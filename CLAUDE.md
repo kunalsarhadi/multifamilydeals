@@ -15,7 +15,7 @@ The target investor wants to scale to 50+ doors in 4 years.
 - **Live URL:** https://multi-family-deals.ca
 - **Hosting:** GitHub Pages (the CNAME file points the domain to GitHub Pages)
 - **Repository:** https://github.com/kunalsarhadi/multifamilydeals
-- **Local files:** `/home/user/gohighlevel/`
+- **Local files:** `/home/user/multifamilydeals/`
 - **Default branch for deploys:** `main` — pushing to `main` makes changes live within 1–2 minutes
 - **Feature branches:** use `fix/` or `feat/` prefix, merge to `main` when ready
 
@@ -24,7 +24,7 @@ The target investor wants to scale to 50+ doors in 4 years.
 Changes to local HTML files do NOT affect the live site until pushed to `main` on GitHub.
 Always tell the user whether a change is local-only or has been pushed live.
 
-## Pages (10 total)
+## Pages (15 total)
 
 | File | URL path | Purpose |
 |---|---|---|
@@ -38,6 +38,11 @@ Always tell the user whether a change is local-only or has been pushed live.
 | `reviews.html` | `/reviews` | Client reviews |
 | `guide.html` | `/guide` | Free CMHC MLI Select investor guide (printable PDF) |
 | `contact.html` | `/contact` | Book Strategy Call |
+| `ontario-investors.html` | `/ontario-investors` | Landing page targeting Ontario investors |
+| `blog/index.html` | `/blog/` | Blog index / listing page |
+| `blog/cmhc-mli-select-guide.html` | `/blog/cmhc-mli-select-guide` | Blog: CMHC MLI Select deep-dive guide |
+| `blog/edmonton-vs-toronto-multifamily.html` | `/blog/edmonton-vs-toronto-multifamily` | Blog: Edmonton vs Toronto multifamily comparison |
+| `blog/scale-50-doors.html` | `/blog/scale-50-doors` | Blog: How to scale to 50 doors |
 
 ## Site Architecture
 
@@ -47,7 +52,7 @@ Always tell the user whether a change is local-only or has been pushed live.
 - Color tokens: `--navy-deep`, `--navy-primary`, `--navy-card`, `--navy-border`, `--gold`, `--gold-light`, `--gold-muted`, `--text-primary`, `--text-muted`, `--text-subtle`
 - Nav: `<nav>` → `.nav-inner` → `.nav-logo` (left) + `.nav-links` (middle) + `.nav-cta` (right)
 - Mobile nav: `<div class="mobile-nav" id="mobileNav">` — toggled by `.hamburger` button
-- Footer: consistent across all pages, links to all 9 other pages
+- Footer: consistent across all pages, links to all main pages
 
 ## Key Market Data (update here when figures change)
 
@@ -77,7 +82,7 @@ Always tell the user whether a change is local-only or has been pushed live.
 ## Inventory
 
 - The "Last Updated" date on the inventory page updates automatically via JavaScript (`new Date()`) — no manual work needed
-- Inventory data is managed separately in Google Sheets (Claude does not have access to this)
+- Inventory data is managed in Google Sheets — see the **Google Sheets — Inventory Hotlist** section below for credentials and sync instructions
 
 ## Git Workflow
 
