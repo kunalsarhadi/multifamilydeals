@@ -204,6 +204,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     @media (min-width: 1440px) { html { font-size: 17px; } }
     @media (min-width: 1920px) { html { font-size: 18.5px; } }
+
+    /* VIRTUAL TOUR */
+    .tour-section { padding: 5rem 2rem 6rem; background: var(--navy-primary); border-top: 1px solid var(--navy-border); }
+    .tour-inner { max-width: 1100px; margin: 0 auto; }
+    .tour-header { text-align: center; margin-bottom: 3rem; }
+    .tour-header .section-eyebrow { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .tour-header .section-eyebrow::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
+    .tour-header h2 { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; margin-bottom: 0.8rem; }
+    .tour-header p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; max-width: 560px; margin: 0 auto 2rem; }
+    .tour-embed-wrap { position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 2px; overflow: hidden; border: 1px solid var(--navy-border); background: var(--navy-deep); }
+    .tour-embed-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .tour-actions { display: flex; justify-content: center; gap: 1rem; margin-top: 1.8rem; flex-wrap: wrap; }
+    .tour-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold); color: var(--navy-deep); padding: 0.85rem 2rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.88rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .tour-btn-primary:hover { background: var(--gold-light); }
+    .tour-btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--navy-border); color: var(--text-muted); padding: 0.85rem 2rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .tour-btn-ghost:hover { border-color: var(--gold-muted); color: var(--gold); }
+    .tour-checklist { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--navy-border); }
+    .tour-check-item { display: flex; align-items: center; gap: 0.75rem; font-size: 0.88rem; color: var(--text-muted); letter-spacing: 0.02em; }
+    .tour-check-icon { flex-shrink: 0; width: 18px; height: 18px; color: var(--gold); }
+
   </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -422,6 +442,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="detail-label">Finish Level</div>
           <div class="detail-value">Premium</div>
         </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- VIRTUAL TOUR -->
+<section class="tour-section">
+  <div class="tour-inner">
+    <div class="tour-header reveal">
+      <div class="section-eyebrow">iGuide Virtual Tour</div>
+      <h2>Walk Every Unit — From Anywhere</h2>
+      <p>Full 3D virtual tour of the completed Inglewood 9-plex. Explore the primary, secondary, and garden suite layouts before your strategy call.</p>
+    </div>
+
+    <div class="tour-embed-wrap reveal">
+      <iframe
+        src="https://unbranded.youriguide.com/29_12421_112_ave_nw_edmonton_ab/"
+        title="9-Plex Inglewood — iGuide Virtual Tour"
+        allow="fullscreen"
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <div class="tour-actions reveal">
+      <a href="https://unbranded.youriguide.com/29_12421_112_ave_nw_edmonton_ab/" target="_blank" rel="noopener" class="tour-btn-primary" data-conversion="virtual_tour_view">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        Open Full Tour
+      </a>
+      <a href="contact.html" class="tour-btn-ghost" data-conversion="book_call">
+        Book a Strategy Call
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+
+    <div class="tour-checklist reveal">
+      <div class="tour-check-item">
+        <svg class="tour-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Separate entrance to all units
+      </div>
+      <div class="tour-check-item">
+        <svg class="tour-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Separate utility meters and address per unit
+      </div>
+      <div class="tour-check-item">
+        <svg class="tour-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Landscaping and window coverings included
+      </div>
+      <div class="tour-check-item">
+        <svg class="tour-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        In-house property management services
       </div>
     </div>
 
