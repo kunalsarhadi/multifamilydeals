@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WBW5QJQT');</script>
+<!-- End Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TE1S1R0BD4"></script>
 <script>
@@ -19,13 +26,13 @@
   <meta property="og:description" content="Questions about CMHC MLI Select, 5% down, Alberta taxation, and how the acquisition process works for Ontario investors." />
   <meta property="og:url" content="https://multi-family-deals.ca/faq.html" />
   <link rel="canonical" href="https://multi-family-deals.ca/faq.html" />
-  <meta property="og:image" content="https://multi-family-deals.ca/images/jasper-park.png" />
+  <meta property="og:image" content="https://multi-family-deals.ca/images/og-edmonton.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="CMHC MLI Select FAQ | Multi-Family Investment Edmonton | Multi Family Deals" />
   <meta name="twitter:description" content="Questions about CMHC MLI Select, 5% down, Alberta taxation, and how the acquisition process works for Ontario investors." />
-  <meta name="twitter:image" content="https://multi-family-deals.ca/images/jasper-park.png" />
+  <meta name="twitter:image" content="https://multi-family-deals.ca/images/og-edmonton.jpg" />
   <meta name="description" content="How is 5% down possible? What is MLI Select? Why Edmonton? How do I manage this from Toronto? All your questions answered." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,7 +54,20 @@
     .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 4rem; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
     .nav-logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
     .nav-logo span { color: var(--text-primary); font-weight: 400; }
-    .nav-links { display: flex; gap: 0.5rem; list-style: none; }
+    .nav-links { display: flex; gap: 0; list-style: none; }
+    .has-dropdown { position: relative; }
+    .nav-dropdown-btn { background: none; border: none; cursor: pointer; font-family: 'Josefin Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); padding: 0.4rem 0.75rem; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; white-space: nowrap; }
+    .nav-dropdown-btn:hover { color: var(--gold); }
+    .has-dropdown.active > .nav-dropdown-btn { color: var(--gold); }
+    .nav-chevron { width: 0.65rem; height: 0.65rem; transition: transform 0.2s; flex-shrink: 0; }
+    .has-dropdown.open .nav-chevron { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 230px; background: var(--navy-card); border: 1px solid var(--navy-border); border-top: 2px solid var(--gold); list-style: none; padding: 0.4rem 0; z-index: 100; box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+    .has-dropdown.open .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu li a { display: block; padding: 0.7rem 1.25rem; text-decoration: none; transition: background 0.15s; border-left: 2px solid transparent; }
+    .nav-dropdown-menu li a:hover { background: var(--navy-alt); border-left-color: var(--gold); }
+    .dropdown-link-title { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 0.18rem; }
+    .dropdown-link-desc { display: block; font-size: 0.7rem; font-weight: 300; color: var(--text-subtle); letter-spacing: 0.01em; text-transform: none; }
+    .mobile-nav-category { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-muted); padding: 1.2rem 0 0.35rem; pointer-events: none; margin-top: 0.25rem; }
     .nav-links a { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.04em; white-space: nowrap; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
     .nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 0.6rem 1.4rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.2s, color 0.2s; }
@@ -162,39 +182,63 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":["RealEstateAgent","LocalBusiness"],"name":"Multi Family Deals","description":"Edmonton-based real estate investment firm specializing in purpose-built CMHC MLI Select multi-family properties. 5% down, 50-year amortization.","url":"https://multi-family-deals.ca","telephone":"+14162007010","email":"sales@teamsarhadi.com","address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA"},"founder":{"@type":"Person","name":"Kunal Sarhadi","jobTitle":"Real Estate Broker","worksFor":{"@type":"Organization","name":"Homelife Miracle Realty Inc."}},"areaServed":{"@type":"City","name":"Edmonton"},"knowsAbout":["Multi-family real estate","CMHC MLI Select","Real estate investment","Alberta real estate"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"10","bestRating":"5","worstRating":"1"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the CMHC MLI Select program?","acceptedAnswer":{"@type":"Answer","text":"MLI Select (Multi-Unit Mortgage Loan Insurance Select) is a CMHC program that offers significantly better financing terms for qualifying multi-family builds, including 5% minimum down payment and amortization periods of up to 50 years."}},{"@type":"Question","name":"How is 5% down possible on a multi-family property?","acceptedAnswer":{"@type":"Answer","text":"CMHC mortgage insurance on qualifying MLI Select builds allows lenders to offer up to 95% loan-to-value financing. The insurance premium is added to the mortgage. Properties must meet Social Outcomes points for affordability, energy efficiency, and accessibility."}},{"@type":"Question","name":"Who is eligible for CMHC MLI Select?","acceptedAnswer":{"@type":"Answer","text":"MLI Select is open to Canadian borrowers acquiring multi-unit residential properties with 5 or more units. Key requirements: 5% deposit, additional 5% in liquid reserves, and net worth of at least 25% of total project cost. CMHC qualifies primarily on the building's Debt Service Coverage Ratio (1.10x minimum)."}},{"@type":"Question","name":"Why does 50-year amortization matter so much?","acceptedAnswer":{"@type":"Answer","text":"A longer amortization means lower monthly payments and more cash flow retained. On a $1.5M mortgage, 50-year amortization saves approximately $2,700/month versus a 25-year term — a significant difference across multiple assets."}},{"@type":"Question","name":"Why Edmonton and not Toronto, Vancouver, or Calgary?","acceptedAnswer":{"@type":"Answer","text":"The 95% CMHC MLI Select financing path is effectively closed in Ontario due to high entry prices that prevent the property from meeting the 1.10x DSCR threshold. Edmonton's rent-to-price ratio supports qualifying DSCR. Alberta also has no HST, no Land Transfer Tax, and lower development charges than Ontario."}},{"@type":"Question","name":"Do I need to qualify for the full mortgage amount?","acceptedAnswer":{"@type":"Answer","text":"Under MLI Select, lenders use rental income from the property as the primary debt servicing qualification — not just personal income. An investor earning $80,000/year can acquire a $1.6M Edmonton 6-plex using the property's projected rent as the primary qualifier, with 5% down."}},{"@type":"Question","name":"Can I use equity from my existing home as the 5% down?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many investors fund their 5% deposit through a HELOC (Home Equity Line of Credit) on their primary residence. This is a common and lender-approved approach for MLI Select acquisitions."}},{"@type":"Question","name":"How do I manage this from Toronto, Vancouver, or Montreal?","acceptedAnswer":{"@type":"Answer","text":"A licensed Edmonton property management company handles 100% of operations: tenant screening, lease agreements, rent collection, maintenance coordination, and regulatory compliance. As the owner, you receive a monthly income statement and net cash flow transfer. You are never contacted about day-to-day operations."}},{"@type":"Question","name":"How long does it take from strategy call to owning a property?","acceptedAnswer":{"@type":"Answer","text":"Strategy call to conditional offer: 1–2 weeks. Financing approval (MLI Select): 4–8 weeks. Construction completion varies by project stage — some assets are turnkey-ready. Tenant placement target is within 30–60 days of possession."}},{"@type":"Question","name":"What is the minimum investment to get started?","acceptedAnswer":{"@type":"Answer","text":"The minimum entry point for a 6-plex is approximately $80,000 as a 5% deposit on a ~$1.6M property, plus closing costs of $8,000–$15,000. Total liquid capital required for a first acquisition is typically $88,000–$100,000 for a 6-plex entry."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":["RealEstateAgent","LocalBusiness"],"name":"Multi Family Deals","description":"Edmonton-based real estate investment firm specializing in purpose-built CMHC MLI Select multi-family properties. 5% down, 50-year amortization.","url":"https://multi-family-deals.ca","telephone":"+14162007010","email":"sales@teamsarhadi.com","address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA"},"founder":{"@type":"Person","name":"Kunal Sarhadi","jobTitle":"Real Estate Broker","worksFor":{"@type":"Organization","name":"Homelife Miracle Realty Inc."}},"areaServed":{"@type":"City","name":"Edmonton"},"knowsAbout":["Multi-family real estate","CMHC MLI Select","Real estate investment","Alberta real estate"],"priceRange":"$$$$","image":"https://multi-family-deals.ca/images/jasper-park.png","sameAs":["https://www.instagram.com/kunalsarhadi/","https://www.facebook.com/multifamilydeals"],"geo":{"@type":"GeoCoordinates","latitude":53.5461,"longitude":-113.4938}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the CMHC MLI Select program?","acceptedAnswer":{"@type":"Answer","text":"MLI Select (Multi-Unit Mortgage Loan Insurance Select) is a CMHC program that offers significantly better financing terms for qualifying multi-family builds, including 5% minimum down payment and amortization periods of up to 50 years."}},{"@type":"Question","name":"How is 5% down possible on a multi-family property?","acceptedAnswer":{"@type":"Answer","text":"CMHC mortgage insurance on qualifying MLI Select builds allows lenders to offer up to 95% loan-to-value financing. The insurance premium is added to the mortgage. Properties must meet Social Outcomes points for affordability, energy efficiency, and accessibility."}},{"@type":"Question","name":"Who is eligible for CMHC MLI Select?","acceptedAnswer":{"@type":"Answer","text":"MLI Select is open to Canadian borrowers acquiring multi-unit residential properties with 5 or more units. Key requirements: 5% deposit, additional 5% in liquid reserves, and net worth of at least 25% of total project cost. CMHC qualifies primarily on the building's Debt Service Coverage Ratio (1.10x minimum)."}},{"@type":"Question","name":"Why does 50-year amortization matter so much?","acceptedAnswer":{"@type":"Answer","text":"A longer amortization means lower monthly payments and more cash flow retained. On a $1.5M mortgage, 50-year amortization saves approximately $2,700/month versus a 25-year term — a significant difference across multiple assets."}},{"@type":"Question","name":"Why Edmonton and not Toronto, Vancouver, or Calgary?","acceptedAnswer":{"@type":"Answer","text":"The 95% CMHC MLI Select financing path is effectively closed in Ontario due to high entry prices that prevent the property from meeting the 1.10x DSCR threshold. Edmonton's rent-to-price ratio supports qualifying DSCR. Alberta also has no HST, no Land Transfer Tax, and lower development charges than Ontario."}},{"@type":"Question","name":"Do I need to qualify for the full mortgage amount?","acceptedAnswer":{"@type":"Answer","text":"Under MLI Select, lenders use rental income from the property as the primary debt servicing qualification — not just personal income. An investor earning $80,000/year can acquire a $1.6M Edmonton 6-plex using the property's projected rent as the primary qualifier, with 5% down."}},{"@type":"Question","name":"Can I use equity from my existing home as the 5% down?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many investors fund their 5% deposit through a HELOC (Home Equity Line of Credit) on their primary residence. This is a common and lender-approved approach for MLI Select acquisitions."}},{"@type":"Question","name":"How do I manage this from Toronto, Vancouver, or Montreal?","acceptedAnswer":{"@type":"Answer","text":"A licensed Edmonton property management company handles 100% of operations: tenant screening, lease agreements, rent collection, maintenance coordination, and regulatory compliance. As the owner, you receive a monthly income statement and net cash flow transfer. You are never contacted about day-to-day operations."}},{"@type":"Question","name":"How long does it take from discovery call to owning a property?","acceptedAnswer":{"@type":"Answer","text":"Discovery call to conditional offer: 1–2 weeks. Financing approval (MLI Select): 4–8 weeks. Construction completion varies by project stage — some assets are turnkey-ready. Tenant placement target is within 30–60 days of possession."}},{"@type":"Question","name":"What is the minimum investment to get started?","acceptedAnswer":{"@type":"Answer","text":"The minimum entry point for a 6-plex is approximately $80,000 as a 5% deposit on a ~$1.6M property, plus closing costs of $8,000–$15,000. Total liquid capital required for a first acquisition is typically $88,000–$100,000 for a 6-plex entry."}},{"@type":"Question","name":"What's the catch with 5% down on a multi-family property?","acceptedAnswer":{"@type":"Answer","text":"There is no hidden catch, but there are real requirements. The CMHC insurance premium (6.15% of the loan at 95% LTV) is added to the mortgage — not paid at closing. Eligibility requires purpose-built new construction, 50+ Social Outcomes points, minimum 1.10x DSCR, and investor net worth equal to at least 25% of total project cost."}},{"@type":"Question","name":"How much do I really need to get started with MLI Select?","acceptedAnswer":{"@type":"Answer","text":"Three numbers matter: liquid capital (5% deposit + closing costs, typically $102,000–$108,000 on a $1.8M 6-plex); net worth of at least 25% of total project cost ($450,000 on a $1.8M property, including home equity, RRSPs, and investments); and reserves as confirmed by your mortgage broker."}},{"@type":"Question","name":"Can I invest in Edmonton real estate from Ontario without visiting?","acceptedAnswer":{"@type":"Answer","text":"Yes. The entire acquisition process is remote — offers, financing, CMHC submissions, and title transfer are handled electronically or via notarized remote signing. A licensed Edmonton property manager handles all operations after possession. Many Ontario investors have never visited Edmonton and own multiple assets there."}},{"@type":"Question","name":"Why doesn't MLI Select work in Ontario or BC?","acceptedAnswer":{"@type":"Answer","text":"MLI Select is a national program but the DSCR math fails in Ontario and BC. CMHC requires rental income to cover debt service at a minimum 1.10x ratio at 95% LTV. High construction costs and purchase prices in Ontario mean projected rents cannot hit that threshold. Edmonton purpose-built 6–10 plex properties consistently achieve 1.15x–1.30x DSCR under current conditions."}},{"@type":"Question","name":"Is MLI Select only for new construction?","acceptedAnswer":{"@type":"Answer","text":"MLI Select applies to both new and existing properties, but maximum terms (5% down, 50-year amortization) are effectively only achievable on purpose-built new construction that earns 100+ Social Outcomes points. Existing buildings rarely qualify for the full financing package."}}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://multi-family-deals.ca/"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://multi-family-deals.ca/faq.html"}]}</script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBW5QJQT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <nav>
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">MULTI FAMILY <span>DEALS</span></a>
       <ul class="nav-links">
-        <li><a href="about.html">The Strategy</a></li>
-        <li><a href="why-alberta.html">Why Alberta</a></li>
-        <li><a href="inventory.html">Active Inventory</a></li>
-        <li><a href="inglewood.html">Portfolio</a></li>
-        <li><a href="buying-process.html">Buying Process</a></li>
-        <li><a href="faq.html" class="active">FAQ</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="guide.html">Free Guide</a></li>
+        <li class="has-dropdown" data-category="why-edmonton">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">Why Edmonton <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li><a href="about.html" role="menuitem"><span class="dropdown-link-title">The Strategy</span><span class="dropdown-link-desc">Investment approach &amp; team</span></a></li>
+            <li><a href="why-alberta.html" role="menuitem"><span class="dropdown-link-title">Why Alberta</span><span class="dropdown-link-desc">Market fundamentals &amp; data</span></a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown" data-category="properties">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">Properties <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li><a href="inventory.html" role="menuitem"><span class="dropdown-link-title">Active Inventory</span><span class="dropdown-link-desc">Available 6–20 plex assets</span></a></li>
+            <li><a href="inglewood.html" role="menuitem"><span class="dropdown-link-title">Portfolio</span><span class="dropdown-link-desc">Completed Inglewood 9-plex</span></a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown" data-category="resources">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">Resources <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li><a href="buying-process.html" role="menuitem"><span class="dropdown-link-title">Buying Process</span><span class="dropdown-link-desc">9-step acquisition roadmap</span></a></li>
+            <li><a href="faq.html" role="menuitem"><span class="dropdown-link-title">FAQ</span><span class="dropdown-link-desc">Common investor questions</span></a></li>
+            <li><a href="reviews.html" role="menuitem"><span class="dropdown-link-title">Reviews</span><span class="dropdown-link-desc">Client testimonials</span></a></li>
+            <li><a href="blog/index.html" role="menuitem"><span class="dropdown-link-title">Blog</span><span class="dropdown-link-desc">Investor education articles</span></a></li>
+            <li><a href="guide.html" role="menuitem"><span class="dropdown-link-title">Free Guide</span><span class="dropdown-link-desc">CMHC MLI Select PDF guide</span></a></li>
+          </ul>
+        </li>
       </ul>
-      <a href="contact.html" class="nav-cta">Book Strategy Call</a>
+      <a href="contact.html" data-conversion="book_call" class="nav-cta">Book Discovery Call</a>
       <div class="hamburger" id="hamburger" role="button" aria-label="Open menu" tabindex="0"><span></span><span></span><span></span></div>
     </div>
   </nav>
     <div class="mobile-nav" id="mobileNav">
-      <a href="about.html">The Strategy</a>
-      <a href="why-alberta.html">Why Alberta</a>
-      <a href="inventory.html">Active Inventory</a>
-  <a href="inglewood.html">Portfolio</a>
-      <a href="buying-process.html">Buying Process</a>
-      <a href="faq.html">FAQ</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="guide.html">Free Guide</a>
-      <a href="contact.html" class="mobile-nav-cta">Book Strategy Call</a>
-    </div>
+    <div class="mobile-nav-category">Why Edmonton</div>
+    <a href="about.html">The Strategy</a>
+    <a href="why-alberta.html">Why Alberta</a>
+    <div class="mobile-nav-category">Properties</div>
+    <a href="inventory.html">Active Inventory</a>
+    <a href="inglewood.html">Portfolio</a>
+    <div class="mobile-nav-category">Resources</div>
+    <a href="buying-process.html">Buying Process</a>
+    <a href="faq.html">FAQ</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="blog/index.html">Blog</a>
+    <a href="guide.html">Free Guide</a>
+    <a href="contact.html" data-conversion="book_call" class="mobile-nav-cta">Book Discovery Call</a>
+  </div>
 
   <section class="page-hero">
     <div class="page-hero-inner">
@@ -377,7 +421,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
               <div class="faq-answer">
                 <div class="faq-answer-inner">
                   We use "Edmonton Growth Corridor" to describe our target acquisition zones without disclosing exact addresses publicly — protecting seller privacy and preventing unsolicited contact with builders.<br /><br />
-                  These corridors are selected based on: <span class="highlight">proximity to transit, employment nodes, schools, and amenities</span>, as well as zoning approvals for infill multi-family development. Exact addresses, site plans, and neighbourhood analysis are shared exclusively during strategy calls.
+                  These corridors are selected based on: <span class="highlight">proximity to transit, employment nodes, schools, and amenities</span>, as well as zoning approvals for infill multi-family development. Exact addresses, site plans, and neighbourhood analysis are shared exclusively during discovery calls.
                 </div>
               </div>
             </div>
@@ -408,7 +452,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
               <div class="faq-answer">
                 <div class="faq-answer-inner">
                   Yes. Many of our investors fund their 5% deposit through a <strong>HELOC (Home Equity Line of Credit)</strong> on their primary residence. This is a common and lender-approved approach for MLI Select acquisitions.<br /><br />
-                  The deposit must be verified as available funds. Your mortgage broker will walk you through the optimal source of funds for your specific situation on your strategy call.
+                  The deposit must be verified as available funds. Your mortgage broker will walk you through the optimal source of funds for your specific situation on your discovery call.
                 </div>
               </div>
             </div>
@@ -421,6 +465,18 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
                 <div class="faq-answer-inner">
                   Standard CMHC-insured mortgages in Canada are full recourse — meaning in a default scenario, the lender may pursue personal assets beyond the property itself. Recourse terms vary by lender, structure, and your specific mortgage agreement.<br /><br />
                   Some investors negotiate limited recourse structures with specific lenders, but this is not a standard feature of CMHC MLI Select and is not guaranteed. <span class="highlight">Consult your lawyer before signing</span> to fully understand your personal liability under your specific mortgage agreement.
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Are mortgage broker fees covered?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  Yes. <span class="highlight">Mortgage broker fees are covered</span> — you do not pay broker commission out of pocket. We connect you to our trusted network of CMHC MLI Select-experienced mortgage brokers who are compensated by the lender on funded deals.<br /><br />
+                  This is one of the structural advantages of working through Multi Family Deals. You access the same institutional-grade financing professionals as large developers, without any additional cost on your side.
                 </div>
               </div>
             </div>
@@ -464,8 +520,28 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
               </button>
               <div class="faq-answer">
                 <div class="faq-answer-inner">
-                  Property management fees are factored into the pro-forma analysis we provide on your strategy call. The cash flow figures shown on our inventory page are <span class="highlight">net of management fees</span> — what you actually receive.<br /><br />
-                  Full fee structure, management agreement terms, and net yield calculations are covered in detail during your 30-minute strategy call.
+                  Property management fees are factored into the pro-forma analysis we provide on your discovery call. The cash flow figures shown on our inventory page are <span class="highlight">net of management fees</span> — what you actually receive.<br /><br />
+                  Full fee structure, management agreement terms, and net yield calculations are covered in detail during your 30-minute discovery call.
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What professional support do you provide beyond the transaction?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  We provide direct referrals to a vetted professional network so you can close and operate without assembling your own team from scratch:<br /><br />
+                  <ul>
+                    <li><strong>Property Management</strong> — licensed Edmonton property managers experienced with purpose-built multi-family portfolios</li>
+                    <li><strong>Mortgage Brokers</strong> — CMHC MLI Select specialists with direct lender relationships (broker fees covered)</li>
+                    <li><strong>Lenders</strong> — institutional lenders pre-approved to fund MLI Select builds at our scale</li>
+                    <li><strong>Real Estate Lawyers</strong> — Alberta-licensed lawyers experienced in new-build multi-family closings</li>
+                    <li><strong>Insurance Brokers</strong> — commercial property insurance brokers who understand rental portfolio requirements</li>
+                  </ul>
+                  <br />
+                  You do not need to source any of these independently. Every referral in our network has been vetted through actual transactions — not just recommended in theory.
                 </div>
               </div>
             </div>
@@ -490,14 +566,14 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
           <div class="faq-list">
             <div class="faq-item">
               <button class="faq-question" aria-expanded="false">
-                How long does it take from strategy call to owning a property?
+                How long does it take from discovery call to owning a property?
                 <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
               </button>
               <div class="faq-answer">
                 <div class="faq-answer-inner">
                   For new builds (our primary inventory), the typical timeline is:<br /><br />
                   <ul>
-                    <li><strong>Strategy call to conditional offer:</strong> 1–2 weeks</li>
+                    <li><strong>Discovery call to conditional offer:</strong> 1–2 weeks</li>
                     <li><strong>Financing approval (MLI Select):</strong> 4–8 weeks</li>
                     <li><strong>Construction completion:</strong> Varies by project stage (some are turnkey-ready)</li>
                     <li><strong>Tenant placement (target):</strong> Within 30–60 days of possession (varies by project)</li>
@@ -539,7 +615,79 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
               <div class="faq-answer">
                 <div class="faq-answer-inner">
                   The minimum entry point for our smallest inventory asset (6-plex) is approximately <span class="highlight">$80,000</span> as a 5% deposit on a ~$1.6M property, plus closing costs (typically $8,000–$15,000 for legal, title insurance, and adjustments). An 8-plex at ~$2.4M requires approximately $120,000 as the 5% deposit.<br /><br />
-                  Total liquid capital required for a first acquisition is typically <strong>$88,000–$100,000</strong> for a 6-plex entry. This is verified during the strategy call where we match your available capital to the right asset.
+                  Total liquid capital required for a first acquisition is typically <strong>$88,000–$100,000</strong> for a 6-plex entry. This is verified during the discovery call where we match your available capital to the right asset.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI SEARCH — common phrasings -->
+        <div id="ai-search" class="reveal" style="transition-delay:0.15s">
+          <div class="faq-group-title">Common Questions</div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What's the catch with 5% down on a multi-family property?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  There is no hidden catch, but there are real requirements. CMHC MLI Select's 5% down is available because the program insures the lender against default — and in exchange, CMHC sets strict eligibility criteria: the property must be purpose-built new construction, must earn 50+ Social Outcomes points, must achieve a minimum 1.10x DSCR, and the investor must have a net worth equal to at least 25% of the total project cost.<br /><br />
+                  The CMHC insurance premium (currently 6.15% of the loan amount for 95% LTV) is added to the mortgage and amortized over 50 years — so it does not come out of pocket at closing. The financing terms are genuinely what they appear to be. The constraints are on eligibility, not on the numbers themselves.
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                How much do I really need to get started with MLI Select?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  Three numbers matter:<br /><br />
+                  <ul>
+                    <li><strong>Liquid capital:</strong> 5% deposit + closing costs. For a $1.8M 6-plex: ~$90,000 deposit + ~$12,000–$18,000 closing = $102,000–$108,000 total liquid required</li>
+                    <li><strong>Net worth:</strong> At least 25% of total project cost. On a $1.8M property: minimum $450,000 in provable net worth (includes home equity, RRSPs, investments, other real estate)</li>
+                    <li><strong>Reserves:</strong> CMHC typically looks for additional liquidity beyond the deposit — your mortgage broker will confirm the exact reserve requirement for your application</li>
+                  </ul>
+                  <br />The net worth threshold is the most common reason investors do not yet qualify. If your home equity alone clears $450,000, you are likely in range. We confirm this on your discovery call before any steps are taken.
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Can I invest in Edmonton real estate from Ontario without visiting?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  Yes — the entire process is remote. Offer documents, financing applications, CMHC submissions, and title transfer are all handled electronically or via notarized remote signing. Many of our Ontario investors have completed full acquisitions without ever visiting Edmonton.<br /><br />
+                  Once tenants are placed, a licensed Edmonton property management company handles all day-to-day operations — tenant screening, rent collection, maintenance, and compliance. You receive a monthly statement and net cash transfer. You are not contacted about operational matters.
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Why doesn't MLI Select work in Ontario or BC?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  MLI Select is a national program — it is available anywhere in Canada. The problem is the DSCR math. CMHC requires the property's rental income to cover its debt service at a minimum ratio of 1.10x. In Ontario and BC, construction costs and purchase prices are high enough that projected rental income cannot hit that threshold at 95% LTV financing.<br /><br />
+                  In Edmonton, purpose-built 6–10 plex properties consistently achieve DSCR ratios of 1.15x–1.30x under current rent and cost conditions. That gap — Edmonton qualifying where Ontario cannot — is why capital is moving west. The program works; the market determines where.
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Is MLI Select only for new construction?
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  MLI Select applies to both new construction and existing properties — but the maximum financing terms (5% down, 50-year amortization) are effectively only achievable on purpose-built new construction. Existing buildings rarely earn the 100+ Social Outcomes points needed for maximum benefits, and many cannot meet the DSCR threshold at 95% LTV.<br /><br />
+                  All inventory we work with is purpose-built new construction designed around the MLI Select program from the ground up — engineered to hit 100+ points and qualify for the full financing package.
                 </div>
               </div>
             </div>
@@ -553,9 +701,9 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
   <section class="cta-section">
     <div class="cta-inner reveal">
       <div class="section-label" style="justify-content:center"><span style="width:1.5rem;height:1px;background:var(--gold);display:block"></span>Still Have Questions</div>
-      <h2 class="cta-title">Get Every Answer<br />On Your Strategy Call</h2>
+      <h2 class="cta-title">Get Every Answer<br />On Your Discovery Call</h2>
       <p class="cta-sub">30 minutes. No cost. No obligation. Walk away with a full pro-forma, debt structure, and your personal 50-door roadmap.</p>
-      <a href="contact.html" class="btn-primary">Book Your Strategy Call</a>
+      <a href="contact.html" data-conversion="book_call" class="btn-primary">Book Your Discovery Call</a>
     </div>
   </section>
 
@@ -570,7 +718,9 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
         <li><a href="buying-process.html">Buying Process</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
         <li><a href="guide.html">Free Guide</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="footer-copy">Kunal Sarhadi, Real Estate Broker &nbsp;|&nbsp; Homelife Miracle Realty Inc. &nbsp;|&nbsp; © 2026 Multi Family Deals. Not financial or investment advice. CMHC MLI Select program terms subject to change.</div>
@@ -624,7 +774,43 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
       });
     }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
     faqSections.forEach(s => faqSpy.observe(s));
-  </script>
+  
+  // Dropdown navigation
+  (function() {
+    var dropdowns = document.querySelectorAll('.has-dropdown');
+    dropdowns.forEach(function(dd) {
+      var btn = dd.querySelector('.nav-dropdown-btn');
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var isOpen = dd.classList.contains('open');
+        dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); });
+        if (!isOpen) { dd.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+      dd.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
+      });
+    });
+    document.addEventListener('click', function() {
+      dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); });
+    });
+    // Active category highlight
+    var path = window.location.pathname;
+    var map = {
+      'why-edmonton': ['about', 'why-alberta'],
+      'properties': ['inventory', 'inglewood'],
+      'resources': ['buying-process', 'faq', 'reviews', 'guide', 'blog']
+    };
+    for (var cat in map) {
+      for (var i = 0; i < map[cat].length; i++) {
+        if (path.indexOf(map[cat][i]) !== -1) {
+          var el = document.querySelector('.has-dropdown[data-category="' + cat + '"]');
+          if (el) el.classList.add('active');
+          break;
+        }
+      }
+    }
+  })();
+</script>
 <script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69fa444c3cc75785c76e6387"></script>
 
 <script>
@@ -654,5 +840,23 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+<!-- Conversion Event Listener -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('[data-conversion]');
+    if(!el) return;
+    var eventName = el.getAttribute('data-conversion');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': eventName,
+      'event_category': 'engagement',
+      'event_label': el.textContent.trim().substring(0, 50),
+      'page_path': window.location.pathname
+    });
+  });
+})();
+</script>
+<!-- End Conversion Event Listener -->
 </body>
 </html>

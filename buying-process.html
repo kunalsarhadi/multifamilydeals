@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WBW5QJQT');</script>
+<!-- End Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TE1S1R0BD4"></script>
 <script>
@@ -16,16 +23,16 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Multi Family Deals" />
   <meta property="og:title" content="How to Buy Multi-Family Property in Edmonton | Multi Family Deals" />
-  <meta property="og:description" content="From strategy call to owning a professionally managed Edmonton multi-family asset. The full roadmap for out-of-province investors." />
+  <meta property="og:description" content="From discovery call to owning a professionally managed Edmonton multi-family asset. The full roadmap for out-of-province investors." />
   <meta property="og:url" content="https://multi-family-deals.ca/buying-process.html" />
   <link rel="canonical" href="https://multi-family-deals.ca/buying-process.html" />
-  <meta property="og:image" content="https://multi-family-deals.ca/images/jasper-park.png" />
+  <meta property="og:image" content="https://multi-family-deals.ca/images/og-edmonton.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How to Buy Multi-Family Property in Edmonton | Multi Family Deals" />
-  <meta name="twitter:description" content="From strategy call to owning a professionally managed Edmonton multi-family asset. The full roadmap for out-of-province investors." />
-  <meta name="twitter:image" content="https://multi-family-deals.ca/images/jasper-park.png" />
+  <meta name="twitter:description" content="From discovery call to owning a professionally managed Edmonton multi-family asset. The full roadmap for out-of-province investors." />
+  <meta name="twitter:image" content="https://multi-family-deals.ca/images/og-edmonton.jpg" />
   <meta name="description" content="A clear 9-step guide to purchasing a CMHC MLI Select multi-family property with Multi Family Deals. From pre-qualification to project completion." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,7 +56,20 @@
     .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 4rem; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
     .nav-logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
     .nav-logo span { color: var(--text-primary); font-weight: 400; }
-    .nav-links { display: flex; gap: 0.5rem; list-style: none; }
+    .nav-links { display: flex; gap: 0; list-style: none; }
+    .has-dropdown { position: relative; }
+    .nav-dropdown-btn { background: none; border: none; cursor: pointer; font-family: 'Josefin Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); padding: 0.4rem 0.75rem; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; white-space: nowrap; }
+    .nav-dropdown-btn:hover { color: var(--gold); }
+    .has-dropdown.active > .nav-dropdown-btn { color: var(--gold); }
+    .nav-chevron { width: 0.65rem; height: 0.65rem; transition: transform 0.2s; flex-shrink: 0; }
+    .has-dropdown.open .nav-chevron { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 230px; background: var(--navy-card); border: 1px solid var(--navy-border); border-top: 2px solid var(--gold); list-style: none; padding: 0.4rem 0; z-index: 100; box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+    .has-dropdown.open .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu li a { display: block; padding: 0.7rem 1.25rem; text-decoration: none; transition: background 0.15s; border-left: 2px solid transparent; }
+    .nav-dropdown-menu li a:hover { background: var(--navy-alt); border-left-color: var(--gold); }
+    .dropdown-link-title { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 0.18rem; }
+    .dropdown-link-desc { display: block; font-size: 0.7rem; font-weight: 300; color: var(--text-subtle); letter-spacing: 0.01em; text-transform: none; }
+    .mobile-nav-category { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-muted); padding: 1.2rem 0 0.35rem; pointer-events: none; margin-top: 0.25rem; }
     .nav-links a { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.04em; white-space: nowrap; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
     .nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 0.6rem 1.4rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.2s, color 0.2s; }
@@ -179,40 +199,64 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":["RealEstateAgent","LocalBusiness"],"name":"Multi Family Deals","description":"Edmonton-based real estate investment firm specializing in purpose-built CMHC MLI Select multi-family properties. 5% down, 50-year amortization.","url":"https://multi-family-deals.ca","telephone":"+14162007010","email":"sales@teamsarhadi.com","address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA"},"founder":{"@type":"Person","name":"Kunal Sarhadi","jobTitle":"Real Estate Broker","worksFor":{"@type":"Organization","name":"Homelife Miracle Realty Inc."}},"areaServed":{"@type":"City","name":"Edmonton"},"knowsAbout":["Multi-family real estate","CMHC MLI Select","Real estate investment","Alberta real estate"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"10","bestRating":"5","worstRating":"1"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":["RealEstateAgent","LocalBusiness"],"name":"Multi Family Deals","description":"Edmonton-based real estate investment firm specializing in purpose-built CMHC MLI Select multi-family properties. 5% down, 50-year amortization.","url":"https://multi-family-deals.ca","telephone":"+14162007010","email":"sales@teamsarhadi.com","address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA"},"founder":{"@type":"Person","name":"Kunal Sarhadi","jobTitle":"Real Estate Broker","worksFor":{"@type":"Organization","name":"Homelife Miracle Realty Inc."}},"areaServed":{"@type":"City","name":"Edmonton"},"knowsAbout":["Multi-family real estate","CMHC MLI Select","Real estate investment","Alberta real estate"],"priceRange":"$$$$","image":"https://multi-family-deals.ca/images/jasper-park.png","sameAs":["https://www.instagram.com/kunalsarhadi/","https://www.facebook.com/multifamilydeals"],"geo":{"@type":"GeoCoordinates","latitude":53.5461,"longitude":-113.4938}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Buy a CMHC MLI Select Multi-Family Property in Edmonton","description":"A 9-step guide to acquiring a purpose-built multi-family property in Edmonton using CMHC MLI Select financing — 5% down, 50-year amortization.","totalTime":"P90D","supply":[{"@type":"HowToSupply","name":"5% deposit (approx. $80,000 for a 6-plex)"},{"@type":"HowToSupply","name":"Additional 5% liquid reserve"},{"@type":"HowToSupply","name":"Net worth of at least 25% of total project cost"}],"step":[{"@type":"HowToStep","position":1,"name":"Pre Qualification","text":"Initial consultation to understand your financial position and determine investor eligibility. We assess net worth, available capital, and investment goals to confirm fit with the MLI Select program."},{"@type":"HowToStep","position":2,"name":"Allocation Request","text":"Once qualified, a worksheet is submitted to the Builder on your behalf to formally request purchase allocation for your selected property."},{"@type":"HowToStep","position":3,"name":"Due Diligence","text":"Our preferred mortgage broker simultaneously qualifies both the investor and the project. This includes a review of property viability, projected cash flow, and CMHC MLI Select eligibility criteria."},{"@type":"HowToStep","position":4,"name":"Lender Satisfied","text":"The lender issues a Letter of Intent outlining the mortgage terms and conditions. This confirms the financing structure before you commit to the purchase."},{"@type":"HowToStep","position":5,"name":"Deal Firmed","text":"The first deposit is submitted to the Builder, firming the agreement. The purchase is now conditional on CMHC approval and project viability as outlined in the APS."},{"@type":"HowToStep","position":6,"name":"Preparation and Submission","text":"The full application package is submitted to CMHC. This stage typically takes 60 to 90 days while CMHC reviews the project and issues the Certificate of Insurance (COI)."},{"@type":"HowToStep","position":7,"name":"CMHC Acceptance","text":"CMHC approves the project and insurance is confirmed. Your lawyer is introduced at this stage to begin preparation for closing."},{"@type":"HowToStep","position":8,"name":"Pre Leasing Before Completion","text":"While construction completes, property management begins advertising and leasing units — with the goal of achieving maximum occupancy before you take title."},{"@type":"HowToStep","position":9,"name":"Project Completion","text":"You have closed on your multi-family property. The property is professionally managed under the 50-year amortization structure."}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://multi-family-deals.ca/"},{"@type":"ListItem","position":2,"name":"Buying Process","item":"https://multi-family-deals.ca/buying-process.html"}]}</script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBW5QJQT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
   <nav>
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">MULTI FAMILY <span>DEALS</span></a>
       <ul class="nav-links">
-        <li><a href="about.html">The Strategy</a></li>
-        <li><a href="why-alberta.html">Why Alberta</a></li>
-        <li><a href="inventory.html">Active Inventory</a></li>
-        <li><a href="inglewood.html">Portfolio</a></li>
-        <li><a href="buying-process.html" class="active">Buying Process</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="guide.html">Free Guide</a></li>
+        <li class="has-dropdown" data-category="why-edmonton">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">Why Edmonton <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li><a href="about.html" role="menuitem"><span class="dropdown-link-title">The Strategy</span><span class="dropdown-link-desc">Investment approach &amp; team</span></a></li>
+            <li><a href="why-alberta.html" role="menuitem"><span class="dropdown-link-title">Why Alberta</span><span class="dropdown-link-desc">Market fundamentals &amp; data</span></a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown" data-category="properties">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">Properties <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li><a href="inventory.html" role="menuitem"><span class="dropdown-link-title">Active Inventory</span><span class="dropdown-link-desc">Available 6–20 plex assets</span></a></li>
+            <li><a href="inglewood.html" role="menuitem"><span class="dropdown-link-title">Portfolio</span><span class="dropdown-link-desc">Completed Inglewood 9-plex</span></a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown" data-category="resources">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">Resources <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li><a href="buying-process.html" role="menuitem"><span class="dropdown-link-title">Buying Process</span><span class="dropdown-link-desc">9-step acquisition roadmap</span></a></li>
+            <li><a href="faq.html" role="menuitem"><span class="dropdown-link-title">FAQ</span><span class="dropdown-link-desc">Common investor questions</span></a></li>
+            <li><a href="reviews.html" role="menuitem"><span class="dropdown-link-title">Reviews</span><span class="dropdown-link-desc">Client testimonials</span></a></li>
+            <li><a href="blog/index.html" role="menuitem"><span class="dropdown-link-title">Blog</span><span class="dropdown-link-desc">Investor education articles</span></a></li>
+            <li><a href="guide.html" role="menuitem"><span class="dropdown-link-title">Free Guide</span><span class="dropdown-link-desc">CMHC MLI Select PDF guide</span></a></li>
+          </ul>
+        </li>
       </ul>
-      <a href="contact.html" class="nav-cta">Book Strategy Call</a>
+      <a href="contact.html" data-conversion="book_call" class="nav-cta">Book Discovery Call</a>
       <div class="hamburger" id="hamburger" role="button" aria-label="Open menu" tabindex="0"><span></span><span></span><span></span></div>
     </div>
   </nav>
     <div class="mobile-nav" id="mobileNav">
-      <a href="about.html">The Strategy</a>
-      <a href="why-alberta.html">Why Alberta</a>
-      <a href="inventory.html">Active Inventory</a>
-  <a href="inglewood.html">Portfolio</a>
-      <a href="buying-process.html">Buying Process</a>
-      <a href="faq.html">FAQ</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="guide.html">Free Guide</a>
-      <a href="contact.html" class="mobile-nav-cta">Book Strategy Call</a>
-    </div>
+    <div class="mobile-nav-category">Why Edmonton</div>
+    <a href="about.html">The Strategy</a>
+    <a href="why-alberta.html">Why Alberta</a>
+    <div class="mobile-nav-category">Properties</div>
+    <a href="inventory.html">Active Inventory</a>
+    <a href="inglewood.html">Portfolio</a>
+    <div class="mobile-nav-category">Resources</div>
+    <a href="buying-process.html">Buying Process</a>
+    <a href="faq.html">FAQ</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="blog/index.html">Blog</a>
+    <a href="guide.html">Free Guide</a>
+    <a href="contact.html" data-conversion="book_call" class="mobile-nav-cta">Book Discovery Call</a>
+  </div>
 
   <section class="page-hero">
     <div class="page-hero-inner">
@@ -395,10 +439,10 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
   <section class="cta-section">
     <div class="cta-inner">
       <div class="section-label reveal" style="justify-content:center">Ready to Start?</div>
-      <h2 class="reveal" style="font-size:clamp(1.5rem,3vw,2.2rem);font-weight:600;margin-bottom:1rem;transition-delay:0.05s">Begin with a Strategy Call</h2>
+      <h2 class="reveal" style="font-size:clamp(1.5rem,3vw,2.2rem);font-weight:600;margin-bottom:1rem;transition-delay:0.05s">Begin with a Discovery Call</h2>
       <p class="reveal" style="font-size:0.95rem;font-weight:300;color:var(--text-muted);line-height:1.75;transition-delay:0.1s">Step 1 starts with a 30-minute call where we assess your eligibility and walk you through the right property for your goals. No commitment required.</p>
       <div class="cta-buttons reveal" style="transition-delay:0.15s">
-        <a href="contact.html" class="btn-primary">Book Your Strategy Call</a>
+        <a href="contact.html" data-conversion="book_call" class="btn-primary">Book Your Discovery Call</a>
         <a href="inventory.html" class="btn-ghost">View Active Inventory <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
       </div>
     </div>
@@ -415,7 +459,9 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
         <li><a href="buying-process.html">Buying Process</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
         <li><a href="guide.html">Free Guide</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="footer-copy">Kunal Sarhadi, Real Estate Broker &nbsp;|&nbsp; Homelife Miracle Realty Inc. &nbsp;|&nbsp; © 2026 Multi Family Deals. Not financial or investment advice. CMHC MLI Select program terms subject to change.</div>
@@ -440,7 +486,43 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     window.addEventListener('scroll', () => { document.querySelectorAll('.reveal:not(.visible)').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight + 50) el.classList.add('visible'); }); }, { passive: true });
     setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')), 1200);
-  </script>
+  
+  // Dropdown navigation
+  (function() {
+    var dropdowns = document.querySelectorAll('.has-dropdown');
+    dropdowns.forEach(function(dd) {
+      var btn = dd.querySelector('.nav-dropdown-btn');
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var isOpen = dd.classList.contains('open');
+        dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); });
+        if (!isOpen) { dd.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+      dd.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
+      });
+    });
+    document.addEventListener('click', function() {
+      dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); });
+    });
+    // Active category highlight
+    var path = window.location.pathname;
+    var map = {
+      'why-edmonton': ['about', 'why-alberta'],
+      'properties': ['inventory', 'inglewood'],
+      'resources': ['buying-process', 'faq', 'reviews', 'guide', 'blog']
+    };
+    for (var cat in map) {
+      for (var i = 0; i < map[cat].length; i++) {
+        if (path.indexOf(map[cat][i]) !== -1) {
+          var el = document.querySelector('.has-dropdown[data-category="' + cat + '"]');
+          if (el) el.classList.add('active');
+          break;
+        }
+      }
+    }
+  })();
+</script>
 
 <script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69fa444c3cc75785c76e6387"></script>
 
@@ -471,5 +553,23 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+<!-- Conversion Event Listener -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('[data-conversion]');
+    if(!el) return;
+    var eventName = el.getAttribute('data-conversion');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': eventName,
+      'event_category': 'engagement',
+      'event_label': el.textContent.trim().substring(0, 50),
+      'page_path': window.location.pathname
+    });
+  });
+})();
+</script>
+<!-- End Conversion Event Listener -->
 </body>
 </html>

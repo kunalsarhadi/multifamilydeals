@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WBW5QJQT');</script>
+<!-- End Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TE1S1R0BD4"></script>
 <script>
@@ -16,16 +23,16 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Multi Family Deals" />
   <meta property="og:title" content="Edmonton Multi-Family Properties for Sale | 6-20 Plex | Multi Family Deals" />
-  <meta property="og:description" content="Browse available 6-20 plex assets in Edmonton's growth corridors. 5% down, 50-year amortization. Full pro-forma on your strategy call." />
+  <meta property="og:description" content="Browse available 6-20 plex assets in Edmonton's growth corridors. 5% down, 50-year amortization. Full pro-forma on your discovery call." />
   <meta property="og:url" content="https://multi-family-deals.ca/inventory.html" />
   <link rel="canonical" href="https://multi-family-deals.ca/inventory.html" />
-  <meta property="og:image" content="https://multi-family-deals.ca/images/spruce-avenue.png" />
+  <meta property="og:image" content="https://multi-family-deals.ca/images/og-edmonton.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Edmonton Multi-Family Properties for Sale | 6-20 Plex | Multi Family Deals" />
-  <meta name="twitter:description" content="Browse available 6-20 plex assets in Edmonton's growth corridors. 5% down, 50-year amortization. Full pro-forma on your strategy call." />
-  <meta name="twitter:image" content="https://multi-family-deals.ca/images/spruce-avenue.png" />
+  <meta name="twitter:description" content="Browse available 6-20 plex assets in Edmonton's growth corridors. 5% down, 50-year amortization. Full pro-forma on your discovery call." />
+  <meta name="twitter:image" content="https://multi-family-deals.ca/images/og-edmonton.jpg" />
   <meta name="description" content="Browse available 6–20 plex multi-family assets in Edmonton's growth corridors. Request full pro-forma and debt analysis." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,7 +56,20 @@
     .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 4rem; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
     .nav-logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
     .nav-logo span { color: var(--text-primary); font-weight: 400; }
-    .nav-links { display: flex; gap: 0.5rem; list-style: none; }
+    .nav-links { display: flex; gap: 0; list-style: none; }
+    .has-dropdown { position: relative; }
+    .nav-dropdown-btn { background: none; border: none; cursor: pointer; font-family: 'Josefin Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); padding: 0.4rem 0.75rem; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; white-space: nowrap; }
+    .nav-dropdown-btn:hover { color: var(--gold); }
+    .has-dropdown.active > .nav-dropdown-btn { color: var(--gold); }
+    .nav-chevron { width: 0.65rem; height: 0.65rem; transition: transform 0.2s; flex-shrink: 0; }
+    .has-dropdown.open .nav-chevron { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 230px; background: var(--navy-card); border: 1px solid var(--navy-border); border-top: 2px solid var(--gold); list-style: none; padding: 0.4rem 0; z-index: 100; box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+    .has-dropdown.open .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu li a { display: block; padding: 0.7rem 1.25rem; text-decoration: none; transition: background 0.15s; border-left: 2px solid transparent; }
+    .nav-dropdown-menu li a:hover { background: var(--navy-alt); border-left-color: var(--gold); }
+    .dropdown-link-title { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 0.18rem; }
+    .dropdown-link-desc { display: block; font-size: 0.7rem; font-weight: 300; color: var(--text-subtle); letter-spacing: 0.01em; text-transform: none; }
+    .mobile-nav-category { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-muted); padding: 1.2rem 0 0.35rem; pointer-events: none; margin-top: 0.25rem; }
     .nav-links a { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.04em; white-space: nowrap; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
     .nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 0.6rem 1.4rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.2s, color 0.2s; }
@@ -119,6 +139,15 @@
     .inventory-count span { color: var(--gold); }
     .inventory-count span.muted { color: var(--gold-muted); }
     .inventory-count span.subtle { color: var(--text-subtle); }
+    /* SORT CONTROLS */
+    .sort-controls { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .sort-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-subtle); margin-right: 0.25rem; }
+    .sort-btn { background: transparent; border: 1px solid var(--navy-border); color: var(--text-subtle); padding: 0.35rem 0.75rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem; transition: border-color 0.2s, color 0.2s; white-space: nowrap; }
+    .sort-btn:hover { border-color: var(--gold-muted); color: var(--text-primary); }
+    .sort-btn.active { border-color: var(--gold); color: var(--gold); }
+    .sort-btn .sort-arrow { font-size: 0.7rem; opacity: 0.5; }
+    .sort-btn.active .sort-arrow { opacity: 1; }
+    @media (max-width: 600px) { .sort-controls { gap: 0.4rem; } .sort-label { display: none; } }
 
     /* CARDS GRID */
     .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); }
@@ -334,45 +363,69 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":["RealEstateAgent","LocalBusiness"],"name":"Multi Family Deals","description":"Edmonton-based real estate investment firm specializing in purpose-built CMHC MLI Select multi-family properties. 5% down, 50-year amortization.","url":"https://multi-family-deals.ca","telephone":"+14162007010","email":"sales@teamsarhadi.com","address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA"},"founder":{"@type":"Person","name":"Kunal Sarhadi","jobTitle":"Real Estate Broker","worksFor":{"@type":"Organization","name":"Homelife Miracle Realty Inc."}},"areaServed":{"@type":"City","name":"Edmonton"},"knowsAbout":["Multi-family real estate","CMHC MLI Select","Real estate investment","Alberta real estate"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"10","bestRating":"5","worstRating":"1"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":["RealEstateAgent","LocalBusiness"],"name":"Multi Family Deals","description":"Edmonton-based real estate investment firm specializing in purpose-built CMHC MLI Select multi-family properties. 5% down, 50-year amortization.","url":"https://multi-family-deals.ca","telephone":"+14162007010","email":"sales@teamsarhadi.com","address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA"},"founder":{"@type":"Person","name":"Kunal Sarhadi","jobTitle":"Real Estate Broker","worksFor":{"@type":"Organization","name":"Homelife Miracle Realty Inc."}},"areaServed":{"@type":"City","name":"Edmonton"},"knowsAbout":["Multi-family real estate","CMHC MLI Select","Real estate investment","Alberta real estate"],"priceRange":"$$$$","image":"https://multi-family-deals.ca/images/jasper-park.png","sameAs":["https://www.instagram.com/kunalsarhadi/","https://www.facebook.com/multifamilydeals"],"geo":{"@type":"GeoCoordinates","latitude":53.5461,"longitude":-113.4938}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://multi-family-deals.ca/"},{"@type":"ListItem","position":2,"name":"Active Inventory","item":"https://multi-family-deals.ca/inventory.html"}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Available Edmonton Multi-Family Properties — CMHC MLI Select","description":"Purpose-built 6–20 plex rental properties in Edmonton, Alberta. CMHC MLI Select financing available: 5% down, 50-year amortization.","url":"https://multi-family-deals.ca/inventory.html","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Apartment","name":"8 Plex — Jasper Park, Edmonton","description":"8-unit purpose-built multi-family property in Jasper Park, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization.","numberOfRooms":8,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Jasper Park"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":2,"item":{"@type":"Apartment","name":"8 Plex — Spruce Avenue, Edmonton","description":"8-unit purpose-built multi-family property in Spruce Avenue, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization.","numberOfRooms":8,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Spruce Avenue"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":3,"item":{"@type":"Apartment","name":"9 Plex — Beacon Heights, Edmonton","description":"9-unit purpose-built multi-family property in Beacon Heights, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization.","numberOfRooms":9,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Beacon Heights"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":4,"item":{"@type":"Apartment","name":"7 Plex — Mill Woods, Edmonton","description":"7-unit purpose-built multi-family property in Mill Woods, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization.","numberOfRooms":7,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Mill Woods"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":5,"item":{"@type":"Apartment","name":"8 Plex — Lynnwood, Edmonton","description":"8-unit purpose-built multi-family property in Lynnwood, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization.","numberOfRooms":8,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Lynnwood"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":6,"item":{"@type":"Apartment","name":"8 Plex — Mill Woods, Edmonton","description":"8-unit purpose-built multi-family property in Mill Woods, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization. Annual cash flow $19,993, DSCR 1.18.","numberOfRooms":8,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Mill Woods"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":7,"item":{"@type":"Apartment","name":"15 Plex — Strathcona, Edmonton","description":"15-unit purpose-built multi-family property in Strathcona, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization.","numberOfRooms":15,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Strathcona"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":8,"item":{"@type":"Apartment","name":"8 Plex — Lauderdale, Edmonton","description":"8-unit purpose-built multi-family property in Lauderdale, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization. Annual cash flow $21,310, DSCR 1.20.","numberOfRooms":8,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Lauderdale"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":9,"item":{"@type":"Apartment","name":"7 Plex — Glenwood, Edmonton","description":"7-unit purpose-built multi-family property in Glenwood, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization. Annual cash flow $16,962, DSCR 1.17.","numberOfRooms":7,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Glenwood"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Available Edmonton Multi-Family Properties — CMHC MLI Select","description":"Purpose-built 6–20 plex rental properties in Edmonton, Alberta. CMHC MLI Select financing available: 5% down, 50-year amortization.","url":"https://multi-family-deals.ca/inventory.html","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Apartment","name":"8 Plex — Jasper Park, Edmonton","description":"8-unit purpose-built multi-family property in Jasper Park, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization.","numberOfRooms":8,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Jasper Park"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":2,"item":{"@type":"Apartment","name":"8 Plex — Spruce Avenue, Edmonton","description":"8-unit purpose-built multi-family property in Spruce Avenue, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization.","numberOfRooms":8,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Spruce Avenue"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":3,"item":{"@type":"Apartment","name":"9 Plex — Beacon Heights, Edmonton","description":"9-unit purpose-built multi-family property in Beacon Heights, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization.","numberOfRooms":9,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Beacon Heights"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":4,"item":{"@type":"Apartment","name":"7 Plex — Mill Woods, Edmonton","description":"7-unit purpose-built multi-family property in Mill Woods, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization.","numberOfRooms":7,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Mill Woods"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":5,"item":{"@type":"Apartment","name":"8 Plex — Lynnwood, Edmonton","description":"8-unit purpose-built multi-family property in Lynnwood, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization.","numberOfRooms":8,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Lynnwood"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":6,"item":{"@type":"Apartment","name":"8 Plex — Mill Woods, Edmonton","description":"8-unit purpose-built multi-family property in Mill Woods, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization. Annual cash flow $19,993, DSCR 1.18.","numberOfRooms":8,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Mill Woods"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":7,"item":{"@type":"Apartment","name":"15 Plex — Strathcona, Edmonton","description":"15-unit purpose-built multi-family property in Strathcona, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization.","numberOfRooms":15,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Strathcona"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":8,"item":{"@type":"Apartment","name":"8 Plex — Lauderdale, Edmonton","description":"8-unit purpose-built multi-family property in Lauderdale, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization. Annual cash flow $21,310, DSCR 1.20.","numberOfRooms":8,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Lauderdale"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":9,"item":{"@type":"Apartment","name":"7 Plex — Glenwood, Edmonton","description":"7-unit purpose-built multi-family property in Glenwood, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization. Annual cash flow $16,962, DSCR 1.17.","numberOfRooms":7,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Glenwood"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":10,"item":{"@type":"Apartment","name":"10 Plex — Britannia Youngstown, Edmonton","description":"10-unit purpose-built multi-family property in Britannia Youngstown, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization.","numberOfRooms":10,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Britannia Youngstown"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":11,"item":{"@type":"Apartment","name":"8 Plex — West Jasper Place, Edmonton","description":"8-unit purpose-built multi-family property in West Jasper Place, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization.","numberOfRooms":8,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"West Jasper Place"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}},{"@type":"ListItem","position":12,"item":{"@type":"Apartment","name":"8 Plex — Pleasantview, Edmonton","description":"8-unit purpose-built multi-family property in Pleasantview, Edmonton. CMHC MLI Select eligible. 5% down, 50-year amortization. Annual cash flow $20,251, DSCR 1.19.","numberOfRooms":8,"address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA","neighborhood":"Pleasantview"},"offers":{"@type":"Offer","availability":"https://schema.org/InStock"}}}]}</script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBW5QJQT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <nav>
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">MULTI FAMILY <span>DEALS</span></a>
       <ul class="nav-links">
-        <li><a href="about.html">The Strategy</a></li>
-        <li><a href="why-alberta.html">Why Alberta</a></li>
-        <li><a href="inventory.html" class="active">Active Inventory</a></li>
-        <li><a href="inglewood.html">Portfolio</a></li>
-        <li><a href="buying-process.html">Buying Process</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="guide.html">Free Guide</a></li>
+        <li class="has-dropdown" data-category="why-edmonton">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">Why Edmonton <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li><a href="about.html" role="menuitem"><span class="dropdown-link-title">The Strategy</span><span class="dropdown-link-desc">Investment approach &amp; team</span></a></li>
+            <li><a href="why-alberta.html" role="menuitem"><span class="dropdown-link-title">Why Alberta</span><span class="dropdown-link-desc">Market fundamentals &amp; data</span></a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown" data-category="properties">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">Properties <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li><a href="inventory.html" role="menuitem"><span class="dropdown-link-title">Active Inventory</span><span class="dropdown-link-desc">Available 6–20 plex assets</span></a></li>
+            <li><a href="inglewood.html" role="menuitem"><span class="dropdown-link-title">Portfolio</span><span class="dropdown-link-desc">Completed Inglewood 9-plex</span></a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown" data-category="resources">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">Resources <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li><a href="buying-process.html" role="menuitem"><span class="dropdown-link-title">Buying Process</span><span class="dropdown-link-desc">9-step acquisition roadmap</span></a></li>
+            <li><a href="faq.html" role="menuitem"><span class="dropdown-link-title">FAQ</span><span class="dropdown-link-desc">Common investor questions</span></a></li>
+            <li><a href="reviews.html" role="menuitem"><span class="dropdown-link-title">Reviews</span><span class="dropdown-link-desc">Client testimonials</span></a></li>
+            <li><a href="blog/index.html" role="menuitem"><span class="dropdown-link-title">Blog</span><span class="dropdown-link-desc">Investor education articles</span></a></li>
+            <li><a href="guide.html" role="menuitem"><span class="dropdown-link-title">Free Guide</span><span class="dropdown-link-desc">CMHC MLI Select PDF guide</span></a></li>
+          </ul>
+        </li>
       </ul>
-      <a href="contact.html" class="nav-cta">Book Strategy Call</a>
+      <a href="contact.html" data-conversion="book_call" class="nav-cta">Book Discovery Call</a>
       <div class="hamburger" id="hamburger" role="button" aria-label="Open menu" tabindex="0"><span></span><span></span><span></span></div>
     </div>
   </nav>
     <div class="mobile-nav" id="mobileNav">
-      <a href="about.html">The Strategy</a>
-      <a href="why-alberta.html">Why Alberta</a>
-      <a href="inventory.html">Active Inventory</a>
-  <a href="inglewood.html">Portfolio</a>
-      <a href="buying-process.html">Buying Process</a>
-      <a href="faq.html">FAQ</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="guide.html">Free Guide</a>
-      <a href="contact.html" class="mobile-nav-cta">Book Strategy Call</a>
-    </div>
+    <div class="mobile-nav-category">Why Edmonton</div>
+    <a href="about.html">The Strategy</a>
+    <a href="why-alberta.html">Why Alberta</a>
+    <div class="mobile-nav-category">Properties</div>
+    <a href="inventory.html">Active Inventory</a>
+    <a href="inglewood.html">Portfolio</a>
+    <div class="mobile-nav-category">Resources</div>
+    <a href="buying-process.html">Buying Process</a>
+    <a href="faq.html">FAQ</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="blog/index.html">Blog</a>
+    <a href="guide.html">Free Guide</a>
+    <a href="contact.html" data-conversion="book_call" class="mobile-nav-cta">Book Discovery Call</a>
+  </div>
 
   <section class="page-hero">
     <div class="page-hero-inner">
       <div class="page-eyebrow">Edmonton Growth Corridor</div>
       <h1 class="page-title">Active <span>Inventory</span></h1>
-      <p class="page-subtitle">Curated 6–20 plex assets in Edmonton's highest-growth corridors. Each property is pre-analyzed for MLI Select eligibility, cash flow, and 50-year amortization structuring. Exact addresses released after strategy call.</p>
+      <p class="page-subtitle">Curated 6–20 plex assets in Edmonton's highest-growth corridors. Each property is pre-analyzed for MLI Select eligibility, cash flow, and 50-year amortization structuring. Exact addresses released after discovery call.</p>
     </div>
   </section>
 
@@ -380,7 +433,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
   <div class="status-bar">
     <div class="status-bar-inner">
       <div class="status-pills">
-        <span class="status-pill available">9 Available</span>
+        <span class="status-pill available">12 Available</span>
         <span class="status-pill sc">2 Sold Conditional</span>
         <span class="status-pill cs">3 Coming Soon</span>
       </div>
@@ -391,7 +444,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
   <div class="privacy-bar">
     <div class="privacy-bar-inner">
       <svg class="privacy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
-      <p class="privacy-text"><strong>Exclusive Access:</strong> Exact addresses, full pro-forma financials, debt structure, and deal terms are shared only during your strategy call — protecting both buyer and seller through the process.</p>
+      <p class="privacy-text"><strong>Exclusive Access:</strong> Exact addresses, full pro-forma financials, debt structure, and deal terms are shared only during your discovery call — protecting both buyer and seller through the process.</p>
     </div>
   </div>
 
@@ -487,42 +540,6 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
   </section>
 
   <!-- ═══════════════════════════════════════════════ -->
-  <!-- WHY THE NUMBERS WORK                            -->
-  <!-- ═══════════════════════════════════════════════ -->
-  <section class="numbers-explainer">
-    <div class="numbers-inner">
-      <div class="reveal">
-        <div class="section-label">The Math Behind the Returns</div>
-        <h2 class="numbers-title">Why Do These Cash-Flow Numbers Look So High?</h2>
-      </div>
-      <p class="numbers-para reveal" style="transition-delay:0.06s">Most investors see these returns and assume they're inflated. They're not — the difference is the amortization. A conventional residential mortgage runs on a 25-year schedule, producing higher monthly payments that compress cash flow. CMHC MLI Select allows up to a 50-year amortization on qualifying purpose-built rental builds. At a $2M mortgage, that single structural difference reduces your monthly debt service by approximately $2,500–$3,000. DSCR improves because your monthly debt obligation shrinks — not because the income is inflated. The rents are market-rate. The cash flow is real. It's the product of a government-backed program built specifically to incentivize purpose-built rental housing in Canada.</p>
-      <div class="numbers-compare reveal" style="transition-delay:0.10s">
-        <div class="compare-col">
-          <div class="compare-label">Conventional Mortgage</div>
-          <div class="compare-amort">25-Year Amortization</div>
-          <div class="compare-payment">~$11,600<span>/mo</span></div>
-          <div class="compare-note">Higher monthly debt service · cash flow compressed</div>
-        </div>
-        <div class="compare-vs">VS</div>
-        <div class="compare-col compare-col-gold">
-          <div class="compare-label" style="color:var(--gold)">CMHC MLI Select</div>
-          <div class="compare-amort" style="color:var(--text-primary)">50-Year Amortization</div>
-          <div class="compare-payment" style="color:var(--gold)">~$9,100<span>/mo</span></div>
-          <div class="compare-note">Lower monthly debt service · cash flow positive</div>
-        </div>
-      </div>
-      <div class="numbers-gst reveal" style="transition-delay:0.14s">
-        <svg class="numbers-gst-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
-        <div>
-          <div class="numbers-gst-title">$0 in Sales Tax — Alberta Advantage</div>
-          <div class="numbers-gst-text">Alberta has no provincial sales tax (no HST). Under the federal government's September 2023 Excise Tax Act amendment, new purpose-built rental housing of 4+ units qualifies for a full federal GST rebate. These properties qualify on both counts. Combined: $0 in net sales tax on purchase — a saving of up to 5% of purchase price compared to new construction in other provinces. <em>The GST rebate is subject to CRA eligibility conditions including a long-term rental hold requirement. Consult your accountant.</em></div>
-        </div>
-      </div>
-      <p class="numbers-disclaimer reveal" style="transition-delay:0.18s">Payment estimates are illustrative based on a $2M mortgage at approximately 5.25–5.50% interest. Actual payments will vary based on rate, amortization, and insurer premium. Consult your mortgage broker for exact figures.</p>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════ -->
   <!-- SECTION 1: AVAILABLE                           -->
   <!-- ═══════════════════════════════════════════════ -->
   <section class="inventory-section" id="available">
@@ -532,7 +549,14 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
           <div class="section-label">Active Listings</div>
           <div class="section-title">Available Now</div>
         </div>
-        <div class="inventory-count"><span>9</span> Properties Ready to Acquire</div>
+        <div class="inventory-header-right">
+          <div class="inventory-count"><span>12</span> Properties Ready to Acquire</div>
+          <div class="sort-controls">
+            <span class="sort-label">Sort by</span>
+            <button class="sort-btn" id="sortCashFlow" type="button">Cash Flow <span class="sort-arrow">↓</span></button>
+            <button class="sort-btn" id="sortUnits" type="button">Units <span class="sort-arrow">↓</span></button>
+          </div>
+        </div>
       </div>
       <p style="font-size:0.75rem;color:var(--text-subtle);letter-spacing:0.03em;margin-bottom:1rem;line-height:1.6;">Cash flow figures are based on projected pro-forma analysis, are shown before personal income tax, and are for illustrative purposes only. Rental income is taxable — your after-tax return will depend on your marginal tax rate and available deductions. Actual results will vary based on occupancy, rent rates, financing terms, and expenses. Consult your lawyer, accountant, and mortgage broker before making any investment decision.</p>
       <p style="font-size:0.75rem;color:var(--text-subtle);letter-spacing:0.03em;margin-bottom:2.5rem;line-height:1.6;font-style:italic;">Property images are AI-generated artistic renderings for illustrative purposes only and do not represent the final appearance, materials, or quality of the completed building. Actual construction may differ.</p>
@@ -757,6 +781,84 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
           </div>
         </div>
 
+        <!-- 8 PLEX PLEASANTVIEW -->
+        <div class="asset-card reveal" style="transition-delay:0.29s">
+          <div class="asset-card-image"><img src="images/pleasantview.png" alt="8 Plex Pleasantview — artist's impression" loading="lazy" onerror="this.classList.add('img-error');this.nextElementSibling.classList.add('visible')" /><div class="img-fallback"><svg class="img-fallback-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span class="img-fallback-text">Artist Impression</span></div></div>
+          <div class="asset-card-top">
+            <div class="asset-badge available">Available</div>
+            <div class="asset-name">8 Plex</div>
+            <div class="asset-package">8 Plex Pleasantview Package</div>
+            <div class="asset-location">Pleasantview · Edmonton</div>
+            <div class="asset-stats">
+              <div class="asset-stat-hero">
+                <div class="asset-stat-hero-label">Annual Cash Flow</div>
+                <div class="asset-stat-hero-value">$20,251</div>
+                <div class="asset-stat-hero-sub">Pre-tax · Pro-forma estimate</div>
+              </div>
+              <div class="asset-stat-row">
+                <div class="asset-stat"><div class="asset-stat-label">DSCR</div><div class="asset-stat-value">1.19</div></div>
+                <div></div>
+                <div class="asset-stat"><div class="asset-stat-label">Completion</div><div class="asset-stat-value">Late 2026</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="asset-card-bottom">
+            <a href="https://drive.google.com/drive/folders/1tTj48N-lGsTZPOvs62IttvVcQ_lemZxI?usp=sharing" target="_blank" rel="noopener" class="asset-cta">View Full Package <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
+          </div>
+        </div>
+
+        <!-- 8 PLEX WEST JASPER PLACE -->
+        <div class="asset-card reveal" style="transition-delay:0.32s">
+          <div class="asset-card-image"><img src="images/west-jasper-place.png" alt="8 Plex West Jasper Place — artist's impression" loading="lazy" onerror="this.classList.add('img-error');this.nextElementSibling.classList.add('visible')" /><div class="img-fallback"><svg class="img-fallback-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span class="img-fallback-text">Artist Impression</span></div></div>
+          <div class="asset-card-top">
+            <div class="asset-badge available">Available</div>
+            <div class="asset-name">8 Plex</div>
+            <div class="asset-package">8 Plex West Jasper Place Package</div>
+            <div class="asset-location">West Jasper Place · Edmonton</div>
+            <div class="asset-stats">
+              <div class="asset-stat-hero">
+                <div class="asset-stat-hero-label">Annual Cash Flow</div>
+                <div class="asset-stat-hero-value">$23,011</div>
+                <div class="asset-stat-hero-sub">Pre-tax · Pro-forma estimate</div>
+              </div>
+              <div class="asset-stat-row">
+                <div class="asset-stat"><div class="asset-stat-label">DSCR</div><div class="asset-stat-value">1.22</div></div>
+                <div></div>
+                <div class="asset-stat"><div class="asset-stat-label">Completion</div><div class="asset-stat-value">Fall 2026</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="asset-card-bottom">
+            <a href="https://drive.google.com/drive/folders/18enWgoBOH9BNP0yQn3Uhjfa7GiFFxkX6?usp=sharing" target="_blank" rel="noopener" class="asset-cta">View Full Package <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
+          </div>
+        </div>
+
+        <!-- 10 PLEX BRITANNIA YOUNGSTOWN -->
+        <div class="asset-card reveal" style="transition-delay:0.35s">
+          <div class="asset-card-image"><img src="images/britannia-youngstown.png" alt="10 Plex Britannia Youngstown — artist's impression" loading="lazy" onerror="this.classList.add('img-error');this.nextElementSibling.classList.add('visible')" /><div class="img-fallback"><svg class="img-fallback-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span class="img-fallback-text">Artist Impression</span></div></div>
+          <div class="asset-card-top">
+            <div class="asset-badge available">Available</div>
+            <div class="asset-name">10 Plex</div>
+            <div class="asset-package">10 Plex Britannia Youngstown Package</div>
+            <div class="asset-location">Britannia Youngstown · Edmonton</div>
+            <div class="asset-stats">
+              <div class="asset-stat-hero">
+                <div class="asset-stat-hero-label">Annual Cash Flow</div>
+                <div class="asset-stat-hero-value">$34,988</div>
+                <div class="asset-stat-hero-sub">Pre-tax · Pro-forma estimate</div>
+              </div>
+              <div class="asset-stat-row">
+                <div class="asset-stat"><div class="asset-stat-label">DSCR</div><div class="asset-stat-value">1.27</div></div>
+                <div></div>
+                <div class="asset-stat"><div class="asset-stat-label">Completion</div><div class="asset-stat-value">Fall 2026</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="asset-card-bottom">
+            <a href="https://drive.google.com/drive/folders/1bns9ly33pXXvJDm9f596qTZ5ZtIqcu7O?usp=sharing" target="_blank" rel="noopener" class="asset-cta">View Full Package <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
+          </div>
+        </div>
+
       </div>
 
       <!-- ── TIER 2: SCALE-UP BUILDINGS ── -->
@@ -837,7 +939,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
             </div>
           </div>
           <div class="asset-card-bottom">
-            <a href="contact.html" class="asset-cta" style="color:var(--gold)">Join Waitlist — May Become Available <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
+            <a href="contact.html" data-conversion="book_call" class="asset-cta" style="color:var(--gold)">Join Waitlist — May Become Available <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
           </div>
         </div>
 
@@ -862,7 +964,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
             </div>
           </div>
           <div class="asset-card-bottom">
-            <a href="contact.html" class="asset-cta" style="color:var(--gold)">Join Waitlist — May Become Available <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
+            <a href="contact.html" data-conversion="book_call" class="asset-cta" style="color:var(--gold)">Join Waitlist — May Become Available <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
           </div>
         </div>
 
@@ -906,7 +1008,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
             </div>
           </div>
           <div class="asset-card-bottom" style="pointer-events:auto">
-            <a href="contact.html" class="asset-cta" style="color:var(--text-subtle);pointer-events:auto">Get Early Access <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
+            <a href="contact.html" data-conversion="book_call" class="asset-cta" style="color:var(--text-subtle);pointer-events:auto">Get Early Access <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
           </div>
         </div>
 
@@ -930,7 +1032,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
             </div>
           </div>
           <div class="asset-card-bottom" style="pointer-events:auto">
-            <a href="contact.html" class="asset-cta" style="color:var(--text-subtle);pointer-events:auto">Get Early Access <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
+            <a href="contact.html" data-conversion="book_call" class="asset-cta" style="color:var(--text-subtle);pointer-events:auto">Get Early Access <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
           </div>
         </div>
 
@@ -954,7 +1056,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
             </div>
           </div>
           <div class="asset-card-bottom" style="pointer-events:auto">
-            <a href="contact.html" class="asset-cta" style="color:var(--text-subtle);pointer-events:auto">Get Early Access <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
+            <a href="contact.html" data-conversion="book_call" class="asset-cta" style="color:var(--text-subtle);pointer-events:auto">Get Early Access <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg></a>
           </div>
         </div>
 
@@ -1060,6 +1162,42 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
   </section>
 
   <!-- ═══════════════════════════════════════════════ -->
+  <!-- WHY THE NUMBERS WORK                            -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="numbers-explainer">
+    <div class="numbers-inner">
+      <div class="reveal">
+        <div class="section-label">The Math Behind the Returns</div>
+        <h2 class="numbers-title">Why Do These Cash-Flow Numbers Look So High?</h2>
+      </div>
+      <p class="numbers-para reveal" style="transition-delay:0.06s">Most investors see these returns and assume they're inflated. They're not — the difference is the amortization. A conventional residential mortgage runs on a 25-year schedule, producing higher monthly payments that compress cash flow. CMHC MLI Select allows up to a 50-year amortization on qualifying purpose-built rental builds. At a $2M mortgage, that single structural difference reduces your monthly debt service by approximately $2,500–$3,000. DSCR improves because your monthly debt obligation shrinks — not because the income is inflated. The rents are market-rate. The cash flow is real. It's the product of a government-backed program built specifically to incentivize purpose-built rental housing in Canada.</p>
+      <div class="numbers-compare reveal" style="transition-delay:0.10s">
+        <div class="compare-col">
+          <div class="compare-label">Conventional Mortgage</div>
+          <div class="compare-amort">25-Year Amortization</div>
+          <div class="compare-payment">~$11,600<span>/mo</span></div>
+          <div class="compare-note">Higher monthly debt service · cash flow compressed</div>
+        </div>
+        <div class="compare-vs">VS</div>
+        <div class="compare-col compare-col-gold">
+          <div class="compare-label" style="color:var(--gold)">CMHC MLI Select</div>
+          <div class="compare-amort" style="color:var(--text-primary)">50-Year Amortization</div>
+          <div class="compare-payment" style="color:var(--gold)">~$9,100<span>/mo</span></div>
+          <div class="compare-note">Lower monthly debt service · cash flow positive</div>
+        </div>
+      </div>
+      <div class="numbers-gst reveal" style="transition-delay:0.14s">
+        <svg class="numbers-gst-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+        <div>
+          <div class="numbers-gst-title">$0 in Sales Tax — Alberta Advantage</div>
+          <div class="numbers-gst-text">Alberta has no provincial sales tax (no HST). Under the federal government's September 2023 Excise Tax Act amendment, new purpose-built rental housing of 4+ units qualifies for a full federal GST rebate. These properties qualify on both counts. Combined: $0 in net sales tax on purchase — a saving of up to 5% of purchase price compared to new construction in other provinces. <em>The GST rebate is subject to CRA eligibility conditions including a long-term rental hold requirement. Consult your accountant.</em></div>
+        </div>
+      </div>
+      <p class="numbers-disclaimer reveal" style="transition-delay:0.18s">Payment estimates are illustrative based on a $2M mortgage at approximately 5.25–5.50% interest. Actual payments will vary based on rate, amortization, and insurer premium. Consult your mortgage broker for exact figures.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
   <!-- ELIGIBILITY — NOT FOR EVERYONE                  -->
   <!-- ═══════════════════════════════════════════════ -->
   <section class="eligibility-section">
@@ -1103,7 +1241,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
       </div>
       <div class="eligibility-callout reveal" style="transition-delay:0.2s">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:1.1rem;height:1.1rem;flex-shrink:0;color:var(--gold);margin-top:0.15rem"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
-        <div>If you meet these criteria, the strategy call is where we verify your eligibility, run your specific numbers, and confirm fit — before you commit to anything. No pressure. No obligation. Just clarity.</div>
+        <div>If you meet these criteria, the discovery call is where we verify your eligibility, run your specific numbers, and confirm fit — before you commit to anything. No pressure. No obligation. Just clarity.</div>
       </div>
     </div>
   </section>
@@ -1114,7 +1252,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
       <div class="reveal">
         <div class="section-label">Request Full Details</div>
         <h2 style="font-size:clamp(1.4rem,3vw,2rem);font-weight:600;margin-bottom:0.8rem;">Get the Full Pro-Forma & Debt Analysis</h2>
-        <p style="font-size:0.95rem;font-weight:300;color:var(--text-muted);line-height:1.7;max-width:560px;">Complete details — including exact address, cash flow projections, mortgage structure, and 50-door roadmap — are shared directly on your strategy call.</p>
+        <p style="font-size:0.95rem;font-weight:300;color:var(--text-muted);line-height:1.7;max-width:560px;">Complete details — including exact address, cash flow projections, mortgage structure, and 50-door roadmap — are shared directly on your discovery call.</p>
       </div>
       <div class="gatekeeper-grid reveal" style="transition-delay:0.1s">
         <div class="gatekeeper-item">
@@ -1137,6 +1275,9 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
             <option>8 Plex — Lynnwood (Available)</option>
             <option>7 Plex — Glenwood (Available)</option>
             <option>8 Plex — Lauderdale (Available)</option>
+            <option>8 Plex — Pleasantview (Available)</option>
+            <option>8 Plex — West Jasper Place (Available)</option>
+            <option>10 Plex — Britannia Youngstown (Available)</option>
             <option>15 Plex — Strathcona (Available)</option>
             <option>8 Plex — Lynnwood (Sold Conditional — Waitlist)</option>
             <option>6 Plex — Mill Woods (Sold Conditional — Waitlist)</option>
@@ -1157,8 +1298,8 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
           </select>
         </div>
         <div class="gatekeeper-item gatekeeper-full" style="padding-top:0.5rem">
-          <button type="button" id="gateSubmit" class="btn-primary">Book Strategy Call to Receive Full Details</button>
-          <p class="gatekeeper-note" id="gateNote">By submitting, you'll be directed to book a 30-minute strategy call where all details are shared. No spam. No unsolicited calls.</p>
+          <button type="button" id="gateSubmit" class="btn-primary">Book Discovery Call to Receive Full Details</button>
+          <p class="gatekeeper-note" id="gateNote">By submitting, you'll be directed to book a 30-minute discovery call where all details are shared. No spam. No unsolicited calls.</p>
         </div>
       </div>
     </div>
@@ -1175,7 +1316,9 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
         <li><a href="buying-process.html">Buying Process</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
         <li><a href="guide.html">Free Guide</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="footer-copy">Kunal Sarhadi, Real Estate Broker &nbsp;|&nbsp; Homelife Miracle Realty Inc. &nbsp;|&nbsp; © 2026 Multi Family Deals. Not financial or investment advice. CMHC MLI Select program terms subject to change.</div>
@@ -1213,6 +1356,33 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
       soldGrid.classList.toggle('open', !expanded);
     });
 
+
+    (function() {
+      const availableSection = document.getElementById('available');
+      const grids = Array.from(availableSection.querySelectorAll('.cards-grid'));
+      const originalOrders = grids.map(g => Array.from(g.children));
+      let activeSort = null, activeDir = -1;
+      function getVal(card, type) {
+        if (type === 'cashflow') { const el = card.querySelector('.asset-stat-hero-value'); return el ? (parseInt(el.textContent.replace(/[^0-9]/g, '')) || 0) : 0; }
+        if (type === 'units') { const el = card.querySelector('.asset-name'); return el ? (parseInt(el.textContent) || 0) : 0; }
+        return 0;
+      }
+      function sortGrids(type, dir) {
+        grids.forEach(grid => {
+          const cards = Array.from(grid.children);
+          cards.sort((a, b) => (getVal(b, type) - getVal(a, type)) * dir);
+          cards.forEach(c => grid.appendChild(c));
+        });
+      }
+      function handleSort(type, btn) {
+        if (activeSort === type) { activeDir *= -1; } else { activeSort = type; activeDir = -1; document.querySelectorAll('.sort-btn').forEach(b => { b.classList.remove('active'); b.querySelector('.sort-arrow').textContent = '↓'; }); }
+        btn.classList.add('active');
+        btn.querySelector('.sort-arrow').textContent = activeDir === -1 ? '↓' : '↑';
+        sortGrids(type, activeDir);
+      }
+      document.getElementById('sortCashFlow').addEventListener('click', function() { handleSort('cashflow', this); });
+      document.getElementById('sortUnits').addEventListener('click', function() { handleSort('units', this); });
+    })();
     document.getElementById('gateSubmit').addEventListener('click', function() {
       const data = {
         name: document.getElementById('name').value,
@@ -1231,7 +1401,43 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
       this.disabled = true;
       setTimeout(() => { window.location.href = 'contact.html'; }, 900);
     });
-  </script>
+  
+  // Dropdown navigation
+  (function() {
+    var dropdowns = document.querySelectorAll('.has-dropdown');
+    dropdowns.forEach(function(dd) {
+      var btn = dd.querySelector('.nav-dropdown-btn');
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var isOpen = dd.classList.contains('open');
+        dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); });
+        if (!isOpen) { dd.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+      dd.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
+      });
+    });
+    document.addEventListener('click', function() {
+      dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); });
+    });
+    // Active category highlight
+    var path = window.location.pathname;
+    var map = {
+      'why-edmonton': ['about', 'why-alberta'],
+      'properties': ['inventory', 'inglewood'],
+      'resources': ['buying-process', 'faq', 'reviews', 'guide', 'blog']
+    };
+    for (var cat in map) {
+      for (var i = 0; i < map[cat].length; i++) {
+        if (path.indexOf(map[cat][i]) !== -1) {
+          var el = document.querySelector('.has-dropdown[data-category="' + cat + '"]');
+          if (el) el.classList.add('active');
+          break;
+        }
+      }
+    }
+  })();
+</script>
 <script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69fa444c3cc75785c76e6387"></script>
 
 <script>
@@ -1275,5 +1481,23 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+<!-- Conversion Event Listener -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('[data-conversion]');
+    if(!el) return;
+    var eventName = el.getAttribute('data-conversion');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': eventName,
+      'event_category': 'engagement',
+      'event_label': el.textContent.trim().substring(0, 50),
+      'page_path': window.location.pathname
+    });
+  });
+})();
+</script>
+<!-- End Conversion Event Listener -->
 </body>
 </html>
