@@ -57,7 +57,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 4rem; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
     .nav-logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
     .nav-logo span { color: var(--text-primary); font-weight: 400; }
-    .nav-links { display: flex; gap: 0.3rem; list-style: none; }
+    .nav-links { display: flex; gap: 0; list-style: none; }
+    .has-dropdown { position: relative; }
+    .nav-dropdown-btn { background: none; border: none; cursor: pointer; font-family: 'Josefin Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); padding: 0.4rem 0.75rem; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; white-space: nowrap; }
+    .nav-dropdown-btn:hover { color: var(--gold); }
+    .has-dropdown.active > .nav-dropdown-btn { color: var(--gold); }
+    .nav-chevron { width: 0.65rem; height: 0.65rem; transition: transform 0.2s; flex-shrink: 0; }
+    .has-dropdown.open .nav-chevron { transform: rotate(180deg); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 230px; background: var(--navy-card); border: 1px solid var(--navy-border); border-top: 2px solid var(--gold); list-style: none; padding: 0.4rem 0; z-index: 100; box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+    .has-dropdown.open .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu li a { display: block; padding: 0.7rem 1.25rem; text-decoration: none; transition: background 0.15s; border-left: 2px solid transparent; }
+    .nav-dropdown-menu li a:hover { background: var(--navy-alt); border-left-color: var(--gold); }
+    .dropdown-link-title { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 0.18rem; }
+    .dropdown-link-desc { display: block; font-size: 0.7rem; font-weight: 300; color: var(--text-subtle); letter-spacing: 0.01em; text-transform: none; }
+    .mobile-nav-category { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-muted); padding: 1.2rem 0 0.35rem; pointer-events: none; margin-top: 0.25rem; }
     .nav-links a { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.04em; white-space: nowrap; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
     .nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 0.6rem 1.4rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.2s, color 0.2s; }
@@ -259,33 +272,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">MULTI FAMILY <span>DEALS</span></a>
     <ul class="nav-links">
-      <li><a href="about.html">The Strategy</a></li>
-      <li><a href="why-alberta.html">Why Alberta</a></li>
-      <li><a href="inventory.html">Active Inventory</a></li>
-      <li><a href="inglewood.html" class="active">Portfolio</a></li>
-      <li><a href="buying-process.html">Buying Process</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
-        <li><a href="guide.html">Free Guide</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
-    </ul>
+        <li class="has-dropdown" data-category="why-edmonton">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">Why Edmonton <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li><a href="about.html" role="menuitem"><span class="dropdown-link-title">The Strategy</span><span class="dropdown-link-desc">Investment approach &amp; team</span></a></li>
+            <li><a href="why-alberta.html" role="menuitem"><span class="dropdown-link-title">Why Alberta</span><span class="dropdown-link-desc">Market fundamentals &amp; data</span></a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown" data-category="properties">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">Properties <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li><a href="inventory.html" role="menuitem"><span class="dropdown-link-title">Active Inventory</span><span class="dropdown-link-desc">Available 6–20 plex assets</span></a></li>
+            <li><a href="inglewood.html" role="menuitem"><span class="dropdown-link-title">Portfolio</span><span class="dropdown-link-desc">Completed Inglewood 9-plex</span></a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown" data-category="resources">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">Resources <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
+          <ul class="nav-dropdown-menu" role="menu">
+            <li><a href="buying-process.html" role="menuitem"><span class="dropdown-link-title">Buying Process</span><span class="dropdown-link-desc">9-step acquisition roadmap</span></a></li>
+            <li><a href="faq.html" role="menuitem"><span class="dropdown-link-title">FAQ</span><span class="dropdown-link-desc">Common investor questions</span></a></li>
+            <li><a href="reviews.html" role="menuitem"><span class="dropdown-link-title">Reviews</span><span class="dropdown-link-desc">Client testimonials</span></a></li>
+            <li><a href="blog/index.html" role="menuitem"><span class="dropdown-link-title">Blog</span><span class="dropdown-link-desc">Investor education articles</span></a></li>
+            <li><a href="guide.html" role="menuitem"><span class="dropdown-link-title">Free Guide</span><span class="dropdown-link-desc">CMHC MLI Select PDF guide</span></a></li>
+          </ul>
+        </li>
+      </ul>
     <a href="contact.html" data-conversion="book_call" class="nav-cta">Book Discovery Call</a>
     <div class="hamburger" id="hamburger" role="button" aria-label="Open menu" tabindex="0"><span></span><span></span><span></span></div>
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
-  <a href="about.html">The Strategy</a>
-  <a href="why-alberta.html">Why Alberta</a>
-  <a href="inventory.html">Active Inventory</a>
-  <a href="inglewood.html" class="active">Portfolio</a>
-  <a href="buying-process.html">Buying Process</a>
-  <a href="faq.html">FAQ</a>
-  <a href="reviews.html">Reviews</a>
-  <a href="blog/index.html">Blog</a>
-  <a href="guide.html">Free Guide</a>
-  <a href="contact.html" data-conversion="book_call" class="mobile-nav-cta">Book Discovery Call</a>
-</div>
+    <div class="mobile-nav-category">Why Edmonton</div>
+    <a href="about.html">The Strategy</a>
+    <a href="why-alberta.html">Why Alberta</a>
+    <div class="mobile-nav-category">Properties</div>
+    <a href="inventory.html">Active Inventory</a>
+    <a href="inglewood.html">Portfolio</a>
+    <div class="mobile-nav-category">Resources</div>
+    <a href="buying-process.html">Buying Process</a>
+    <a href="faq.html">FAQ</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="blog/index.html">Blog</a>
+    <a href="guide.html">Free Guide</a>
+    <a href="contact.html" data-conversion="book_call" class="mobile-nav-cta">Book Discovery Call</a>
+  </div>
 
 <!-- HERO -->
 <section class="project-hero">
@@ -597,6 +627,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   revealEls.forEach(el => observer.observe(el));
   window.addEventListener('scroll', () => { document.querySelectorAll('.reveal:not(.visible)').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight + 50) el.classList.add('visible'); }); }, { passive: true });
   setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')), 1200);
+
+  // Dropdown navigation
+  (function() {
+    var dropdowns = document.querySelectorAll('.has-dropdown');
+    dropdowns.forEach(function(dd) {
+      var btn = dd.querySelector('.nav-dropdown-btn');
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var isOpen = dd.classList.contains('open');
+        dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); });
+        if (!isOpen) { dd.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+      dd.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
+      });
+    });
+    document.addEventListener('click', function() {
+      dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); });
+    });
+    // Active category highlight
+    var path = window.location.pathname;
+    var map = {
+      'why-edmonton': ['about', 'why-alberta'],
+      'properties': ['inventory', 'inglewood'],
+      'resources': ['buying-process', 'faq', 'reviews', 'guide', 'blog']
+    };
+    for (var cat in map) {
+      for (var i = 0; i < map[cat].length; i++) {
+        if (path.indexOf(map[cat][i]) !== -1) {
+          var el = document.querySelector('.has-dropdown[data-category="' + cat + '"]');
+          if (el) el.classList.add('active');
+          break;
+        }
+      }
+    }
+  })();
 </script>
 <script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69fa444c3cc75785c76e6387"></script>
 
