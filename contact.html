@@ -738,6 +738,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       window.addEventListener('message', (e) => {
         if (e.data && typeof e.data === 'object' && e.data.event && e.data.event.indexOf('calendly') === 0) {
           dismissSkel();
+          if (e.data.event === 'calendly.event_scheduled') {
+            if (typeof gtag === 'function') {
+              gtag('event', 'generate_lead', { event_category: 'booking', event_label: 'calendly_scheduled', value: 1 });
+              gtag('event', 'book_call', { event_category: 'booking', method: 'calendly' });
+            }
+            if (typeof fbq === 'function') {
+              fbq('track', 'Schedule');
+              fbq('track', 'Lead', { content_name: 'discovery_call' });
+            }
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: 'book_call', method: 'calendly' });
+          }
         }
       });
       // Fallback: dismiss after 5s regardless
