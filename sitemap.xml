@@ -102,4 +102,10 @@
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://multi-family-deals.ca/blog/best-canadian-city-multifamily-investing.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
