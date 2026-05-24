@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WBW5QJQT');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TE1S1R0BD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TE1S1R0BD4');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMHC MLI Select Pro-Forma Calculator — Multi Family Deals</title>
+  <!-- Open Graph / Social Share -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Multi Family Deals" />
+  <meta property="og:title" content="CMHC MLI Select Pro-Forma Calculator | Multi Family Deals" />
+  <meta property="og:description" content="Model the numbers on a CMHC MLI Select multi-family deal: deposit, mortgage payment with CMHC premium, NOI, DSCR, cash-on-cash, cap rate, rate/rent sensitivity, and a 5-year projection." />
+  <meta property="og:url" content="https://multi-family-deals.ca/calculator.html" />
+  <link rel="canonical" href="https://multi-family-deals.ca/calculator.html" />
+  <meta property="og:image" content="https://multi-family-deals.ca/images/og-edmonton.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CMHC MLI Select Pro-Forma Calculator | Multi Family Deals" />
+  <meta name="twitter:description" content="Model deposit, mortgage payment, NOI, DSCR, cash-on-cash, cap rate, and a 5-year projection on a CMHC MLI Select multi-family deal." />
+  <meta name="twitter:image" content="https://multi-family-deals.ca/images/og-edmonton.jpg" />
+  <meta name="description" content="Interactive CMHC MLI Select pro-forma calculator. Enter purchase price, unit rents, and interest rate to model deposit requirements, mortgage payment with CMHC premium, NOI, DSCR, cash-on-cash, cap rate, sensitivity tables, and a 5-year projection." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy-deep: #03080F; --navy-primary: #070F1C; --navy-card: #0C1828; --navy-alt: #0F1E35;
+      --navy-border: #162438; --gold: #C4934A; --gold-light: #DBA868;
+      --gold-muted: #9A7A34; --text-primary: #EEF2F7;
+      --text-muted: #9AAABB; --text-subtle: #8BA0B8; --accent-warm: #C4783A;
+      --pos: #4DB88C; --neg: #D9776B;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { overflow-x: hidden; min-width: 320px; }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+    body { background-color: var(--navy-primary); color: var(--text-primary); font-family: 'Josefin Sans', sans-serif; font-weight: 400; overflow-x: hidden; min-width: 320px; width: 100%; }
+    h1 { font-family: 'Cinzel', serif; letter-spacing: 0.02em; }
+    h2, h3, h4 { font-family: 'Josefin Sans', sans-serif; font-weight: 600; letter-spacing: 0.04em; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(7,15,28,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--navy-border); }
+    .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 4rem; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .nav-logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+    .nav-logo span { color: var(--text-primary); font-weight: 400; }
+    .nav-links { display: flex; gap: 0.3rem; list-style: none; }
+    .nav-links a { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.04em; white-space: nowrap; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 0.6rem 1.4rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--gold); color: var(--navy-deep); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 22px; height: 1px; background: var(--text-muted); display: block; transition: all 0.25s ease; }
+    .hamburger.is-open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+    .hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.is-open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+    body.no-scroll { overflow: hidden; position: fixed; width: 100%; }
+    .mobile-nav { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: rgba(7,15,28,0.98); backdrop-filter: blur(16px); z-index: 49; padding: 2rem 2rem 3rem; flex-direction: column; gap: 0; overflow-y: auto; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; padding: 1.1rem 0; border-bottom: 1px solid var(--navy-border); transition: color 0.2s; display: block; }
+    .mobile-nav a:hover, .mobile-nav a.active { color: var(--gold); }
+    .mobile-nav a.mobile-nav-cta { color: var(--gold); margin-top: 0.8rem; font-weight: 600; }
+
+    /* HERO */
+    .page-hero { padding: 9rem 2rem 3rem; background: var(--navy-deep); position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 60% at 70% 40%, rgba(201,168,76,0.06) 0%, transparent 65%); pointer-events: none; }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .page-eyebrow { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .page-eyebrow::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
+    .page-title { font-size: clamp(2rem, 4.5vw, 3.3rem); font-weight: 700; line-height: 1.08; margin-bottom: 1.2rem; }
+    .page-title span { color: var(--gold); }
+    .page-subtitle { font-size: 1rem; font-weight: 300; color: var(--text-muted); line-height: 1.75; max-width: 720px; }
+
+    /* BUTTONS */
+    .btn-primary { background: var(--gold); color: var(--navy-deep); padding: 0.85rem 2rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; border: none; text-decoration: none; display: inline-block; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-ghost { background: transparent; color: var(--text-muted); padding: 0.7rem 1.3rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--text-subtle); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: color 0.2s, border-color 0.2s; }
+    .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
+
+    /* LAYOUT */
+    .calc-body { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .calc-grid { display: grid; grid-template-columns: minmax(320px, 380px) 1fr; gap: 2rem; align-items: start; }
+    .section-label { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .section-label::before { content: ''; display: block; width: 1.2rem; height: 1px; background: currentColor; }
+
+    /* PANELS */
+    .panel { background: var(--navy-card); border: 1px solid var(--navy-border); padding: 1.6rem 1.6rem 1.8rem; margin-bottom: 1.5rem; }
+    .panel h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 1.1rem; letter-spacing: 0.05em; }
+    .inputs-col { position: sticky; top: 90px; }
+
+    /* FIELDS */
+    .field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+    .field:last-child { margin-bottom: 0; }
+    .field label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); }
+    .field .hint { font-size: 0.66rem; font-weight: 300; letter-spacing: 0.02em; text-transform: none; color: var(--text-subtle); margin-top: 0.15rem; line-height: 1.4; }
+    .input-wrap { position: relative; display: flex; align-items: center; }
+    .input-wrap .affix { position: absolute; color: var(--text-subtle); font-size: 0.85rem; pointer-events: none; }
+    .input-wrap .affix.pre { left: 0.85rem; }
+    .input-wrap .affix.post { right: 0.85rem; }
+    input[type="text"], input[type="number"], select {
+      width: 100%; background: var(--navy-deep); border: 1px solid var(--navy-border);
+      color: var(--text-primary); padding: 0.7rem 0.9rem; font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.92rem; border-radius: 2px; -moz-appearance: textfield;
+    }
+    .input-wrap.has-pre input { padding-left: 1.7rem; }
+    .input-wrap.has-post input { padding-right: 2.4rem; }
+    input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    input:focus, select:focus { border-color: var(--gold); outline: none; }
+    select { cursor: pointer; }
+
+    /* UNIT MIX */
+    .unit-head, .unit-row { display: grid; grid-template-columns: 1fr 4rem 5.5rem 1.8rem; gap: 0.5rem; align-items: center; }
+    .unit-head { margin-bottom: 0.5rem; }
+    .unit-head span { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-subtle); }
+    .unit-head span:nth-child(2), .unit-head span:nth-child(3) { text-align: center; }
+    .unit-row { margin-bottom: 0.5rem; }
+    .unit-row input { padding: 0.55rem 0.6rem; font-size: 0.85rem; }
+    .unit-row input.u-count, .unit-row input.u-rent { text-align: center; }
+    .u-remove { background: transparent; border: 1px solid var(--navy-border); color: var(--text-subtle); width: 1.8rem; height: 1.8rem; cursor: pointer; border-radius: 2px; font-size: 1rem; line-height: 1; transition: color 0.2s, border-color 0.2s; }
+    .u-remove:hover { color: var(--neg); border-color: var(--neg); }
+    .add-row { margin-top: 0.4rem; background: transparent; border: 1px dashed var(--navy-border); color: var(--gold); width: 100%; padding: 0.55rem; cursor: pointer; font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; transition: border-color 0.2s; }
+    .add-row:hover { border-color: var(--gold); }
+
+    /* ASSUMPTIONS ACCORDION */
+    details.assumptions { background: var(--navy-card); border: 1px solid var(--navy-border); margin-bottom: 1.5rem; }
+    details.assumptions > summary { list-style: none; cursor: pointer; padding: 1.1rem 1.6rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); display: flex; align-items: center; justify-content: space-between; }
+    details.assumptions > summary::-webkit-details-marker { display: none; }
+    details.assumptions > summary:hover { color: var(--gold); }
+    details.assumptions > summary .chev { transition: transform 0.2s; color: var(--gold); }
+    details.assumptions[open] > summary .chev { transform: rotate(180deg); }
+    .assumptions-inner { padding: 0 1.6rem 1.6rem; }
+    .assumptions-inner .sub-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); padding: 0.5rem 0; border-bottom: 1px solid var(--navy-border); margin: 0.6rem 0 1rem; }
+    .field-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1rem; }
+
+    /* METRIC CARDS */
+    .metric-grid { display: grid; gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); margin-bottom: 1.5rem; }
+    .metric-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .metric-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+    .metric { background: var(--navy-card); padding: 1.3rem 1.1rem; text-align: center; }
+    .metric .m-value { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); line-height: 1.1; }
+    .metric .m-value.pos { color: var(--pos); }
+    .metric .m-value.neg { color: var(--neg); }
+    .metric .m-label { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-subtle); margin-top: 0.45rem; }
+
+    /* DEFINITION ROWS (financing) */
+    .def-list { background: var(--navy-card); border: 1px solid var(--navy-border); margin-bottom: 1.5rem; }
+    .def-row { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 1.3rem; border-bottom: 1px solid var(--navy-border); gap: 1rem; }
+    .def-row:last-child { border-bottom: none; }
+    .def-row.emphasis { background: rgba(196,147,74,0.06); }
+    .def-label { font-size: 0.82rem; color: var(--text-muted); letter-spacing: 0.02em; }
+    .def-label .sub { display: block; font-size: 0.68rem; color: var(--text-subtle); margin-top: 0.1rem; }
+    .def-value { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+    .def-value.gold { color: var(--gold); }
+
+    /* TABLES */
+    .table-wrap { overflow-x: auto; border: 1px solid var(--navy-border); margin-bottom: 1.5rem; -webkit-overflow-scrolling: touch; }
+    .calc-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; min-width: 480px; }
+    .calc-table th, .calc-table td { padding: 0.7rem 0.95rem; text-align: right; border-bottom: 1px solid var(--navy-border); white-space: nowrap; }
+    .calc-table th:first-child, .calc-table td:first-child { text-align: left; }
+    .calc-table tbody tr:last-child td { border-bottom: none; }
+    .calc-table thead th { background: var(--navy-deep); color: var(--text-subtle); font-family: 'Cinzel', serif; font-weight: 600; font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    .calc-table tbody td { background: var(--navy-card); color: var(--text-muted); }
+    .calc-table tbody tr.base td { background: rgba(196,147,74,0.07); color: var(--text-primary); font-weight: 600; }
+    .calc-table tbody td.row-tag { font-weight: 600; color: var(--text-primary); }
+    .calc-table .pos { color: var(--pos); }
+    .calc-table .neg { color: var(--neg); }
+
+    .summary-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); margin-bottom: 1.5rem; }
+    .summary-strip .metric .m-value { font-size: 1.7rem; }
+
+    .note { font-size: 0.74rem; color: var(--text-subtle); line-height: 1.6; margin-bottom: 1.5rem; letter-spacing: 0.02em; }
+    .note strong { color: var(--text-muted); font-weight: 500; }
+
+    .results-block { margin-bottom: 2.5rem; }
+    .results-block h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; }
+
+    /* CTA */
+    .cta-section { background: var(--navy-deep); border-top: 1px solid var(--navy-border); border-bottom: 1px solid var(--navy-border); padding: 4rem 2rem; }
+    .cta-inner { max-width: 1100px; margin: 0 auto; }
+    .cta-card { background: var(--navy-card); border: 1px solid var(--gold-muted); padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+    .cta-card .cta-text { flex: 1; min-width: 280px; }
+    .cta-card h2 { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 600; margin-bottom: 0.8rem; line-height: 1.2; }
+    .cta-card h2 span { color: var(--gold); }
+    .cta-card p { font-size: 0.9rem; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
+    .cta-actions { display: flex; flex-direction: column; gap: 0.8rem; align-items: stretch; }
+    .cta-actions .btn-primary { text-align: center; }
+
+    .disclaimer { max-width: 1100px; margin: 2.5rem auto 0; background: var(--navy-deep); border: 1px solid var(--navy-border); padding: 1.5rem 2rem; font-size: 0.78rem; color: var(--text-subtle); line-height: 1.8; letter-spacing: 0.02em; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* FOOTER */
+    footer { background: var(--navy-deep); border-top: 1px solid var(--navy-border); padding: 3rem 2rem; }
+    .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; color: var(--gold); letter-spacing: 0.08em; }
+    .footer-logo span { color: var(--text-muted); font-weight: 400; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.03em; color: var(--text-subtle); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.85rem; color: var(--text-subtle); letter-spacing: 0.04em; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 900px) {
+      .calc-grid { grid-template-columns: 1fr; }
+      .inputs-col { position: static; }
+      .metric-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+      .metric-grid.cols-3 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .nav-inner { padding: 0 1.5rem; }
+      .calc-body { padding: 2rem 1.2rem 4rem; }
+      .field-2col { grid-template-columns: 1fr; }
+      .cta-card { padding: 1.8rem; }
+    }
+    @media (min-width: 1440px) { html { font-size: 17px; } }
+    @media (min-width: 1920px) { html { font-size: 18.5px; } }
+  </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '3083326175185716');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CMHC MLI Select Pro-Forma Calculator","url":"https://multi-family-deals.ca/calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"CAD"},"description":"Interactive pro-forma calculator for CMHC MLI Select multi-family deals. Models deposit, mortgage payment with CMHC premium, NOI, DSCR, cash-on-cash, cap rate, rate and rent sensitivity, and a 5-year projection.","publisher":{"@type":"Organization","name":"Multi Family Deals","url":"https://multi-family-deals.ca"}}</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBW5QJQT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">MULTI FAMILY <span>DEALS</span></a>
+      <ul class="nav-links">
+        <li><a href="about.html">The Strategy</a></li>
+        <li><a href="why-alberta.html">Why Alberta</a></li>
+        <li><a href="inventory.html">Active Inventory</a></li>
+        <li><a href="inglewood.html">Portfolio</a></li>
+        <li><a href="buying-process.html">Buying Process</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="guide.html">Free Guide</a></li>
+      </ul>
+      <a href="contact.html" data-conversion="book_call" class="nav-cta">Book Discovery Call</a>
+      <div class="hamburger" id="hamburger" role="button" aria-label="Open menu" tabindex="0"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="about.html">The Strategy</a>
+      <a href="why-alberta.html">Why Alberta</a>
+      <a href="inventory.html">Active Inventory</a>
+      <a href="inglewood.html">Portfolio</a>
+      <a href="buying-process.html">Buying Process</a>
+      <a href="faq.html">FAQ</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="guide.html">Free Guide</a>
+      <a href="contact.html" data-conversion="book_call" class="mobile-nav-cta">Book Discovery Call</a>
+    </div>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Interactive Tool</div>
+      <h1 class="page-title">CMHC MLI Select<br /><span>Pro-Forma Calculator</span></h1>
+      <p class="page-subtitle">Model the numbers on a purpose-built multi-family deal the same way we do. Enter a purchase price, your unit mix, and an interest rate — the deposit math, mortgage payment with CMHC premium, NOI, DSCR, cash flow, sensitivity tables, and a 5-year projection update instantly.</p>
+    </div>
+  </section>
+
+  <div class="calc-body">
+    <div class="calc-grid">
+
+      <!-- ============ INPUTS ============ -->
+      <div class="inputs-col reveal">
+
+        <div class="panel">
+          <h3>Deal Inputs</h3>
+          <div class="field">
+            <label for="price">Purchase Price</label>
+            <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="price" value="1800000" min="0" step="1000" inputmode="numeric" /></div>
+          </div>
+          <div class="field">
+            <label for="rate">Interest Rate</label>
+            <div class="input-wrap has-post"><input type="number" id="rate" value="4" min="0" step="0.05" inputmode="decimal" /><span class="affix post">%</span></div>
+          </div>
+          <div class="field">
+            <label for="province">Province</label>
+            <select id="province">
+              <option value="AB" data-tax="0.66" selected>Alberta</option>
+              <option value="BC" data-tax="0.45">British Columbia</option>
+              <option value="ON" data-tax="0.90">Ontario</option>
+              <option value="SK" data-tax="1.00">Saskatchewan</option>
+              <option value="MB" data-tax="1.10">Manitoba</option>
+              <option value="OTHER" data-tax="0.75">Other</option>
+            </select>
+            <span class="hint">Sets an estimated property-tax rate (editable below). Alberta has no PST/HST or land transfer tax.</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Unit Mix &amp; Rents</h3>
+          <div class="unit-head">
+            <span>Unit Type</span><span>Units</span><span>Rent / mo</span><span></span>
+          </div>
+          <div id="unitRows">
+            <div class="unit-row">
+              <input type="text" class="u-type" value="4 Bed Upper" />
+              <input type="number" class="u-count" value="3" min="0" step="1" inputmode="numeric" />
+              <input type="number" class="u-rent" value="2250" min="0" step="25" inputmode="numeric" />
+              <button type="button" class="u-remove" aria-label="Remove unit type">&times;</button>
+            </div>
+            <div class="unit-row">
+              <input type="text" class="u-type" value="2 Bed Lower" />
+              <input type="number" class="u-count" value="3" min="0" step="1" inputmode="numeric" />
+              <input type="number" class="u-rent" value="1350" min="0" step="25" inputmode="numeric" />
+              <button type="button" class="u-remove" aria-label="Remove unit type">&times;</button>
+            </div>
+          </div>
+          <button type="button" class="add-row" id="addUnit">+ Add Unit Type</button>
+        </div>
+
+        <details class="assumptions">
+          <summary>Assumptions &amp; Expenses <span class="chev">&#9662;</span></summary>
+          <div class="assumptions-inner">
+            <div class="sub-label">Financing</div>
+            <div class="field-2col">
+              <div class="field">
+                <label for="depPct">Deposit</label>
+                <div class="input-wrap has-post"><input type="number" id="depPct" value="5" min="0" step="0.5" /><span class="affix post">%</span></div>
+              </div>
+              <div class="field">
+                <label for="amort">Amortization</label>
+                <div class="input-wrap has-post"><input type="number" id="amort" value="50" min="1" step="1" /><span class="affix post">yr</span></div>
+              </div>
+              <div class="field">
+                <label for="cmhcPct">CMHC Premium</label>
+                <div class="input-wrap has-post"><input type="number" id="cmhcPct" value="6.15" min="0" step="0.05" /><span class="affix post">%</span></div>
+              </div>
+            </div>
+
+            <div class="sub-label">Operating Expenses</div>
+            <div class="field-2col">
+              <div class="field">
+                <label for="propTax">Property Tax / yr</label>
+                <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="propTax" value="11903" min="0" step="100" /></div>
+              </div>
+              <div class="field">
+                <label for="utilities">Utilities / yr</label>
+                <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="utilities" value="0" min="0" step="100" /></div>
+              </div>
+              <div class="field">
+                <label for="insPerUnit">Insurance / unit</label>
+                <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="insPerUnit" value="720" min="0" step="10" /></div>
+              </div>
+              <div class="field">
+                <label for="reservePerUnit">Repl. Reserve / unit</label>
+                <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="reservePerUnit" value="480" min="0" step="10" /></div>
+              </div>
+              <div class="field">
+                <label for="mgmtPct">Management &amp; Ops</label>
+                <div class="input-wrap has-post"><input type="number" id="mgmtPct" value="5" min="0" step="0.5" /><span class="affix post">%</span></div>
+              </div>
+              <div class="field">
+                <label for="otherPct">Other Costs</label>
+                <div class="input-wrap has-post"><input type="number" id="otherPct" value="2" min="0" step="0.5" /><span class="affix post">%</span></div>
+              </div>
+              <div class="field">
+                <label for="rmPct">Repairs &amp; Maint.</label>
+                <div class="input-wrap has-post"><input type="number" id="rmPct" value="1.5" min="0" step="0.25" /><span class="affix post">%</span></div>
+              </div>
+              <div class="field">
+                <label for="vacPct">Vacancy &amp; Bad Debt</label>
+                <div class="input-wrap has-post"><input type="number" id="vacPct" value="3" min="0" step="0.5" /><span class="affix post">%</span></div>
+              </div>
+            </div>
+            <span class="hint" style="display:block;margin-top:0.5rem;">Percentage expenses are calculated on gross rental income (excluding other income), matching the reference pro-forma.</span>
+
+            <div class="sub-label">Other Income</div>
+            <div class="field-2col">
+              <div class="field">
+                <label for="parkCount">Parking Stalls</label>
+                <input type="number" id="parkCount" value="3" min="0" step="1" />
+              </div>
+              <div class="field">
+                <label for="parkRent">Parking / mo</label>
+                <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="parkRent" value="50" min="0" step="5" /></div>
+              </div>
+              <div class="field">
+                <label for="petCount">Pet Units</label>
+                <input type="number" id="petCount" value="0" min="0" step="1" />
+              </div>
+              <div class="field">
+                <label for="petRent">Pet Fee / mo</label>
+                <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="petRent" value="50" min="0" step="5" /></div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- ============ RESULTS ============ -->
+      <div class="results-col">
+
+        <!-- Eligibility & Deposit -->
+        <div class="results-block reveal">
+          <div class="section-label">Eligibility &amp; Deposit</div>
+          <div class="metric-grid cols-3">
+            <div class="metric">
+              <div class="m-value" id="o-deposit">$0</div>
+              <div class="m-label">Down Payment (<span id="o-depPctLbl">5</span>%)</div>
+            </div>
+            <div class="metric">
+              <div class="m-value" id="o-liquidity">$0</div>
+              <div class="m-label">Min. Liquidity (2× Deposit)</div>
+            </div>
+            <div class="metric">
+              <div class="m-value" id="o-networth">$0</div>
+              <div class="m-label">Min. Net Worth (25%)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Financing -->
+        <div class="results-block reveal">
+          <div class="section-label">Financing &amp; Mortgage</div>
+          <div class="def-list">
+            <div class="def-row">
+              <div class="def-label">Loan Amount <span class="sub">95% of purchase price</span></div>
+              <div class="def-value" id="o-loan">$0</div>
+            </div>
+            <div class="def-row">
+              <div class="def-label">CMHC Premium <span class="sub" id="o-cmhcLbl">6.15% of loan amount</span></div>
+              <div class="def-value" id="o-premium">$0</div>
+            </div>
+            <div class="def-row">
+              <div class="def-label">Total Loan Size <span class="sub">loan + CMHC premium</span></div>
+              <div class="def-value gold" id="o-totalloan">$0</div>
+            </div>
+            <div class="def-row emphasis">
+              <div class="def-label">Monthly Mortgage Payment <span class="sub" id="o-amortLbl">incl. CMHC premium · 50-yr amortization</span></div>
+              <div class="def-value gold" id="o-monthly">$0</div>
+            </div>
+            <div class="def-row">
+              <div class="def-label">Annual Mortgage Payment <span class="sub">total annual debt service</span></div>
+              <div class="def-value" id="o-annual">$0</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Returns -->
+        <div class="results-block reveal">
+          <div class="section-label">Returns &amp; Performance</div>
+          <div class="metric-grid cols-5">
+            <div class="metric">
+              <div class="m-value" id="o-noi">$0</div>
+              <div class="m-label">Net Operating Income</div>
+            </div>
+            <div class="metric">
+              <div class="m-value" id="o-cashflow">$0</div>
+              <div class="m-label">Annual Cash Flow</div>
+            </div>
+            <div class="metric">
+              <div class="m-value" id="o-coc">0%</div>
+              <div class="m-label">Cash-on-Cash</div>
+            </div>
+            <div class="metric">
+              <div class="m-value" id="o-dscr">0.00</div>
+              <div class="m-label">DSCR</div>
+            </div>
+            <div class="metric">
+              <div class="m-value" id="o-cap">0%</div>
+              <div class="m-label">Cap Rate</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rate Sensitivity -->
+        <div class="results-block reveal">
+          <div class="section-label">Rate Sensitivity</div>
+          <div class="table-wrap">
+            <table class="calc-table">
+              <thead>
+                <tr><th>Scenario</th><th>Rate</th><th>Monthly</th><th>Annual</th><th>Cash Flow</th><th>DSCR</th></tr>
+              </thead>
+              <tbody id="rateTable"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Rent Sensitivity -->
+        <div class="results-block reveal">
+          <div class="section-label">Rent Sensitivity</div>
+          <div class="table-wrap">
+            <table class="calc-table">
+              <thead>
+                <tr><th>Scenario</th><th>Gross Rent</th><th>NOI</th><th>Annual Debt</th><th>Cash Flow</th><th>DSCR</th></tr>
+              </thead>
+              <tbody id="rentTable"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 5-Year Projection -->
+        <div class="results-block reveal">
+          <div class="section-label">5-Year Projection</div>
+          <div class="table-wrap">
+            <table class="calc-table">
+              <thead>
+                <tr><th>Year</th><th>Building Value</th><th>Appreciation</th><th>Cash Flow</th><th>Paydown</th><th>Equity Gained</th><th>Return on Down Pmt</th></tr>
+              </thead>
+              <tbody id="projTable"></tbody>
+            </table>
+          </div>
+          <div class="summary-strip">
+            <div class="metric">
+              <div class="m-value" id="o-totalequity">$0</div>
+              <div class="m-label">Total Equity Gained (5 yr)</div>
+            </div>
+            <div class="metric">
+              <div class="m-value" id="o-roi">0%</div>
+              <div class="m-label">Annualized 5-Year ROI</div>
+            </div>
+          </div>
+          <p class="note">
+            Appreciation: 5% in Year 1, then 3% annually. Cash flow grows 5% year-over-year. Mortgage paydown is the principal reduction on the base loan. Equity gained each year = appreciation + cash flow + paydown.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section reveal">
+    <div class="cta-inner">
+      <div class="cta-card">
+        <div class="cta-text">
+          <h2>Want a full pro-forma on a <span>real asset?</span></h2>
+          <p>This calculator uses the same model we run on every deal. On a free 30-minute discovery call, we'll match your available capital to a specific property in our active inventory and build you a complete, property-specific pro-forma — rents, expenses, financing, and a 5-year projection grounded in real numbers. No cost. No obligation.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="contact.html" data-conversion="book_call" class="btn-primary">Book a Discovery Call</a>
+          <a href="inventory.html" class="btn-ghost" style="justify-content:center;">Browse Active Inventory</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="disclaimer reveal">
+    <strong>Disclaimer:</strong> This calculator is for general information and illustration purposes only and is based on user-entered assumptions that may not reflect actual results. Outputs are projections and estimates subject to market conditions, financing terms, CMHC approval, and other variable factors. It does not constitute financial, investment, legal, or tax advice. CMHC MLI Select program terms — eligibility, premium rates, loan-to-value, and amortization — are subject to change at CMHC's discretion; verify current terms with your mortgage broker. Consult your lawyer, mortgage broker, and accountant before making any investment decision. Kunal Sarhadi is a licensed real estate broker with Homelife Miracle Realty Inc. and is not a financial advisor.
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">MULTI FAMILY <span>DEALS</span></div>
+      <ul class="footer-links">
+        <li><a href="about.html">Strategy</a></li>
+        <li><a href="why-alberta.html">Why Alberta</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="inglewood.html">Portfolio</a></li>
+        <li><a href="buying-process.html">Buying Process</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="guide.html">Free Guide</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="footer-copy">Kunal Sarhadi, Real Estate Broker &nbsp;|&nbsp; Homelife Miracle Realty Inc. &nbsp;|&nbsp; © 2026 Multi Family Deals. Not financial or investment advice. CMHC MLI Select program terms subject to change.</div>
+    </div>
+  </footer>
+
+  <script>
+    /* ---------- Nav ---------- */
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    function _syncScrollLock() { document.body.classList.toggle('no-scroll', mobileNav.classList.contains('open')); }
+    function openMenu() { mobileNav.classList.add('open'); hamburger.classList.add('is-open'); _syncScrollLock(); }
+    function closeMenu() { mobileNav.classList.remove('open'); hamburger.classList.remove('is-open'); _syncScrollLock(); }
+    function toggleMenu() { mobileNav.classList.contains('open') ? closeMenu() : openMenu(); }
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); } });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+    /* ---------- Reveal ---------- */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -10px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')), 1200);
+
+    /* ---------- Calculator ---------- */
+    const $ = id => document.getElementById(id);
+    const num = id => { const v = parseFloat($(id).value); return isNaN(v) ? 0 : v; };
+
+    const fmtMoney = n => (n < 0 ? '-$' : '$') + Math.abs(Math.round(n)).toLocaleString('en-US');
+    const fmtMoney2 = n => (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const fmtPct = n => n.toFixed(2) + '%';
+    const fmtDscr = n => n.toFixed(2);
+
+    // Monthly mortgage payment (monthly compounding, matches reference pro-forma).
+    function pmt(principal, annualRatePct, years) {
+      const i = (annualRatePct / 100) / 12;
+      const n = years * 12;
+      if (n <= 0) return 0;
+      if (i === 0) return principal / n;
+      return principal * i / (1 - Math.pow(1 + i, -n));
+    }
+    // Outstanding balance after a number of months.
+    function balanceAfter(principal, annualRatePct, years, months) {
+      const i = (annualRatePct / 100) / 12;
+      const pay = pmt(principal, annualRatePct, years);
+      if (i === 0) return Math.max(0, principal - pay * months);
+      return principal * Math.pow(1 + i, months) - pay * ((Math.pow(1 + i, months) - 1) / i);
+    }
+    function principalPaidInYear(principal, annualRatePct, years, year) {
+      return balanceAfter(principal, annualRatePct, years, (year - 1) * 12) - balanceAfter(principal, annualRatePct, years, year * 12);
+    }
+
+    function readUnits() {
+      let units = 0, annualRent = 0;
+      document.querySelectorAll('#unitRows .unit-row').forEach(r => {
+        const c = parseFloat(r.querySelector('.u-count').value) || 0;
+        const rent = parseFloat(r.querySelector('.u-rent').value) || 0;
+        units += c;
+        annualRent += c * rent * 12;
+      });
+      return { units, annualRent };
+    }
+
+    function otherIncome() {
+      const park = num('parkCount') * num('parkRent') * 1.0 * 12;   // parking usage 100%
+      const pet = num('petCount') * num('petRent') * 0.20 * 12;     // pet usage 20%
+      return park + pet;
+    }
+
+    function calc() {
+      const price = num('price');
+      const rate = num('rate');
+      const amort = num('amort');
+      const depPct = num('depPct');
+      const cmhcPct = num('cmhcPct');
+
+      const { units, annualRent } = readUnits();
+      const other = otherIncome();
+
+      // Operating expenses
+      const tax = num('propTax');
+      const ins = num('insPerUnit') * units;
+      const util = num('utilities');
+      const rm = annualRent * num('rmPct') / 100;
+      const mgmt = annualRent * num('mgmtPct') / 100;
+      const otherCost = annualRent * num('otherPct') / 100;
+      const reserve = num('reservePerUnit') * units;
+      const vacancy = annualRent * num('vacPct') / 100;
+      const totalExp = tax + ins + util + rm + mgmt + otherCost + reserve + vacancy;
+
+      const noi = annualRent + other - totalExp;
+
+      // Deposit / eligibility
+      const deposit = price * depPct / 100;
+      const minLiquidity = deposit * 2;
+      const minNetWorth = price * 0.25;
+
+      // Financing
+      const loan = price - deposit;
+      const premium = loan * cmhcPct / 100;
+      const totalLoan = loan + premium;
+      const monthly = pmt(totalLoan, rate, amort);
+      const annual = monthly * 12;
+
+      const cashFlow = noi - annual;
+      const coc = deposit ? (cashFlow / deposit * 100) : 0;
+      const dscr = annual ? (noi / annual) : 0;
+      const cap = price ? (noi / price * 100) : 0;
+
+      /* ---- render headline ---- */
+      $('o-depPctLbl').textContent = depPct;
+      $('o-deposit').textContent = fmtMoney(deposit);
+      $('o-liquidity').textContent = fmtMoney(minLiquidity);
+      $('o-networth').textContent = fmtMoney(minNetWorth);
+
+      $('o-loan').textContent = fmtMoney(loan);
+      $('o-premium').textContent = fmtMoney(premium);
+      $('o-cmhcLbl').textContent = cmhcPct + '% of loan amount';
+      $('o-totalloan').textContent = fmtMoney(totalLoan);
+      $('o-monthly').textContent = fmtMoney2(monthly);
+      $('o-amortLbl').textContent = 'incl. CMHC premium · ' + amort + '-yr amortization';
+      $('o-annual').textContent = fmtMoney2(annual);
+
+      $('o-noi').textContent = fmtMoney(noi);
+      const cfEl = $('o-cashflow');
+      cfEl.textContent = fmtMoney(cashFlow);
+      cfEl.className = 'm-value ' + (cashFlow >= 0 ? 'pos' : 'neg');
+      const cocEl = $('o-coc');
+      cocEl.textContent = fmtPct(coc);
+      cocEl.className = 'm-value ' + (coc >= 0 ? 'pos' : 'neg');
+      const dscrEl = $('o-dscr');
+      dscrEl.textContent = fmtDscr(dscr);
+      dscrEl.className = 'm-value ' + (dscr >= 1.10 ? 'pos' : (dscr >= 1 ? '' : 'neg'));
+      $('o-cap').textContent = fmtPct(cap);
+
+      /* ---- rate sensitivity ---- */
+      const rateRows = [
+        { label: 'Base Rate', d: 0, base: true },
+        { label: '-0.50%', d: -0.50 },
+        { label: '-0.25%', d: -0.25 },
+        { label: '+0.25%', d: 0.25 },
+        { label: '+0.50%', d: 0.50 }
+      ];
+      $('rateTable').innerHTML = rateRows.map(r => {
+        const rr = rate + r.d;
+        const m = pmt(totalLoan, rr, amort);
+        const a = m * 12;
+        const cf = noi - a;
+        const ds = a ? noi / a : 0;
+        return `<tr class="${r.base ? 'base' : ''}">
+          <td class="row-tag">${r.label}</td>
+          <td>${rr.toFixed(2)}%</td>
+          <td>${fmtMoney2(m)}</td>
+          <td>${fmtMoney2(a)}</td>
+          <td class="${cf >= 0 ? 'pos' : 'neg'}">${fmtMoney2(cf)}</td>
+          <td>${fmtDscr(ds)}</td>
+        </tr>`;
+      }).join('');
+
+      /* ---- rent sensitivity ---- */
+      const rentRows = [
+        { label: 'Base Rent', d: 0, base: true },
+        { label: '-5%', d: -0.05 },
+        { label: '-10%', d: -0.10 },
+        { label: '-15%', d: -0.15 }
+      ];
+      $('rentTable').innerHTML = rentRows.map(r => {
+        const grossRent = annualRent * (1 + r.d);
+        const noiS = noi + annualRent * r.d;     // expenses held constant, per reference pro-forma
+        const cf = noiS - annual;
+        const ds = annual ? noiS / annual : 0;
+        return `<tr class="${r.base ? 'base' : ''}">
+          <td class="row-tag">${r.label}</td>
+          <td>${fmtMoney(grossRent)}</td>
+          <td>${fmtMoney2(noiS)}</td>
+          <td>${fmtMoney2(annual)}</td>
+          <td class="${cf >= 0 ? 'pos' : 'neg'}">${fmtMoney2(cf)}</td>
+          <td>${fmtDscr(ds)}</td>
+        </tr>`;
+      }).join('');
+
+      /* ---- 5-year projection ---- */
+      const apprRates = [0.05, 0.03, 0.03, 0.03, 0.03];
+      let buildingValue = price;
+      let totalEquity = 0;
+      let rows = '';
+      for (let y = 1; y <= 5; y++) {
+        const apprRate = apprRates[y - 1];
+        const apprDollar = buildingValue * apprRate;
+        buildingValue += apprDollar;
+        const yearCashFlow = cashFlow * Math.pow(1.05, y - 1);
+        const paydown = principalPaidInYear(loan, rate, amort, y);
+        const equity = apprDollar + yearCashFlow + paydown;
+        totalEquity += equity;
+        const ret = deposit ? (equity / deposit * 100) : 0;
+        rows += `<tr>
+          <td class="row-tag">Year ${y}</td>
+          <td>${fmtMoney(buildingValue)}</td>
+          <td>${fmtMoney(apprDollar)} <span style="color:var(--text-subtle)">(${(apprRate*100).toFixed(0)}%)</span></td>
+          <td class="${yearCashFlow >= 0 ? 'pos' : 'neg'}">${fmtMoney(yearCashFlow)}</td>
+          <td>${fmtMoney(paydown)}</td>
+          <td>${fmtMoney(equity)}</td>
+          <td>${fmtPct(ret)}</td>
+        </tr>`;
+      }
+      $('projTable').innerHTML = rows;
+      $('o-totalequity').textContent = fmtMoney(totalEquity);
+      $('o-roi').textContent = deposit ? fmtPct(totalEquity / deposit / 5 * 100) : '0%';
+    }
+
+    /* ---------- Unit row add/remove ---------- */
+    function attachRemove(btn) {
+      btn.addEventListener('click', () => {
+        const rows = document.querySelectorAll('#unitRows .unit-row');
+        if (rows.length > 1) { btn.closest('.unit-row').remove(); calc(); }
+      });
+    }
+    document.querySelectorAll('.u-remove').forEach(attachRemove);
+    $('addUnit').addEventListener('click', () => {
+      const row = document.createElement('div');
+      row.className = 'unit-row';
+      row.innerHTML = `<input type="text" class="u-type" value="Unit Type" />
+        <input type="number" class="u-count" value="1" min="0" step="1" inputmode="numeric" />
+        <input type="number" class="u-rent" value="1500" min="0" step="25" inputmode="numeric" />
+        <button type="button" class="u-remove" aria-label="Remove unit type">&times;</button>`;
+      $('unitRows').appendChild(row);
+      attachRemove(row.querySelector('.u-remove'));
+      calc();
+    });
+
+    /* ---------- Province sets estimated property tax ---------- */
+    $('province').addEventListener('change', (e) => {
+      const taxRate = parseFloat(e.target.selectedOptions[0].dataset.tax) || 0.66;
+      $('propTax').value = Math.round(num('price') * taxRate / 100);
+      calc();
+    });
+
+    /* ---------- Recalculate on any input ---------- */
+    document.querySelector('.calc-body').addEventListener('input', calc);
+
+    calc();
+  </script>
+
+<!-- Conversion Event Listener -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('[data-conversion]');
+    if(!el) return;
+    var eventName = el.getAttribute('data-conversion');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': eventName,
+      'event_category': 'engagement',
+      'event_label': el.textContent.trim().substring(0, 50),
+      'page_path': window.location.pathname
+    });
+  });
+})();
+</script>
+<!-- End Conversion Event Listener -->
+<script src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69fa444c3cc75785c76e6387"></script>
+</body>
+</html>
