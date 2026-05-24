@@ -162,7 +162,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .cf-box .cf-k { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold-light); }
     .cf-box .cf-k small { display: block; font-size: 0.66rem; color: var(--text-subtle); text-transform: none; letter-spacing: 0; margin-top: 0.2rem; font-weight: 400; }
     .cf-box .cf-v { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 700; white-space: nowrap; }
-    .cf-box .cf-v.pos { color: var(--gold); }
+    .cf-box .cf-v.pos { color: var(--pos); }
     .cf-box .cf-v.neg { color: var(--neg); }
     .elig-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; margin-top: 0.5rem; }
     .elig-box { position: relative; background: var(--navy-card); border: 1px solid var(--navy-border); padding: 1.1rem 0.5rem; text-align: center; cursor: default; overflow: hidden; transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease; }
@@ -321,7 +321,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="page-hero-inner">
       <div class="page-eyebrow">Interactive Tool</div>
       <h1 class="page-title">Pro-Forma <span>Calculator</span></h1>
-      <p class="page-subtitle">Enter a purchase price, your unit mix, and an interest rate. Your estimate updates instantly on the right — what you'll need to bring, your mortgage with the CMHC premium, cash flow, returns, and a 5-year outlook.</p>
     </div>
   </section>
 
@@ -380,13 +379,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="group-label">Operating Expenses <span class="opt">— optional, edit to fit</span></div>
         <div class="field">
           <label for="propTax">Property Tax / year</label>
-          <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="propTax" value="14650" min="0" step="100" /></div>
-          <span class="hint">Estimated as 80% of price &times; Edmonton's mill rate (1.01738%). Type the actual figure if you have it.</span>
+          <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="propTax" value="13735" min="0" step="100" /></div>
+          <span class="hint">Estimated as 75% of price &times; Edmonton's mill rate (1.01738%). Type the actual figure if you have it.</span>
         </div>
         <div class="grid-2">
           <div class="field">
             <label for="insPerUnit">Insurance / unit / mo</label>
-            <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="insPerUnit" value="50" min="0" step="5" /></div>
+            <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="insPerUnit" value="45" min="0" step="5" /></div>
           </div>
           <div class="field">
             <label for="reservePerUnit">Reserve / unit / mo</label>
@@ -409,7 +408,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="input-wrap has-post"><input type="number" id="otherPct" value="2" min="0" step="0.5" /><span class="affix post">%</span></div>
           </div>
         </div>
-        <span class="hint" style="display:block;margin-top:0.7rem;">Management, maintenance, vacancy and other costs are a percentage of gross rent.</span>
       </div>
 
       <!-- ============ RESULTS (right, sticky) ============ -->
@@ -460,7 +458,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- 5-Year Outlook (full width) -->
     <div class="outlook reveal">
       <div class="block-label">5-Year Outlook</div>
-      <p class="block-intro">Assuming 5% appreciation in Year 1, then 3% a year, with cash flow growing 5% annually. Equity gained each year combines appreciation, cash flow, and the principal you pay down on the mortgage.</p>
       <div class="table-wrap">
         <table class="calc-table">
           <thead>
@@ -608,7 +605,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     let calcCompleted = false;
 
-    const ASSESS_FACTOR = 0.80;   // assessed value = 80% of purchase price
+    const ASSESS_FACTOR = 0.75;   // assessed value = 75% of purchase price
     const $ = id => document.getElementById(id);
     const num = id => { const v = parseFloat($(id).value); return isNaN(v) ? 0 : v; };
 
@@ -645,7 +642,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       return { units, annualRent };
     }
 
-    // Property tax = assessed value (80% of price) x Edmonton mill rate.
+    // Property tax = assessed value (75% of price) x Edmonton mill rate.
     const EDMONTON_MILL = 0.0101738;
     let taxManual = false;
     $('propTax').addEventListener('input', () => { taxManual = true; });
