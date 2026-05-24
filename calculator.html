@@ -105,10 +105,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* LAYOUT — two-panel split */
     .calc-body { max-width: 1180px; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
-    .calc-shell { display: grid; grid-template-columns: 1.1fr 0.95fr; gap: 1.5rem; align-items: start; }
-    .panel { border: 1px solid var(--navy-border); }
+    .calc-shell { display: grid; grid-template-columns: 1.1fr 0.95fr; gap: 1.5rem; align-items: stretch; }
+    .panel { border: 1px solid var(--navy-border); box-shadow: 0 18px 50px rgba(0,0,0,0.35); }
     .panel-inputs { background: var(--navy-card); padding: 2rem; }
-    .panel-result { background: var(--navy-deep); padding: 2rem 1.9rem; position: sticky; top: 90px; }
+    .panel-result { background: linear-gradient(180deg, var(--navy-deep) 0%, #050B16 100%); padding: 2rem 1.9rem; display: flex; flex-direction: column; }
     .panel-inputs h3 { font-family: 'Cinzel', serif; font-size: 1.3rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1.6rem; }
 
     /* FIELDS */
@@ -152,7 +152,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .est-sub { font-size: 0.74rem; color: var(--text-subtle); margin-top: 0.6rem; }
     .est-div { border: none; border-top: 1px solid var(--navy-border); margin: 1.5rem 0; }
     .est-sec { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 0.7rem; }
-    .brk-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.5rem 0; font-size: 0.86rem; }
+    .brk-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.5rem 0.6rem; margin: 0 -0.6rem; border-radius: 3px; font-size: 0.86rem; transition: background 0.15s; }
+    .brk-row:hover { background: rgba(255,255,255,0.025); }
     .brk-row .bk { color: var(--text-muted); }
     .brk-row .bv { font-weight: 600; color: var(--text-primary); font-family: 'Cinzel', serif; white-space: nowrap; }
     .brk-row.em .bk { color: var(--gold-light); }
@@ -163,11 +164,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .cf-box .cf-v { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 700; white-space: nowrap; }
     .cf-box .cf-v.pos { color: var(--gold); }
     .cf-box .cf-v.neg { color: var(--neg); }
-    .elig-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-top: 0.5rem; }
-    .elig-box { background: var(--navy-card); border: 1px solid var(--navy-border); padding: 0.9rem 0.5rem; text-align: center; }
-    .elig-box b { display: block; font-family: 'Cinzel', serif; font-size: 1.02rem; font-weight: 700; color: var(--text-primary); }
-    .elig-box span { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-subtle); margin-top: 0.4rem; display: block; line-height: 1.35; }
-    .est-note { font-size: 0.68rem; color: var(--text-subtle); line-height: 1.6; margin-top: 1.4rem; }
+    .elig-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; margin-top: 0.5rem; }
+    .elig-box { position: relative; background: var(--navy-card); border: 1px solid var(--navy-border); padding: 1.1rem 0.5rem; text-align: center; cursor: default; overflow: hidden; transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease; }
+    .elig-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform 0.25s ease; transform-origin: left; }
+    .elig-box:hover { transform: translateY(-4px) scale(1.04); border-color: var(--gold-muted); box-shadow: 0 14px 30px rgba(0,0,0,0.5); }
+    .elig-box:hover::before { transform: scaleX(1); }
+    .elig-box b { display: block; font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; color: var(--gold); transition: transform 0.22s ease; }
+    .elig-box:hover b { transform: scale(1.06); }
+    .elig-box span { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-subtle); margin-top: 0.45rem; display: block; line-height: 1.35; }
+    .est-note { font-size: 0.68rem; color: var(--text-subtle); line-height: 1.6; margin-top: auto; padding-top: 1.4rem; }
 
     /* 5-YEAR OUTLOOK (full width) */
     .outlook { margin-top: 1.5rem; }
@@ -333,13 +338,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="field">
           <label for="rate">Interest Rate (% / year)</label>
           <div class="input-wrap has-post"><input type="number" id="rate" value="4" min="0" step="0.05" inputmode="decimal" /><span class="affix post">%</span></div>
-        </div>
-        <div class="field">
-          <label for="province">Province</label>
-          <select id="province">
-            <option value="AB" data-mill="0.0101738" selected>Alberta</option>
-            <option value="ON" data-mill="0.0090">Ontario</option>
-          </select>
+          <span class="hint">Modelled at the CMHC MLI Select maximum <strong style="color:var(--gold-light);font-weight:600;">50-year amortization</strong>.</span>
         </div>
 
         <div class="group-label">Units &amp; Rents</div>
@@ -365,10 +364,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="input-wrap has-post"><input type="number" id="depPct" value="5" min="0" step="0.5" /><span class="affix post">%</span></div>
           </div>
           <div class="field">
-            <label for="amort">Amortization</label>
-            <div class="input-wrap has-post"><input type="number" id="amort" value="50" min="1" step="1" /><span class="affix post">yr</span></div>
-          </div>
-          <div class="field">
             <label for="cmhcPct">CMHC Premium</label>
             <div class="input-wrap has-post"><input type="number" id="cmhcPct" value="5.8" min="0" step="0.05" /><span class="affix post">%</span></div>
           </div>
@@ -378,7 +373,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="field">
           <label for="propTax">Property Tax / year</label>
           <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="propTax" value="14650" min="0" step="100" /></div>
-          <span class="hint">Estimated as 80% of price &times; the local mill rate (Edmonton 1.01738%). Type the actual figure if you have it.</span>
+          <span class="hint">Estimated as 80% of price &times; Edmonton's mill rate (1.01738%). Type the actual figure if you have it.</span>
         </div>
         <div class="grid-2">
           <div class="field">
@@ -426,7 +421,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="brk-row"><span class="bk">CMHC Premium</span><span class="bv" id="o-premium">$0</span></div>
         <div class="brk-row em"><span class="bk">Total Loan Size</span><span class="bv" id="o-totalloan">$0</span></div>
         <div class="brk-row"><span class="bk">Interest Rate</span><span class="bv" id="o-rate2">0%</span></div>
-        <div class="brk-row"><span class="bk">Amortization</span><span class="bv" id="o-amort2">50 years</span></div>
         <div class="brk-row"><span class="bk">Annual Mortgage Payment</span><span class="bv" id="o-annual">$0</span></div>
 
         <hr class="est-div" />
@@ -591,19 +585,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       return { units, annualRent };
     }
 
-    // Property tax = assessed value (80% of price) x local mill rate.
+    // Property tax = assessed value (80% of price) x Edmonton mill rate.
+    const EDMONTON_MILL = 0.0101738;
     let taxManual = false;
     $('propTax').addEventListener('input', () => { taxManual = true; });
     function estimateTax() {
       if (taxManual) return;
-      const mill = parseFloat($('province').selectedOptions[0].dataset.mill) || 0.0101738;
-      $('propTax').value = Math.round(num('price') * ASSESS_FACTOR * mill);
+      $('propTax').value = Math.round(num('price') * ASSESS_FACTOR * EDMONTON_MILL);
     }
 
     function calc() {
       const price = num('price');
       const rate = num('rate');
-      const amort = num('amort');
+      const amort = 50;   // CMHC MLI Select maximum amortization
       const depPct = num('depPct');
       const cmhcPct = num('cmhcPct');
 
@@ -649,7 +643,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       $('o-premium').textContent = fmtMoney(premium) + ' (' + cmhcPct + '%)';
       $('o-totalloan').textContent = fmtMoney(totalLoan);
       $('o-rate2').textContent = rate.toFixed(2) + '% / yr';
-      $('o-amort2').textContent = amort + ' years';
       $('o-annual').textContent = fmtMoney(annual);
 
       /* ---- Income & returns ---- */
@@ -711,8 +704,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       calc();
     });
 
-    /* ---------- Province & price drive the tax estimate ---------- */
-    $('province').addEventListener('change', () => { taxManual = false; estimateTax(); calc(); });
+    /* ---------- Price drives the tax estimate ---------- */
     $('price').addEventListener('input', estimateTax);
 
     /* ---------- Recalculate on any input ---------- */
