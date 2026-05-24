@@ -67,6 +67,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://multi-family-deals.ca/calculator.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://multi-family-deals.ca/blog/</loc>
     <lastmod>2026-05-24</lastmod>
     <priority>0.8</priority>
