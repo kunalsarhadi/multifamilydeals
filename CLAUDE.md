@@ -102,15 +102,16 @@ The live inventory data is managed in Google Sheets. Read it at the start of any
 
 - **Spreadsheet ID:** `1rv3GdNkdN89AmNthj1JeL2ulSgKL9x3NnIL7UxCbn20`
 - **Tab name:** `CMHC MLI Inventory List`
-- **API Key:** `AIzaSyC3Ii4Ps8mqlB-sCO5DyqFo1HgTyADcxCc`
+- **API Key:** stored in `.env` as `SHEETS_API_KEY` (file is gitignored — never commit it)
 
-**To read the sheet:**
+**To read the sheet**, load the key from `.env` then fetch:
 ```
-https://sheets.googleapis.com/v4/spreadsheets/1rv3GdNkdN89AmNthj1JeL2ulSgKL9x3NnIL7UxCbn20/values/CMHC%20MLI%20Inventory%20List?key=AIzaSyC3Ii4Ps8mqlB-sCO5DyqFo1HgTyADcxCc
+https://sheets.googleapis.com/v4/spreadsheets/1rv3GdNkdN89AmNthj1JeL2ulSgKL9x3NnIL7UxCbn20/values/CMHC%20MLI%20Inventory%20List?key=<SHEETS_API_KEY>
 ```
 
 When the user says "sync inventory", "update inventory", or "update the hotlist":
-1. Fetch the sheet using the URL above
-2. Compare with current inventory.html
-3. Update inventory.html to match the sheet
-4. Commit and push to main
+1. Read `SHEETS_API_KEY` from `.env`
+2. Fetch the sheet using the URL above with that key
+3. Compare with current inventory.html
+4. Update inventory.html to match the sheet
+5. Commit and push to main
