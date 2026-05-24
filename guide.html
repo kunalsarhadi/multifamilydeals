@@ -768,7 +768,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const pdfModalClose = document.getElementById('pdfModalClose');
     function openPdfModal() { pdfModalOverlay.classList.add('open'); _syncScrollLock(); }
     function closePdfModal() { pdfModalOverlay.classList.remove('open'); _syncScrollLock(); }
-    pdfGateBtn.addEventListener('click', openPdfModal);
+    pdfGateBtn.addEventListener('click', function() {
+      openPdfModal();
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead', { content_name: 'mli_select_guide' });
+      }
+    });
     pdfModalClose.addEventListener('click', closePdfModal);
     pdfModalOverlay.addEventListener('click', (e) => { if (e.target === pdfModalOverlay) closePdfModal(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && pdfModalOverlay.classList.contains('open')) closePdfModal(); });

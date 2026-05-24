@@ -1478,6 +1478,7 @@ document.addEventListener('DOMContentLoaded', function() {
       content_category: 'multi-family-investment',
       content_type: 'inventory_page'
     }, {eventID: eventId});
+    fbq('track', 'ViewContent', { content_type: 'product', content_name: 'inventory_listing' });
   }
 });
 </script>
