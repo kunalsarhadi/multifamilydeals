@@ -23,7 +23,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Multi Family Deals" />
   <meta property="og:title" content="CMHC MLI Select Pro-Forma Calculator | Multi Family Deals" />
-  <meta property="og:description" content="Model the numbers on a CMHC MLI Select multi-family deal: deposit, mortgage payment with CMHC premium, NOI, DSCR, cash-on-cash, cap rate, rate/rent sensitivity, and a 5-year projection." />
+  <meta property="og:description" content="Model the numbers on a CMHC MLI Select multi-family deal: deposit, mortgage payment with CMHC premium, NOI, cash flow, DSCR, cash-on-cash, cap rate, and a 5-year projection." />
   <meta property="og:url" content="https://multi-family-deals.ca/calculator.html" />
   <link rel="canonical" href="https://multi-family-deals.ca/calculator.html" />
   <meta property="og:image" content="https://multi-family-deals.ca/images/og-edmonton.jpg" />
@@ -31,9 +31,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="CMHC MLI Select Pro-Forma Calculator | Multi Family Deals" />
-  <meta name="twitter:description" content="Model deposit, mortgage payment, NOI, DSCR, cash-on-cash, cap rate, and a 5-year projection on a CMHC MLI Select multi-family deal." />
+  <meta name="twitter:description" content="Model deposit, mortgage payment, NOI, cash flow, DSCR, cash-on-cash, cap rate, and a 5-year projection on a CMHC MLI Select multi-family deal." />
   <meta name="twitter:image" content="https://multi-family-deals.ca/images/og-edmonton.jpg" />
-  <meta name="description" content="Interactive CMHC MLI Select pro-forma calculator. Enter purchase price, unit rents, and interest rate to model deposit requirements, mortgage payment with CMHC premium, NOI, DSCR, cash-on-cash, cap rate, sensitivity tables, and a 5-year projection." />
+  <meta name="description" content="Interactive CMHC MLI Select pro-forma calculator. Enter purchase price, unit rents, and interest rate to model deposit requirements, mortgage payment with CMHC premium, NOI, cash flow, DSCR, cash-on-cash, cap rate, and a 5-year projection." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -77,12 +77,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* HERO */
     .page-hero { padding: 9rem 2rem 3rem; background: var(--navy-deep); position: relative; overflow: hidden; }
     .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 60% at 70% 40%, rgba(201,168,76,0.06) 0%, transparent 65%); pointer-events: none; }
-    .page-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .page-hero-inner { max-width: 1080px; margin: 0 auto; position: relative; z-index: 1; }
     .page-eyebrow { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
     .page-eyebrow::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
     .page-title { font-size: clamp(2rem, 4.5vw, 3.3rem); font-weight: 700; line-height: 1.08; margin-bottom: 1.2rem; }
     .page-title span { color: var(--gold); }
-    .page-subtitle { font-size: 1rem; font-weight: 300; color: var(--text-muted); line-height: 1.75; max-width: 720px; }
+    .page-subtitle { font-size: 1rem; font-weight: 300; color: var(--text-muted); line-height: 1.75; max-width: 660px; }
 
     /* BUTTONS */
     .btn-primary { background: var(--gold); color: var(--navy-deep); padding: 0.85rem 2rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; border: none; text-decoration: none; display: inline-block; transition: background 0.2s; }
@@ -91,21 +91,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
 
     /* LAYOUT */
-    .calc-body { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 5rem; }
-    .calc-grid { display: grid; grid-template-columns: minmax(320px, 380px) 1fr; gap: 2rem; align-items: start; }
-    .section-label { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-    .section-label::before { content: ''; display: block; width: 1.2rem; height: 1px; background: currentColor; }
+    .calc-body { max-width: 1080px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .calc-grid { display: grid; grid-template-columns: minmax(300px, 350px) 1fr; gap: 2.5rem; align-items: start; }
 
-    /* PANELS */
-    .panel { background: var(--navy-card); border: 1px solid var(--navy-border); padding: 1.6rem 1.6rem 1.8rem; margin-bottom: 1.5rem; }
-    .panel h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 1.1rem; letter-spacing: 0.05em; }
+    /* PANELS (inputs) */
+    .panel { background: var(--navy-card); border: 1px solid var(--navy-border); padding: 1.6rem; margin-bottom: 1.25rem; }
+    .panel h3 { font-size: 0.92rem; font-weight: 600; margin-bottom: 1.2rem; letter-spacing: 0.04em; }
     .inputs-col { position: sticky; top: 90px; }
 
     /* FIELDS */
-    .field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+    .field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.1rem; }
     .field:last-child { margin-bottom: 0; }
-    .field label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); }
-    .field .hint { font-size: 0.66rem; font-weight: 300; letter-spacing: 0.02em; text-transform: none; color: var(--text-subtle); margin-top: 0.15rem; line-height: 1.4; }
+    .field label { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); }
+    .field .hint { font-size: 0.66rem; font-weight: 300; letter-spacing: 0.01em; text-transform: none; color: var(--text-subtle); margin-top: 0.2rem; line-height: 1.45; }
     .input-wrap { position: relative; display: flex; align-items: center; }
     .input-wrap .affix { position: absolute; color: var(--text-subtle); font-size: 0.85rem; pointer-events: none; }
     .input-wrap .affix.pre { left: 0.85rem; }
@@ -122,53 +120,66 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     select { cursor: pointer; }
 
     /* UNIT MIX */
-    .unit-head, .unit-row { display: grid; grid-template-columns: 1fr 4rem 5.5rem 1.8rem; gap: 0.5rem; align-items: center; }
+    .unit-head, .unit-row { display: grid; grid-template-columns: 1fr 3.6rem 5rem 1.8rem; gap: 0.5rem; align-items: center; }
     .unit-head { margin-bottom: 0.5rem; }
-    .unit-head span { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-subtle); }
+    .unit-head span { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-subtle); }
     .unit-head span:nth-child(2), .unit-head span:nth-child(3) { text-align: center; }
     .unit-row { margin-bottom: 0.5rem; }
-    .unit-row input { padding: 0.55rem 0.6rem; font-size: 0.85rem; }
+    .unit-row input { padding: 0.55rem 0.5rem; font-size: 0.85rem; }
     .unit-row input.u-count, .unit-row input.u-rent { text-align: center; }
     .u-remove { background: transparent; border: 1px solid var(--navy-border); color: var(--text-subtle); width: 1.8rem; height: 1.8rem; cursor: pointer; border-radius: 2px; font-size: 1rem; line-height: 1; transition: color 0.2s, border-color 0.2s; }
     .u-remove:hover { color: var(--neg); border-color: var(--neg); }
-    .add-row { margin-top: 0.4rem; background: transparent; border: 1px dashed var(--navy-border); color: var(--gold); width: 100%; padding: 0.55rem; cursor: pointer; font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; transition: border-color 0.2s; }
+    .add-row { margin-top: 0.4rem; background: transparent; border: 1px dashed var(--navy-border); color: var(--gold); width: 100%; padding: 0.55rem; cursor: pointer; font-family: 'Josefin Sans', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; transition: border-color 0.2s; }
     .add-row:hover { border-color: var(--gold); }
 
     /* ASSUMPTIONS ACCORDION */
-    details.assumptions { background: var(--navy-card); border: 1px solid var(--navy-border); margin-bottom: 1.5rem; }
-    details.assumptions > summary { list-style: none; cursor: pointer; padding: 1.1rem 1.6rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); display: flex; align-items: center; justify-content: space-between; }
+    details.assumptions { background: var(--navy-card); border: 1px solid var(--navy-border); }
+    details.assumptions > summary { list-style: none; cursor: pointer; padding: 1.1rem 1.6rem; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); display: flex; align-items: center; justify-content: space-between; }
     details.assumptions > summary::-webkit-details-marker { display: none; }
     details.assumptions > summary:hover { color: var(--gold); }
     details.assumptions > summary .chev { transition: transform 0.2s; color: var(--gold); }
     details.assumptions[open] > summary .chev { transform: rotate(180deg); }
     .assumptions-inner { padding: 0 1.6rem 1.6rem; }
-    .assumptions-inner .sub-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); padding: 0.5rem 0; border-bottom: 1px solid var(--navy-border); margin: 0.6rem 0 1rem; }
-    .field-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1rem; }
+    .assumptions-inner .sub-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); padding-bottom: 0.5rem; border-bottom: 1px solid var(--navy-border); margin: 0.4rem 0 1rem; }
+    .field-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 1rem; }
 
-    /* METRIC CARDS */
-    .metric-grid { display: grid; gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); margin-bottom: 1.5rem; }
-    .metric-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
-    .metric-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
-    .metric { background: var(--navy-card); padding: 1.3rem 1.1rem; text-align: center; }
-    .metric .m-value { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); line-height: 1.1; }
-    .metric .m-value.pos { color: var(--pos); }
-    .metric .m-value.neg { color: var(--neg); }
-    .metric .m-label { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-subtle); margin-top: 0.45rem; }
+    /* RESULT CARDS */
+    .result-card { background: var(--navy-card); border: 1px solid var(--navy-border); padding: 1.9rem 1.9rem 1.6rem; margin-bottom: 1.5rem; }
+    .rc-head { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.3rem; display: flex; align-items: center; gap: 0.6rem; }
+    .rc-head::before { content: ''; width: 1.3rem; height: 1px; background: currentColor; }
+    .hero-num { font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 700; color: var(--text-primary); line-height: 1; }
+    .hero-num.gold { color: var(--gold); }
+    .hero-num.pos { color: var(--pos); }
+    .hero-num.neg { color: var(--neg); }
+    .hero-lbl { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-subtle); margin-top: 0.65rem; }
+    .rc-hero { margin-bottom: 1.4rem; }
+    .rc-hero-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+    .rc-hero-2 .hero-num { font-size: 1.95rem; }
 
-    /* DEFINITION ROWS (financing) */
-    .def-list { background: var(--navy-card); border: 1px solid var(--navy-border); margin-bottom: 1.5rem; }
-    .def-row { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 1.3rem; border-bottom: 1px solid var(--navy-border); gap: 1rem; }
-    .def-row:last-child { border-bottom: none; }
-    .def-row.emphasis { background: rgba(196,147,74,0.06); }
-    .def-label { font-size: 0.82rem; color: var(--text-muted); letter-spacing: 0.02em; }
-    .def-label .sub { display: block; font-size: 0.68rem; color: var(--text-subtle); margin-top: 0.1rem; }
-    .def-value { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; }
-    .def-value.gold { color: var(--gold); }
+    .rc-rows { display: flex; flex-direction: column; border-top: 1px solid var(--navy-border); }
+    .rc-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--navy-border); }
+    .rc-row:last-child { border-bottom: none; }
+    .rc-row .k { font-size: 0.82rem; color: var(--text-muted); }
+    .rc-row .k em { font-style: normal; display: block; font-size: 0.66rem; color: var(--text-subtle); margin-top: 0.15rem; }
+    .rc-row .v { font-family: 'Cinzel', serif; font-weight: 600; font-size: 0.98rem; color: var(--text-primary); white-space: nowrap; }
+    .rc-row .v.gold { color: var(--gold); }
 
-    /* TABLES */
-    .table-wrap { overflow-x: auto; border: 1px solid var(--navy-border); margin-bottom: 1.5rem; -webkit-overflow-scrolling: touch; }
-    .calc-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; min-width: 480px; }
-    .calc-table th, .calc-table td { padding: 0.7rem 0.95rem; text-align: right; border-bottom: 1px solid var(--navy-border); white-space: nowrap; }
+    .ratios { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--navy-border); }
+    .rc-ratio { text-align: center; padding: 1.05rem 0.4rem; border-right: 1px solid var(--navy-border); }
+    .rc-ratio:last-child { border-right: none; }
+    .rc-ratio b { display: block; font-family: 'Cinzel', serif; font-size: 1.35rem; font-weight: 700; color: var(--gold); }
+    .rc-ratio b.pos { color: var(--pos); }
+    .rc-ratio b.neg { color: var(--neg); }
+    .rc-ratio span { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-subtle); margin-top: 0.4rem; display: block; }
+
+    /* OUTLOOK / TABLES */
+    .block-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin: 0 0 1.1rem; display: flex; align-items: center; gap: 0.6rem; }
+    .block-label::before { content: ''; width: 1.3rem; height: 1px; background: currentColor; }
+    .block { margin-bottom: 2.2rem; }
+    .block-intro { font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; margin: -0.4rem 0 1.1rem; max-width: 600px; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--navy-border); -webkit-overflow-scrolling: touch; }
+    .calc-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; min-width: 440px; }
+    .calc-table th, .calc-table td { padding: 0.75rem 1rem; text-align: right; border-bottom: 1px solid var(--navy-border); white-space: nowrap; }
     .calc-table th:first-child, .calc-table td:first-child { text-align: left; }
     .calc-table tbody tr:last-child td { border-bottom: none; }
     .calc-table thead th { background: var(--navy-deep); color: var(--text-subtle); font-family: 'Cinzel', serif; font-weight: 600; font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase; }
@@ -178,18 +189,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .calc-table .pos { color: var(--pos); }
     .calc-table .neg { color: var(--neg); }
 
-    .summary-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); margin-bottom: 1.5rem; }
-    .summary-strip .metric .m-value { font-size: 1.7rem; }
-
-    .note { font-size: 0.74rem; color: var(--text-subtle); line-height: 1.6; margin-bottom: 1.5rem; letter-spacing: 0.02em; }
-    .note strong { color: var(--text-muted); font-weight: 500; }
-
-    .results-block { margin-bottom: 2.5rem; }
-    .results-block h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; }
+    .summary-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); border-top: none; }
+    .summary-strip .cell { background: var(--navy-card); padding: 1.4rem 1rem; text-align: center; }
+    .summary-strip .cell b { display: block; font-family: 'Cinzel', serif; font-size: 1.7rem; font-weight: 700; color: var(--gold); }
+    .summary-strip .cell span { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-subtle); margin-top: 0.4rem; display: block; }
 
     /* CTA */
     .cta-section { background: var(--navy-deep); border-top: 1px solid var(--navy-border); border-bottom: 1px solid var(--navy-border); padding: 4rem 2rem; }
-    .cta-inner { max-width: 1100px; margin: 0 auto; }
+    .cta-inner { max-width: 1080px; margin: 0 auto; }
     .cta-card { background: var(--navy-card); border: 1px solid var(--gold-muted); padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
     .cta-card .cta-text { flex: 1; min-width: 280px; }
     .cta-card h2 { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 600; margin-bottom: 0.8rem; line-height: 1.2; }
@@ -198,7 +205,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .cta-actions { display: flex; flex-direction: column; gap: 0.8rem; align-items: stretch; }
     .cta-actions .btn-primary { text-align: center; }
 
-    .disclaimer { max-width: 1100px; margin: 2.5rem auto 0; background: var(--navy-deep); border: 1px solid var(--navy-border); padding: 1.5rem 2rem; font-size: 0.78rem; color: var(--text-subtle); line-height: 1.8; letter-spacing: 0.02em; }
+    .disclaimer { max-width: 1080px; margin: 2.5rem auto 0; background: var(--navy-deep); border: 1px solid var(--navy-border); padding: 1.5rem 2rem; font-size: 0.76rem; color: var(--text-subtle); line-height: 1.8; letter-spacing: 0.02em; }
 
     /* REVEAL */
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
@@ -219,17 +226,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
     }
-    @media (max-width: 900px) {
-      .calc-grid { grid-template-columns: 1fr; }
+    @media (max-width: 880px) {
+      .calc-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .inputs-col { position: static; }
-      .metric-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
-      .metric-grid.cols-3 { grid-template-columns: 1fr; }
     }
-    @media (max-width: 560px) {
+    @media (max-width: 520px) {
       .nav-inner { padding: 0 1.5rem; }
       .calc-body { padding: 2rem 1.2rem 4rem; }
       .field-2col { grid-template-columns: 1fr; }
+      .ratios { grid-template-columns: 1fr 1fr; }
+      .rc-ratio:nth-child(2) { border-right: none; }
+      .rc-ratio:nth-child(1), .rc-ratio:nth-child(2) { border-bottom: 1px solid var(--navy-border); }
       .cta-card { padding: 1.8rem; }
+      .hero-num { font-size: 2.1rem; }
     }
     @media (min-width: 1440px) { html { font-size: 17px; } }
     @media (min-width: 1920px) { html { font-size: 18.5px; } }
@@ -252,7 +261,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CMHC MLI Select Pro-Forma Calculator","url":"https://multi-family-deals.ca/calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"CAD"},"description":"Interactive pro-forma calculator for CMHC MLI Select multi-family deals. Models deposit, mortgage payment with CMHC premium, NOI, DSCR, cash-on-cash, cap rate, rate and rent sensitivity, and a 5-year projection.","publisher":{"@type":"Organization","name":"Multi Family Deals","url":"https://multi-family-deals.ca"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CMHC MLI Select Pro-Forma Calculator","url":"https://multi-family-deals.ca/calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"CAD"},"description":"Interactive pro-forma calculator for CMHC MLI Select multi-family deals. Models deposit, mortgage payment with CMHC premium, NOI, cash flow, DSCR, cash-on-cash, cap rate, and a 5-year projection.","publisher":{"@type":"Organization","name":"Multi Family Deals","url":"https://multi-family-deals.ca"}}</script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -294,8 +303,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="page-hero">
     <div class="page-hero-inner">
       <div class="page-eyebrow">Interactive Tool</div>
-      <h1 class="page-title">CMHC MLI Select<br /><span>Pro-Forma Calculator</span></h1>
-      <p class="page-subtitle">Model the numbers on a purpose-built multi-family deal the same way we do. Enter a purchase price, your unit mix, and an interest rate — the deposit math, mortgage payment with CMHC premium, NOI, DSCR, cash flow, sensitivity tables, and a 5-year projection update instantly.</p>
+      <h1 class="page-title">Pro-Forma <span>Calculator</span></h1>
+      <p class="page-subtitle">Enter a purchase price, your unit mix, and an interest rate. The calculator shows what you'll need to bring, your mortgage with the CMHC premium, your cash flow and returns, and a 5-year outlook — instantly.</p>
     </div>
   </section>
 
@@ -306,7 +315,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="inputs-col reveal">
 
         <div class="panel">
-          <h3>Deal Inputs</h3>
+          <h3>Your Deal</h3>
           <div class="field">
             <label for="price">Purchase Price</label>
             <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="price" value="1800000" min="0" step="1000" inputmode="numeric" /></div>
@@ -319,30 +328,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <label for="province">Province</label>
             <select id="province">
               <option value="AB" data-tax="0.66" selected>Alberta</option>
-              <option value="BC" data-tax="0.45">British Columbia</option>
-              <option value="ON" data-tax="0.90">Ontario</option>
-              <option value="SK" data-tax="1.00">Saskatchewan</option>
-              <option value="MB" data-tax="1.10">Manitoba</option>
-              <option value="OTHER" data-tax="0.75">Other</option>
+              <option value="ON" data-tax="1.00">Ontario</option>
             </select>
-            <span class="hint">Sets an estimated property-tax rate (editable below). Alberta has no PST/HST or land transfer tax.</span>
           </div>
         </div>
 
         <div class="panel">
-          <h3>Unit Mix &amp; Rents</h3>
+          <h3>Units &amp; Rents</h3>
           <div class="unit-head">
             <span>Unit Type</span><span>Units</span><span>Rent / mo</span><span></span>
           </div>
           <div id="unitRows">
             <div class="unit-row">
-              <input type="text" class="u-type" value="4 Bed Upper" />
+              <input type="text" class="u-type" value="Upper Unit" />
               <input type="number" class="u-count" value="3" min="0" step="1" inputmode="numeric" />
               <input type="number" class="u-rent" value="2250" min="0" step="25" inputmode="numeric" />
               <button type="button" class="u-remove" aria-label="Remove unit type">&times;</button>
             </div>
             <div class="unit-row">
-              <input type="text" class="u-type" value="2 Bed Lower" />
+              <input type="text" class="u-type" value="Lower Unit" />
               <input type="number" class="u-count" value="3" min="0" step="1" inputmode="numeric" />
               <input type="number" class="u-rent" value="1350" min="0" step="25" inputmode="numeric" />
               <button type="button" class="u-remove" aria-label="Remove unit type">&times;</button>
@@ -352,12 +356,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <details class="assumptions">
-          <summary>Assumptions &amp; Expenses <span class="chev">&#9662;</span></summary>
+          <summary>Adjust Assumptions <span class="chev">&#9662;</span></summary>
           <div class="assumptions-inner">
             <div class="sub-label">Financing</div>
             <div class="field-2col">
               <div class="field">
-                <label for="depPct">Deposit</label>
+                <label for="depPct">Down Payment</label>
                 <div class="input-wrap has-post"><input type="number" id="depPct" value="5" min="0" step="0.5" /><span class="affix post">%</span></div>
               </div>
               <div class="field">
@@ -366,66 +370,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
               <div class="field">
                 <label for="cmhcPct">CMHC Premium</label>
-                <div class="input-wrap has-post"><input type="number" id="cmhcPct" value="6.15" min="0" step="0.05" /><span class="affix post">%</span></div>
+                <div class="input-wrap has-post"><input type="number" id="cmhcPct" value="5.8" min="0" step="0.05" /><span class="affix post">%</span></div>
               </div>
             </div>
 
-            <div class="sub-label">Operating Expenses</div>
+            <div class="sub-label" style="margin-top:1.2rem;">Operating Expenses</div>
+            <div class="field">
+              <label for="propTax">Property Tax / year</label>
+              <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="propTax" value="11880" min="0" step="100" /></div>
+              <span class="hint">Estimated from price &amp; province — type the actual municipal figure if you have it.</span>
+            </div>
             <div class="field-2col">
               <div class="field">
-                <label for="propTax">Property Tax / yr</label>
-                <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="propTax" value="11903" min="0" step="100" /></div>
+                <label for="insPerUnit">Insurance / unit / mo</label>
+                <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="insPerUnit" value="50" min="0" step="5" /></div>
               </div>
               <div class="field">
-                <label for="utilities">Utilities / yr</label>
-                <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="utilities" value="0" min="0" step="100" /></div>
+                <label for="reservePerUnit">Reserve / unit / mo</label>
+                <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="reservePerUnit" value="40" min="0" step="5" /></div>
               </div>
               <div class="field">
-                <label for="insPerUnit">Insurance / unit</label>
-                <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="insPerUnit" value="720" min="0" step="10" /></div>
-              </div>
-              <div class="field">
-                <label for="reservePerUnit">Repl. Reserve / unit</label>
-                <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="reservePerUnit" value="480" min="0" step="10" /></div>
-              </div>
-              <div class="field">
-                <label for="mgmtPct">Management &amp; Ops</label>
+                <label for="mgmtPct">Management</label>
                 <div class="input-wrap has-post"><input type="number" id="mgmtPct" value="5" min="0" step="0.5" /><span class="affix post">%</span></div>
-              </div>
-              <div class="field">
-                <label for="otherPct">Other Costs</label>
-                <div class="input-wrap has-post"><input type="number" id="otherPct" value="2" min="0" step="0.5" /><span class="affix post">%</span></div>
               </div>
               <div class="field">
                 <label for="rmPct">Repairs &amp; Maint.</label>
                 <div class="input-wrap has-post"><input type="number" id="rmPct" value="1.5" min="0" step="0.25" /><span class="affix post">%</span></div>
               </div>
               <div class="field">
-                <label for="vacPct">Vacancy &amp; Bad Debt</label>
+                <label for="vacPct">Vacancy</label>
                 <div class="input-wrap has-post"><input type="number" id="vacPct" value="3" min="0" step="0.5" /><span class="affix post">%</span></div>
               </div>
-            </div>
-            <span class="hint" style="display:block;margin-top:0.5rem;">Percentage expenses are calculated on gross rental income (excluding other income), matching the reference pro-forma.</span>
-
-            <div class="sub-label">Other Income</div>
-            <div class="field-2col">
               <div class="field">
-                <label for="parkCount">Parking Stalls</label>
-                <input type="number" id="parkCount" value="3" min="0" step="1" />
-              </div>
-              <div class="field">
-                <label for="parkRent">Parking / mo</label>
-                <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="parkRent" value="50" min="0" step="5" /></div>
-              </div>
-              <div class="field">
-                <label for="petCount">Pet Units</label>
-                <input type="number" id="petCount" value="0" min="0" step="1" />
-              </div>
-              <div class="field">
-                <label for="petRent">Pet Fee / mo</label>
-                <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="petRent" value="50" min="0" step="5" /></div>
+                <label for="otherPct">Other Costs</label>
+                <div class="input-wrap has-post"><input type="number" id="otherPct" value="2" min="0" step="0.5" /><span class="affix post">%</span></div>
               </div>
             </div>
+            <span class="hint" style="display:block;margin-top:0.6rem;">Management, maintenance, vacancy and other costs are calculated as a percentage of gross rent.</span>
           </div>
         </details>
       </div>
@@ -433,129 +414,85 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- ============ RESULTS ============ -->
       <div class="results-col">
 
-        <!-- Eligibility & Deposit -->
-        <div class="results-block reveal">
-          <div class="section-label">Eligibility &amp; Deposit</div>
-          <div class="metric-grid cols-3">
-            <div class="metric">
-              <div class="m-value" id="o-deposit">$0</div>
-              <div class="m-label">Down Payment (<span id="o-depPctLbl">5</span>%)</div>
-            </div>
-            <div class="metric">
-              <div class="m-value" id="o-liquidity">$0</div>
-              <div class="m-label">Min. Liquidity (2× Deposit)</div>
-            </div>
-            <div class="metric">
-              <div class="m-value" id="o-networth">$0</div>
-              <div class="m-label">Min. Net Worth (25%)</div>
-            </div>
+        <!-- Capital -->
+        <div class="result-card reveal">
+          <div class="rc-head">What You'll Need</div>
+          <div class="rc-hero">
+            <div class="hero-num" id="o-deposit">$0</div>
+            <div class="hero-lbl">Down Payment &middot; <span id="o-depPctLbl">5</span>% Down</div>
+          </div>
+          <div class="rc-rows">
+            <div class="rc-row"><span class="k">Minimum Liquidity <em>2&times; your deposit</em></span><span class="v" id="o-liquidity">$0</span></div>
+            <div class="rc-row"><span class="k">Minimum Net Worth <em>25% of purchase price</em></span><span class="v" id="o-networth">$0</span></div>
           </div>
         </div>
 
-        <!-- Financing -->
-        <div class="results-block reveal">
-          <div class="section-label">Financing &amp; Mortgage</div>
-          <div class="def-list">
-            <div class="def-row">
-              <div class="def-label">Loan Amount <span class="sub">95% of purchase price</span></div>
-              <div class="def-value" id="o-loan">$0</div>
-            </div>
-            <div class="def-row">
-              <div class="def-label">CMHC Premium <span class="sub" id="o-cmhcLbl">6.15% of loan amount</span></div>
-              <div class="def-value" id="o-premium">$0</div>
-            </div>
-            <div class="def-row">
-              <div class="def-label">Total Loan Size <span class="sub">loan + CMHC premium</span></div>
-              <div class="def-value gold" id="o-totalloan">$0</div>
-            </div>
-            <div class="def-row emphasis">
-              <div class="def-label">Monthly Mortgage Payment <span class="sub" id="o-amortLbl">incl. CMHC premium · 50-yr amortization</span></div>
-              <div class="def-value gold" id="o-monthly">$0</div>
-            </div>
-            <div class="def-row">
-              <div class="def-label">Annual Mortgage Payment <span class="sub">total annual debt service</span></div>
-              <div class="def-value" id="o-annual">$0</div>
-            </div>
+        <!-- Mortgage -->
+        <div class="result-card reveal">
+          <div class="rc-head">Your Mortgage</div>
+          <div class="rc-hero">
+            <div class="hero-num gold" id="o-monthly">$0</div>
+            <div class="hero-lbl" id="o-monthlyLbl">Per Month &middot; incl. CMHC premium &middot; 50-yr amortization</div>
+          </div>
+          <div class="rc-rows">
+            <div class="rc-row"><span class="k">Loan Amount <em>95% of purchase price</em></span><span class="v" id="o-loan">$0</span></div>
+            <div class="rc-row"><span class="k">CMHC Premium <em id="o-cmhcLbl">5.8% of loan, added to the loan</em></span><span class="v" id="o-premium">$0</span></div>
+            <div class="rc-row"><span class="k">Total Loan Size</span><span class="v" id="o-totalloan">$0</span></div>
+            <div class="rc-row"><span class="k">Annual Mortgage Payment</span><span class="v" id="o-annual">$0</span></div>
           </div>
         </div>
 
         <!-- Returns -->
-        <div class="results-block reveal">
-          <div class="section-label">Returns &amp; Performance</div>
-          <div class="metric-grid cols-5">
-            <div class="metric">
-              <div class="m-value" id="o-noi">$0</div>
-              <div class="m-label">Net Operating Income</div>
+        <div class="result-card reveal">
+          <div class="rc-head">Your Returns</div>
+          <div class="rc-hero-2">
+            <div>
+              <div class="hero-num" id="o-cashflowM">$0</div>
+              <div class="hero-lbl">Monthly Cash Flow</div>
             </div>
-            <div class="metric">
-              <div class="m-value" id="o-cashflow">$0</div>
-              <div class="m-label">Annual Cash Flow</div>
+            <div>
+              <div class="hero-num" id="o-cashflow">$0</div>
+              <div class="hero-lbl">Annual Cash Flow</div>
             </div>
-            <div class="metric">
-              <div class="m-value" id="o-coc">0%</div>
-              <div class="m-label">Cash-on-Cash</div>
-            </div>
-            <div class="metric">
-              <div class="m-value" id="o-dscr">0.00</div>
-              <div class="m-label">DSCR</div>
-            </div>
-            <div class="metric">
-              <div class="m-value" id="o-cap">0%</div>
-              <div class="m-label">Cap Rate</div>
-            </div>
+          </div>
+          <div class="ratios">
+            <div class="rc-ratio"><b id="o-cap">0%</b><span>Cap Rate</span></div>
+            <div class="rc-ratio"><b id="o-coc">0%</b><span>Cash-on-Cash</span></div>
+            <div class="rc-ratio"><b id="o-dscr">0.00</b><span>DSCR</span></div>
+            <div class="rc-ratio"><b id="o-noi">$0</b><span>Net Operating Income</span></div>
           </div>
         </div>
 
-        <!-- Rate Sensitivity -->
-        <div class="results-block reveal">
-          <div class="section-label">Rate Sensitivity</div>
+        <!-- 5-Year Outlook -->
+        <div class="block reveal">
+          <div class="block-label">5-Year Outlook</div>
+          <p class="block-intro">Assuming 5% appreciation in Year 1, then 3% a year, with cash flow growing 5% annually. Equity gained each year combines appreciation, cash flow, and the principal you pay down on the mortgage.</p>
           <div class="table-wrap">
             <table class="calc-table">
               <thead>
-                <tr><th>Scenario</th><th>Rate</th><th>Monthly</th><th>Annual</th><th>Cash Flow</th><th>DSCR</th></tr>
-              </thead>
-              <tbody id="rateTable"></tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Rent Sensitivity -->
-        <div class="results-block reveal">
-          <div class="section-label">Rent Sensitivity</div>
-          <div class="table-wrap">
-            <table class="calc-table">
-              <thead>
-                <tr><th>Scenario</th><th>Gross Rent</th><th>NOI</th><th>Annual Debt</th><th>Cash Flow</th><th>DSCR</th></tr>
-              </thead>
-              <tbody id="rentTable"></tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- 5-Year Projection -->
-        <div class="results-block reveal">
-          <div class="section-label">5-Year Projection</div>
-          <div class="table-wrap">
-            <table class="calc-table">
-              <thead>
-                <tr><th>Year</th><th>Building Value</th><th>Appreciation</th><th>Cash Flow</th><th>Paydown</th><th>Equity Gained</th><th>Return on Down Pmt</th></tr>
+                <tr><th>Year</th><th>Building Value</th><th>Cash Flow</th><th>Equity Gained</th><th>Return on Down Pmt</th></tr>
               </thead>
               <tbody id="projTable"></tbody>
             </table>
           </div>
           <div class="summary-strip">
-            <div class="metric">
-              <div class="m-value" id="o-totalequity">$0</div>
-              <div class="m-label">Total Equity Gained (5 yr)</div>
-            </div>
-            <div class="metric">
-              <div class="m-value" id="o-roi">0%</div>
-              <div class="m-label">Annualized 5-Year ROI</div>
-            </div>
+            <div class="cell"><b id="o-totalequity">$0</b><span>Total Equity Gained (5 yr)</span></div>
+            <div class="cell"><b id="o-roi">0%</b><span>Annualized 5-Year ROI</span></div>
           </div>
-          <p class="note">
-            Appreciation: 5% in Year 1, then 3% annually. Cash flow grows 5% year-over-year. Mortgage paydown is the principal reduction on the base loan. Equity gained each year = appreciation + cash flow + paydown.
-          </p>
+        </div>
+
+        <!-- Rent Stress Test -->
+        <div class="block reveal">
+          <div class="block-label">If Rents Come In Lower</div>
+          <p class="block-intro">A quick stress test — how cash flow and your debt-coverage ratio (DSCR) hold up if achieved rents land below projection.</p>
+          <div class="table-wrap">
+            <table class="calc-table">
+              <thead>
+                <tr><th>Scenario</th><th>Gross Rent</th><th>NOI</th><th>Cash Flow</th><th>DSCR</th></tr>
+              </thead>
+              <tbody id="rentTable"></tbody>
+            </table>
+          </div>
         </div>
 
       </div>
@@ -568,7 +505,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="cta-card">
         <div class="cta-text">
           <h2>Want a full pro-forma on a <span>real asset?</span></h2>
-          <p>This calculator uses the same model we run on every deal. On a free 30-minute discovery call, we'll match your available capital to a specific property in our active inventory and build you a complete, property-specific pro-forma — rents, expenses, financing, and a 5-year projection grounded in real numbers. No cost. No obligation.</p>
+          <p>This calculator uses the same model we run on every deal. On a free 30-minute discovery call, we'll match your available capital to a specific property in our active inventory and build you a complete, property-specific pro-forma grounded in real numbers. No cost. No obligation.</p>
         </div>
         <div class="cta-actions">
           <a href="contact.html" data-conversion="book_call" class="btn-primary">Book a Discovery Call</a>
@@ -625,11 +562,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const num = id => { const v = parseFloat($(id).value); return isNaN(v) ? 0 : v; };
 
     const fmtMoney = n => (n < 0 ? '-$' : '$') + Math.abs(Math.round(n)).toLocaleString('en-US');
-    const fmtMoney2 = n => (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     const fmtPct = n => n.toFixed(2) + '%';
     const fmtDscr = n => n.toFixed(2);
 
-    // Monthly mortgage payment (monthly compounding, matches reference pro-forma).
+    // Monthly mortgage payment (monthly compounding).
     function pmt(principal, annualRatePct, years) {
       const i = (annualRatePct / 100) / 12;
       const n = years * 12;
@@ -637,7 +573,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (i === 0) return principal / n;
       return principal * i / (1 - Math.pow(1 + i, -n));
     }
-    // Outstanding balance after a number of months.
     function balanceAfter(principal, annualRatePct, years, months) {
       const i = (annualRatePct / 100) / 12;
       const pay = pmt(principal, annualRatePct, years);
@@ -659,10 +594,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       return { units, annualRent };
     }
 
-    function otherIncome() {
-      const park = num('parkCount') * num('parkRent') * 1.0 * 12;   // parking usage 100%
-      const pet = num('petCount') * num('petRent') * 0.20 * 12;     // pet usage 20%
-      return park + pet;
+    // Property tax auto-estimate (until the user types their own figure).
+    let taxManual = false;
+    $('propTax').addEventListener('input', () => { taxManual = true; });
+    function estimateTax() {
+      if (taxManual) return;
+      const rate = parseFloat($('province').selectedOptions[0].dataset.tax) || 0.66;
+      $('propTax').value = Math.round(num('price') * rate / 100);
     }
 
     function calc() {
@@ -673,22 +611,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const cmhcPct = num('cmhcPct');
 
       const { units, annualRent } = readUnits();
-      const other = otherIncome();
 
       // Operating expenses
       const tax = num('propTax');
-      const ins = num('insPerUnit') * units;
-      const util = num('utilities');
-      const rm = annualRent * num('rmPct') / 100;
+      const ins = num('insPerUnit') * 12 * units;
+      const reserve = num('reservePerUnit') * 12 * units;
       const mgmt = annualRent * num('mgmtPct') / 100;
-      const otherCost = annualRent * num('otherPct') / 100;
-      const reserve = num('reservePerUnit') * units;
+      const rm = annualRent * num('rmPct') / 100;
       const vacancy = annualRent * num('vacPct') / 100;
-      const totalExp = tax + ins + util + rm + mgmt + otherCost + reserve + vacancy;
+      const otherCost = annualRent * num('otherPct') / 100;
+      const totalExp = tax + ins + reserve + mgmt + rm + vacancy + otherCost;
 
-      const noi = annualRent + other - totalExp;
+      const noi = annualRent - totalExp;
 
-      // Deposit / eligibility
+      // Capital / eligibility
       const deposit = price * depPct / 100;
       const minLiquidity = deposit * 2;
       const minNetWorth = price * 0.25;
@@ -705,86 +641,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const dscr = annual ? (noi / annual) : 0;
       const cap = price ? (noi / price * 100) : 0;
 
-      /* ---- render headline ---- */
+      /* ---- Capital ---- */
       $('o-depPctLbl').textContent = depPct;
       $('o-deposit').textContent = fmtMoney(deposit);
       $('o-liquidity').textContent = fmtMoney(minLiquidity);
       $('o-networth').textContent = fmtMoney(minNetWorth);
 
+      /* ---- Mortgage ---- */
+      $('o-monthly').textContent = fmtMoney(monthly);
+      $('o-monthlyLbl').textContent = 'Per Month · incl. CMHC premium · ' + amort + '-yr amortization';
       $('o-loan').textContent = fmtMoney(loan);
+      $('o-cmhcLbl').textContent = cmhcPct + '% of loan, added to the loan';
       $('o-premium').textContent = fmtMoney(premium);
-      $('o-cmhcLbl').textContent = cmhcPct + '% of loan amount';
       $('o-totalloan').textContent = fmtMoney(totalLoan);
-      $('o-monthly').textContent = fmtMoney2(monthly);
-      $('o-amortLbl').textContent = 'incl. CMHC premium · ' + amort + '-yr amortization';
-      $('o-annual').textContent = fmtMoney2(annual);
+      $('o-annual').textContent = fmtMoney(annual);
 
-      $('o-noi').textContent = fmtMoney(noi);
-      const cfEl = $('o-cashflow');
-      cfEl.textContent = fmtMoney(cashFlow);
-      cfEl.className = 'm-value ' + (cashFlow >= 0 ? 'pos' : 'neg');
-      const cocEl = $('o-coc');
-      cocEl.textContent = fmtPct(coc);
-      cocEl.className = 'm-value ' + (coc >= 0 ? 'pos' : 'neg');
-      const dscrEl = $('o-dscr');
-      dscrEl.textContent = fmtDscr(dscr);
-      dscrEl.className = 'm-value ' + (dscr >= 1.10 ? 'pos' : (dscr >= 1 ? '' : 'neg'));
+      /* ---- Returns ---- */
+      const cfClass = cashFlow >= 0 ? 'pos' : 'neg';
+      const cfM = $('o-cashflowM'); cfM.textContent = fmtMoney(cashFlow / 12); cfM.className = 'hero-num ' + cfClass;
+      const cfA = $('o-cashflow'); cfA.textContent = fmtMoney(cashFlow); cfA.className = 'hero-num ' + cfClass;
       $('o-cap').textContent = fmtPct(cap);
+      const cocEl = $('o-coc'); cocEl.textContent = fmtPct(coc); cocEl.className = (coc >= 0 ? 'pos' : 'neg');
+      const dscrEl = $('o-dscr'); dscrEl.textContent = fmtDscr(dscr); dscrEl.className = (dscr >= 1.10 ? 'pos' : (dscr >= 1 ? '' : 'neg'));
+      $('o-noi').textContent = fmtMoney(noi);
 
-      /* ---- rate sensitivity ---- */
-      const rateRows = [
-        { label: 'Base Rate', d: 0, base: true },
-        { label: '-0.50%', d: -0.50 },
-        { label: '-0.25%', d: -0.25 },
-        { label: '+0.25%', d: 0.25 },
-        { label: '+0.50%', d: 0.50 }
-      ];
-      $('rateTable').innerHTML = rateRows.map(r => {
-        const rr = rate + r.d;
-        const m = pmt(totalLoan, rr, amort);
-        const a = m * 12;
-        const cf = noi - a;
-        const ds = a ? noi / a : 0;
-        return `<tr class="${r.base ? 'base' : ''}">
-          <td class="row-tag">${r.label}</td>
-          <td>${rr.toFixed(2)}%</td>
-          <td>${fmtMoney2(m)}</td>
-          <td>${fmtMoney2(a)}</td>
-          <td class="${cf >= 0 ? 'pos' : 'neg'}">${fmtMoney2(cf)}</td>
-          <td>${fmtDscr(ds)}</td>
-        </tr>`;
-      }).join('');
-
-      /* ---- rent sensitivity ---- */
-      const rentRows = [
-        { label: 'Base Rent', d: 0, base: true },
-        { label: '-5%', d: -0.05 },
-        { label: '-10%', d: -0.10 },
-        { label: '-15%', d: -0.15 }
-      ];
-      $('rentTable').innerHTML = rentRows.map(r => {
-        const grossRent = annualRent * (1 + r.d);
-        const noiS = noi + annualRent * r.d;     // expenses held constant, per reference pro-forma
-        const cf = noiS - annual;
-        const ds = annual ? noiS / annual : 0;
-        return `<tr class="${r.base ? 'base' : ''}">
-          <td class="row-tag">${r.label}</td>
-          <td>${fmtMoney(grossRent)}</td>
-          <td>${fmtMoney2(noiS)}</td>
-          <td>${fmtMoney2(annual)}</td>
-          <td class="${cf >= 0 ? 'pos' : 'neg'}">${fmtMoney2(cf)}</td>
-          <td>${fmtDscr(ds)}</td>
-        </tr>`;
-      }).join('');
-
-      /* ---- 5-year projection ---- */
+      /* ---- 5-year outlook ---- */
       const apprRates = [0.05, 0.03, 0.03, 0.03, 0.03];
       let buildingValue = price;
       let totalEquity = 0;
       let rows = '';
       for (let y = 1; y <= 5; y++) {
-        const apprRate = apprRates[y - 1];
-        const apprDollar = buildingValue * apprRate;
+        const apprDollar = buildingValue * apprRates[y - 1];
         buildingValue += apprDollar;
         const yearCashFlow = cashFlow * Math.pow(1.05, y - 1);
         const paydown = principalPaidInYear(loan, rate, amort, y);
@@ -794,9 +681,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         rows += `<tr>
           <td class="row-tag">Year ${y}</td>
           <td>${fmtMoney(buildingValue)}</td>
-          <td>${fmtMoney(apprDollar)} <span style="color:var(--text-subtle)">(${(apprRate*100).toFixed(0)}%)</span></td>
           <td class="${yearCashFlow >= 0 ? 'pos' : 'neg'}">${fmtMoney(yearCashFlow)}</td>
-          <td>${fmtMoney(paydown)}</td>
           <td>${fmtMoney(equity)}</td>
           <td>${fmtPct(ret)}</td>
         </tr>`;
@@ -804,13 +689,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       $('projTable').innerHTML = rows;
       $('o-totalequity').textContent = fmtMoney(totalEquity);
       $('o-roi').textContent = deposit ? fmtPct(totalEquity / deposit / 5 * 100) : '0%';
+
+      /* ---- rent stress test ---- */
+      const rentRows = [
+        { label: 'As Projected', d: 0, base: true },
+        { label: '-5%', d: -0.05 },
+        { label: '-10%', d: -0.10 },
+        { label: '-15%', d: -0.15 }
+      ];
+      $('rentTable').innerHTML = rentRows.map(r => {
+        const grossRent = annualRent * (1 + r.d);
+        const noiS = noi + annualRent * r.d;     // expenses held constant
+        const cf = noiS - annual;
+        const ds = annual ? noiS / annual : 0;
+        return `<tr class="${r.base ? 'base' : ''}">
+          <td class="row-tag">${r.label}</td>
+          <td>${fmtMoney(grossRent)}</td>
+          <td>${fmtMoney(noiS)}</td>
+          <td class="${cf >= 0 ? 'pos' : 'neg'}">${fmtMoney(cf)}</td>
+          <td>${fmtDscr(ds)}</td>
+        </tr>`;
+      }).join('');
     }
 
     /* ---------- Unit row add/remove ---------- */
     function attachRemove(btn) {
       btn.addEventListener('click', () => {
-        const rows = document.querySelectorAll('#unitRows .unit-row');
-        if (rows.length > 1) { btn.closest('.unit-row').remove(); calc(); }
+        if (document.querySelectorAll('#unitRows .unit-row').length > 1) { btn.closest('.unit-row').remove(); calc(); }
       });
     }
     document.querySelectorAll('.u-remove').forEach(attachRemove);
@@ -826,16 +731,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       calc();
     });
 
-    /* ---------- Province sets estimated property tax ---------- */
-    $('province').addEventListener('change', (e) => {
-      const taxRate = parseFloat(e.target.selectedOptions[0].dataset.tax) || 0.66;
-      $('propTax').value = Math.round(num('price') * taxRate / 100);
-      calc();
-    });
+    /* ---------- Province & price drive the tax estimate ---------- */
+    $('province').addEventListener('change', () => { taxManual = false; estimateTax(); calc(); });
+    $('price').addEventListener('input', estimateTax);
 
     /* ---------- Recalculate on any input ---------- */
     document.querySelector('.calc-body').addEventListener('input', calc);
 
+    estimateTax();
     calc();
   </script>
 
