@@ -161,6 +161,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .brk-row .bv.good { color: var(--pos); }
     .brk-row .bv.warn { color: var(--amber); }
     .brk-row .bv.bad { color: var(--neg); }
+    .dscr-dot { display: inline-block; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: currentColor; margin-right: 0.45rem; vertical-align: middle; }
     .dscr-tag { font-style: normal; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; margin-left: 0.35rem; opacity: 0.9; }
     .block-caption { font-size: 0.7rem; color: var(--text-subtle); letter-spacing: 0.02em; margin: -0.6rem 0 1.1rem; }
     .cf-box { background: rgba(196,147,74,0.08); border: 1px solid var(--gold-muted); padding: 1rem 1.2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1.1rem; }
@@ -737,12 +738,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       $('o-cap').textContent = fmtPct(cap);
       $('o-coc').textContent = fmtPct(coc);
       const dscrEl = $('o-dscr');
-      let dCls, dTag;
-      if (dscr >= 1.20) { dCls = 'good'; dTag = 'Strong'; }
-      else if (dscr >= 1.10) { dCls = 'warn'; dTag = 'Passes min.'; }
-      else { dCls = 'bad'; dTag = "Won't qualify"; }
+      let dCls;
+      if (dscr >= 1.15) dCls = 'good';
+      else if (dscr >= 1.10) dCls = 'warn';
+      else dCls = 'bad';
       dscrEl.className = 'bv ' + dCls;
-      dscrEl.innerHTML = fmtDscr(dscr) + ' <em class="dscr-tag">' + dTag + '</em>';
+      dscrEl.innerHTML = '<span class="dscr-dot"></span>' + fmtDscr(dscr) + (dCls === 'bad' ? ' <em class="dscr-tag">Won\'t qualify</em>' : '');
 
       const cfClass = cashFlow >= 0 ? 'pos' : 'neg';
       const cfM = $('o-cashflowM'); cfM.textContent = fmtMoney(cashFlow / 12); cfM.className = 'cf-v ' + cfClass;
