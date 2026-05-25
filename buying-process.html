@@ -126,6 +126,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .timeline-phase-bar { height: 1px; background: var(--navy-border); margin-top: 0.75rem; }
     @media (max-width: 600px) { .timeline-phase { grid-template-columns: 3.5rem 1fr; gap: 1rem; } }
 
+    /* REPEAT INVESTOR FLYWHEEL */
+    .flywheel-section { padding: 5rem 2rem; background: var(--navy-primary); border-top: 1px solid var(--navy-border); }
+    .flywheel-inner { max-width: 1280px; margin: 0 auto; text-align: center; }
+    .flywheel-heading { font-family: 'Cinzel', serif; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 600; margin: 1rem 0 1.25rem; color: var(--text-primary); }
+    .flywheel-sub { font-size: 0.95rem; font-weight: 300; color: var(--text-muted); line-height: 1.75; max-width: 640px; margin: 0 auto 3.5rem; }
+    .flywheel-track { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; gap: 0; align-items: start; margin-bottom: 3.5rem; }
+    .flywheel-arrow { display: flex; align-items: center; justify-content: center; padding: 0 0.75rem; margin-top: 1.4rem; color: var(--gold-muted); }
+    .flywheel-node { background: var(--navy-card); border: 1px solid var(--navy-border); padding: 1.75rem 1.5rem; text-align: left; border-top: 2px solid var(--navy-border); }
+    .flywheel-node-final { border-top-color: var(--gold); }
+    .flywheel-icon { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 700; color: var(--navy-border); margin-bottom: 0.9rem; line-height: 1; }
+    .flywheel-icon-final { color: var(--gold); }
+    .flywheel-node-title { font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; }
+    .flywheel-node-desc { font-size: 0.8rem; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
+    .flywheel-stat-strip { display: flex; align-items: center; justify-content: center; gap: 0; border: 1px solid var(--navy-border); background: var(--navy-deep); }
+    .flywheel-stat { flex: 1; padding: 1.75rem 1.5rem; text-align: center; }
+    .flywheel-stat-num { display: block; font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 700; color: var(--gold); margin-bottom: 0.4rem; }
+    .flywheel-stat-label { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-subtle); }
+    .flywheel-stat-div { width: 1px; background: var(--navy-border); align-self: stretch; }
+    @media (max-width: 900px) {
+      .flywheel-track { grid-template-columns: 1fr; gap: 0; }
+      .flywheel-arrow { transform: rotate(90deg); padding: 0.5rem 0; margin-top: 0; }
+      .flywheel-stat-strip { flex-direction: column; }
+      .flywheel-stat-div { width: 100%; height: 1px; align-self: auto; }
+    }
+
     /* WHAT TO EXPECT STRIP */
     .expect-strip { background: var(--navy-deep); border-top: 1px solid var(--navy-border); border-bottom: 1px solid var(--navy-border); padding: 4rem 2rem; }
     .expect-inner { max-width: 1280px; margin: 0 auto; }
@@ -434,6 +459,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <p class="incentives-disclaimer reveal" style="transition-delay:0.2s;margin-top:1.5rem;font-size:0.72rem;color:var(--text-subtle);letter-spacing:0.03em;line-height:1.6;">Full terms and conditions, including details of these provisions, will be outlined in the Agreement of Purchase and Sale.</p>
+    </div>
+  </section>
+
+  <!-- REPEAT INVESTOR FLYWHEEL -->
+  <section class="flywheel-section">
+    <div class="flywheel-inner">
+      <div class="section-label reveal" style="justify-content:center">After Property 1</div>
+      <h2 class="flywheel-heading reveal" style="transition-delay:0.05s">The Acquisition Doesn't End Here</h2>
+      <p class="flywheel-sub reveal" style="transition-delay:0.1s">Closing is not the finish line. It is the foundation. Most investors who close on a first asset return for a second within 12–18 months — funded by the equity the first property builds.</p>
+
+      <div class="flywheel-track reveal" style="transition-delay:0.15s">
+        <div class="flywheel-node">
+          <div class="flywheel-icon">01</div>
+          <div class="flywheel-node-title">Property 1 Closes</div>
+          <div class="flywheel-node-desc">Keys in hand. Tenants in place. Cash flowing under 50-year amortization.</div>
+        </div>
+        <div class="flywheel-arrow" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg>
+        </div>
+        <div class="flywheel-node">
+          <div class="flywheel-icon">02</div>
+          <div class="flywheel-node-title">Equity Builds</div>
+          <div class="flywheel-node-desc">Principal paydown and appreciation accumulate. Typically within 12–18 months, a HELOC or refinance unlocks the equity.</div>
+        </div>
+        <div class="flywheel-arrow" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg>
+        </div>
+        <div class="flywheel-node">
+          <div class="flywheel-icon">03</div>
+          <div class="flywheel-node-title">Property 2 Deposit</div>
+          <div class="flywheel-node-desc">Pulled equity funds the 5% deposit on the next acquisition. The same $80K–$120K entry point. The process repeats.</div>
+        </div>
+        <div class="flywheel-arrow" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/></svg>
+        </div>
+        <div class="flywheel-node flywheel-node-final">
+          <div class="flywheel-icon flywheel-icon-final">50</div>
+          <div class="flywheel-node-title">50 Doors</div>
+          <div class="flywheel-node-desc">Each asset finances the next. The portfolio compounds. This is how 50 doors gets built — one structured acquisition at a time.</div>
+        </div>
+      </div>
+
+      <div class="flywheel-stat-strip reveal" style="transition-delay:0.2s">
+        <div class="flywheel-stat">
+          <span class="flywheel-stat-num">12–18</span>
+          <span class="flywheel-stat-label">Months to Property 2 Eligibility</span>
+        </div>
+        <div class="flywheel-stat-div"></div>
+        <div class="flywheel-stat">
+          <span class="flywheel-stat-num">5%</span>
+          <span class="flywheel-stat-label">Down Payment — Every Acquisition</span>
+        </div>
+        <div class="flywheel-stat-div"></div>
+        <div class="flywheel-stat">
+          <span class="flywheel-stat-num">50+</span>
+          <span class="flywheel-stat-label">Doors. The 4-Year Target.</span>
+        </div>
+      </div>
     </div>
   </section>
 
