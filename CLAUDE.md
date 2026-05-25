@@ -49,7 +49,9 @@ Always tell the user whether a change is local-only or has been pushed live.
 - Plain HTML/CSS/JS — no build framework, no npm, no bundler
 - All styles are inline `<style>` blocks inside each page's `<head>`
 - Fonts: Cinzel (headings) + Josefin Sans (body) via Google Fonts
-- Color tokens: `--navy-deep`, `--navy-primary`, `--navy-card`, `--navy-border`, `--gold`, `--gold-light`, `--gold-muted`, `--text-primary`, `--text-muted`, `--text-subtle`
+- Color tokens: `--navy-deep`, `--navy-primary`, `--navy-card`, `--navy-alt`, `--navy-border`, `--gold`, `--gold-light`, `--gold-muted`, `--accent-warm`, `--text-primary`, `--text-muted`, `--text-subtle`, `--slate` (index.html only), `--status-live` (index.html only)
+- Social: Instagram https://www.instagram.com/kunalsarhadi — Facebook https://www.facebook.com/multifamilydeals
+- Public-facing brand name: **Multi Family Deals** (not Team Sarhadi — that is the personal/agent brand)
 - Nav: `<nav>` → `.nav-inner` → `.nav-logo` (left) + `.nav-links` (middle) + `.nav-cta` (right)
 - Mobile nav: `<div class="mobile-nav" id="mobileNav">` — toggled by `.hamburger` button
 - Footer: consistent across all pages, links to all main pages

@@ -34,8 +34,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     :root {
       --navy-deep: #03080F; --navy-primary: #070F1C; --navy-card: #0C1828; --navy-alt: #0F1E35;
       --navy-border: #162438; --gold: #C4934A; --gold-light: #DBA868;
-      --gold-muted: #9A7A34; --slate: #2A3F58; --text-primary: #EEF2F7; --status-live: #2AAF72;
-      --text-muted: #9AAABB; --text-subtle: #8BA0B8; --accent-warm: #C4783A;
+      --gold-muted: #9A7A34; --text-primary: #EEF2F7; --status-live: #2AAF72;
+      --text-muted: #9AAABB; --text-subtle: #8BA0B8;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { overflow-x: hidden; min-width: 320px; }
@@ -229,6 +229,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .hero-eyebrow, .hero-headline, .hero-subline, .hero-actions, .hero-stats { animation: none; } }
       @media (min-width: 1440px) { html { font-size: 17px; } }
     @media (min-width: 1920px) { html { font-size: 18.5px; } }
+
+    /* FOOTER SOCIAL */
+    .footer-social { display: flex; gap: 1rem; align-items: center; }
+    .footer-social a { color: var(--text-subtle); transition: color 0.2s; line-height: 0; }
+    .footer-social a:hover { color: var(--gold); }
+    .footer-social svg { width: 1.1rem; height: 1.1rem; fill: currentColor; }
   </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -248,6 +254,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":["RealEstateAgent","LocalBusiness"],"name":"Multi Family Deals","description":"Edmonton-based real estate investment firm specializing in purpose-built CMHC MLI Select multi-family properties. 5% down, 50-year amortization.","url":"https://multi-family-deals.ca","telephone":"+14162007010","email":"sales@teamsarhadi.com","address":{"@type":"PostalAddress","addressLocality":"Edmonton","addressRegion":"AB","addressCountry":"CA"},"founder":{"@type":"Person","name":"Kunal Sarhadi","jobTitle":"Real Estate Broker","worksFor":{"@type":"Organization","name":"Homelife Miracle Realty Inc."}},"areaServed":{"@type":"City","name":"Edmonton"},"knowsAbout":["Multi-family real estate","CMHC MLI Select","Real estate investment","Alberta real estate"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","bestRating":"5","worstRating":"1","reviewCount":"10"},"priceRange":"$$$$","image":"https://multi-family-deals.ca/images/jasper-park.png","sameAs":["https://www.instagram.com/kunalsarhadi/","https://www.facebook.com/multifamilydeals"],"geo":{"@type":"GeoCoordinates","latitude":53.5461,"longitude":-113.4938}}</script>
 </head>
 <body>
@@ -310,7 +317,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-inner">
       <div class="hero-eyebrow">Edmonton, Alberta — MLI Select Program</div>
       <h1 class="hero-headline">Scale to 50 Doors. <br /><span class="accent">$80,000 Gets You In.</span> Not $400,000.</h1>
-      <p class="hero-subline">In Ontario, the 95% CMHC financing path is effectively closed — rents don't support the debt threshold. In Alberta, they do. Our clients enter Edmonton's institutional-grade multi-family market for as little as 5% down — with 50-year amortization and zero provincial tax friction — while Ontario investors tie up $400K for a single aging property.</p>
+      <p class="hero-subline">In Ontario, the 95% CMHC financing path is effectively closed — rents don't support the debt threshold. In Alberta, they do. Our clients enter Edmonton's institutional-grade multi-family market for as little as 5% down — with 50-year amortization and no provincial sales tax, land transfer tax, or development charges — while Ontario investors tie up $400K for a single aging property.</p>
       <div class="hero-actions">
         <a href="contact.html" data-conversion="book_call" class="btn-primary">Book Your Discovery Call</a>
         <a href="inventory.html" class="btn-ghost">View Active Inventory</a>
@@ -605,7 +612,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="reviews.html">Reviews</a></li>
         <li><a href="blog/index.html">Blog</a></li>
         <li><a href="guide.html">Free Guide</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="footer-copy">Kunal Sarhadi, Real Estate Broker &nbsp;|&nbsp; Homelife Miracle Realty Inc. &nbsp;|&nbsp; © 2026 Multi Family Deals. Not financial or investment advice. CMHC MLI Select program terms subject to change.</div>
