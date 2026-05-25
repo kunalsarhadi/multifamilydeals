@@ -782,6 +782,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function triggerPdfDownload() {
       if (_pdfTriggered) return;
       _pdfTriggered = true;
+      if (typeof gtag === 'function') gtag('event', 'guide_download', { event_category: 'lead', event_label: 'mli_select_guide' });
+      if (window.dataLayer) window.dataLayer.push({ event: 'guide_download', content_name: 'mli_select_guide' });
       setTimeout(() => {
         const a = document.createElement('a');
         a.href = '/assets/CMHC-MLI-Select-Investor-Guide.pdf';
