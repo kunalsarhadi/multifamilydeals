@@ -43,7 +43,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       --navy-border: #162438; --gold: #C4934A; --gold-light: #DBA868;
       --gold-muted: #9A7A34; --text-primary: #EEF2F7;
       --text-muted: #9AAABB; --text-subtle: #8BA0B8; --accent-warm: #C4783A;
-      --pos: #4DB88C; --neg: #D9776B;
+      --pos: #4DB88C; --neg: #D9776B; --amber: #E0A949;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { overflow-x: hidden; min-width: 320px; }
@@ -158,6 +158,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .brk-row .bv { font-weight: 600; color: var(--text-primary); font-family: 'Cinzel', serif; white-space: nowrap; }
     .brk-row.em .bk { color: var(--gold-light); }
     .brk-row.em .bv { color: var(--gold); }
+    .brk-row .bv.good { color: var(--pos); }
+    .brk-row .bv.warn { color: var(--amber); }
+    .brk-row .bv.bad { color: var(--neg); }
+    .dscr-tag { font-style: normal; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; margin-left: 0.35rem; opacity: 0.9; }
+    .block-caption { font-size: 0.7rem; color: var(--text-subtle); letter-spacing: 0.02em; margin: -0.6rem 0 1.1rem; }
     .cf-box { background: rgba(196,147,74,0.08); border: 1px solid var(--gold-muted); padding: 1rem 1.2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1.1rem; }
     .cf-box .cf-k { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold-light); }
     .cf-box .cf-k small { display: block; font-size: 0.66rem; color: var(--text-subtle); text-transform: none; letter-spacing: 0; margin-top: 0.2rem; font-weight: 400; }
@@ -449,7 +454,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <hr class="est-div" />
 
         <div class="est-sec">Income &amp; Returns</div>
-        <div class="brk-row"><span class="bk">Net Operating Income</span><span class="bv" id="o-noi">$0</span></div>
+        <div class="brk-row"><span class="bk">Gross Rent (annual)</span><span class="bv" id="o-gross">$0</span></div>
+        <div class="brk-row"><span class="bk">Operating Expenses</span><span class="bv" id="o-expenses">$0</span></div>
+        <div class="brk-row em"><span class="bk">Net Operating Income</span><span class="bv" id="o-noi">$0</span></div>
         <div class="brk-row"><span class="bk">Cap Rate</span><span class="bv" id="o-cap">0%</span></div>
         <div class="brk-row"><span class="bk">Cash-on-Cash Return</span><span class="bv" id="o-coc">0%</span></div>
         <div class="brk-row"><span class="bk">DSCR (debt coverage)</span><span class="bv" id="o-dscr">0.00</span></div>
@@ -475,6 +482,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- 5-Year Outlook (full width) -->
     <div class="outlook reveal">
       <div class="block-label">5-Year Outlook</div>
+      <p class="block-caption">Illustrative: 5% appreciation Y1, 3% Y2&ndash;5 &middot; cash flow +5%/yr</p>
       <div class="table-wrap">
         <table class="calc-table">
           <thead>
@@ -723,10 +731,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       $('o-annual').textContent = fmtMoney(annual);
 
       /* ---- Income & returns ---- */
+      $('o-gross').textContent = fmtMoney(annualRent);
+      $('o-expenses').textContent = fmtMoney(-totalExp);
       $('o-noi').textContent = fmtMoney(noi);
       $('o-cap').textContent = fmtPct(cap);
       $('o-coc').textContent = fmtPct(coc);
-      $('o-dscr').textContent = fmtDscr(dscr);
+      const dscrEl = $('o-dscr');
+      let dCls, dTag;
+      if (dscr >= 1.20) { dCls = 'good'; dTag = 'Strong'; }
+      else if (dscr >= 1.10) { dCls = 'warn'; dTag = 'Passes min.'; }
+      else { dCls = 'bad'; dTag = "Won't qualify"; }
+      dscrEl.className = 'bv ' + dCls;
+      dscrEl.innerHTML = fmtDscr(dscr) + ' <em class="dscr-tag">' + dTag + '</em>';
 
       const cfClass = cashFlow >= 0 ? 'pos' : 'neg';
       const cfM = $('o-cashflowM'); cfM.textContent = fmtMoney(cashFlow / 12); cfM.className = 'cf-v ' + cfClass;
