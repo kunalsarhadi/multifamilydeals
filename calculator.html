@@ -492,12 +492,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- MLI Select vs Single-Family -->
     <div class="vs-block reveal">
-      <div class="block-label">The Alternative — Same Capital, Single-Family</div>
+      <div class="block-label">The Alternative — Same Capital, Conventional</div>
       <p class="vs-headline" id="vsHeadline">&nbsp;</p>
       <div class="vs-grid">
         <div class="vh blank"></div>
         <div class="vh mli">CMHC MLI Select<small>this deal · 5% down</small></div>
-        <div class="vh">Single-Family<small>20% down · 30-yr</small></div>
+        <div class="vh">Conventional<small>20% down · 30-yr</small></div>
 
         <div class="vk">Property You Control</div>
         <div class="vv mli" id="vs-mliPrice">$0</div>
@@ -505,7 +505,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="vk">Doors / Units</div>
         <div class="vv mli" id="vs-doors">0</div>
-        <div class="vv sf">1</div>
+        <div class="vv sf" id="vs-sfDoors">1</div>
 
         <div class="vk">Monthly Cash Flow</div>
         <div class="vv mli" id="vs-mliCf">$0</div>
@@ -519,7 +519,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="vv mli" id="vs-mliRoi">0%</div>
         <div class="vv sf" id="vs-sfRoi">0%</div>
       </div>
-      <p class="vs-note">Both columns deploy the <strong style="color:var(--text-muted);font-weight:500;">same deposit</strong>. The single-family side assumes that capital as 20% down on one home, traditional 30-year financing, your top unit rent, and no vacancy or management — the most generous case for buying a house. Even then, 5% down on a purpose-built multi-family puts far more asset, cash flow, and equity to work.</p>
+      <p class="vs-note">Both columns deploy the <strong style="color:var(--text-muted);font-weight:500;">same deposit</strong>. The conventional side puts that capital down at 20% on the same per-door price — so it controls roughly a quarter of the doors — with traditional 30-year financing, your own rents, and no vacancy or management (the most generous case). Even then, 5% down on a purpose-built multi-family puts far more asset, cash flow, and equity to work.</p>
     </div>
 
   </div>
@@ -645,14 +645,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     function readUnits() {
       let units = 0, annualRent = 0, maxRent = 0;
+      const rentSet = new Set();
       document.querySelectorAll('#unitRows .unit-row').forEach(r => {
         const c = parseFloat(r.querySelector('.u-count').value) || 0;
         const rent = parseFloat(r.querySelector('.u-rent').value) || 0;
         units += c;
         annualRent += c * rent * 12;
         if (c > 0 && rent > maxRent) maxRent = rent;
+        if (c > 0 && rent > 0) rentSet.add(rent);
       });
-      return { units, annualRent, maxRent };
+      const rentTiers = [...rentSet].sort((a, b) => b - a);
+      return { units, annualRent, maxRent, rentTiers };
     }
 
     // Property tax = assessed value (75% of price) x Edmonton mill rate.
@@ -672,7 +675,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const depPct = num('depPct');
       const cmhcPct = num('cmhcPct');
 
-      const { units, annualRent, maxRent } = readUnits();
+      const { units, annualRent, maxRent, rentTiers } = readUnits();
 
       // Operating expenses
       const tax = num('propTax');
@@ -772,43 +775,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const mliRoi = deposit ? (totalEquity / deposit / 5 * 100) : 0;
       $('o-roi').textContent = fmtPct(mliRoi);
 
-      /* ---- Single-family alternative (same capital, traditional 20% down / 30-yr) ---- */
-      const SF_DOWN = 0.20, SF_AMORT = 30, SF_TAX_RATE = 0.0094;
-      const sfPrice = deposit / SF_DOWN;
-      const sfLoan = sfPrice * (1 - SF_DOWN);
-      const sfMortgage = pmt(sfLoan, rate, SF_AMORT);
-      const sfCashflowMo = maxRent - sfMortgage - (sfPrice * SF_TAX_RATE / 12) - num('insPerUnit');
-      const sfCashflowYr = sfCashflowMo * 12;
-      let sfBV = sfPrice, sfEquity = 0;
+      /* ---- Conventional alternative (same capital, 20% down / 30-yr, proportional doors) ---- */
+      const CV_DOWN = 0.20, CV_AMORT = 30, CV_TAX_RATE = 0.0094;
+      const cvPrice = deposit / CV_DOWN;                       // same capital, fully deployed at 20% down
+      const perDoor = units ? (price / units) : 0;
+      const cvDoors = perDoor ? Math.max(1, Math.floor(cvPrice / perDoor)) : 1;
+      let cvRentMo = 0;                                         // N doors at your rents (one per tier, cycling)
+      if (rentTiers.length) { for (let i = 0; i < cvDoors; i++) cvRentMo += rentTiers[i % rentTiers.length]; }
+      const cvLoan = cvPrice * (1 - CV_DOWN);
+      const cvMortgage = pmt(cvLoan, rate, CV_AMORT);
+      const cvCashflowMo = cvRentMo - cvMortgage - (cvPrice * CV_TAX_RATE / 12) - (cvDoors * num('insPerUnit'));
+      const cvCashflowYr = cvCashflowMo * 12;
+      let cvBV = cvPrice, cvEquity = 0;
       for (let y = 1; y <= 5; y++) {
-        const ap = sfBV * apprRates[y - 1];
-        sfBV += ap;
-        const ycf = sfCashflowYr * Math.pow(1.05, y - 1);
-        const pd = principalPaidInYear(sfLoan, rate, SF_AMORT, y);
-        sfEquity += ap + ycf + pd;
+        const ap = cvBV * apprRates[y - 1];
+        cvBV += ap;
+        const ycf = cvCashflowYr * Math.pow(1.05, y - 1);
+        const pd = principalPaidInYear(cvLoan, rate, CV_AMORT, y);
+        cvEquity += ap + ycf + pd;
       }
-      const sfRoi = deposit ? (sfEquity / deposit / 5 * 100) : 0;
+      const cvRoi = deposit ? (cvEquity / deposit / 5 * 100) : 0;
       const mliCfMo = cashFlow / 12;
 
       $('vs-mliPrice').textContent = fmtMoney(price);
-      $('vs-sfPrice').textContent = fmtMoney(sfPrice);
+      $('vs-sfPrice').textContent = fmtMoney(cvPrice);
       $('vs-doors').textContent = units;
+      $('vs-sfDoors').textContent = cvDoors;
       $('vs-mliCf').textContent = fmtMoney(mliCfMo) + ' / mo';
-      $('vs-sfCf').textContent = fmtMoney(sfCashflowMo) + ' / mo';
+      $('vs-sfCf').textContent = fmtMoney(cvCashflowMo) + ' / mo';
       $('vs-mliEq').textContent = fmtMoney(totalEquity);
-      $('vs-sfEq').textContent = fmtMoney(sfEquity);
+      $('vs-sfEq').textContent = fmtMoney(cvEquity);
       $('vs-mliRoi').textContent = fmtPct(mliRoi);
-      $('vs-sfRoi').textContent = fmtPct(sfRoi);
+      $('vs-sfRoi').textContent = fmtPct(cvRoi);
 
-      const doorTxt = units === 1 ? '1 door' : units + ' doors';
-      let cfClause = '.';
-      if (mliCfMo > 0 && sfCashflowMo > 50) {
-        const mult = mliCfMo / sfCashflowMo;
-        cfClause = ', and about <strong>' + (mult >= 10 ? Math.round(mult) : mult.toFixed(1).replace(/\.0$/, '')) + '×</strong> the monthly cash flow.';
-      } else if (mliCfMo > 0 && sfCashflowMo <= 0) {
-        cfClause = ' — and it cash-flows while the single-family loses money each month.';
+      const doorTxt = units + (units === 1 ? ' door' : ' doors');
+      const cvDoorTxt = cvDoors + (cvDoors === 1 ? ' door' : ' doors');
+      let tail = '.';
+      if (mliCfMo > 0 && cvCashflowMo > 50) {
+        const mult = mliCfMo / cvCashflowMo;
+        tail = ' &mdash; and about <strong>' + (mult >= 10 ? Math.round(mult) : mult.toFixed(1).replace(/\.0$/, '')) + '&times;</strong> the monthly cash flow.';
+      } else if (mliCfMo > 0 && cvCashflowMo <= 0) {
+        tail = ' &mdash; and it cash-flows while the conventional buy loses money each month.';
       }
-      $('vsHeadline').innerHTML = 'Same <strong>' + fmtMoney(deposit) + '</strong> deposit buys you <strong>' + doorTxt + '</strong> on CMHC MLI Select instead of one' + cfClause;
+      $('vsHeadline').innerHTML = 'Same <strong>' + fmtMoney(deposit) + '</strong> deposit puts <strong>' + doorTxt + '</strong> to work on CMHC MLI Select, vs <strong>' + cvDoorTxt + '</strong> conventionally' + tail;
     }
 
     /* ---------- Unit row add/remove ---------- */
