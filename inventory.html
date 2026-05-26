@@ -229,23 +229,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .sold-section .asset-stat-row .asset-stat { background: #070F1C; }
 
     /* GATEKEEPER */
-    .gatekeeper { background: var(--navy-deep); padding: 5rem 2rem; border-top: 1px solid var(--navy-border); }
-    .gatekeeper-inner { max-width: 900px; margin: 0 auto; }
-    .gatekeeper-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); margin-top: 2.5rem; }
-    .gatekeeper-item { background: var(--navy-card); padding: 2rem 2rem; }
-    .gatekeeper-item label { display: block; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 0.6rem; }
-    .gatekeeper-item input, .gatekeeper-item select {
-      width: 100%; background: var(--navy-primary); border: 1px solid var(--navy-border); color: var(--text-primary);
-      padding: 0.75rem 1rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.85rem;
-      outline: none; transition: border-color 0.2s; appearance: none;
-    }
-    .gatekeeper-item input:focus, .gatekeeper-item select:focus { border-color: var(--gold-muted); }
-    .gatekeeper-item input::placeholder { color: var(--text-subtle); }
-    .gatekeeper-item select option { background: var(--navy-card); }
-    .gatekeeper-full { grid-column: 1 / -1; }
-    .btn-primary { background: var(--gold); color: var(--navy-deep); padding: 1rem 2.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; border: none; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-    .gatekeeper-note { font-size: 0.82rem; color: var(--text-subtle); margin-top: 1rem; letter-spacing: 0.04em; }
 
     footer { background: var(--navy-deep); border-top: 1px solid var(--navy-border); padding: 3rem 2rem; }
     .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
@@ -261,7 +244,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     @media (max-width: 1200px) {
       .nav-links { display: none; } .nav-cta { display: none; } .hamburger { display: flex; }
       .cards-grid { grid-template-columns: 1fr; }
-      .gatekeeper-grid { grid-template-columns: 1fr; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .status-pills { gap: 1rem; }
     }
@@ -269,7 +251,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .page-hero { padding: 7rem 1.5rem 4rem; }
       .inventory-section { padding: 3rem 1.5rem; }
       .sold-section { padding: 2rem 1.5rem; }
-      .gatekeeper { padding: 4rem 1.5rem; }
       .asset-stats { grid-template-columns: repeat(2, 1fr); }
     }
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -530,7 +511,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="incentive-item incentive-peace">
           <svg class="incentive-check gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
           <div>
-            <div class="incentive-name">Conditional Agreement</div>
+            <div class="incentive-name">CMHC-Compliant Build</div>
             <div class="incentive-note">On project viability — exit per APS terms if CMHC declines</div>
           </div>
         </div>
@@ -1232,64 +1213,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- GATEKEEPER FORM -->
-  <section class="gatekeeper">
-    <div class="gatekeeper-inner">
-      <div class="reveal">
-        <div class="section-label">Request Full Details</div>
-        <h2 style="font-size:clamp(1.4rem,3vw,2rem);font-weight:600;margin-bottom:0.8rem;">Get the Full Pro-Forma & Debt Analysis</h2>
-        <p style="font-size:0.95rem;font-weight:300;color:var(--text-muted);line-height:1.7;max-width:560px;">Complete details — including exact address, cash flow projections, mortgage structure, and 50-door roadmap — are shared directly on your discovery call.</p>
-      </div>
-      <div class="gatekeeper-grid reveal" style="transition-delay:0.1s">
-        <div class="gatekeeper-item">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" placeholder="Your full name" autocomplete="name" />
-        </div>
-        <div class="gatekeeper-item">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="your@email.com" autocomplete="email" />
-        </div>
-        <div class="gatekeeper-item">
-          <label for="asset">Asset of Interest</label>
-          <select id="asset">
-            <option value="" disabled selected>Select a property</option>
-            <option>8 Plex — Jasper Park (Available)</option>
-            <option>8 Plex — Spruce Avenue (Sold)</option>
-            <option>9 Plex — Beacon Heights (Sold)</option>
-            <option>7 Plex — Mill Woods (Available)</option>
-            <option>8 Plex — Mill Woods (Available)</option>
-            <option>8 Plex — Lynnwood (Available)</option>
-            <option>7 Plex — Glenwood (Available)</option>
-            <option>8 Plex — Lauderdale (Available)</option>
-            <option>8 Plex — Pleasantview (Available)</option>
-            <option>8 Plex — West Jasper Place (Available)</option>
-            <option>10 Plex — Britannia Youngstown (Available)</option>
-            <option>15 Plex — Strathcona (Available)</option>
-            <option>8 Plex — Lynnwood (Sold Conditional — Waitlist)</option>
-            <option>6 Plex — Mill Woods (Sold Conditional — Waitlist)</option>
-            <option>9 Plex — Edmonton (Coming Soon)</option>
-            <option>7 Plex — Edmonton (Coming Soon)</option>
-            <option>8 Plex — Edmonton (Coming Soon)</option>
-            <option>All Available Properties</option>
-          </select>
-        </div>
-        <div class="gatekeeper-item">
-          <label for="capital2">Available Capital</label>
-          <select id="capital2">
-            <option value="" disabled selected>Select your range</option>
-            <option>$50,000 – $100,000</option>
-            <option>$100,000 – $250,000</option>
-            <option>$250,000 – $500,000</option>
-            <option>$500,000+</option>
-          </select>
-        </div>
-        <div class="gatekeeper-item gatekeeper-full" style="padding-top:0.5rem">
-          <button type="button" id="gateSubmit" class="btn-primary">Book Discovery Call to Receive Full Details</button>
-          <p class="gatekeeper-note" id="gateNote">By submitting, you'll be directed to book a 30-minute discovery call where all details are shared. No spam. No unsolicited calls.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
 </main>
   <footer>

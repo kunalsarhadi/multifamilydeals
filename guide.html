@@ -97,16 +97,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .btn-ghost { background: transparent; color: var(--text-muted); padding: 0.85rem 1.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--text-subtle); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: color 0.2s, border-color 0.2s; margin-top: 0.75rem; width: 100%; justify-content: center; }
     .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
 
-    /* WHAT'S INSIDE */
-    .whats-inside { background: var(--navy-primary); border-top: 1px solid var(--navy-border); border-bottom: 1px solid var(--navy-border); padding: 3rem 2rem; }
-    .whats-inside-inner { max-width: 900px; margin: 0 auto; }
-    .whats-inside-label { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
-    .whats-inside-label::before { content: ''; display: block; width: 1.2rem; height: 1px; background: var(--gold); }
-    .whats-inside-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); }
-    .whats-inside-item { background: var(--navy-card); padding: 1.2rem 1.4rem; display: flex; align-items: flex-start; gap: 0.75rem; }
-    .whats-inside-num { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 0.1rem; }
-    .whats-inside-text { font-size: 0.8rem; font-weight: 500; color: var(--text-primary); letter-spacing: 0.03em; line-height: 1.4; }
-    @media print { .whats-inside { display: none; } }
 
     /* GUIDE CONTENT */
     .guide-body { max-width: 900px; margin: 0 auto; padding: 4rem 2rem 6rem; }
@@ -362,20 +352,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <section class="whats-inside">
-    <div class="whats-inside-inner">
-      <div class="whats-inside-label">What's Inside</div>
-      <div class="whats-inside-grid">
-        <div class="whats-inside-item"><span class="whats-inside-num">01</span><span class="whats-inside-text">What Is CMHC MLI Select?</span></div>
-        <div class="whats-inside-item"><span class="whats-inside-num">02</span><span class="whats-inside-text">Why Edmonton — Ontario vs. Alberta</span></div>
-        <div class="whats-inside-item"><span class="whats-inside-num">03</span><span class="whats-inside-text">Investor Eligibility Requirements</span></div>
-        <div class="whats-inside-item"><span class="whats-inside-num">04</span><span class="whats-inside-text">Deposit Math &amp; Capital Requirements</span></div>
-        <div class="whats-inside-item"><span class="whats-inside-num">05</span><span class="whats-inside-text">What's Included with Every Property</span></div>
-        <div class="whats-inside-item"><span class="whats-inside-num">06</span><span class="whats-inside-text">The 9-Step Buying Process</span></div>
-        <div class="whats-inside-item"><span class="whats-inside-num">07</span><span class="whats-inside-text">Key Risks &amp; Your Next Step</span></div>
-      </div>
-    </div>
-  </section>
 
   <div class="guide-body">
 
@@ -543,10 +519,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="check-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
-            <span><strong>Conditional Agreement on Project Viability</strong> — exit per APS terms if CMHC declines</span>
-          </div>
-          <div class="check-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
             <span><strong>In-House Property Management</strong> — available from completion</span>
           </div>
         </div>
@@ -670,7 +642,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="guide-section reveal">
       <div class="guide-section-label">Next Step</div>
       <h2>Book Your Discovery Call</h2>
-      <p class="guide-p">A 30-minute discovery call is where we match your available capital to the right property, walk through the current pro-forma, and build your acquisition timeline. No cost. No obligation. Before you call, review <a href="buying-process.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px">the full 9-step buying process</a> and <a href="inventory.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px">browse active inventory</a>.</p>
+      <p class="guide-p">A 30-minute discovery call with Kunal or Ankit is your first concrete step. Here is what we cover:</p>
+      <ul style="list-style:none;padding:0;margin:1rem 0 1.2rem;display:flex;flex-direction:column;gap:0.6rem;">
+        <li style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.88rem;color:var(--text-muted);line-height:1.6;"><svg style="flex-shrink:0;margin-top:0.2rem;color:var(--gold)" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span><strong style="color:var(--text-primary)">Capital &amp; eligibility review</strong> — net worth, available deposit, credit position, and CMHC fit</span></li>
+        <li style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.88rem;color:var(--text-muted);line-height:1.6;"><svg style="flex-shrink:0;margin-top:0.2rem;color:var(--gold)" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span><strong style="color:var(--text-primary)">Property matching</strong> — we match your capital to the right asset from active inventory</span></li>
+        <li style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.88rem;color:var(--text-muted);line-height:1.6;"><svg style="flex-shrink:0;margin-top:0.2rem;color:var(--gold)" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span><strong style="color:var(--text-primary)">Full pro-forma walkthrough</strong> — projected rents, DSCR, 50-year debt schedule, and net cash flow</span></li>
+        <li style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.88rem;color:var(--text-muted);line-height:1.6;"><svg style="flex-shrink:0;margin-top:0.2rem;color:var(--gold)" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span><strong style="color:var(--text-primary)">50-door roadmap</strong> — a personalized acquisition timeline showing how to scale from Property 1 to 50+ doors</span></li>
+        <li style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.88rem;color:var(--text-muted);line-height:1.6;"><svg style="flex-shrink:0;margin-top:0.2rem;color:var(--gold)" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span><strong style="color:var(--text-primary)">Your questions answered</strong> — financing structure, CMHC process, builder, property management, and anything else</span></li>
+      </ul>
+      <p class="guide-p" style="font-size:0.82rem;color:var(--text-subtle);">No cost. No obligation. Before your call, review <a href="buying-process.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px">the full 9-step buying process</a> and <a href="inventory.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px">browse active inventory</a>.</p>
 
       <div class="contact-card">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;flex:1;">
