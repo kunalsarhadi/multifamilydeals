@@ -190,6 +190,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .proof-cta-row { margin-top: 1.4rem; font-size: 0.82rem; color: var(--text-subtle); letter-spacing: 0.05em; }
     .proof-cta-row a { color: var(--gold); text-decoration: none; }
     @media (max-width: 640px) { .proof-grid { grid-template-columns: 1fr; } }
+    .trust-bar { display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--navy-border); flex-wrap: wrap; }
+    .trust-stat { text-align: center; padding: 0 2.5rem; }
+    .trust-stat-num { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 700; color: var(--gold); letter-spacing: 0.02em; line-height: 1.1; }
+    .trust-stat-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); margin-top: 0.35rem; line-height: 1.5; }
+    .trust-divider { width: 1px; height: 2.5rem; background: var(--navy-border); flex-shrink: 0; }
+    @media (max-width: 640px) { .trust-bar { gap: 1rem 0; } .trust-divider { display: none; } .trust-stat { padding: 0.5rem 1.5rem; } }
+    .mobile-sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; background: var(--gold); padding: 0.9rem 1.5rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); }
+    .mobile-sticky-cta a { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.88rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy-deep); text-decoration: none; }
+    @media (max-width: 1200px) { .mobile-sticky-cta { display: block; } }
 
     /* ELIGIBILITY */
     .qualify-section { background: var(--navy-deep); border-top: 1px solid var(--navy-border); border-bottom: 1px solid var(--navy-border); padding: 6rem 2rem; }
@@ -324,7 +333,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-inner">
       <div class="hero-eyebrow">Edmonton, Alberta — MLI Select Program</div>
       <h1 class="hero-headline">Scale to 50 Doors. <br /><span class="accent">$80,000 Gets You In.</span> Not $400,000.</h1>
-      <p class="hero-subline">In Ontario, the up-to-95% CMHC financing path is effectively closed — rents don't support the debt threshold. In Alberta, they do. Our clients enter Edmonton's institutional-grade multi-family market for as little as 5% down — with 50-year amortization, no provincial sales tax, and no land transfer tax — while Ontario investors tie up $400K for a single aging property.</p>
+      <p class="hero-subline">MLI Select runs on the same rules across Canada. In Ontario, high property prices push the required CMHC deposit to 2–4x Alberta's entry cost — because CMHC raises the deposit until the 1.10x DSCR threshold clears. In Edmonton, rents still support 5% down. Our clients enter Canada's fastest-growing rental market with 50-year amortization, no provincial sales tax, and no land transfer tax.</p>
       <div class="hero-actions">
         <a href="contact.html" data-conversion="book_call" class="btn-primary">Book Your Discovery Call</a>
         <a href="inventory.html" class="btn-ghost">View Active Inventory</a>
@@ -339,6 +348,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="proof-strip reveal">
     <div class="proof-strip-inner">
+      <div class="trust-bar">
+        <div class="trust-stat">
+          <div class="trust-stat-num">$500M+</div>
+          <div class="trust-stat-label">Real Estate Sold<br>Combined Sarhadi Group</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-stat">
+          <div class="trust-stat-num">150+</div>
+          <div class="trust-stat-label">Verified Google Reviews</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-stat">
+          <div class="trust-stat-num">500+</div>
+          <div class="trust-stat-label">Families Served</div>
+        </div>
+      </div>
       <div class="proof-header">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
         Verified Client Experiences — Google Reviews
@@ -727,5 +752,22 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 <!-- End Conversion Event Listener -->
+<div class="mobile-sticky-cta" id="mobileStickyCtaBar">
+  <a href="contact.html" data-conversion="book_call">Book Your Discovery Call &rarr;</a>
+</div>
+<script>
+(function(){
+  var bar = document.getElementById('mobileStickyCtaBar');
+  if (!bar) return;
+  var heroActions = document.querySelector('.hero-actions');
+  function checkScroll() {
+    if (!heroActions) return;
+    var rect = heroActions.getBoundingClientRect();
+    bar.style.display = rect.bottom > 0 ? 'none' : 'block';
+  }
+  window.addEventListener('scroll', checkScroll, { passive: true });
+  checkScroll();
+})();
+</script>
 </body>
 </html>
