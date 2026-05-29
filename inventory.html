@@ -327,6 +327,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* SKIP LINK */
     .skip-link { position: absolute; left: -9999px; top: 0; background: var(--gold); color: var(--navy-deep); padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; z-index: 9999; text-decoration: none; }
     .skip-link:focus { left: 0; }
+
+    /* TRUST BAR */
+    .trust-bar { display: flex; align-items: center; justify-content: center; gap: 0; padding: 2rem; background: var(--navy-deep); border-bottom: 1px solid var(--navy-border); flex-wrap: wrap; }
+    .trust-bar-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; width: 100%; }
+    .trust-stat { text-align: center; padding: 0 2.5rem; }
+    .trust-stat-num { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 700; color: var(--gold); letter-spacing: 0.02em; line-height: 1.1; }
+    .trust-stat-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); margin-top: 0.35rem; line-height: 1.5; }
+    .trust-divider { width: 1px; height: 2.5rem; background: var(--navy-border); flex-shrink: 0; }
+    @media (max-width: 640px) { .trust-bar { padding: 1.5rem; } .trust-bar-inner { gap: 1rem 0; } .trust-divider { display: none; } .trust-stat { padding: 0.5rem 1.5rem; } }
+
+    /* INVESTOR REVIEWS STRIP */
+    .inv-reviews { padding: 4rem 2rem; background: var(--navy-deep); border-top: 1px solid var(--navy-border); }
+    .inv-reviews-inner { max-width: 1280px; margin: 0 auto; }
+    .inv-reviews-header { text-align: center; margin-bottom: 2.5rem; }
+    .inv-reviews-label { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .inv-reviews-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
+    .inv-reviews-title { font-size: clamp(1.2rem, 2.5vw, 1.7rem); font-weight: 600; line-height: 1.25; }
+    .inv-reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); }
+    .inv-review-card { background: var(--navy-card); padding: 2rem 2rem 1.75rem; display: flex; flex-direction: column; gap: 1rem; }
+    .inv-review-stars { display: flex; gap: 0.2rem; }
+    .inv-review-star { color: var(--gold); font-size: 0.9rem; }
+    .inv-review-text { font-size: 0.92rem; font-weight: 300; color: var(--text-muted); line-height: 1.75; font-style: italic; }
+    .inv-review-author { display: flex; flex-direction: column; gap: 0.2rem; padding-top: 0.5rem; border-top: 1px solid var(--navy-border); }
+    .inv-review-name { font-size: 0.82rem; font-weight: 600; color: var(--text-primary); letter-spacing: 0.05em; }
+    .inv-review-meta { font-size: 0.72rem; font-weight: 400; color: var(--text-subtle); letter-spacing: 0.04em; }
+    @media (max-width: 700px) { .inv-reviews-grid { grid-template-columns: 1fr; } }
+
+    /* EXIT INTENT OVERLAY */
+    .exit-intent { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: var(--navy-card); border-top: 2px solid var(--gold); padding: 1.75rem 2rem; box-shadow: 0 -8px 40px rgba(0,0,0,0.5); transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+    .exit-intent.visible { display: flex; }
+    .exit-intent.shown { transform: translateY(0); }
+    .exit-intent-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: space-between; width: 100%; }
+    .exit-intent-text { flex: 1; min-width: 240px; }
+    .exit-intent-eyebrow { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+    .exit-intent-headline { font-size: 1rem; font-weight: 600; color: var(--text-primary); line-height: 1.4; margin-bottom: 0.3rem; }
+    .exit-intent-sub { font-size: 0.8rem; font-weight: 300; color: var(--text-muted); line-height: 1.6; }
+    .exit-intent-cta { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold); color: var(--navy-deep); padding: 0.85rem 1.75rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: background 0.2s; flex-shrink: 0; }
+    .exit-intent-cta:hover { background: var(--gold-light); }
+    .exit-intent-dismiss { position: absolute; top: 0.75rem; right: 1rem; background: none; border: none; color: var(--text-subtle); cursor: pointer; font-size: 1.2rem; line-height: 1; padding: 0.25rem; transition: color 0.2s; }
+    .exit-intent-dismiss:hover { color: var(--text-primary); }
+    @media (max-width: 600px) { .exit-intent { padding: 1.5rem 1.25rem; } .exit-intent-inner { gap: 1.25rem; } }
   </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -418,11 +459,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-stat"><div class="trust-stat-num">$500M+</div><div class="trust-stat-label">Real Estate Sold<br>Combined Sarhadi Group</div></div>
+      <div class="trust-divider"></div>
+      <div class="trust-stat"><div class="trust-stat-num">150+</div><div class="trust-stat-label">Verified Google Reviews</div></div>
+      <div class="trust-divider"></div>
+      <div class="trust-stat"><div class="trust-stat-num">500+</div><div class="trust-stat-label">Families Served</div></div>
+    </div>
+  </div>
+
   <!-- STATUS SUMMARY BAR -->
   <div class="status-bar">
     <div class="status-bar-inner">
       <div class="status-pills">
-        <span class="status-pill available">10 Available</span>
+        <a href="#available" class="status-pill available" style="text-decoration:none">10 Available</a>
         <span class="status-pill sc">2 Sold Conditional</span>
         <span class="status-pill cs">3 Coming Soon</span>
       </div>
@@ -1165,6 +1217,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- ═══════════════════════════════════════════════ -->
+  <!-- INVESTOR REVIEWS                                -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="inv-reviews">
+    <div class="inv-reviews-inner">
+      <div class="inv-reviews-header reveal">
+        <div class="inv-reviews-label">What Investors Are Saying</div>
+        <h2 class="inv-reviews-title">Real Buyers. Real Deals. Real Results.</h2>
+      </div>
+      <div class="inv-reviews-grid">
+        <div class="inv-review-card reveal" style="transition-delay:0.05s">
+          <div class="inv-review-stars"><span class="inv-review-star">★</span><span class="inv-review-star">★</span><span class="inv-review-star">★</span><span class="inv-review-star">★</span><span class="inv-review-star">★</span></div>
+          <p class="inv-review-text">"Kunal has done an excellent job of securing the multi family property for me from beginning to the end. He was thorough with all the information and always available to answer any questions I had regarding the purchase. I highly recommend working with him for any real estate needs."</p>
+          <div class="inv-review-author">
+            <div class="inv-review-name">Chad F.</div>
+            <div class="inv-review-meta">Multi-Family Investor · Google Review</div>
+          </div>
+        </div>
+        <div class="inv-review-card reveal" style="transition-delay:0.10s">
+          <div class="inv-review-stars"><span class="inv-review-star">★</span><span class="inv-review-star">★</span><span class="inv-review-star">★</span><span class="inv-review-star">★</span><span class="inv-review-star">★</span></div>
+          <p class="inv-review-text">"Working with Kunal and his team was a real pleasure. He is very professional and knowledgeable in real estate. He helped us through the whole process and made sure everything was done properly and on time. We will definitely work with Kunal in the future and would highly recommend him."</p>
+          <div class="inv-review-author">
+            <div class="inv-review-name">Nestor G.</div>
+            <div class="inv-review-meta">Real Estate Investor · Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:1.75rem">
+        <a href="reviews.html" style="font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-muted);text-decoration:none;border-bottom:1px solid var(--navy-border);padding-bottom:0.2rem;transition:color 0.2s,border-color 0.2s" onmouseover="this.style.color='var(--gold)';this.style.borderColor='var(--gold)'" onmouseout="this.style.color='var(--gold-muted)';this.style.borderColor='var(--navy-border)'">Read all 150+ reviews →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
   <!-- ELIGIBILITY — NOT FOR EVERYONE                  -->
   <!-- ═══════════════════════════════════════════════ -->
   <section class="eligibility-section">
@@ -1409,5 +1494,56 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 <!-- End Conversion Event Listener -->
+
+<!-- EXIT INTENT STRIP -->
+<div class="exit-intent" id="exitIntent" role="dialog" aria-label="Before you go" aria-live="polite">
+  <div class="exit-intent-inner">
+    <div class="exit-intent-text">
+      <div class="exit-intent-eyebrow">Before You Go</div>
+      <div class="exit-intent-headline">See the Full Pro-Forma on Any Listing</div>
+      <div class="exit-intent-sub">Book a free 30-min call — we'll walk you through exact cash flow, DSCR, and debt structure for any property that interests you. No commitment required.</div>
+    </div>
+    <a href="contact.html" data-conversion="book_call" class="exit-intent-cta">Book a 30-Min Call &rarr;</a>
+  </div>
+  <button class="exit-intent-dismiss" id="exitIntentDismiss" aria-label="Close">&times;</button>
+</div>
+<script>
+(function(){
+  var el = document.getElementById('exitIntent');
+  var btn = document.getElementById('exitIntentDismiss');
+  if (!el || !btn) return;
+  var shown = false;
+  var dismissed = false;
+  var maxScroll = 0;
+
+  function show() {
+    if (shown || dismissed) return;
+    shown = true;
+    el.classList.add('visible');
+    requestAnimationFrame(function(){ el.classList.add('shown'); });
+  }
+
+  function hide() {
+    dismissed = true;
+    el.classList.remove('shown');
+    setTimeout(function(){ el.classList.remove('visible'); }, 400);
+  }
+
+  btn.addEventListener('click', hide);
+
+  // Desktop: mouse approaching top of viewport
+  document.addEventListener('mouseleave', function(e) {
+    if (e.clientY <= 10) show();
+  });
+
+  // Mobile/all: back-scroll after scrolling 50%+ of page
+  window.addEventListener('scroll', function() {
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = window.scrollY / docH;
+    if (pct > maxScroll) maxScroll = pct;
+    if (maxScroll > 0.5 && pct < maxScroll - 0.15) show();
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>
