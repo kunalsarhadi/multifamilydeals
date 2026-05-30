@@ -506,7 +506,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const mobileNav = document.getElementById('mobileNav');
     var _navScroll = 0;
     function openMenu() { _navScroll = window.scrollY; document.body.style.top = '-' + _navScroll + 'px'; mobileNav.classList.add('open'); hamburger.classList.add('is-open'); document.body.classList.add('no-scroll'); }
-    function closeMenu() { mobileNav.classList.remove('open'); hamburger.classList.remove('is-open'); document.body.classList.remove('no-scroll'); document.body.style.top = ''; window.scrollTo(0, _navScroll); }
+    function closeMenu() { var wasOpen = document.body.classList.contains('no-scroll'); mobileNav.classList.remove('open'); hamburger.classList.remove('is-open'); document.body.classList.remove('no-scroll'); document.body.style.top = ''; if (wasOpen) window.scrollTo(0, _navScroll); }
     function toggleMenu() { mobileNav.classList.contains('open') ? closeMenu() : openMenu(); }
     hamburger.addEventListener('click', toggleMenu);
     hamburger.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') toggleMenu(); });
