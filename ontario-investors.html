@@ -607,12 +607,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
-    function openMenu() { mobileNav.classList.add('open'); hamburger.classList.add('is-open'); document.body.classList.add('no-scroll'); }
-    function closeMenu() { mobileNav.classList.remove('open'); hamburger.classList.remove('is-open'); document.body.classList.remove('no-scroll'); }
+    var _navScroll = 0;
+    function openMenu() { _navScroll = window.scrollY; document.body.style.top = '-' + _navScroll + 'px'; mobileNav.classList.add('open'); hamburger.classList.add('is-open'); document.body.classList.add('no-scroll'); }
+    function closeMenu() { mobileNav.classList.remove('open'); hamburger.classList.remove('is-open'); document.body.classList.remove('no-scroll'); document.body.style.top = ''; window.scrollTo(0, _navScroll); }
     function toggleMenu() { mobileNav.classList.contains('open') ? closeMenu() : openMenu(); }
     hamburger.addEventListener('click', toggleMenu);
     hamburger.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); } });
     mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    window.addEventListener('pageshow', function(e) { if (e.persisted) closeMenu(); });
 
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries => {

@@ -163,9 +163,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .nav-links { display: none; } .nav-cta { display: none; } .hamburger { display: flex; }
       .hero-stats { grid-template-columns: 1fr; gap: 1.5rem; max-width: 300px; }
       .hero-stat + .hero-stat { border-left: none; padding-left: 0; border-top: 1px solid var(--navy-border); padding-top: 1.5rem; }
-      .comparison-grid { grid-template-columns: 1fr; }
+      .comparison-grid { grid-template-columns: 1fr 1.25fr; }
+      .comparison-header:first-child { display: none; }
       .comparison-header:not(.highlight) { display: none; }
+      .comparison-header.highlight { grid-column: span 2; border-top-width: 2px; }
       .comparison-cell:not(.highlight):not(.label-cell) { display: none; }
+      .comparison-cell.label-cell { padding: 1rem 1.1rem; }
+      .comparison-cell.highlight { padding: 1rem 1.1rem; }
+      .comparison-cell.highlight .comparison-cell-value.good { font-size: 1.3rem; }
       .advantages-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: 1fr; gap: 3rem; } .steps-grid::before { display: none; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
@@ -654,12 +659,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
-    function openMenu() { mobileNav.classList.add('open'); hamburger.classList.add('is-open'); document.body.classList.add('no-scroll'); }
-    function closeMenu() { mobileNav.classList.remove('open'); hamburger.classList.remove('is-open'); document.body.classList.remove('no-scroll'); }
+    var _navScroll = 0;
+    function openMenu() { _navScroll = window.scrollY; document.body.style.top = '-' + _navScroll + 'px'; mobileNav.classList.add('open'); hamburger.classList.add('is-open'); document.body.classList.add('no-scroll'); }
+    function closeMenu() { mobileNav.classList.remove('open'); hamburger.classList.remove('is-open'); document.body.classList.remove('no-scroll'); document.body.style.top = ''; window.scrollTo(0, _navScroll); }
     function toggleMenu() { mobileNav.classList.contains('open') ? closeMenu() : openMenu(); }
     hamburger.addEventListener('click', toggleMenu);
     hamburger.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') toggleMenu(); });
     mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    window.addEventListener('pageshow', function(e) { if (e.persisted) closeMenu(); });
     let _lastScroll = 0;
     window.addEventListener('scroll', () => { if (Math.abs(window.scrollY - _lastScroll) > 60) { closeMenu(); } _lastScroll = window.scrollY; }, { passive: true });
     const observer = new IntersectionObserver((entries) => {

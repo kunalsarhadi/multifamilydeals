@@ -29,7 +29,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
   <style>
     :root {
       --navy-deep: #03080F; --navy-primary: #070F1C; --navy-card: #0C1828; --navy-alt: #0F1E35;
@@ -267,68 +267,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .qualifier-item select option {
       background: var(--navy-card);
-    }
-
-    /* CALENDLY */
-    .calendly-section {
-      padding: 5rem 2rem 6rem;
-      background: var(--navy-primary);
-    }
-    .calendly-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .calendly-header {
-      margin-bottom: 2rem;
-    }
-    .calendly-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-    .calendly-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
-    .calendly-title {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 600;
-      line-height: 1.2;
-    }
-    .calendly-embed-wrap {
-      border: 1px solid var(--navy-border);
-      background: var(--navy-card);
-      overflow: hidden;
-      min-height: 700px;
-      position: relative;
-    }
-    .calendly-skeleton {
-      position: absolute;
-      inset: 0;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-    }
-    .calendly-skeleton.loaded { opacity: 0; }
-    .skel {
-      background: linear-gradient(90deg, var(--navy-card) 25%, rgba(255,255,255,0.04) 50%, var(--navy-card) 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.6s infinite;
-      border-radius: 4px;
-    }
-    @keyframes shimmer {
-      0%   { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-    .calendly-inline-widget {
-      min-width: 320px;
-      height: 700px;
     }
 
     /* TRUST BAR */
@@ -623,49 +561,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- CALENDLY -->
-  <section class="calendly-section">
-    <div class="calendly-inner">
-      <div class="calendly-header reveal">
-        <div class="calendly-label">Select a Time</div>
-        <h2 class="calendly-title">Choose Your Discovery Call Slot</h2>
-        <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.5rem;font-weight:300;">Select a 30-minute slot — we'll send a confirmation immediately.</p>
-        <p style="font-size:0.82rem;color:var(--text-subtle);margin-top:1rem;font-weight:300;">Prefer to reach us directly? Call <a href="tel:+14162007010" data-conversion="phone_click" style="color:var(--gold);text-decoration:none;">+1 416 200 7010</a> or email <a href="mailto:sales@teamsarhadi.com" style="color:var(--gold);text-decoration:none;">sales@teamsarhadi.com</a></p>
-      </div>
-      <div class="calendly-embed-wrap reveal" style="transition-delay:0.1s">
-        <div class="calendly-skeleton" id="calendlySkeleton">
-          <div class="skel" style="height:2rem;width:40%"></div>
-          <div class="skel" style="height:1rem;width:60%"></div>
-          <div style="display:flex;gap:0.75rem;margin-top:0.5rem">
-            <div class="skel" style="height:5rem;flex:1"></div>
-            <div class="skel" style="height:5rem;flex:1"></div>
-            <div class="skel" style="height:5rem;flex:1"></div>
-            <div class="skel" style="height:5rem;flex:1"></div>
-            <div class="skel" style="height:5rem;flex:1"></div>
-            <div class="skel" style="height:5rem;flex:1"></div>
-            <div class="skel" style="height:5rem;flex:1"></div>
-          </div>
-          <div class="skel" style="height:1rem;width:30%"></div>
-          <div style="display:flex;gap:0.75rem">
-            <div class="skel" style="height:4rem;flex:1"></div>
-            <div class="skel" style="height:4rem;flex:1"></div>
-            <div class="skel" style="height:4rem;flex:1"></div>
-          </div>
-          <div style="display:flex;gap:0.75rem">
-            <div class="skel" style="height:4rem;flex:1"></div>
-            <div class="skel" style="height:4rem;flex:1"></div>
-            <div class="skel" style="height:4rem;flex:1"></div>
-          </div>
-          <div class="skel" style="height:3rem;width:50%;margin-top:auto;align-self:center"></div>
-        </div>
-        <div
-          class="calendly-inline-widget"
-          data-url="https://calendly.com/kunalsarhadi/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0C1828&text_color=EEF2F7&primary_color=C4934A"
-        ></div>
-      </div>
-    </div>
-  </section>
-
   <!-- WHATSAPP NETWORK -->
   <div style="background:var(--navy-deep);border-top:1px solid var(--navy-border);border-bottom:1px solid var(--navy-border);padding:2rem 2rem;">
     <div style="max-width:700px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
@@ -725,12 +620,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
-    function openMenu() { mobileNav.classList.add('open'); hamburger.classList.add('is-open'); document.body.classList.add('no-scroll'); }
-    function closeMenu() { mobileNav.classList.remove('open'); hamburger.classList.remove('is-open'); document.body.classList.remove('no-scroll'); }
+    var _navScroll = 0;
+    function openMenu() { _navScroll = window.scrollY; document.body.style.top = '-' + _navScroll + 'px'; mobileNav.classList.add('open'); hamburger.classList.add('is-open'); document.body.classList.add('no-scroll'); }
+    function closeMenu() { mobileNav.classList.remove('open'); hamburger.classList.remove('is-open'); document.body.classList.remove('no-scroll'); document.body.style.top = ''; window.scrollTo(0, _navScroll); }
     function toggleMenu() { mobileNav.classList.contains('open') ? closeMenu() : openMenu(); }
     hamburger.addEventListener('click', toggleMenu);
     hamburger.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') toggleMenu(); });
     mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    window.addEventListener('pageshow', function(e) { if (e.persisted) closeMenu(); });
     let _lastScroll = 0;
     window.addEventListener('scroll', () => { if (Math.abs(window.scrollY - _lastScroll) > 60) { closeMenu(); } _lastScroll = window.scrollY; }, { passive: true });
     const observer = new IntersectionObserver((entries) => {
@@ -740,32 +637,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     window.addEventListener('scroll', () => { document.querySelectorAll('.reveal:not(.visible)').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight + 50) el.classList.add('visible'); }); }, { passive: true });
     setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')), 1200);
 
-    // Calendly skeleton — dismiss once widget posts its ready/profile message
-    const skel = document.getElementById('calendlySkeleton');
-    if (skel) {
-      const dismissSkel = () => skel.classList.add('loaded');
-      window.addEventListener('message', (e) => {
-        if (e.data && typeof e.data === 'object' && e.data.event && e.data.event.indexOf('calendly') === 0) {
-          dismissSkel();
-          if (e.data.event === 'calendly.event_scheduled') {
-            if (typeof gtag === 'function') {
-              gtag('event', 'generate_lead', { event_category: 'booking', event_label: 'calendly_scheduled', value: 1 });
-              gtag('event', 'book_call', { event_category: 'booking', method: 'calendly' });
-            }
-            if (typeof fbq === 'function') {
-              fbq('track', 'Schedule');
-              fbq('track', 'Lead', { content_name: 'discovery_call' });
-            }
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({ event: 'book_call', method: 'calendly' });
-          }
-        }
-      });
-      // Fallback: dismiss after 5s regardless
-      setTimeout(dismissSkel, 5000);
-    }
-
-  
   // Dropdown navigation
   (function() {
     var dropdowns = document.querySelectorAll('.has-dropdown');
