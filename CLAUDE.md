@@ -117,3 +117,96 @@ When the user says "sync inventory", "update inventory", or "update the hotlist"
 3. Compare with current inventory.html
 4. Update inventory.html to match the sheet
 5. Commit and push to main
+
+---
+
+## Google Ads & GTM
+
+**GTM Container:** `GTM-WBW5QJQT` — installed in `<head>` + `<noscript>` after `<body>` on all 20 HTML files.
+
+**Conversion tracking — `dataLayer` events fired on this site:**
+
+| Event name | Trigger | Pages |
+|---|---|---|
+| `book_call` | Click on any CTA with `data-conversion="book_call"` | All pages (70 instances) |
+| `phone_click` | Click on phone number link | All pages (6 instances) |
+| `whatsapp_click` | Click on WhatsApp link | All pages (2 instances) |
+| `guide_download` | Click on guide/lead magnet CTA | guide.html, index.html (2 instances) |
+| `form_submit_contact` | GHL form submit (postMessage from iframe) | contact.html, guide.html |
+| `calculator_start` | User begins DSCR calculator | calculator.html |
+| `calculator_complete` | User completes DSCR calculator | calculator.html (includes `dscr` value) |
+
+**Primary conversion pages (send traffic here):**
+- `/contact` — Book Strategy Call (GHL form + chat widget)
+- `/inventory` — Active listings (high intent)
+- `/guide` — Free investor guide (lead magnet / top of funnel)
+- `/ontario-investors` — Dedicated landing page for Ontario-based investors
+
+**Key `data-conversion` attribute:** every CTA anchor and button has `data-conversion="<event>"`. The global listener is in the inline `<script>` before `</body>` on each page — it does `window.dataLayer.push({ event: e.currentTarget.dataset.conversion })`.
+
+**Gap to fix:** 3 blog pages (`blog/best-canadian-city-multifamily-investing.html`, `blog/cmhc-mli-select-50-points-explained.html`, `blog/mli-select-vs-conventional.html`) are missing the dataLayer event listener script — no conversion events fire from those pages.
+
+---
+
+## Meta (Facebook) Ads
+
+**Meta Pixel ID:** `3083326175185716`
+
+**Pixel placement:** installed in `<head>` on all pages via GTM (GTM-WBW5QJQT fires the pixel — it is NOT hardcoded directly in HTML).
+
+**Audience signals on-site:**
+- Primary audience: Ontario and BC investors priced out of local markets looking for cash-flowing Alberta multifamily
+- Secondary: Alberta-based accredited investors wanting to scale doors
+- Persona: 35–55, high income, entrepreneurial mindset, already owns at least one property
+
+**Retargeting segments to build:**
+- `/inventory` visitors (highest intent — browsing active listings)
+- `/contact` visitors who did NOT submit (abandoned booking)
+- `/guide` downloaders (top-of-funnel nurture)
+- `/ontario-investors` visitors (geo-specific segment)
+
+**Landing pages for ad traffic:**
+- Ontario audiences → `/ontario-investors`
+- General Canada → `/` or `/inventory`
+- Warm/retargeting → `/contact`
+
+**Creative tone:** premium, institutional, data-driven — NOT "get rich quick". The brand is sophisticated. Visuals: navy + gold palette, architectural imagery, Edmonton skyline. Tagline direction: "purpose-built wealth", "engineered for scale", "50 doors in 4 years".
+
+**Social profiles:**
+- Instagram: https://www.instagram.com/kunalsarhadi (Kunal's personal brand)
+- Facebook Page: https://www.facebook.com/multifamilydeals
+
+---
+
+## GoHighLevel (GHL)
+
+**GHL is the CRM, booking, and chat system for this site.**
+
+### Form Embeds
+
+| Page | Form ID | Purpose |
+|---|---|---|
+| `contact.html` | `vP9PwFhTgisGUe7787YO` | Book Strategy Call |
+| `guide.html` | `w9WSkfoD0lYZLBl9fwv5` | Download Investor Guide (lead magnet) |
+
+**Embed method:** `<iframe src="https://api.leadconnectorhq.com/widget/form/<ID>">` + `<script src="https://link.msgsndr.com/js/form_embed.js">`
+
+**postMessage listener:** both contact.html and guide.html listen for `message` events from `leadconnectorhq.com` origin. On form submit, fires `dataLayer.push({ event: 'form_submit_contact' })` to GTM.
+
+### Chat Widget
+
+- **Widget ID:** `69fa444c3cc75785c76e6387`
+- **Embed:** `<script defer src="https://beta.leadconnectorhq.com/loader.js" data-widget-id="69fa444c3cc75785c76e6387">`
+- Installed on all pages in footer
+
+### Workflows Connected
+
+- **Contact form** (`vP9PwFhTgisGUe7787YO`) → triggers Strategy Call booking workflow in GHL
+- **Guide form** (`w9WSkfoD0lYZLBl9fwv5`) → triggers lead magnet delivery + nurture sequence in GHL
+- **Calendly is fully removed** — do not reference or re-add it. GHL is the sole booking and CRM path.
+
+### Contact Details (used in forms and workflows)
+
+- **Phone:** +14162007010
+- **Email:** sales@teamsarhadi.com
+- **WhatsApp group:** https://chat.whatsapp.com/BYNf65k8iSf3fNOIrkZUvZ
