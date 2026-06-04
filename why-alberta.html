@@ -141,23 +141,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .comparison-table tr:last-child td { border-bottom: none; }
     .comparison-table tr:hover td { background: rgba(255,255,255,0.01); }
 
-    /* NEWS CARDS */
-    .news-section { padding: 6rem 2rem; background: var(--navy-deep); border-top: 1px solid var(--navy-border); }
-    .news-inner { max-width: 1280px; margin: 0 auto; }
-    .news-header { margin-bottom: 2.8rem; display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .news-title { font-size: clamp(1.3rem, 2.5vw, 1.9rem); font-weight: 600; }
-    .news-update-note { font-size: 0.82rem; font-weight: 400; letter-spacing: 0.02em; color: var(--text-subtle); }
-    .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); }
-    .news-card { background: var(--navy-card); padding: 2rem; display: flex; flex-direction: column; gap: 0.9rem; transition: background 0.2s; }
-    .news-card:hover { background: #0F1E35; }
-    .news-category { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: inline-flex; align-items: center; gap: 0.5rem; }
-    .news-category::before { content: ''; width: 0.5rem; height: 1px; background: var(--gold); display: block; }
-    .news-headline { font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 600; color: var(--text-primary); line-height: 1.4; }
-    .news-excerpt { font-size: 0.82rem; font-weight: 300; color: var(--text-muted); line-height: 1.72; flex: 1; }
-    .news-meta { display: flex; align-items: center; justify-content: space-between; padding-top: 0.8rem; border-top: 1px solid var(--navy-border); }
-    .news-source { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.02em; color: var(--text-subtle); }
-    .news-date { font-size: 0.68rem; font-weight: 400; color: var(--text-subtle); }
-
     /* CTA STRIP */
     .cta-strip { padding: 5rem 2rem; background: var(--navy-primary); border-top: 1px solid var(--navy-border); }
     .cta-strip-inner { max-width: 800px; margin: 0 auto; text-align: center; }
@@ -187,7 +170,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     @media (max-width: 1100px) {
       .fundamentals-grid { grid-template-columns: repeat(2, 1fr); }
       .narrative-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .news-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 1200px) { .nav-links { display: none; } .nav-cta { display: none; } .hamburger { display: flex; } }
     @media (max-width: 860px) {
@@ -201,7 +183,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .fundamentals { padding: 4rem 1.5rem; }
       .narrative { padding: 4rem 1.5rem; }
       .comparison { padding: 4rem 1.5rem; }
-      .news-section { padding: 4rem 1.5rem; }
       .hero-metrics { grid-template-columns: 1fr 1fr; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
@@ -504,49 +485,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- CURATED NEWS CARDS -->
-  <section class="news-section">
-    <div class="news-inner">
-      <div class="news-header reveal">
-        <div>
-          <div class="section-label">Market Updates</div>
-          <h2 class="news-title">What's Happening in Alberta Right Now</h2>
+  <!-- CONFIRMED SIGNALS -->
+  <section style="padding:3.5rem 2rem;background:var(--navy-deep);border-top:1px solid var(--navy-border);">
+    <div style="max-width:1100px;margin:0 auto;">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--navy-border);border:1px solid var(--navy-border);">
+        <div style="background:var(--navy-card);padding:1.75rem 2rem;">
+          <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-muted);margin-bottom:0.6rem;">Migration · Stats Can 2024</div>
+          <div style="font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:var(--gold);margin-bottom:0.4rem;">200,000+</div>
+          <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.65;">Net new Albertans annually. Alberta led all provinces in interprovincial migration in 2023–2024.</div>
         </div>
-        <div class="news-update-note">Curated monthly · Last updated May 2026</div>
+        <div style="background:var(--navy-card);padding:1.75rem 2rem;">
+          <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-muted);margin-bottom:0.6rem;">Vacancy · CMHC 2025</div>
+          <div style="font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:var(--gold);margin-bottom:0.4rem;">~4%</div>
+          <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.65;">Edmonton rental vacancy. Population growth continues to outpace new purpose-built supply.</div>
+        </div>
+        <div style="background:var(--navy-card);padding:1.75rem 2rem;">
+          <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-muted);margin-bottom:0.6rem;">Tax · Canada Revenue Agency</div>
+          <div style="font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:var(--gold);margin-bottom:0.4rem;">$0</div>
+          <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.65;">Provincial sales tax. No PST, no HST — plus GST rebated on qualifying purpose-built rental housing.</div>
+        </div>
       </div>
-      <div class="news-grid">
-
-        <div class="news-card reveal" style="transition-delay:0.06s">
-          <div class="news-category">Population &amp; Migration</div>
-          <h3 class="news-headline">Alberta Tops Canada for Net Interprovincial Migration for the Third Consecutive Year</h3>
-          <p class="news-excerpt">Statistics Canada confirmed Alberta received more net interprovincial migrants than any other province in 2023–2024, driven by housing affordability pressures in Ontario and British Columbia. Edmonton specifically absorbed a significant share of new arrivals, with the metro area recording population growth rates among the highest for any major Canadian city. Demand for rental housing — particularly purpose-built multi-unit properties — has outpaced supply as the housing stock struggles to absorb new residents at the pace of arrivals.</p>
-          <div class="news-meta">
-            <span class="news-source">Statistics Canada</span>
-            <span class="news-date">Q1 2025</span>
-          </div>
-        </div>
-
-        <div class="news-card reveal" style="transition-delay:0.10s">
-          <div class="news-category">Rental Market</div>
-          <h3 class="news-headline">Edmonton Rental Vacancy Holds Near 4% as Population Growth Sustains Absorption</h3>
-          <p class="news-excerpt">CMHC's spring 2025 Rental Market Report identified Edmonton as one of Canada's strongest demand-side rental markets. The vacancy rate for purpose-built rental apartments sits near 4%, with newer and larger units showing the strongest absorption. Landlords of 6–20 unit properties have reported stable lease-up periods and consistent rent growth — conditions supported by the city's ongoing population inflows, which continue to outpace new supply delivery by a significant margin.</p>
-          <div class="news-meta">
-            <span class="news-source">CMHC Rental Market Report</span>
-            <span class="news-date">Spring 2025</span>
-          </div>
-        </div>
-
-        <div class="news-card reveal" style="transition-delay:0.14s">
-          <div class="news-category">Economic Growth</div>
-          <h3 class="news-headline">Alberta Projects Strongest Provincial GDP Growth in Canada Through 2026</h3>
-          <p class="news-excerpt">Alberta's provincial government and major financial institutions have projected Alberta to lead Canadian provinces in real GDP growth through 2025–2026, supported by continued energy sector activity, accelerating private sector investment, and one of the country's most competitive business tax environments. Edmonton's public sector and healthcare employment base provides a stable anchor, while emerging technology and agri-business sectors are contributing new employment streams that reinforce rental housing demand across all unit types.</p>
-          <div class="news-meta">
-            <span class="news-source">Alberta Treasury Board &amp; Finance</span>
-            <span class="news-date">April 2025</span>
-          </div>
-        </div>
-
-      </div>
+      <p style="font-size:0.68rem;color:var(--text-subtle);margin-top:0.8rem;letter-spacing:0.03em;">Sources: Statistics Canada, CMHC Rental Market Report, Canada Revenue Agency. Figures are approximate and subject to change.</p>
     </div>
   </section>
 

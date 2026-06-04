@@ -124,14 +124,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .check-item svg.gold { color: var(--gold); }
     .check-item strong { color: var(--text-primary); font-weight: 500; }
 
-    /* STEPS */
-    .steps-list { display: flex; flex-direction: column; gap: 0; }
-    .step-row { display: grid; grid-template-columns: 2.4rem 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--navy-border); align-items: flex-start; }
-    .step-row:last-child { border-bottom: none; }
-    .step-num-sm { width: 2.4rem; height: 2.4rem; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 0.82rem; font-weight: 700; color: var(--gold); flex-shrink: 0; }
-    .step-title-sm { font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.2rem; }
-    .step-desc-sm { font-size: 0.8rem; font-weight: 300; color: var(--text-muted); line-height: 1.6; }
-
     /* COMPARISON */
     .compare-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); margin: 1.2rem 0; }
     .compare-cell { background: var(--navy-card); padding: 0.9rem 1rem; font-size: 0.8rem; }
@@ -146,13 +138,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* DISCLAIMER */
     .guide-disclaimer { background: var(--navy-deep); border: 1px solid var(--navy-border); padding: 1.5rem 2rem; font-size: 0.82rem; color: var(--text-subtle); line-height: 1.8; letter-spacing: 0.03em; margin-top: 3rem; }
-
-    /* CONTACT CARD */
-    .contact-card { background: var(--navy-card); border: 1px solid var(--gold-muted); padding: 2rem; margin-top: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
-    .contact-info-name { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
-    .contact-info-role { font-size: 0.82rem; color: var(--gold); letter-spacing: 0.08em; margin-bottom: 0.5rem; }
-    .contact-info-brokerage { font-size: 0.82rem; color: var(--text-subtle); }
-    .contact-info-phone { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
 
     /* REVEAL */
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
@@ -202,9 +187,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .compare-cell.header { background: #eee; }
       .compare-cell.highlight { background: #fffde7; }
       .check-item { break-inside: avoid; page-break-inside: avoid; }
-      .step-row { break-inside: avoid; page-break-inside: avoid; }
       .guide-disclaimer { background: #f9f9f9; border: 1px solid #ddd; break-inside: avoid; page-break-inside: avoid; }
-      .contact-card { border: 1px solid #8B6914; background: #fffdf5; break-inside: avoid; page-break-inside: avoid; }
       .reveal { opacity: 1; transform: none; }
       .page-hero::before { display: none; }
 
@@ -214,11 +197,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
       /* Prevent heading from stranding at bottom of page without any content */
       .guide-section-label, .guide-section h2 {
-        break-after: avoid;
-        page-break-after: avoid;
-      }
-      /* Prevent phase dividers from orphaning */
-      .section-phase-label {
         break-after: avoid;
         page-break-after: avoid;
       }
@@ -480,131 +458,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <p class="guide-p">Cash flow figures on the inventory page are projected estimates based on pro-forma analysis, net of property management fees. <strong>Actual results will vary.</strong> Consult your mortgage broker and accountant before making any purchase decision.</p>
+        <p class="guide-p" style="margin-top:0.5rem;">Inclusions bundled with every property — appliances, window coverings, landscaping, CMHC-compliant build, and Alberta New Home Warranty — are detailed on the <a href="inventory.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px">Active Inventory page</a>.</p>
       </div>
     </div>
 
     <hr class="guide-divider" />
 
-    <!-- SECTION 5: BUNDLED INCENTIVES -->
+    <!-- SECTION 5: BUYING PROCESS -->
     <div class="guide-section reveal">
       <div class="guide-section-label">Section 05</div>
-      <h2>What's Included with Every Property</h2>
-      <div class="guide-card">
-        <p class="guide-p">Every available property in our inventory comes with a bundled package of inclusions — negotiated with the Builder and built into the purchase agreement.</p>
-
-        <div class="checklist" style="margin-top:1rem;">
-          <div class="check-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            <span><strong>Mortgage Broker Fees Covered</strong> — when using the Developer's preferred broker on qualifying projects</span>
-          </div>
-          <div class="check-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            <span><strong>Appliances Package</strong> — included in every unit</span>
-          </div>
-          <div class="check-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            <span><strong>Window Coverings</strong> — included in every unit</span>
-          </div>
-          <div class="check-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            <span><strong>Landscaping</strong> — completed and included</span>
-          </div>
-          <div class="check-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            <span><strong>CMHC-Compliant Build</strong> — separate utility meters for every unit, built to program specifications</span>
-          </div>
-          <div class="check-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            <span><strong>Alberta New Home Warranty Program</strong> — up to 10 years structural coverage on every unit</span>
-          </div>
-          <div class="check-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="gold"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
-            <span><strong>In-House Property Management</strong> — available from completion</span>
-          </div>
-        </div>
-        <p class="guide-p" style="margin-top:1rem;font-size:0.72rem;color:var(--text-subtle);">Full terms and conditions, including details of these provisions, will be outlined in the Agreement of Purchase and Sale.</p>
-      </div>
-    </div>
-
-    <hr class="guide-divider" />
-
-    <!-- SECTION 6: BUYING PROCESS -->
-    <div class="guide-section reveal">
-      <div class="guide-section-label">Section 06</div>
       <h2>The 9-Step Buying Process</h2>
       <div class="guide-card">
-        <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);padding:0.75rem 0 0.5rem;border-bottom:1px solid var(--navy-border);margin-bottom:0.25rem;">Phase 1 — Pre-Approval</div>
-        <div class="steps-list">
-          <div class="step-row">
-            <div class="step-num-sm">01</div>
-            <div>
-              <div class="step-title-sm">Pre Qualification</div>
-              <div class="step-desc-sm">Initial consultation to assess net worth, available capital, and investment goals. Confirm fit with MLI Select requirements.</div>
-            </div>
+        <div style="display:flex;flex-direction:column;">
+          <div style="display:grid;grid-template-columns:9rem 1fr;gap:1rem;padding:0.75rem 0;border-bottom:1px solid var(--navy-border);align-items:baseline;">
+            <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Phase 1 — Pre-Approval</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);">Pre-qualify → Allocation request submitted to Builder → Due diligence with preferred broker</div>
           </div>
-          <div class="step-row">
-            <div class="step-num-sm">02</div>
-            <div>
-              <div class="step-title-sm">Allocation Request</div>
-              <div class="step-desc-sm">A worksheet is submitted to the Builder on your behalf to formally request purchase allocation for your selected property.</div>
-            </div>
+          <div style="display:grid;grid-template-columns:9rem 1fr;gap:1rem;padding:0.75rem 0;border-bottom:1px solid var(--navy-border);align-items:baseline;">
+            <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Phase 2 — Secure</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);">Lender letter of intent → Deal firmed, first deposit → CMHC submission (60–90 days)</div>
           </div>
-          <div class="step-row">
-            <div class="step-num-sm">03</div>
-            <div>
-              <div class="step-title-sm">Due Diligence</div>
-              <div class="step-desc-sm">Preferred mortgage broker qualifies both the investor and the project — reviewing cash flow projections and CMHC eligibility.</div>
-            </div>
+          <div style="display:grid;grid-template-columns:9rem 1fr;gap:1rem;padding:0.75rem 0;align-items:baseline;">
+            <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);">Phase 3 — Close</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);">CMHC acceptance → Pre-leasing begins → Completion and handover</div>
           </div>
         </div>
-        <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);padding:1.25rem 0 0.5rem;border-bottom:1px solid var(--navy-border);margin-bottom:0.25rem;">Phase 2 — Secure the Deal</div>
-        <div class="steps-list">
-          <div class="step-row">
-            <div class="step-num-sm">04</div>
-            <div>
-              <div class="step-title-sm">Lender Satisfied</div>
-              <div class="step-desc-sm">The lender issues a Letter of Intent confirming the financing structure and mortgage terms.</div>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-num-sm">05</div>
-            <div>
-              <div class="step-title-sm">Deal Firmed</div>
-              <div class="step-desc-sm">First deposit submitted to the Builder. Agreement is now conditional on CMHC approval and project viability as per the APS.</div>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-num-sm">06</div>
-            <div>
-              <div class="step-title-sm">CMHC Submission</div>
-              <div class="step-desc-sm">Full application package submitted to CMHC. This stage typically takes 60–90 days for review and Certificate of Insurance (COI) issuance.</div>
-            </div>
-          </div>
-        </div>
-        <div style="font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);padding:1.25rem 0 0.5rem;border-bottom:1px solid var(--navy-border);margin-bottom:0.25rem;">Phase 3 — Close &amp; Launch</div>
-        <div class="steps-list">
-          <div class="step-row">
-            <div class="step-num-sm">07</div>
-            <div>
-              <div class="step-title-sm">CMHC Acceptance</div>
-              <div class="step-desc-sm">CMHC approves the project. Your lawyer is introduced to begin preparation for closing.</div>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-num-sm">08</div>
-            <div>
-              <div class="step-title-sm">Pre-Leasing</div>
-              <div class="step-desc-sm">Property management begins marketing and leasing units before completion. The goal is maximum occupancy at handover — actual tenancy levels will vary by project.</div>
-            </div>
-          </div>
-          <div class="step-row" style="border-bottom:none;">
-            <div class="step-num-sm" style="background:var(--gold);color:var(--navy-deep);border-color:var(--gold);">09</div>
-            <div>
-              <div class="step-title-sm">Project Completion</div>
-              <div class="step-desc-sm">You close on the property. The building is professionally managed under the 50-year amortization structure. Actual occupancy at closing will depend on market conditions and project timing.</div>
-            </div>
-          </div>
-        </div>
+        <p class="guide-p" style="margin-top:1.25rem;"><a href="buying-process.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px">View the full 9-step buying process with detailed descriptions →</a></p>
       </div>
     </div>
 
@@ -651,25 +530,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.88rem;color:var(--text-muted);line-height:1.6;"><svg style="flex-shrink:0;margin-top:0.2rem;color:var(--gold)" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg><span><strong style="color:var(--text-primary)">Your questions answered</strong> — financing structure, CMHC process, builder, property management, and anything else</span></li>
       </ul>
       <p class="guide-p" style="font-size:0.82rem;color:var(--text-subtle);">No cost. No obligation. Before your call, review <a href="buying-process.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px">the full 9-step buying process</a> and <a href="inventory.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px">browse active inventory</a>.</p>
-
-      <div class="contact-card">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;flex:1;">
-          <div>
-            <div class="contact-info-name">Kunal Sarhadi</div>
-            <div class="contact-info-role">Real Estate Broker</div>
-            <div class="contact-info-brokerage">Homelife Miracle Realty Inc.</div>
-            <div class="contact-info-phone"><a href="tel:4162007010" data-conversion="phone_click" style="color:inherit;text-decoration:none;">416-200-7010</a></div>
-            <div class="contact-info-phone" style="font-size:0.78rem;margin-top:0.25rem;"><a href="mailto:sales@teamsarhadi.com" style="color:var(--gold);text-decoration:none;">sales@teamsarhadi.com</a></div>
-          </div>
-          <div>
-            <div class="contact-info-name">Ankit Sarhadi</div>
-            <div class="contact-info-role">Real Estate Broker</div>
-            <div class="contact-info-brokerage">Homelife Miracle Realty Inc.</div>
-            <div class="contact-info-phone"><a href="tel:4162007010" data-conversion="phone_click" style="color:inherit;text-decoration:none;">416-200-7010</a></div>
-            <div class="contact-info-phone" style="font-size:0.78rem;margin-top:0.25rem;"><a href="mailto:sales@teamsarhadi.com" style="color:var(--gold);text-decoration:none;">sales@teamsarhadi.com</a></div>
-          </div>
-        </div>
-        <a href="contact.html" data-conversion="book_call" class="btn-primary" style="align-self:center;">Book a Discovery Call</a>
+      <div style="margin-top:1.5rem;">
+        <a href="contact.html" data-conversion="book_call" class="btn-primary">Book a Discovery Call</a>
       </div>
     </div>
 
