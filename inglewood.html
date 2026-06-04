@@ -102,12 +102,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .section-sub { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; max-width: 560px; margin-bottom: 2.5rem; }
 
     /* TABS */
-    .suite-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--navy-border); margin-bottom: 3rem; overflow-x: auto; scrollbar-width: none; }
+    .suite-tabs-wrap { margin-bottom: 3rem; }
+    .suite-tabs-hint { font-size: 0.72rem; color: var(--text-subtle); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .suite-tabs { display: flex; gap: 0.5rem; overflow-x: auto; scrollbar-width: none; }
     .suite-tabs::-webkit-scrollbar { display: none; }
-    .suite-tab { font-family: 'Josefin Sans', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-subtle); background: none; border: none; border-bottom: 2px solid transparent; padding: 0.9rem 1.8rem; cursor: pointer; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
-    .suite-tab:hover { color: var(--text-muted); }
-    .suite-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
-    @media (max-width: 640px) { .suite-tab { flex: 1; padding: 0.8rem 0.5rem; font-size: 0.72rem; letter-spacing: 0.08em; text-align: center; } }
+    .suite-tab { font-family: 'Josefin Sans', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); background: var(--navy-card); border: 1px solid var(--navy-border); padding: 0.85rem 1.8rem; cursor: pointer; white-space: nowrap; transition: color 0.2s, background 0.2s, border-color 0.2s; }
+    .suite-tab:hover { color: var(--text-primary); border-color: var(--gold-muted); }
+    .suite-tab.active { color: var(--navy-deep); background: var(--gold); border-color: var(--gold); font-weight: 700; }
+    @media (max-width: 640px) { .suite-tab { flex: 1; padding: 0.85rem 0.5rem; font-size: 0.75rem; letter-spacing: 0.06em; text-align: center; } }
 
     /* SUITE PANELS */
     .suite-panel { display: none; }
@@ -414,10 +416,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="section-sub">Every unit is photographed at completion — no staging, no filters. What you see is what tenants move into.</p>
     </div>
 
-    <div class="suite-tabs reveal">
-      <button class="suite-tab active" data-tab="primary">Primary Suite</button>
-      <button class="suite-tab" data-tab="secondary">Secondary Suite</button>
-      <button class="suite-tab" data-tab="garden">Garden Suite</button>
+    <div class="suite-tabs-wrap reveal">
+      <p class="suite-tabs-hint">3 suite types &mdash; tap to explore each</p>
+      <div class="suite-tabs">
+        <button class="suite-tab active" data-tab="primary">Primary Suite</button>
+        <button class="suite-tab" data-tab="secondary">Secondary Suite</button>
+        <button class="suite-tab" data-tab="garden">Garden Suite</button>
+      </div>
     </div>
 
     <!-- PRIMARY SUITE -->
