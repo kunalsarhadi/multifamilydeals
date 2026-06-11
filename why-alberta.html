@@ -198,6 +198,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* SKIP LINK */
     .skip-link { position: absolute; left: -9999px; top: 0; background: var(--gold); color: var(--navy-deep); padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; z-index: 9999; text-decoration: none; }
     .skip-link:focus { left: 0; }
+    /* SIGNALS GRID */
+    .signals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); }
+    @media (max-width: 900px) { .signals-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .signals-grid { grid-template-columns: 1fr; } }
   </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -488,7 +492,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- CONFIRMED SIGNALS -->
   <section style="padding:3.5rem 2rem;background:var(--navy-deep);border-top:1px solid var(--navy-border);">
     <div style="max-width:1100px;margin:0 auto;">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--navy-border);border:1px solid var(--navy-border);">
+      <div class="signals-grid">
         <div style="background:var(--navy-card);padding:1.75rem 2rem;">
           <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-muted);margin-bottom:0.6rem;">Migration · Stats Can 2024</div>
           <div style="font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:var(--gold);margin-bottom:0.4rem;">200,000+</div>
@@ -504,8 +508,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div style="font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:var(--gold);margin-bottom:0.4rem;">$0</div>
           <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.65;">Provincial sales tax. No PST, no HST — plus GST rebated on qualifying purpose-built rental housing.</div>
         </div>
+        <div style="background:var(--navy-card);padding:1.75rem 2rem;">
+          <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-muted);margin-bottom:0.6rem;">Employment · Stats Can + ATB Economics, June 2026</div>
+          <div style="font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:var(--gold);margin-bottom:0.4rem;">#1</div>
+          <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.65;">Alberta leads all four major provinces in employment growth. Ontario, BC &amp; Quebec are now declining.</div>
+        </div>
       </div>
-      <p style="font-size:0.68rem;color:var(--text-subtle);margin-top:0.8rem;letter-spacing:0.03em;">Sources: Statistics Canada, CMHC Rental Market Report, Canada Revenue Agency. Figures are approximate and subject to change.</p>
+      <p style="font-size:0.68rem;color:var(--text-subtle);margin-top:0.8rem;letter-spacing:0.03em;">Sources: Statistics Canada, CMHC Rental Market Report, Canada Revenue Agency, ATB Economics. Figures are approximate and subject to change.</p>
     </div>
   </section>
 

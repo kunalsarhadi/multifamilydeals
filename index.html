@@ -163,14 +163,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .nav-links { display: none; } .nav-cta { display: none; } .hamburger { display: flex; }
       .hero-stats { grid-template-columns: 1fr; gap: 1.5rem; max-width: 300px; }
       .hero-stat + .hero-stat { border-left: none; padding-left: 0; border-top: 1px solid var(--navy-border); padding-top: 1.5rem; }
-      .comparison-grid { grid-template-columns: 1fr; }
+      .comparison-grid { grid-template-columns: 1fr 1fr; }
       .comparison-header:first-child { display: none; }
       .comparison-header:not(.highlight) { display: none; }
-      .comparison-header.highlight { grid-column: span 1; border-top-width: 2px; }
+      .comparison-header.highlight { grid-column: span 2; border-top-width: 2px; }
       .comparison-cell.label-cell { padding: 1rem 1.1rem; background: var(--navy-primary); }
-      .comparison-cell:not(.highlight):not(.label-cell) { padding: 0.6rem 1.1rem; background: var(--navy-deep); }
-      .comparison-cell:not(.highlight):not(.label-cell) .comparison-cell-value { font-size: 1rem; color: var(--text-subtle); }
-      .comparison-cell:not(.highlight):not(.label-cell) .comparison-cell-sub { color: var(--text-subtle); font-size: 0.72rem; }
+      .comparison-cell:not(.highlight):not(.label-cell) { display: none; }
       .comparison-cell.highlight { padding: 1rem 1.1rem; }
       .comparison-cell.highlight .comparison-cell-value.good { font-size: 1.3rem; }
       .advantages-grid { grid-template-columns: 1fr; }
