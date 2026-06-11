@@ -89,13 +89,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .page-title { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 700; line-height: 1.08; margin-bottom: 1.5rem; max-width: 700px; }
     .page-title span { color: var(--gold); }
     .page-subtitle { font-size: 1.05rem; font-weight: 300; color: var(--text-muted); line-height: 1.75; max-width: 560px; letter-spacing: 0.02em; }
-    @media (max-width: 900px) { .page-hero-inner { grid-template-columns: 1fr; } .page-hero-aside { display: none; } }
+    @media (max-width: 900px) { .page-hero-inner { grid-template-columns: 1fr; } .page-hero-aside { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; } }
 
     .section { padding: 6rem 2rem; }
     .section-inner { max-width: 1280px; margin: 0 auto; }
     .section-label { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
     .section-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
-    .section-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 600; line-height: 1.15; margin-bottom: 1rem; }
+    .section-title { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 600; line-height: 1.15; margin-bottom: 1rem; }
     .section-subtitle { font-size: 1rem; font-weight: 300; color: var(--text-muted); line-height: 1.75; max-width: 580px; letter-spacing: 0.02em; margin-bottom: 3rem; }
 
     /* WHY 6-10 PLEX */
@@ -193,7 +193,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .trust-bar-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
     .trust-stat { text-align: center; padding: 0 2.5rem; }
     .trust-stat-num { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 700; color: var(--gold); letter-spacing: 0.02em; line-height: 1.1; }
-    .trust-stat-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); margin-top: 0.35rem; line-height: 1.5; }
+    .trust-stat-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); margin-top: 0.35rem; line-height: 1.5; }
     .trust-divider { width: 1px; height: 2.5rem; background: var(--navy-border); flex-shrink: 0; }
     @media (max-width: 640px) { .trust-bar { padding: 1.5rem; } .trust-bar-inner { gap: 1rem 0; } .trust-divider { display: none; } .trust-stat { padding: 0.5rem 1.5rem; } }
   </style>
@@ -299,8 +299,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="page-hero-stat-label">HST · Land Transfer Tax</div>
         </div>
         <div class="page-hero-stat">
-          <div class="page-hero-stat-number">160+</div>
-          <div class="page-hero-stat-label">Google Reviews</div>
+          <a href="inglewood.html" style="text-decoration:none;color:inherit;display:block;">
+            <div class="page-hero-stat-number">9-Plex</div>
+            <div class="page-hero-stat-label">Delivered — View Portfolio</div>
+          </a>
         </div>
       </div>
     </div>
