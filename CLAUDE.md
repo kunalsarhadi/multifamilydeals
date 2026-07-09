@@ -68,6 +68,13 @@ Always tell the user whether a change is local-only or has been pushed live.
 - **Ontario vacancy rate:** ~1.5%
 - **BC vacancy rate:** ~0.9%
 - **Alberta provincial sales tax:** None (no PST, no HST)
+- **MLI Select points (canonical framing — keep consistent site-wide):** 50 points = minimum eligibility; 100 points = maximum benefits including 50-year amortization and highest LTV
+- **Liquidity requirement (canonical — keep consistent site-wide):** liquid assets equal to ~10% of project price after deposit
+- **Calculator default rate:** 5.25% (matches the inventory disclaimer's 5.25–5.50% modeling; do not lower it)
+
+## Inventory counts are AUTO-CALCULATED
+
+Do NOT hand-edit the Available / Sold Conditional / Coming Soon counts on inventory.html (status pills, section headers, scarcity block). A script at the bottom of inventory.html counts the `.asset-badge` elements per section at page load and fills every count. To change inventory: add/move/remove the card itself — the numbers update themselves.
 
 ## Why Investors Choose Alberta (key talking points)
 
@@ -128,13 +135,17 @@ When the user says "sync inventory", "update inventory", or "update the hotlist"
 
 | Event name | Trigger | Pages |
 |---|---|---|
-| `book_call` | Click on any CTA with `data-conversion="book_call"` | All pages (70 instances) |
-| `phone_click` | Click on phone number link | All pages (6 instances) |
-| `whatsapp_click` | Click on WhatsApp link | All pages (2 instances) |
-| `guide_download` | Click on guide/lead magnet CTA | guide.html, index.html (2 instances) |
+| `book_call` | Click on any CTA with `data-conversion="book_call"` | All pages (70+ instances) |
+| `phone_click` | Click on phone number link | All pages |
+| `whatsapp_click` | Click on WhatsApp link | contact, ontario-investors |
+| `guide_download` | Click on guide/lead magnet CTA | guide.html, index.html, ontario-investors.html |
+| `package_view` | Click "View Full Package" (Google Drive) on inventory cards | inventory.html (9 links) — added July 2026; build Meta retargeting audience off this |
+| `virtual_tour_view` | Click "Open Full Tour" (iGuide) | inglewood.html — **verify a GTM trigger exists for this event** |
 | `form_submit_contact` | GHL form submit (postMessage from iframe) | contact.html, guide.html |
 | `calculator_start` | User begins DSCR calculator | calculator.html |
 | `calculator_complete` | User completes DSCR calculator | calculator.html (includes `dscr` value) |
+
+**Meta pixel events on guide.html:** `Lead` fires ONLY on actual GHL form submission (inside `triggerPdfDownload()`). Opening the download modal fires the custom event `GuideModalOpen`. Do not move `Lead` back to the modal-open click — that corrupts Meta ad optimization.
 
 **Primary conversion pages (send traffic here):**
 - `/contact` — Book Strategy Call (GHL form + chat widget)
@@ -144,7 +155,7 @@ When the user says "sync inventory", "update inventory", or "update the hotlist"
 
 **Key `data-conversion` attribute:** every CTA anchor and button has `data-conversion="<event>"`. The global listener is in the inline `<script>` before `</body>` on each page — it does `window.dataLayer.push({ event: e.currentTarget.dataset.conversion })`.
 
-**Gap to fix:** 3 blog pages (`blog/best-canadian-city-multifamily-investing.html`, `blog/cmhc-mli-select-50-points-explained.html`, `blog/mli-select-vs-conventional.html`) are missing the dataLayer event listener script — no conversion events fire from those pages.
+**Resolved July 2026:** all blog pages now carry the dataLayer conversion listener and the GHL chat widget. No known tracking gaps in HTML. Remaining verification (needs GTM/Meta account access): (1) confirm GTM has a trigger for `virtual_tour_view` and `package_view`; (2) confirm GTM does NOT also fire the Meta base pixel — the pixel IS hardcoded in every page's `<head>`, so a GTM-fired pixel would double-count PageViews.
 
 ---
 
@@ -152,7 +163,7 @@ When the user says "sync inventory", "update inventory", or "update the hotlist"
 
 **Meta Pixel ID:** `3083326175185716`
 
-**Pixel placement:** installed in `<head>` on all pages via GTM (GTM-WBW5QJQT fires the pixel — it is NOT hardcoded directly in HTML).
+**Pixel placement:** the Meta base pixel IS hardcoded in the `<head>` of all HTML pages (init + PageView). GTM must NOT also fire the base pixel or PageViews double-count — verify in the GTM container.
 
 **Audience signals on-site:**
 - Primary audience: Ontario and BC investors priced out of local markets looking for cash-flowing Alberta multifamily

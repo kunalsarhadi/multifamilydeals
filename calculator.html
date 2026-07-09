@@ -369,11 +369,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="field">
           <label for="price">Purchase Price</label>
-          <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="price" value="1800000" min="0" step="1000" inputmode="numeric" /></div>
+          <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="price" value="2000000" min="0" step="1000" inputmode="numeric" /></div>
         </div>
         <div class="field">
           <label for="rate">Interest Rate (% / year)</label>
-          <div class="input-wrap has-post"><input type="number" id="rate" value="4" min="0" step="0.05" inputmode="decimal" /><span class="affix post">%</span></div>
+          <div class="input-wrap has-post"><input type="number" id="rate" value="5.25" min="0" step="0.05" inputmode="decimal" /><span class="affix post">%</span></div>
           <span class="hint">Modelled at the CMHC MLI Select maximum <strong style="color:var(--gold-light);font-weight:600;">50-year amortization</strong>.</span>
         </div>
 
@@ -381,13 +381,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="unit-head"><span>Units</span><span>Rent / mo</span><span></span></div>
         <div id="unitRows">
           <div class="unit-row">
-            <input type="number" class="u-count" value="3" min="0" step="1" inputmode="numeric" />
-            <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" class="u-rent" value="2250" min="0" step="25" inputmode="numeric" /></div>
+            <input type="number" class="u-count" value="4" min="0" step="1" inputmode="numeric" />
+            <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" class="u-rent" value="2150" min="0" step="25" inputmode="numeric" /></div>
             <button type="button" class="u-remove" aria-label="Remove row">&times;</button>
           </div>
           <div class="unit-row">
-            <input type="number" class="u-count" value="3" min="0" step="1" inputmode="numeric" />
-            <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" class="u-rent" value="1350" min="0" step="25" inputmode="numeric" /></div>
+            <input type="number" class="u-count" value="4" min="0" step="1" inputmode="numeric" />
+            <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" class="u-rent" value="1500" min="0" step="25" inputmode="numeric" /></div>
             <button type="button" class="u-remove" aria-label="Remove row">&times;</button>
           </div>
         </div>
@@ -408,7 +408,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="group-label">Operating Expenses <span class="opt">— optional, edit to fit</span></div>
         <div class="field">
           <label for="propTax">Property Tax / year</label>
-          <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="propTax" value="13735" min="0" step="100" /></div>
+          <div class="input-wrap has-pre"><span class="affix pre">$</span><input type="number" id="propTax" value="15500" min="0" step="100" /></div>
           <span class="hint">Estimated as 75% of price &times; Edmonton's mill rate (1.01738%). Type the actual figure if you have it.</span>
         </div>
         <div class="grid-2">
@@ -547,9 +547,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>This calculator uses the same model we run on every deal. On a free 30-minute discovery call, we'll match your available capital to a specific property in our active inventory and build you a complete, property-specific pro-forma grounded in real numbers. No cost. No obligation.</p>
         </div>
         <div class="cta-actions">
-          <a href="contact.html" data-conversion="book_call" class="btn-primary">Book a Discovery Call</a>
+          <a href="contact.html?source=calculator" data-conversion="book_call" class="btn-primary">Book a Discovery Call</a>
           <a href="inventory.html" class="btn-ghost" style="justify-content:center;">Browse Active Inventory</a>
         </div>
+        <p style="font-size:0.82rem;color:var(--text-muted);margin-top:1.25rem;line-height:1.6;"><strong style="color:var(--gold);">Keep this pro-forma:</strong> mention "calculator" when you book and we&rsquo;ll rebuild these numbers against live listings within your deposit range before the call.</p>
       </div>
     </div>
   </section>
