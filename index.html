@@ -165,12 +165,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .hero-stat + .hero-stat { border-left: none; padding-left: 0; border-top: 1px solid var(--navy-border); padding-top: 1.5rem; }
       .comparison-grid { grid-template-columns: 1fr 1fr; }
       .comparison-header:first-child { display: none; }
-      .comparison-header:not(.highlight) { display: none; }
-      .comparison-header.highlight { grid-column: span 2; border-top-width: 2px; }
-      .comparison-cell.label-cell { padding: 1rem 1.1rem; background: var(--navy-primary); }
-      .comparison-cell:not(.highlight):not(.label-cell) { display: none; }
-      .comparison-cell.highlight { padding: 1rem 1.1rem; }
-      .comparison-cell.highlight .comparison-cell-value.good { font-size: 1.3rem; }
+      .comparison-header { padding: 1rem 1.1rem; }
+      .comparison-header.highlight { border-top-width: 2px; }
+      .comparison-cell.label-cell { grid-column: span 2; padding: 1rem 1.1rem 0.6rem; background: var(--navy-primary); }
+      .comparison-cell:not(.highlight):not(.label-cell) { padding: 0.9rem 1.1rem; background: var(--navy-deep); }
+      .comparison-cell:not(.highlight):not(.label-cell) .comparison-cell-value { font-size: 1rem; color: var(--text-subtle); }
+      .comparison-cell:not(.highlight):not(.label-cell) .comparison-cell-sub { font-size: 0.72rem; color: var(--text-subtle); }
+      .comparison-cell.highlight { padding: 0.9rem 1.1rem; }
+      .comparison-cell.highlight .comparison-cell-value.good { font-size: 1.2rem; }
       .advantages-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: 1fr; gap: 3rem; } .steps-grid::before { display: none; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
@@ -341,8 +343,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="hero-subline">CMHC MLI Select lets qualifying investors enter Edmonton's purpose-built multi-family market with as little as 5% down and 50-year amortization. The same $80,000 that buys one Ontario condo can acquire 6–10 doors of cash-flowing rental real estate in Canada's fastest-growing major city.</p>
       <div class="hero-actions">
         <a href="contact.html" data-conversion="book_call" class="btn-primary">Book Your Discovery Call</a>
-        <a href="inventory.html#available" class="btn-ghost">View Active Inventory</a>
+        <a href="inventory.html#available" class="btn-ghost">View the Available Packages</a>
       </div>
+      <p style="margin-top:1.1rem;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-subtle);">More than half of released packages are already sold or under conditional offer &mdash; <a href="inventory.html" style="color:var(--gold);text-decoration:none;">see what remains &rarr;</a></p>
       <div class="hero-stats">
         <div class="hero-stat"><div class="hero-stat-number">5%</div><div class="hero-stat-label">Minimum Down Payment</div></div>
         <div class="hero-stat"><div class="hero-stat-number">50 Yr</div><div class="hero-stat-label">Amortization Period</div></div>
@@ -356,7 +359,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="trust-bar">
         <div class="trust-stat">
           <div class="trust-stat-num">$500M+</div>
-          <div class="trust-stat-label">Real Estate Sold<br>Combined Sarhadi Group</div>
+          <div class="trust-stat-label">In Transactions Closed<br>by the Sarhadi Brothers</div>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-stat">
@@ -590,7 +593,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="timeline-dot"></div>
           <div>
             <div class="timeline-event">Construction Period</div>
-            <div class="timeline-desc">No capital is at risk during the build — you don't hold the mortgage yet. Quarterly build updates are provided. You focus on your next acquisition.</div>
+            <div class="timeline-desc">Your mortgage doesn't begin until completion — during construction you make no mortgage payments while the builder carries the project. Quarterly build updates are provided. You focus on your next acquisition.</div>
           </div>
         </div>
         <div class="timeline-item">
@@ -631,8 +634,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="section-label" style="justify-content:center"><span style="display:block;width:1.5rem;height:1px;background:var(--gold)"></span>Take The First Step<span style="display:block;width:1.5rem;height:1px;background:var(--gold)"></span></div>
       <h2 class="cta-title">Your Next Acquisition<br />Starts With One Conversation</h2>
       <p class="cta-sub">Qualified investors receive a full pro-forma analysis, debt structure breakdown, and a personalized acquisition roadmap — at no cost.</p>
-      <p style="font-size:0.72rem;color:var(--text-subtle);letter-spacing:0.04em;line-height:1.7;max-width:520px;margin:0 auto 2rem;">Real estate investment involves risk, including the potential loss of capital. Financing is subject to CMHC and lender approval. Past performance does not guarantee future results. This is not financial advice — consult a qualified advisor before investing.</p>
       <a href="contact.html" data-conversion="book_call" class="btn-primary">Book Your Discovery Call</a>
+      <p style="font-size:0.72rem;color:var(--text-subtle);letter-spacing:0.04em;line-height:1.7;max-width:520px;margin:2rem auto 0;">Real estate investment involves risk, including the potential loss of capital. Financing is subject to CMHC and lender approval. Past performance does not guarantee future results. This is not financial advice — consult a qualified advisor before investing.</p>
     </div>
   </section>
 
@@ -650,6 +653,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="reviews.html">Reviews</a></li>
         <li><a href="blog/index.html">Blog</a></li>
         <li><a href="guide.html">Free Guide</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="footer-copy">Kunal Sarhadi, Real Estate Broker &nbsp;|&nbsp; Homelife Miracle Realty Inc. &nbsp;|&nbsp; © 2026 Multi Family Deals. Not financial or investment advice. CMHC MLI Select program terms subject to change.</div>
@@ -767,10 +771,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var bar = document.getElementById('mobileStickyCtaBar');
   if (!bar) return;
   var heroActions = document.querySelector('.hero-actions');
+  var mq = window.matchMedia('(max-width: 1200px)');
   function checkScroll() {
     if (!heroActions) return;
     var rect = heroActions.getBoundingClientRect();
-    var show = rect.bottom <= 0;
+    var show = mq.matches && rect.bottom <= 0;
     bar.style.display = show ? 'block' : 'none';
     document.body.style.paddingBottom = show ? (bar.offsetHeight + 'px') : '';
   }

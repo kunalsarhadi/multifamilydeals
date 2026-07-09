@@ -447,7 +447,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="footer-inner">
       <div class="footer-logo">MULTI FAMILY <span>DEALS</span></div>
       <ul class="footer-links">
-        <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">Strategy</a></li>
         <li><a href="../why-alberta.html">Why Alberta</a></li>
         <li><a href="../inventory.html">Inventory</a></li>
@@ -455,8 +454,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="../buying-process.html">Buying Process</a></li>
         <li><a href="../faq.html">FAQ</a></li>
         <li><a href="../reviews.html">Reviews</a></li>
-        <li><a href="../guide.html">Free Guide</a></li>
         <li><a href="index.html">Blog</a></li>
+        <li><a href="../guide.html">Free Guide</a></li>
+        <li><a href="../calculator.html">Calculator</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
       <p class="footer-copy">Multi Family Deals — Edmonton, Alberta. Kunal Sarhadi, Real Estate Broker, Homelife Miracle Realty Inc. All investment involves risk. Past performance is not indicative of future results. This content is for informational purposes only and does not constitute investment advice.</p>
@@ -531,6 +531,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   })();
 </script>
+<!-- Conversion Event Listener -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('[data-conversion]');
+    if(!el) return;
+    var eventName = el.getAttribute('data-conversion');
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': eventName,
+      'event_category': 'engagement',
+      'event_label': el.textContent.trim().substring(0, 50),
+      'page_path': window.location.pathname
+    });
+  });
+})();
+</script>
+<!-- End Conversion Event Listener -->
 <script defer src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69fa444c3cc75785c76e6387"></script>
 </body>
 </html>

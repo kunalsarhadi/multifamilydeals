@@ -419,7 +419,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="check-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            <span><strong>Additional 5% in liquid form</strong> as a contingency reserve</span>
+            <span><strong>Liquid assets equal to roughly 10% of the project price</strong> (after deposit) as a contingency reserve</span>
           </div>
           <div class="check-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
@@ -462,6 +462,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
+    <!-- MID-GUIDE CAPTURE -->
+    <div class="reveal" style="margin:2.5rem 0;background:var(--navy-card);border:1px solid var(--navy-border);border-top:2px solid var(--gold);padding:1.75rem 2rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem;">
+      <div style="flex:1;min-width:260px;">
+        <div style="font-family:'Cinzel',serif;font-size:1.05rem;font-weight:700;color:var(--text-primary);margin-bottom:0.35rem;">Want to keep these numbers?</div>
+        <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.65;margin:0;">Get the PDF version — the deposit tables, the 9-step process, and the risk checklist in one printable document.</p>
+      </div>
+      <button class="btn-primary" onclick="document.getElementById('pdfGateBtn').click()" style="flex-shrink:0;">Download the PDF Guide</button>
+    </div>
+
     <hr class="guide-divider" />
 
     <!-- SECTION 5: BUYING PROCESS -->
@@ -489,9 +498,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <hr class="guide-divider" />
 
-    <!-- SECTION 7: RISK -->
+    <!-- SECTION 6: RISK -->
     <div class="guide-section reveal">
-      <div class="guide-section-label">Section 07</div>
+      <div class="guide-section-label">Section 06</div>
       <h2>Key Risks to Understand</h2>
       <div class="guide-card">
         <div class="checklist">
@@ -623,7 +632,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     pdfGateBtn.addEventListener('click', function() {
       openPdfModal();
       if (typeof fbq === 'function') {
-        fbq('track', 'Lead', { content_name: 'mli_select_guide' });
+        fbq('trackCustom', 'GuideModalOpen', { content_name: 'mli_select_guide' });
       }
     });
     pdfModalClose.addEventListener('click', closePdfModal);
@@ -635,6 +644,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       _pdfTriggered = true;
       if (typeof gtag === 'function') gtag('event', 'guide_download', { event_category: 'lead', event_label: 'mli_select_guide' });
       if (window.dataLayer) window.dataLayer.push({ event: 'guide_download', content_name: 'mli_select_guide' });
+      if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'mli_select_guide' });
       setTimeout(() => {
         const a = document.createElement('a');
         a.href = '/assets/CMHC-MLI-Select-Investor-Guide.pdf';
@@ -780,5 +790,28 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 <!-- End GHL Booking Completion Listener -->
+<!-- Mobile Sticky CTA -->
+<style>
+  .mobile-sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; background: var(--gold); padding: 0.9rem 1.5rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); }
+  .mobile-sticky-cta a { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.88rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy-deep); text-decoration: none; }
+</style>
+<div class="mobile-sticky-cta" id="mobileStickyCtaBar">
+  <a href="contact.html" data-conversion="book_call">Book a Discovery Call &rarr;</a>
+</div>
+<script>
+(function(){
+  var bar = document.getElementById('mobileStickyCtaBar');
+  if (!bar) return;
+  var mq = window.matchMedia('(max-width: 1200px)');
+  function checkScroll() {
+    var show = mq.matches && window.scrollY > 600;
+    bar.style.display = show ? 'block' : 'none';
+    document.body.style.paddingBottom = show ? (bar.offsetHeight + 'px') : '';
+  }
+  window.addEventListener('scroll', checkScroll, { passive: true });
+  window.addEventListener('resize', checkScroll, { passive: true });
+  checkScroll();
+})();
+</script>
 </body>
 </html>

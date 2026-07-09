@@ -900,5 +900,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 <!-- End Conversion Event Listener -->
 <script defer src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69fa444c3cc75785c76e6387"></script>
+<!-- Mobile Sticky CTA -->
+<style>
+  .mobile-sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; background: var(--gold); padding: 0.9rem 1.5rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); }
+  .mobile-sticky-cta a { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.88rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy-deep); text-decoration: none; }
+</style>
+<div class="mobile-sticky-cta" id="mobileStickyCtaBar">
+  <a href="contact.html" data-conversion="book_call">Book a Call — Review Your Numbers &rarr;</a>
+</div>
+<script>
+(function(){
+  var bar = document.getElementById('mobileStickyCtaBar');
+  if (!bar) return;
+  var mq = window.matchMedia('(max-width: 1200px)');
+  function checkScroll() {
+    var show = mq.matches && window.scrollY > 600;
+    bar.style.display = show ? 'block' : 'none';
+    document.body.style.paddingBottom = show ? (bar.offsetHeight + 'px') : '';
+  }
+  window.addEventListener('scroll', checkScroll, { passive: true });
+  window.addEventListener('resize', checkScroll, { passive: true });
+  checkScroll();
+})();
+</script>
 </body>
 </html>
