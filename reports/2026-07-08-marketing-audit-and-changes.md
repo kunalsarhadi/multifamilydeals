@@ -113,9 +113,9 @@ To change inventory, add/move/remove the **card** — numbers update themselves.
 
 ### reviews.html
 - H1 now includes the site brand: "What Investors Say About the Team Behind Multi Family Deals."
-- "Read our reviews on Google →" outbound link added under the stats bar. **NOTE: currently points to a Google search URL** (`google.com/search?q=Team+Sarhadi+Homelife+Miracle+Realty+reviews`). **Replace with the exact Google Business Profile share link when Kunal provides it.**
 - Self-serving review JSON-LD removed (policy risk).
 - tel: links normalized to +1.
+- **Owner decision (July 9):** NO direct outbound link to the Google reviews profile — a search-URL link was briefly added and has been removed. Keep review proof on-site only. Do not re-add external Google links.
 
 ### Blog (all 9 files)
 - Footers normalized, conversion listener + chat widget gaps closed, sitemap + canonical fixes (see sections 2 above).
@@ -136,15 +136,18 @@ These are also recorded in CLAUDE.md.
 
 ---
 
-## 6. Deliberately NOT done (needs owner input or data)
+## 6. Remaining items — PRIORITY ORDER (July 9, 2026)
 
-1. **Founder photography.** The site has zero human faces. All credential blocks shipped text-only. When professional photos of Kunal/Ankit exist: add to about.html manifesto, contact.html beside the form, homepage proof strip. Highest remaining trust lever.
-2. **Deposit/price anchors on inventory cards** ("Est. cash to close: from ~$X"). Requires real price bands per package — do not invent numbers. Data lives in the Drive packages/Google Sheet.
-3. **Inglewood outcomes band** (lease-up days, achieved rents vs pro-forma, stabilized DSCR). The portfolio page proves the building exists, not that the investment worked. Needs real deal data from Kunal.
-4. **True calculator email capture** ("Email me this pro-forma"). Needs a dedicated GHL form ID + workflow. Current implementation is a soft CTA with `?source=calculator`.
-5. **Google Business Profile direct link** on reviews.html (see above — placeholder search URL in place).
-6. **GTM verification** (no GTM access from this environment): triggers for `package_view` + `virtual_tour_view`; confirm no double-fired Meta base pixel.
-7. **Appraisal/track-record section** (separate initiative, deferred by owner): ~10 past deals appraised $25K–$200K over purchase price. Plan: numbers-only data cards (no purchase price, no addresses/legal info), compact strip on about.html + full section on inglewood.html. Snapshot branch `snapshot/pre-appraisals` exists for pre-work state.
+| # | Item | Status / what unblocks it | Expected impact |
+|---|---|---|---|
+| 1 | **Founder photos on site** — about.html manifesto, contact.html beside the form, homepage proof strip. Credential text blocks are already in place; drop the images in when they arrive. | **Owner is sending photos of Kunal & Ankit soon.** Implement immediately on receipt. | Highest remaining trust lever — site currently has zero human faces at commitment points |
+| 2 | **GTM verification** — (a) create triggers for `package_view` and `virtual_tour_view`; (b) confirm GTM does NOT also fire the Meta base pixel (it is hardcoded in every page's head — double-fire = double-counted PageViews); (c) build Meta retargeting audience off `package_view`. | Needs GTM + Meta account access (browser session). | Every ad dollar optimizes better; highest-intent audience becomes targetable |
+| 3 | **Deposit / cash-to-close anchors on inventory cards** ("Est. cash to close: from ~$X"). | Needs real price bands per package from the Google Sheet / Kunal. Never invent numbers. | Answers the #1 unspoken question on the highest-intent page |
+| 4 | **Inglewood outcomes band** — lease-up days, achieved rents vs pro-forma, stabilized DSCR, + one buyer quote. | Needs real deal data from Kunal. | Converts "the building exists" into "the investment worked" |
+| 5 | **True calculator email capture** ("Email me this pro-forma" → GHL). | Needs a dedicated GHL form ID + workflow. Current stand-in: soft CTA with `?source=calculator`. | Captures the site's most-engaged anonymous users |
+| 6 | **Appraisal / track-record section** — ~10 past deals appraised $25K–$200K over purchase. Numbers-only cards (no purchase price, no addresses/legal/lot info, no client names), compact strip on about.html + full section on inglewood.html. | Owner will provide redacted data. Snapshot branch `snapshot/pre-appraisals` preserves pre-work state. | Proof-of-returns asset no competitor in this niche shows |
+
+**Owner decisions on record (July 9):** photos incoming; NO direct Google-profile link anywhere (on-site review proof only); Drive links stay public; WhatsApp stays green; no "CMHC approval protection" language ever.
 
 ---
 
