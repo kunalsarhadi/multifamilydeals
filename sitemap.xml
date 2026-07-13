@@ -132,4 +132,10 @@
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://multi-family-deals.ca/blog/alberta-80-percent-canada-job-gains.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>
