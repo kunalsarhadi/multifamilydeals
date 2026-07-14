@@ -33,6 +33,7 @@ Always tell the user whether a change is local-only or has been pushed live.
 | `why-alberta.html` | `/why-alberta` | Why Alberta — market data, vacancy rates, migration |
 | `inventory.html` | `/inventory` | Active property listings |
 | `inglewood.html` | `/inglewood` | Portfolio — completed 9-plex project |
+| `crawford-plains.html` | `/crawford-plains` | Portfolio — completed 8-plex Crawford Plains (newest; higher priority than Inglewood) |
 | `buying-process.html` | `/buying-process` | Step-by-step buying process |
 | `faq.html` | `/faq` | FAQ accordion |
 | `reviews.html` | `/reviews` | Client reviews |
@@ -54,7 +55,8 @@ Always tell the user whether a change is local-only or has been pushed live.
 - Public-facing brand name: **Multi Family Deals** (not Team Sarhadi — that is the personal/agent brand)
 - Nav: `<nav>` → `.nav-inner` → `.nav-logo` (left) + `.nav-links` (middle) + `.nav-cta` (right)
 - Mobile nav: `<div class="mobile-nav" id="mobileNav">` — toggled by `.hamburger` button
-- Footer: consistent across all pages, links to all main pages
+- Footer: consistent across all pages, links to all main pages (the footer "Portfolio" link points to crawford-plains.html — the newest completed project)
+- crawford-plains.html photo gallery is pending: the gallery section is commented out in the HTML — add images to `images/crawford-plains/` and uncomment the marked block when the owner provides photos
 
 ## Key Market Data (update here when figures change)
 

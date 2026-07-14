@@ -25,6 +25,12 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>https://multi-family-deals.ca/crawford-plains.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://multi-family-deals.ca/inglewood.html</loc>
     <lastmod>2026-05-25</lastmod>
     <priority>0.8</priority>
