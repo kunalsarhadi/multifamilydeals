@@ -236,6 +236,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .footer-social a:hover { color: var(--gold); }
     .footer-social svg { width: 1.1rem; height: 1.1rem; fill: currentColor; }
 
+
+    /* LIGHTBOX SLIDESHOW */
+    .view-all-btn { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 1.25rem; background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 0.8rem 1.8rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, color 0.2s; }
+    .view-all-btn:hover { background: var(--gold); color: var(--navy-deep); }
+    .gallery-card { cursor: pointer; }
+    .mfd-lightbox { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(3,8,15,0.97); }
+    .mfd-lightbox.open { display: flex; align-items: center; justify-content: center; }
+    .mfd-lightbox img { max-width: 92vw; max-height: 80vh; object-fit: contain; user-select: none; -webkit-user-drag: none; }
+    .mfd-lb-counter { position: absolute; top: 1.25rem; left: 50%; transform: translateX(-50%); font-size: 0.8rem; letter-spacing: 0.14em; color: var(--text-muted); }
+    .mfd-lb-suite { position: absolute; top: 2.9rem; left: 50%; transform: translateX(-50%); font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--gold); }
+    .mfd-lb-close { position: absolute; top: 1rem; right: 1.25rem; background: none; border: none; color: var(--text-muted); font-size: 2rem; line-height: 1; cursor: pointer; padding: 0.5rem; }
+    .mfd-lb-close:hover { color: var(--gold); }
+    .mfd-lb-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(12,24,40,0.85); border: 1px solid var(--navy-border); color: var(--gold); width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.3rem; transition: background 0.2s; }
+    .mfd-lb-arrow:hover { background: var(--gold); color: var(--navy-deep); }
+    .mfd-lb-prev { left: 1rem; } .mfd-lb-next { right: 1rem; }
+    .mfd-lb-mark { position: absolute; bottom: 1.25rem; left: 50%; transform: translateX(-50%); font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.3em; color: rgba(255,255,255,0.5); text-transform: uppercase; pointer-events: none; }
+    @media (max-width: 640px) { .mfd-lb-arrow { width: 2.5rem; height: 2.5rem; } .mfd-lightbox img { max-height: 70vh; } }
     /* SKIP LINK */
     .skip-link { position: absolute; left: -9999px; top: 0; background: var(--gold); color: var(--navy-deep); padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; z-index: 9999; text-decoration: none; }
     .skip-link:focus { left: 0; }
@@ -285,7 +302,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <ul class="nav-dropdown-menu" role="menu">
             <li><a href="inventory.html" role="menuitem"><span class="dropdown-link-title">Active Inventory</span><span class="dropdown-link-desc">Available 6–20 plex assets</span></a></li>
             <li><a href="crawford-plains.html" role="menuitem"><span class="dropdown-link-title">Portfolio — 8-Plex Crawford Plains</span><span class="dropdown-link-desc">Our newest completed project</span></a></li>
-            <li><a href="inglewood.html" role="menuitem"><span class="dropdown-link-title">Portfolio — 9-Plex Inglewood</span><span class="dropdown-link-desc">Our first completed project</span></a></li>
+            <li><a href="inglewood.html" role="menuitem"><span class="dropdown-link-title">Portfolio — 9-Plex Inglewood</span><span class="dropdown-link-desc">Completed portfolio project</span></a></li>
           </ul>
         </li>
         <li class="has-dropdown" data-category="resources">
@@ -443,6 +460,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="https://lh3.googleusercontent.com/d/1q1EevjvlluEvLkJwpYnlPX4DjaDVKx23=w1200" alt="8-Plex Crawford Plains upper suite one — interior view 5" draggable="false" loading="lazy" width="1400" height="934">
         </div>
       </div>
+      <button class="view-all-btn" onclick="mfdOpenLb('upper1', 0)" type="button">View All 23 Photos
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8V6a2 2 0 012-2h2M3 16v2a2 2 0 002 2h2m10-16h2a2 2 0 012 2v2m-4 12h2a2 2 0 002-2v-2"/></svg>
+      </button>
     </div>
 
     <div class="suite-panel" id="tab-upper2">
@@ -467,6 +487,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="https://lh3.googleusercontent.com/d/1fYu0KURnpJU5bocdavjbqiYEctDoZ2nz=w1200" alt="8-Plex Crawford Plains upper suite two — interior view 5" draggable="false" loading="lazy" width="1400" height="934">
         </div>
       </div>
+      <button class="view-all-btn" onclick="mfdOpenLb('upper2', 0)" type="button">View All 19 Photos
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8V6a2 2 0 012-2h2M3 16v2a2 2 0 002 2h2m10-16h2a2 2 0 012 2v2m-4 12h2a2 2 0 002-2v-2"/></svg>
+      </button>
     </div>
 
     <div class="suite-panel" id="tab-lower">
@@ -491,6 +514,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="https://lh3.googleusercontent.com/d/1ZJv761OvbSS1EaRwdoM0hfP3nEDmETZP=w1200" alt="8-Plex Crawford Plains lower suite — interior view 5" draggable="false" loading="lazy" width="1400" height="934">
         </div>
       </div>
+      <button class="view-all-btn" onclick="mfdOpenLb('lower', 0)" type="button">View All 11 Photos
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8V6a2 2 0 012-2h2M3 16v2a2 2 0 002 2h2m10-16h2a2 2 0 012 2v2m-4 12h2a2 2 0 002-2v-2"/></svg>
+      </button>
     </div>
 
   </div>
@@ -706,5 +732,65 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 <!-- End Conversion Event Listener -->
+<!-- Photo Lightbox -->
+<div class="mfd-lightbox" id="mfdLb" role="dialog" aria-label="Photo slideshow">
+  <div class="mfd-lb-counter" id="mfdLbCounter"></div>
+  <div class="mfd-lb-suite" id="mfdLbSuite"></div>
+  <button class="mfd-lb-close" id="mfdLbClose" aria-label="Close">&times;</button>
+  <button class="mfd-lb-arrow mfd-lb-prev" id="mfdLbPrev" aria-label="Previous photo">&#8249;</button>
+  <img id="mfdLbImg" src="" alt="8-Plex Crawford Plains photo" />
+  <button class="mfd-lb-arrow mfd-lb-next" id="mfdLbNext" aria-label="Next photo">&#8250;</button>
+  <div class="mfd-lb-mark">Multi Family Deals</div>
+</div>
+<script>
+(function(){
+  var G = {
+    upper1: { label: 'Upper Suite 1', ids: ['1HdNiQ4o2nfraLud2EOn9W0rSzCWeuglZ', '1GeS6t0DjYUTaCRYKU-qaPn_GIM3edvVe', '1eqsELT9uKkfUJBpRmhEEs79UB90lSJdn', '12ek1BVkWWauvWRbDYfGrN-y8sn_kAn51', '1q1EevjvlluEvLkJwpYnlPX4DjaDVKx23', '17CTWmwWPV7s2T5IJ1p86xLUqsRn3aehn', '1VaQeCqTRXYQSVVWxLh_KUCN_3i2bl6U0', '1cXHBsgc7opEAlwxFZP4PlOIYB918elC0', '1U8eizpiGVwyHYDyQasxrUkKidQO42c-8', '1vZKl3fiCSK1G-zBu7R1cceM3q5IsyGta', '1hdqcaEwRmU-g-gb7nfMq1lwTwFc1uWb1', '1ohh_p2coEdslRuGhfD0rVH8Zz5fg5ZW4', '1VtZqelCYHVffC3MnwmXR-TErihV1Mm08', '1DYFFuuHIJInIbYdCPIAva_u0jzfFq6Oz', '1HcJOm1AGaHJNSafNBBq9q9jkiCi6g8mZ', '14lLYfSjOn2FWrwdaiBOlMXXfBsVeu6k4', '1FbDUKbQensL5MhaNmXJM4bWi5pxzMr4W', '1R9drD-oPl3QJAl-Rz8UyLel-J9INWBKc', '1F6gyr5QvbrU7TcIiuI5ihVm5F6P7n1uD', '1PXqCmYzx4-9KZU6ilSNO7ZwbHSlpA5EF', '1-9fhq008NrZ4SbJjhU9_pSKReDeIWP-j', '1bsBIa_mMvxY3Z5QDMqJl476GbNBYQYz_', '1g__F0hzSqijT-Bw4AVSsv6I8z0mTcX5B'] },
+    upper2: { label: 'Upper Suite 2', ids: ['1N7puJ_YzP_vZ_Jw6V0zIqyXoDsfrdgkR', '1hEFsJ-IgfEnVtXFgQXNYiYgL1ZDEoP0t', '1zW3Y3eBLFyjaJIQ8HD0nYusv0EvGo45c', '105rj6Gqvkjq2338TamndN7hjQLYxUeGD', '1vJjWnFlj2pj_pSc55McbbVFoh6TSFowZ', '1fYu0KURnpJU5bocdavjbqiYEctDoZ2nz', '15xqLvK1sZfxQU2YVoHq_EI0MolX6m6Q_', '1qI6z-QmmlcJX5FofUci8w9yunrKdvemM', '1n16yLCcnvuzV8NfqrLPHyPH6rXSMt31i', '19hDWcbMCDcyjbTrDcKmdrcK5e8HvbhCa', '11_VISvqjz8KAz8fSuGXOZLH7zxDuvphP', '1HHy-k1UvhpuXVdibPrVrsaM6u9B0WEYz', '13GRy-D2brfRg4ZxKnW50vygpM-YVDIZN', '1pjHtXRhcVriPiuSVjxHWgwbvCS-V4NSV', '1dUCOZA6uYNIHwT4SgWW6LrRAaJ6TGVK7', '1VEmkGB_ABnZGj9uL8jGP3VyO4Ajy8JL5', '1BN0fM48uE-AxQx_wB6FL3ryQz9vGgcSb', '1DHXsoq9MsmZ9uE22LJo9MZAgQz8770sE', '1J6wBDJWxUpqnsFs52ofsbYgkqkSoc6bC'] },
+    lower: { label: 'Lower Suite', ids: ['1suqdFWVYJNvBR_x8mSUfj5TWL8sH9BYV', '169DMJHhRRe_ay-2HSboO_C9XU0egC869', '11xCiSOO6wbt2VQTQVI3XLd8mG3b9HjtU', '1HLFYU6weeI1Z3kpJTLmPLHO8u5KMoU90', '1ZJv761OvbSS1EaRwdoM0hfP3nEDmETZP', '1LdWCbcbgKHxF2GVOtHheqg6TuGZe6isu', '1Uo8f08UE2YmgPAyOpY3yb31lIxNNvEQH', '1LDhd12qzclBrOIBl6n7KuSGzCFzFYSEF', '1lK15u2HsSt2IxHaz6co1aKalooW-XQ1L', '1Y67aV_4EoG4QucNwN5r8hDGV3DMjTaZD', '1EDgJx4yDq1xVP7i4XISK1s-hjVA84LIV'] }
+  };
+  var lb = document.getElementById('mfdLb'), img = document.getElementById('mfdLbImg');
+  var counter = document.getElementById('mfdLbCounter'), suiteEl = document.getElementById('mfdLbSuite');
+  var cur = { suite: 'upper1', i: 0 };
+  function url(id){ return 'https://lh3.googleusercontent.com/d/' + id + '=w1600'; }
+  function show(){
+    var set = G[cur.suite];
+    img.src = url(set.ids[cur.i]);
+    counter.textContent = (cur.i + 1) + ' / ' + set.ids.length;
+    suiteEl.textContent = set.label;
+    var nxt = set.ids[(cur.i + 1) % set.ids.length];
+    (new Image()).src = url(nxt);
+  }
+  window.mfdOpenLb = function(suite, i){ cur = { suite: suite, i: i || 0 }; lb.classList.add('open'); document.body.classList.add('no-scroll'); show(); };
+  function close(){ lb.classList.remove('open'); document.body.classList.remove('no-scroll'); img.src = ''; }
+  function step(d){ var n = G[cur.suite].ids.length; cur.i = (cur.i + d + n) % n; show(); }
+  document.getElementById('mfdLbClose').addEventListener('click', close);
+  document.getElementById('mfdLbPrev').addEventListener('click', function(){ step(-1); });
+  document.getElementById('mfdLbNext').addEventListener('click', function(){ step(1); });
+  lb.addEventListener('click', function(e){ if (e.target === lb) close(); });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+  var tx = null;
+  lb.addEventListener('touchstart', function(e){ tx = e.changedTouches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function(e){
+    if (tx === null) return;
+    var dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 45) step(dx < 0 ? 1 : -1);
+    tx = null;
+  }, { passive: true });
+  // clicking a grid photo opens the slideshow at that photo
+  document.querySelectorAll('.gallery-card img').forEach(function(im){
+    im.parentElement.addEventListener('click', function(){
+      var m = im.src.match(/\/d\/([^=]+)=/);
+      if (!m) return;
+      for (var s in G) { var k = G[s].ids.indexOf(m[1]); if (k !== -1) { window.mfdOpenLb(s, k); return; } }
+    });
+  });
+})();
+</script>
 </body>
 </html>
