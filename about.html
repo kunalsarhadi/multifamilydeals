@@ -196,6 +196,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .trust-stat-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); margin-top: 0.35rem; line-height: 1.5; }
     .trust-divider { width: 1px; height: 2.5rem; background: var(--navy-border); flex-shrink: 0; }
     @media (max-width: 640px) { .trust-bar { padding: 1.5rem; } .trust-bar-inner { gap: 1rem 0; } .trust-divider { display: none; } .trust-stat { padding: 0.5rem 1.5rem; } }
+
+    /* APPRAISAL TRACK RECORD */
+    .appr-section { background: var(--navy-deep); border-top: 1px solid var(--navy-border); border-bottom: 1px solid var(--navy-border); padding: 6rem 2rem; }
+    .appr-inner { max-width: 1200px; margin: 0 auto; }
+    .appr-head { text-align: center; margin-bottom: 3.5rem; }
+    .appr-eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .appr-title { font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; color: var(--text-primary); line-height: 1.15; margin-bottom: 1rem; }
+    .appr-sub { font-size: 0.98rem; font-weight: 300; color: var(--text-muted); line-height: 1.75; max-width: 620px; margin: 0 auto; }
+    .appr-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); }
+    .appr-card { background: var(--navy-card); padding: 2rem 1.5rem; text-align: center; transition: background 0.2s; }
+    .appr-card:hover { background: var(--navy-alt); }
+    .appr-card-type { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 0.5rem; }
+    .appr-card-hood { font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1.1rem; }
+    .appr-card-delta { font-family: 'Cinzel', serif; font-size: 1.75rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
+    .appr-card-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.03em; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.9rem; }
+    .appr-card-src { font-size: 0.64rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-subtle); padding-top: 0.75rem; border-top: 1px solid var(--navy-border); }
+    .appr-foot { margin-top: 2.5rem; text-align: center; }
+    .appr-foot-verify { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; max-width: 640px; margin: 0 auto 1rem; }
+    .appr-foot-verify strong { color: var(--gold); font-weight: 600; }
+    .appr-disclaimer { font-size: 0.7rem; color: var(--text-subtle); letter-spacing: 0.02em; line-height: 1.6; max-width: 680px; margin: 0 auto; }
+    @media (max-width: 900px) { .appr-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .appr-grid { grid-template-columns: 1fr; } }
   </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -475,6 +497,79 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--navy-border);max-width:560px;margin-left:auto;margin-right:auto;">
         <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.75;">Multi Family Deals is run by brothers <strong style="color:var(--text-primary);">Kunal Sarhadi</strong>, licensed Real Estate Broker with Homelife Miracle Realty Inc., and <strong style="color:var(--text-primary);">Ankit Sarhadi</strong>. Their team has closed over $500M in transactions and placed hundreds of families and investors into Edmonton real estate — including the completed <a href="inglewood.html" style="color:var(--gold);text-decoration:none;">Inglewood 9-plex</a>.</p>
         <p style="margin-top:0.9rem;font-size:0.78rem;letter-spacing:0.06em;color:var(--text-subtle);"><a href="reviews.html" style="color:var(--gold);text-decoration:none;">Read 160+ verified client reviews &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPRAISAL TRACK RECORD -->
+  <section class="appr-section" id="track-record">
+    <div class="appr-inner">
+      <div class="appr-head reveal">
+        <div class="appr-eyebrow">Independent Appraisal Track Record</div>
+        <h2 class="appr-title">Every Completed Project Has Appraised<br />Above Its Purchase Price</h2>
+        <p class="appr-sub">On completion, our purpose-built projects are independently appraised by an AACI-designated appraiser for financing. Across every completed project, the appraised value has come in above the original purchase price — from $20,000 to $200,000 higher.</p>
+      </div>
+      <div class="appr-grid reveal">
+        <div class="appr-card">
+          <div class="appr-card-type">20-Plex</div>
+          <div class="appr-card-hood">Leduc</div>
+          <div class="appr-card-delta">+$200,000</div>
+          <div class="appr-card-label">above purchase price at completion</div>
+          <div class="appr-card-src">Independent AACI appraisal · 2026</div>
+        </div>
+        <div class="appr-card">
+          <div class="appr-card-type">8-Plex</div>
+          <div class="appr-card-hood">Allendale</div>
+          <div class="appr-card-delta">+$120,000</div>
+          <div class="appr-card-label">above purchase price at completion</div>
+          <div class="appr-card-src">Independent AACI appraisal · 2026</div>
+        </div>
+        <div class="appr-card">
+          <div class="appr-card-type">8-Plex</div>
+          <div class="appr-card-hood">Crawford Plains</div>
+          <div class="appr-card-delta">+$100,000</div>
+          <div class="appr-card-label">above purchase price at completion</div>
+          <div class="appr-card-src">Independent AACI appraisal · 2025</div>
+        </div>
+        <div class="appr-card">
+          <div class="appr-card-type">8-Plex</div>
+          <div class="appr-card-hood">Sherwood</div>
+          <div class="appr-card-delta">+$100,000</div>
+          <div class="appr-card-label">above purchase price at completion</div>
+          <div class="appr-card-src">Independent AACI appraisal · 2025</div>
+        </div>
+        <div class="appr-card">
+          <div class="appr-card-type">8-Plex</div>
+          <div class="appr-card-hood">Jasper Park</div>
+          <div class="appr-card-delta">+$50,000</div>
+          <div class="appr-card-label">above purchase price at completion</div>
+          <div class="appr-card-src">Independent AACI appraisal · 2025</div>
+        </div>
+        <div class="appr-card">
+          <div class="appr-card-type">7-Plex</div>
+          <div class="appr-card-hood">Strathearn</div>
+          <div class="appr-card-delta">+$50,000</div>
+          <div class="appr-card-label">above purchase price at completion</div>
+          <div class="appr-card-src">Independent AACI appraisal · 2025</div>
+        </div>
+        <div class="appr-card">
+          <div class="appr-card-type">8-Plex</div>
+          <div class="appr-card-hood">Prince Charles</div>
+          <div class="appr-card-delta">+$25,000</div>
+          <div class="appr-card-label">above purchase price at completion</div>
+          <div class="appr-card-src">Independent AACI appraisal · 2025</div>
+        </div>
+        <div class="appr-card">
+          <div class="appr-card-type">9-Plex</div>
+          <div class="appr-card-hood">Glenwood</div>
+          <div class="appr-card-delta">+$20,000</div>
+          <div class="appr-card-label">above purchase price at completion</div>
+          <div class="appr-card-src">Independent AACI appraisal · 2026</div>
+        </div>
+      </div>
+      <div class="appr-foot">
+        <p class="appr-foot-verify reveal"><strong>Appraisal letters are on file.</strong> Verification is available to serious investors on request.</p>
+        <p class="appr-disclaimer reveal">Figures reflect independent "as-if-complete" market value appraisals prepared for mortgage financing, versus the original purchase price, in Edmonton-area neighbourhoods. An appraisal is a professional opinion of value at a specific date; past results do not guarantee future values. Not investment advice.</p>
       </div>
     </div>
   </section>
