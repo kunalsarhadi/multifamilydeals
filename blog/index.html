@@ -117,6 +117,21 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
     .blog-card-read { color: var(--gold); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.2s; }
     .blog-card:hover .blog-card-read { gap: 0.65rem; }
 
+    /* FEATURED START-HERE SLOT */
+    .featured-post { display: block; background: var(--navy-card); border: 1px solid var(--navy-border); border-top: 3px solid var(--gold); padding: 2.75rem 2.75rem 2.5rem; text-decoration: none; transition: background 0.2s; margin-bottom: 1.5rem; }
+    .featured-post:hover { background: var(--navy-alt); }
+    .featured-post-label { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
+    .featured-post-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
+    .featured-post h2 { font-family: 'Cinzel', serif; font-size: clamp(1.3rem, 2.6vw, 1.85rem); font-weight: 700; color: var(--text-primary); line-height: 1.3; letter-spacing: 0.02em; margin-bottom: 1rem; }
+    .featured-post p { font-size: 0.95rem; font-weight: 300; color: var(--text-muted); line-height: 1.8; max-width: 720px; margin-bottom: 1.25rem; }
+    .featured-post .blog-card-meta { margin-top: 0; margin-bottom: 1rem; }
+    .featured-pins { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); border-top: none; margin-bottom: 3rem; }
+    .featured-pin { background: var(--navy-card); padding: 1.25rem 1.75rem; text-decoration: none; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; transition: background 0.2s; }
+    .featured-pin:hover { background: var(--navy-alt); }
+    .featured-pin-q { font-size: 0.82rem; font-weight: 300; color: var(--text-muted); letter-spacing: 0.02em; }
+    .featured-pin-a { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
+    @media (max-width: 700px) { .featured-post { padding: 2rem 1.5rem; } .featured-pins { grid-template-columns: 1fr; } }
+
     .cta-section { padding: 6rem 2rem; background: var(--navy-deep); border-top: 1px solid var(--navy-border); text-align: center; }
     .cta-inner { max-width: 680px; margin: 0 auto; }
     .section-label { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
@@ -223,7 +238,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="blog-section">
     <div class="blog-inner">
+
+      <a href="cmhc-mli-select-guide.html" class="featured-post">
+        <div class="featured-post-label">Start Here</div>
+        <h2>CMHC MLI Select Guide 2026: 5% Down, 50-Year Amortization Explained</h2>
+        <p>Start here — the complete 2026 breakdown of the program behind everything we do: the points system, the DSCR math, and why 5% down on an 8-plex is possible at all.</p>
+        <div class="blog-card-meta">
+          <span>May 2026</span>
+          <span>14 min read</span>
+        </div>
+        <span class="blog-card-read">Read the Guide →</span>
+      </a>
+      <div class="featured-pins">
+        <a href="edmonton-vs-toronto-multifamily.html" class="featured-pin">
+          <span class="featured-pin-q">New to the Edmonton thesis?</span>
+          <span class="featured-pin-a">→ Edmonton vs Toronto</span>
+        </a>
+        <a href="scale-50-doors.html" class="featured-pin">
+          <span class="featured-pin-q">Already convinced?</span>
+          <span class="featured-pin-a">→ How to Scale to 50 Doors</span>
+        </a>
+      </div>
+
       <div class="blog-grid">
+
+        <a href="crawford-plains-8plex-case-study.html" class="blog-card">
+          <div class="blog-card-tag">Portfolio</div>
+          <h2>Anatomy of a Completed Edmonton 8-Plex: The Crawford Plains Project</h2>
+          <p>Eight purpose-built rental units in south Edmonton, delivered July 2026 — turnkey with management in place, refined from the Inglewood standard, and independently appraised +$100,000 above purchase at completion. A walkthrough of what "delivered" actually looks like.</p>
+          <div class="blog-card-meta">
+            <span>July 2026</span>
+            <span>7 min read</span>
+          </div>
+          <span class="blog-card-read">Read Article →</span>
+        </a>
+
+        <a href="appraisal-track-record-edmonton.html" class="blog-card">
+          <div class="blog-card-tag">Track Record</div>
+          <h2>Why Our Projects Keep Appraising Above Purchase Price</h2>
+          <p>Every completed project we have delivered has been independently appraised above its purchase price at completion — AACI-verified deltas from +$20,000 to +$200,000. What that means for an MLI Select investor's day-one equity, and the honest caveats that come with it.</p>
+          <div class="blog-card-meta">
+            <span>July 2026</span>
+            <span>8 min read</span>
+          </div>
+          <span class="blog-card-read">Read Article →</span>
+        </a>
 
         <a href="alberta-80-percent-canada-job-gains.html" class="blog-card">
           <div class="blog-card-tag">Market News</div>
