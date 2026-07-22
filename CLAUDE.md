@@ -24,7 +24,7 @@ The target investor wants to scale to 50+ doors in 4 years.
 Changes to local HTML files do NOT affect the live site until pushed to `main` on GitHub.
 Always tell the user whether a change is local-only or has been pushed live.
 
-## Pages (15 total)
+## Pages
 
 | File | URL path | Purpose |
 |---|---|---|
@@ -44,6 +44,9 @@ Always tell the user whether a change is local-only or has been pushed live.
 | `blog/cmhc-mli-select-guide.html` | `/blog/cmhc-mli-select-guide` | Blog: CMHC MLI Select deep-dive guide |
 | `blog/edmonton-vs-toronto-multifamily.html` | `/blog/edmonton-vs-toronto-multifamily` | Blog: Edmonton vs Toronto multifamily comparison |
 | `blog/scale-50-doors.html` | `/blog/scale-50-doors` | Blog: How to scale to 50 doors |
+| `calculator.html` | `/calculator` | DSCR / pro-forma calculator (defaults: $2.0M 8-plex at 5.25%) |
+
+(Plus additional blog posts not individually listed — see `blog/` and `sitemap.xml` for the full set. Sitemap is the canonical page list.)
 
 ## Site Architecture
 
@@ -56,7 +59,10 @@ Always tell the user whether a change is local-only or has been pushed live.
 - Nav: `<nav>` → `.nav-inner` → `.nav-logo` (left) + `.nav-links` (middle) + `.nav-cta` (right)
 - Mobile nav: `<div class="mobile-nav" id="mobileNav">` — toggled by `.hamburger` button
 - Footer: consistent across all pages, links to all main pages (the footer "Portfolio" link points to crawford-plains.html — the newest completed project)
-- crawford-plains.html photo gallery is pending: the gallery section is commented out in the HTML — add images to `images/crawford-plains/` and uncomment the marked block when the owner provides photos
+- crawford-plains.html gallery is LIVE: 15 grid images + a 53-photo lightbox, all embedded directly from the owner's Google Drive via `lh3.googleusercontent.com/d/<FILE_ID>=w1200` (nothing stored in the repo). CAUTION: if Drive sharing on that folder changes, the flagship gallery silently blanks — long-term, commit compressed webp copies to the repo like Inglewood
+- Nav (July 22, 2026): first tab is "The Strategy" (Our Approach / Why Alberta / Track Record → about.html#track-record); Properties lists Crawford Plains 8-Plex above Inglewood 9-Plex; Resources order: Buying Process, Calculator, Free Guide, FAQ, Reviews, Blog; mobile nav has Book CTA + tel link at top
+- Appraisal track record (about.html#track-record + strips on index/inventory/ontario/contact/calculator/guide/crawford/inglewood): DELTA-ONLY policy — never publish absolute appraised values or purchase prices (deltas + values would let anyone back-calculate purchase prices). Claim wording: "every completed project has appraised above its purchase price, $20K–$200K." Source: "independent AACI appraisal" (do not name the firm on-site). Letters are never published or sent — "on file, verification on request"
+- Canonical mortgage math: all payment examples site-wide are computed at 5.25% ($2M: ~$11,000/mo 30yr vs ~$9,450/mo 50yr, ~$1,600/mo delta; $1.5M: ~$8,300 vs ~$7,100, ~$1,200/mo). Never quote payment figures computed at a different rate than stated
 
 ## Key Market Data (update here when figures change)
 
@@ -131,7 +137,7 @@ When the user says "sync inventory", "update inventory", or "update the hotlist"
 
 ## Google Ads & GTM
 
-**GTM Container:** `GTM-WBW5QJQT` — installed in `<head>` + `<noscript>` after `<body>` on all 20 HTML files.
+**GTM Container:** `GTM-WBW5QJQT` — installed in `<head>` + `<noscript>` after `<body>` on ALL HTML pages (root + blog).
 
 **Conversion tracking — `dataLayer` events fired on this site:**
 
@@ -141,8 +147,9 @@ When the user says "sync inventory", "update inventory", or "update the hotlist"
 | `phone_click` | Click on phone number link | All pages |
 | `whatsapp_click` | Click on WhatsApp link | contact, ontario-investors |
 | `guide_download` | Click on guide/lead magnet CTA | guide.html, index.html, ontario-investors.html |
-| `package_view` | Click "View Full Package" (Google Drive) on inventory cards | inventory.html (9 links) — added July 2026; build Meta retargeting audience off this |
-| `virtual_tour_view` | Click "Open Full Tour" (iGuide) | inglewood.html — **verify a GTM trigger exists for this event** |
+| `package_view` | Click "View Full Package" (Google Drive) on inventory cards | inventory.html (one per available card) — build Meta retargeting audience off this |
+| `virtual_tour_view` | Click "Open Full Tour" (iGuide) | inglewood.html AND crawford-plains.html — **verify a GTM trigger exists** |
+| `gallery_view` | Click "View All N Photos" buttons | crawford-plains.html (3 buttons) — **needs a GTM trigger** |
 | `form_submit_contact` | GHL form submit (postMessage from iframe) | contact.html, guide.html |
 | `calculator_start` | User begins DSCR calculator | calculator.html |
 | `calculator_complete` | User completes DSCR calculator | calculator.html (includes `dscr` value) |

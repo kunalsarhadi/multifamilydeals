@@ -359,8 +359,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="project-stat-label">Delivered</div>
       </div>
       <div class="project-stat">
-        <div class="project-stat-num">South</div>
-        <div class="project-stat-label">Edmonton Location</div>
+        <div class="project-stat-num">+$100K</div>
+        <div class="project-stat-label">Appraised Over Purchase</div>
       </div>
       <div class="project-stat">
         <div class="project-stat-num">Turnkey</div>
@@ -463,7 +463,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="https://lh3.googleusercontent.com/d/1q1EevjvlluEvLkJwpYnlPX4DjaDVKx23=w1200" alt="8-Plex Crawford Plains upper suite one — interior view 5" draggable="false" loading="lazy" width="1400" height="934">
         </div>
       </div>
-      <button class="view-all-btn" onclick="mfdOpenLb('upper1', 0)" type="button">View All 23 Photos
+      <button class="view-all-btn" data-conversion="gallery_view" onclick="mfdOpenLb('upper1', 0)" type="button">View All 23 Photos
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8V6a2 2 0 012-2h2M3 16v2a2 2 0 002 2h2m10-16h2a2 2 0 012 2v2m-4 12h2a2 2 0 002-2v-2"/></svg>
       </button>
     </div>
@@ -490,7 +490,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="https://lh3.googleusercontent.com/d/1fYu0KURnpJU5bocdavjbqiYEctDoZ2nz=w1200" alt="8-Plex Crawford Plains upper suite two — interior view 5" draggable="false" loading="lazy" width="1400" height="934">
         </div>
       </div>
-      <button class="view-all-btn" onclick="mfdOpenLb('upper2', 0)" type="button">View All 19 Photos
+      <button class="view-all-btn" data-conversion="gallery_view" onclick="mfdOpenLb('upper2', 0)" type="button">View All 19 Photos
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8V6a2 2 0 012-2h2M3 16v2a2 2 0 002 2h2m10-16h2a2 2 0 012 2v2m-4 12h2a2 2 0 002-2v-2"/></svg>
       </button>
     </div>
@@ -517,7 +517,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="https://lh3.googleusercontent.com/d/1ZJv761OvbSS1EaRwdoM0hfP3nEDmETZP=w1200" alt="8-Plex Crawford Plains lower suite — interior view 5" draggable="false" loading="lazy" width="1400" height="934">
         </div>
       </div>
-      <button class="view-all-btn" onclick="mfdOpenLb('lower', 0)" type="button">View All 11 Photos
+      <button class="view-all-btn" data-conversion="gallery_view" onclick="mfdOpenLb('lower', 0)" type="button">View All 11 Photos
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8V6a2 2 0 012-2h2M3 16v2a2 2 0 002 2h2m10-16h2a2 2 0 012 2v2m-4 12h2a2 2 0 002-2v-2"/></svg>
       </button>
     </div>
@@ -526,7 +526,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 <!-- END GALLERY -->
 
-<!-- UPGRADES CALLOUT -->
 <!-- APPRAISED PERFORMANCE -->
 <section style="background:var(--navy-deep);border-top:1px solid var(--navy-border);padding:4rem 2rem;">
   <div style="max-width:760px;margin:0 auto;text-align:center;">
@@ -776,8 +775,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var nxt = set.ids[(cur.i + 1) % set.ids.length];
     (new Image()).src = url(nxt);
   }
-  window.mfdOpenLb = function(suite, i){ cur = { suite: suite, i: i || 0 }; lb.classList.add('open'); document.body.classList.add('no-scroll'); show(); };
-  function close(){ lb.classList.remove('open'); document.body.classList.remove('no-scroll'); img.src = ''; }
+  var _lbScroll = 0;
+  window.mfdOpenLb = function(suite, i){ cur = { suite: suite, i: i || 0 }; _lbScroll = window.scrollY || document.documentElement.scrollTop; lb.classList.add('open'); document.body.classList.add('no-scroll'); document.body.style.top = (-_lbScroll) + 'px'; show(); };
+  function close(){ lb.classList.remove('open'); document.body.classList.remove('no-scroll'); document.body.style.top = ''; window.scrollTo(0, _lbScroll); img.src = ''; }
   function step(d){ var n = G[cur.suite].ids.length; cur.i = (cur.i + d + n) % n; show(); }
   document.getElementById('mfdLbClose').addEventListener('click', close);
   document.getElementById('mfdLbPrev').addEventListener('click', function(){ step(-1); });
@@ -805,6 +805,29 @@ document.addEventListener('DOMContentLoaded', function() {
       for (var s in G) { var k = G[s].ids.indexOf(m[1]); if (k !== -1) { window.mfdOpenLb(s, k); return; } }
     });
   });
+})();
+</script>
+<!-- Mobile Sticky CTA -->
+<style>
+  .mobile-sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; background: var(--gold); padding: 0.9rem 1.5rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); }
+  .mobile-sticky-cta a { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.88rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy-deep); text-decoration: none; }
+</style>
+<div class="mobile-sticky-cta" id="mobileStickyCtaBar">
+  <a href="inventory.html">See What&rsquo;s Available Now &rarr;</a>
+</div>
+<script>
+(function(){
+  var bar = document.getElementById('mobileStickyCtaBar');
+  if (!bar) return;
+  var mq = window.matchMedia('(max-width: 1200px)');
+  function checkScroll() {
+    var show = mq.matches && window.scrollY > 600 && !document.body.classList.contains('no-scroll');
+    bar.style.display = show ? 'block' : 'none';
+    document.body.style.paddingBottom = show ? (bar.offsetHeight + 'px') : '';
+  }
+  window.addEventListener('scroll', checkScroll, { passive: true });
+  window.addEventListener('resize', checkScroll, { passive: true });
+  checkScroll();
 })();
 </script>
 </body>
