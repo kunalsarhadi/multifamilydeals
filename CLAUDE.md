@@ -4,7 +4,7 @@ This file is read automatically at the start of every session. Do not remove it.
 
 ## The Business
 
-**Multi Family Deals** is an Edmonton-based real estate investment firm run by **Kunal Sarhadi**, Real Estate Broker at Homelife Miracle Realty Inc., and his brother **Ankit Sarhadi**.
+**Multi Family Deals** is an Edmonton-based real estate investment firm run by brothers **Kunal Sarhadi** and **Ankit Sarhadi** — both licensed Real Estate Brokers. Kunal is licensed for residential and commercial real estate in BOTH Alberta and Ontario. Brokerages: **Standard Realty Co., 14811 114 Ave NW, Edmonton, AB T5M 4E5** (Alberta) and **Homelife Miracle Realty Inc.** (Ontario). Canonical credential line: "Kunal & Ankit Sarhadi, Real Estate Brokers | Standard Realty Co., Edmonton (AB) | Homelife Miracle Realty Inc. (ON)".
 
 The firm helps investors acquire purpose-built multi-family properties in Edmonton, Alberta using the **CMHC MLI Select** program — which offers 5% down and 50-year amortization on qualifying builds.
 
@@ -78,7 +78,15 @@ Always tell the user whether a change is local-only or has been pushed live.
 - **Alberta provincial sales tax:** None (no PST, no HST)
 - **MLI Select points (canonical framing — keep consistent site-wide):** 50 points = minimum eligibility; 100 points = maximum benefits including 50-year amortization and highest LTV
 - **Liquidity requirement (canonical — keep consistent site-wide):** liquid assets equal to ~10% of project price after deposit
+- **Cash required for a 6-plex (canonical, owner-confirmed July 2026):** approximately $90,000 all-in — never quote a different 6-plex figure
 - **Calculator default rate:** 4% (owner standard — matches the inventory disclaimer and all site payment examples)
+
+## Content repetition budget (standing rule, July 2026 audit)
+
+- Appraisal claim: max ONE contextual placement per page (full grid lives on about.html#track-record only)
+- Trust bar ($500M/160+/500+): index, about, reviews, inventory, contact, ontario only — do not add elsewhere
+- 5%/50yr/GST checklists: once per page, only where the program is the topic
+- A given review quote appears on ONE page only
 
 ## Inventory counts are AUTO-CALCULATED
 
@@ -86,7 +94,7 @@ Do NOT hand-edit the Available / Sold Conditional / Coming Soon counts on invent
 
 ## Why Investors Choose Alberta (key talking points)
 
-- No provincial sales tax (written into Alberta's constitution — not a policy that can be reversed)
+- No provincial sales tax (long-standing policy; NOT constitutionally mandated — never claim it is; why-alberta.html words this correctly)
 - Lowest provincial income tax in Canada
 - Edmonton home prices 40–50% below Toronto/Vancouver — preserves cap rates
 - Canada's #1 interprovincial migration destination
