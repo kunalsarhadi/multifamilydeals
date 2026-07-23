@@ -44,7 +44,7 @@ Always tell the user whether a change is local-only or has been pushed live.
 | `blog/cmhc-mli-select-guide.html` | `/blog/cmhc-mli-select-guide` | Blog: CMHC MLI Select deep-dive guide |
 | `blog/edmonton-vs-toronto-multifamily.html` | `/blog/edmonton-vs-toronto-multifamily` | Blog: Edmonton vs Toronto multifamily comparison |
 | `blog/scale-50-doors.html` | `/blog/scale-50-doors` | Blog: How to scale to 50 doors |
-| `calculator.html` | `/calculator` | DSCR / pro-forma calculator (defaults: $2.0M 8-plex at 5.25%) |
+| `calculator.html` | `/calculator` | DSCR / pro-forma calculator (defaults: $2.0M 8-plex at 4%) |
 
 (Plus additional blog posts not individually listed — see `blog/` and `sitemap.xml` for the full set. Sitemap is the canonical page list.)
 
@@ -62,7 +62,7 @@ Always tell the user whether a change is local-only or has been pushed live.
 - crawford-plains.html gallery is LIVE: 15 grid images + a 53-photo lightbox, all embedded directly from the owner's Google Drive via `lh3.googleusercontent.com/d/<FILE_ID>=w1200` (nothing stored in the repo). CAUTION: if Drive sharing on that folder changes, the flagship gallery silently blanks — long-term, commit compressed webp copies to the repo like Inglewood
 - Nav (July 22, 2026): first tab is "The Strategy" (Our Approach / Why Alberta / Track Record → about.html#track-record); Properties lists Crawford Plains 8-Plex above Inglewood 9-Plex; Resources order: Buying Process, Calculator, Free Guide, FAQ, Reviews, Blog; mobile nav has Book CTA + tel link at top
 - Appraisal track record (about.html#track-record + strips on index/inventory/ontario/contact/calculator/guide/crawford/inglewood): DELTA-ONLY policy — never publish absolute appraised values or purchase prices (deltas + values would let anyone back-calculate purchase prices). Claim wording: "every completed project has appraised above its purchase price, $20K–$200K." Source: "independent AACI appraisal" (do not name the firm on-site). Letters are never published or sent — "on file, verification on request"
-- Canonical mortgage math: all payment examples site-wide are computed at 5.25% ($2M: ~$11,000/mo 30yr vs ~$9,450/mo 50yr, ~$1,600/mo delta; $1.5M: ~$8,300 vs ~$7,100, ~$1,200/mo). Never quote payment figures computed at a different rate than stated
+- Canonical mortgage math: STANDARD RATE IS 4% (owner decision, July 2026 — this is the firm's modeled MLI Select rate; do not change to 5.25%). All payment examples site-wide computed at 4% ($2M: ~$9,500/mo 30yr vs ~$7,700/mo 50yr, ~$1,800/mo delta; $1.5M: ~$7,150 vs ~$5,800, ~$1,375/mo). Whatever rate is shown, the dollar figures MUST compute to it — never state one rate while showing figures from another
 
 ## Key Market Data (update here when figures change)
 
@@ -78,7 +78,7 @@ Always tell the user whether a change is local-only or has been pushed live.
 - **Alberta provincial sales tax:** None (no PST, no HST)
 - **MLI Select points (canonical framing — keep consistent site-wide):** 50 points = minimum eligibility; 100 points = maximum benefits including 50-year amortization and highest LTV
 - **Liquidity requirement (canonical — keep consistent site-wide):** liquid assets equal to ~10% of project price after deposit
-- **Calculator default rate:** 5.25% (matches the inventory disclaimer's 5.25–5.50% modeling; do not lower it)
+- **Calculator default rate:** 4% (owner standard — matches the inventory disclaimer and all site payment examples)
 
 ## Inventory counts are AUTO-CALCULATED
 
