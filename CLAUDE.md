@@ -78,7 +78,7 @@ Always tell the user whether a change is local-only or has been pushed live.
 - **Alberta provincial sales tax:** None (no PST, no HST)
 - **MLI Select points (canonical framing — keep consistent site-wide):** 50 points = minimum eligibility; 100 points = maximum benefits including 50-year amortization and highest LTV
 - **Liquidity requirement (canonical — keep consistent site-wide):** liquid assets equal to ~10% of project price after deposit
-- **Cash required for a 6-plex (canonical, owner-confirmed July 2026):** approximately $90,000 all-in — never quote a different 6-plex figure
+- **Cash required for a 6-plex (canonical, owner-confirmed July 2026):** the 5% deposit falls in the **$80,000–$90,000 range** — always quote it as a range, never a single committed number, and NEVER say "all-in" or any phrasing that reads as a fixed total commitment. Legal/title/closing costs are additional and vary by deal (confirmed on the discovery call). Do not publish an all-in total.
 - **Calculator default rate:** 4% (owner standard — matches the inventory disclaimer and all site payment examples)
 
 ## Content repetition budget (standing rule, July 2026 audit)
