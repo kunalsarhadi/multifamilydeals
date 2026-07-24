@@ -92,6 +92,8 @@ Always tell the user whether a change is local-only or has been pushed live.
 
 Do NOT hand-edit the Available / Sold Conditional / Coming Soon counts on inventory.html (status pills, section headers, scarcity block). A script at the bottom of inventory.html counts the `.asset-badge` elements per section at page load and fills every count. To change inventory: add/move/remove the card itself — the numbers update themselves.
 
+**Summarized cards (Sold Conditional + Coming Soon):** to reduce scroll fatigue, Sold Conditional shows only the first 3 cards + a summary line, and Coming Soon shows a single "Get Early Access" banner instead of cards. The hidden cards are represented by `data-extra-sc="N"` (on the SC summary line) and `data-extra-cs="N"` (on the CS banner), and the auto-count script ADDS these to the visible badge counts so the pills/headers stay truthful. **If the real SC or Coming-Soon count changes, update the matching `data-extra-sc` / `data-extra-cs` number (it sits right on the visible summary text) — that is the ONE inventory number that is not fully auto-derived.**
+
 ## Why Investors Choose Alberta (key talking points)
 
 - No provincial sales tax (long-standing policy; NOT constitutionally mandated — never claim it is; why-alberta.html words this correctly)
