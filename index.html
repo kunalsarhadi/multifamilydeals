@@ -29,232 +29,87 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="description" content="Scale to 50+ doors in 4 years. As low as 5% down, 50-year amortization on qualifying projects. Edmonton's institutional-grade multi-family investment opportunity." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy-deep: #03080F; --navy-primary: #070F1C; --navy-card: #0C1828; --navy-alt: #0F1E35;
-      --navy-border: #162438; --gold: #C4934A; --gold-light: #DBA868;
-      --gold-muted: #9A7A34; --accent-warm: #C4783A; --text-primary: #EEF2F7; --status-live: #2AAF72;
-      --text-muted: #9AAABB; --text-subtle: #8BA0B8;
+      --paper:#F5F1E8; --paper-alt:#EFE9DB; --card:#FBF8F1;
+      --ink:#1C1813; --body:#4A443B; --muted:#8A8172; --faint:#A79E8E;
+      --line:#DDD4C2; --line2:#E4DBCB; --line3:#D9D0C0;
+      --accent:#9C6B34; --accent-h:#7A5326; --accent-l:#C79A5E; --accent2:#B0563F;
+      --espresso:#16130E; --footer:#0E0C09;
+      --on-dark:#F5F1E8; --on-dark-muted:#B9B0A0;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { overflow-x: hidden; min-width: 320px; }
-    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
-    body { background-color: var(--navy-primary); color: var(--text-primary); font-family: 'Josefin Sans', sans-serif; font-weight: 400; overflow-x: hidden; min-width: 320px; width: 100%; }
-    h1 { font-family: 'Cinzel', serif; letter-spacing: 0.02em; }
-    h2, h3, h4 { font-family: 'Josefin Sans', sans-serif; font-weight: 600; letter-spacing: 0.04em; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(7,15,28,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--navy-border); }
-    .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 4rem; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-    .nav-logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
-    .nav-logo span { color: var(--text-primary); font-weight: 400; }
-    .nav-links { display: flex; gap: 0; list-style: none; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; overflow-x: hidden; min-width: 320px; }
+    body { background: var(--paper); color: var(--ink); font-family: 'Space Grotesk', sans-serif; font-weight: 400; overflow-x: hidden; min-width: 320px; width: 100%; }
+    ::selection { background: #1C1813; color: #F5F1E8; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-h); }
+    img { max-width: 100%; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+    @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    @keyframes pulseDot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.8); } }
+    @keyframes heroUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+
+    .skip-link { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #fff; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; z-index: 9999; text-decoration: none; }
+    .skip-link:focus { left: 0; }
+
+    /* ---------- NAV (light) ---------- */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 60; background: rgba(245,241,232,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line2); transition: background .3s, box-shadow .3s; }
+    .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 clamp(18px,4vw,44px); height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-family: 'Newsreader', serif; font-size: 1.12rem; font-weight: 600; letter-spacing: .14em; color: var(--ink); white-space: nowrap; flex-shrink: 0; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 0; list-style: none; align-items: center; }
     .has-dropdown { position: relative; }
-    .nav-dropdown-btn { background: none; border: none; cursor: pointer; font-family: 'Josefin Sans', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); padding: 0.4rem 0.75rem; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; white-space: nowrap; }
-    .nav-dropdown-btn:hover { color: var(--gold); }
-    .has-dropdown.active > .nav-dropdown-btn { color: var(--gold); }
-    .nav-chevron { width: 0.65rem; height: 0.65rem; transition: transform 0.2s; flex-shrink: 0; }
+    .nav-dropdown-btn { background: none; border: none; cursor: pointer; font-family: 'Space Grotesk', sans-serif; font-size: .7rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: #5A5348; padding: 0.4rem 0.8rem; display: flex; align-items: center; gap: 0.35rem; transition: color 0.2s; white-space: nowrap; }
+    .nav-dropdown-btn:hover, .has-dropdown.active > .nav-dropdown-btn { color: var(--accent); }
+    .nav-chevron { width: 0.62rem; height: 0.62rem; transition: transform 0.2s; flex-shrink: 0; }
     .has-dropdown.open .nav-chevron { transform: rotate(180deg); }
-    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 230px; background: var(--navy-card); border: 1px solid var(--navy-border); border-top: 2px solid var(--gold); list-style: none; padding: 0.4rem 0; z-index: 100; box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 8px); left: 0; min-width: 240px; background: var(--card); border: 1px solid var(--line); border-top: 2px solid var(--accent); list-style: none; padding: 0.4rem 0; z-index: 100; box-shadow: 0 20px 48px -20px rgba(28,24,19,0.35); }
     .has-dropdown.open .nav-dropdown-menu { display: block; }
-    .nav-dropdown-menu li a { display: block; padding: 0.7rem 1.25rem; text-decoration: none; transition: background 0.15s; border-left: 2px solid transparent; }
-    .nav-dropdown-menu li a:hover { background: var(--navy-alt); border-left-color: var(--gold); }
-    .dropdown-link-title { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 0.18rem; }
-    .dropdown-link-desc { display: block; font-size: 0.7rem; font-weight: 300; color: var(--text-subtle); letter-spacing: 0.01em; text-transform: none; }
-    .mobile-nav-category { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-muted); padding: 1.2rem 0 0.35rem; pointer-events: none; margin-top: 0.25rem; }
-    .nav-links a { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; white-space: nowrap; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-    .nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 0.6rem 1.4rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.2s, color 0.2s; }
-    .nav-cta:hover { background: var(--gold); color: var(--navy-deep); }
-    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 72px; background: var(--navy-deep); position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse 60% 50% at 70% 40%, rgba(196,147,74,0.11) 0%, transparent 60%), radial-gradient(ellipse 40% 60% at 10% 80%, rgba(196,147,74,0.07) 0%, transparent 50%); pointer-events: none; }
-    .hero-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(196,147,74,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(196,147,74,0.07) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
-    .hero-inner { max-width: 1280px; margin: 0 auto; padding: 7rem 2rem 5rem; position: relative; z-index: 1; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; }
-    .hero-eyebrow::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
-    .hero-headline { font-size: clamp(3.2rem, 7vw, 5.2rem); font-weight: 700; line-height: 1.02; letter-spacing: -0.02em; max-width: 1100px; margin-bottom: 2rem; }
-    .hero-headline .accent { color: var(--gold); display: block; }
-    .hero-subline { font-size: 1.1rem; font-weight: 300; color: var(--text-muted); line-height: 1.7; max-width: 560px; margin-bottom: 3rem; letter-spacing: 0.03em; }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-    .btn-primary { background: var(--gold); color: var(--navy-deep); padding: 1rem 2.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; border: none; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; }
-    .btn-primary::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent); transition: left 0.45s ease; }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,147,74,0.35); }
-    .btn-primary:hover::after { left: 100%; }
-    .btn-ghost { background: transparent; color: var(--text-muted); padding: 1rem 2rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--text-subtle); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: color 0.2s, border-color 0.2s; }
-    .btn-ghost:hover { color: var(--gold); border-color: var(--gold-muted); }
-    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 5rem; border-top: 1px solid var(--navy-border); padding-top: 3rem; max-width: 700px; }
-    .hero-stat { padding-right: 2rem; }
-    .hero-stat + .hero-stat { padding-left: 2rem; border-left: 1px solid var(--navy-border); }
-    .hero-stat-number { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
-    .hero-stat-label { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
-    .section { padding: 7rem 2rem; }
-    .section-inner { max-width: 1280px; margin: 0 auto; }
-    .section-label { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
-    .section-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
-    .section-title { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 600; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.01em; }
-    .section-subtitle { font-size: 1rem; font-weight: 300; color: var(--text-muted); line-height: 1.7; max-width: 560px; letter-spacing: 0.02em; }
-    .comparison-section { background: var(--navy-alt); padding: 9rem 2rem; }
-    .comparison-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); margin-top: 4rem; }
-    .comparison-header { background: var(--navy-card); padding: 1.5rem 2rem; text-align: center; }
-    .comparison-header.highlight { background: linear-gradient(135deg, #0D1C2E 0%, #122035 100%); border-top: 3px solid var(--gold); box-shadow: 0 -6px 28px rgba(196,147,74,0.22), inset 0 1px 0 rgba(196,147,74,0.12); }
-    .comparison-header-label { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 0.4rem; }
-    .comparison-header-title { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 600; }
-    .comparison-header.highlight .comparison-header-title { color: var(--gold); }
-    .comparison-cell { background: var(--navy-card); padding: 1.4rem 2rem; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column; gap: 0.2rem; }
-    .comparison-cell.label-cell { justify-content: flex-start; text-align: left; background: var(--navy-primary); }
-    .comparison-cell.highlight { background: linear-gradient(180deg, rgba(196,147,74,0.07) 0%, rgba(196,147,74,0.02) 100%), linear-gradient(180deg, #0C1828 0%, #0A1420 100%); }
-    .comparison-cell-value { font-family: 'Cinzel', serif; font-size: 1.3rem; font-weight: 700; }
-    .comparison-cell.highlight .comparison-cell-value.good { font-size: 1.55rem; }
-    .comparison-cell-value.good { color: var(--gold); }
-    .comparison-cell-value.bad { color: #D46868; }
-    .comparison-cell-sub { font-size: 0.82rem; letter-spacing: 0.02em; color: var(--text-subtle); }
-    .comparison-label { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); }
-    .comparison-label-sub { font-size: 0.82rem; color: var(--text-subtle); margin-top: 0.2rem; }
-    .advantages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); margin-top: 4rem; }
-    .advantage-card { background: var(--navy-card); padding: 2.5rem 2rem; position: relative; transition: background 0.25s, transform 0.25s, box-shadow 0.25s; }
-    .advantage-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s; }
-    .advantage-card:hover { background: #0F1E35; transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(196,147,74,0.1); }
-    .advantage-card:hover::before { transform: scaleX(1); }
-    .advantage-icon { width: 2.5rem; height: 2.5rem; margin-bottom: 1.5rem; color: var(--gold); }
-    .advantage-amount { font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 700; color: var(--gold); margin-bottom: 0.4rem; line-height: 1; }
-    .advantage-title { font-size: 1rem; font-weight: 600; letter-spacing: 0.01em; color: var(--text-primary); margin-bottom: 0.8rem; }
-    .advantage-desc { font-size: 0.85rem; font-weight: 300; color: var(--text-muted); line-height: 1.65; }
-    .steps-section { padding: 7rem 2rem; background: var(--navy-primary); }
-    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 4rem; position: relative; }
-    .steps-grid::before { content: ''; position: absolute; top: 3rem; left: calc(16.67% + 1rem); right: calc(16.67% + 1rem); height: 1px; background: linear-gradient(90deg, var(--gold-muted), var(--gold), var(--gold-muted)); }
-    .step-card { padding: 0 2.5rem; text-align: center; }
-    .step-number { width: 4rem; height: 4rem; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); background: var(--navy-primary); }
-    .step-title { font-size: 0.95rem; font-weight: 600; letter-spacing: 0.02em; color: var(--text-primary); margin-bottom: 1rem; }
-    .step-desc { font-size: 0.9rem; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
-    .network-strip { background: var(--navy-card); border-top: 1px solid var(--navy-border); border-bottom: 1px solid var(--navy-border); padding: 1.8rem 2rem; }
-    .network-strip-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-    .network-strip-left { display: flex; align-items: center; gap: 1rem; }
-    .network-strip-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--status-live); flex-shrink: 0; animation: pulse 2s infinite; }
-    .network-strip-text { font-size: 0.82rem; color: var(--text-muted); letter-spacing: 0.02em; }
-    .network-strip-text strong { color: var(--text-primary); font-weight: 600; }
-    .network-strip-cta { background: transparent; border: 1px solid var(--status-live); color: var(--status-live); padding: 0.6rem 1.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.2s, color 0.2s; white-space: nowrap; flex-shrink: 0; }
-    .network-strip-cta:hover { background: var(--status-live); color: #000; }
-    @media (max-width: 640px) { .network-strip-inner { flex-direction: column; align-items: flex-start; } .network-strip-cta { width: 100%; justify-content: center; } }
-    .cta-section { padding: 9rem 2rem; background: var(--navy-deep); border-top: 1px solid var(--navy-border); border-bottom: 1px solid var(--navy-border); text-align: center; position: relative; overflow: hidden; }
-    .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 80% at 50% 50%, rgba(196,147,74,0.07) 0%, transparent 70%); pointer-events: none; }
-    .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-    .cta-title { font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 600; line-height: 1.1; margin-bottom: 1.2rem; letter-spacing: -0.01em; }
-    .cta-sub { font-size: 0.95rem; font-weight: 300; color: var(--text-muted); line-height: 1.7; margin-bottom: 2.5rem; letter-spacing: 0.02em; }
-    footer { background: var(--navy-deep); border-top: 1px solid var(--navy-border); padding: 3rem 2rem; }
-    .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
-    .footer-logo { font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 700; color: var(--gold); letter-spacing: 0.08em; }
-    .footer-logo span { color: var(--text-subtle); font-weight: 400; }
-    .footer-links { display: flex; gap: 2rem; list-style: none; }
-    @media (max-width: 640px) { .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1.5rem; } }
-    .footer-links a { font-size: 0.85rem; letter-spacing: 0.03em; color: var(--text-subtle); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-copy { font-size: 0.85rem; color: var(--text-subtle); letter-spacing: 0.05em; }
+    .nav-dropdown-menu li a { display: block; padding: 0.7rem 1.25rem; transition: background 0.15s; border-left: 2px solid transparent; }
+    .nav-dropdown-menu li a:hover { background: var(--paper-alt); border-left-color: var(--accent); }
+    .dropdown-link-title { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.16rem; }
+    .dropdown-link-desc { display: block; font-size: 0.7rem; font-weight: 400; color: var(--muted); letter-spacing: 0.01em; }
+    .nav-cta { background: var(--accent); color: #F8F5EE; padding: 11px 20px; border-radius: 2px; font-family: 'Space Grotesk', sans-serif; font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--accent-h); color: #fff; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-    .hamburger span { width: 22px; height: 1px; background: var(--text-muted); display: block; transition: all 0.25s ease; }
+    .hamburger span { width: 22px; height: 2px; background: var(--ink); display: block; transition: all 0.25s ease; border-radius: 2px; }
     .hamburger.is-open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
     .hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
     .hamburger.is-open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
     body.no-scroll { overflow: hidden; position: fixed; width: 100%; }
-    .mobile-nav { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: rgba(7,15,28,0.98); backdrop-filter: blur(16px); z-index: 49; padding: 2rem 2rem 3rem; flex-direction: column; gap: 0; overflow-y: auto; }
+    .mobile-nav { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: rgba(245,241,232,0.98); backdrop-filter: blur(16px); z-index: 59; padding: 1.5rem 2rem 3rem; flex-direction: column; gap: 0; overflow-y: auto; }
     .mobile-nav.open { display: flex; }
-    .mobile-nav a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; padding: 1.1rem 0; border-bottom: 1px solid var(--navy-border); transition: color 0.2s; display: block; }
-    @media (hover: hover) { .mobile-nav a:hover { color: var(--gold); } }
-    .mobile-nav a.mobile-nav-cta { color: var(--gold); margin-top: 0.8rem; font-weight: 600; }
-    @media (max-width: 1200px) {
+    .mobile-nav a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #5A5348; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid var(--line); transition: color 0.2s; display: block; }
+    .mobile-nav a:hover { color: var(--accent); }
+    .mobile-nav a.mobile-nav-cta { color: #fff; background: var(--accent); text-align: center; border: none; margin-top: 0.8rem; padding: 0.95rem; font-weight: 600; border-radius: 2px; }
+    .mobile-nav-category { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--faint); padding: 1.1rem 0 0.3rem; pointer-events: none; }
+
+    @media (max-width: 1024px) {
       .nav-links { display: none; } .nav-cta { display: none; } .hamburger { display: flex; }
-      .hero-stats { grid-template-columns: 1fr; gap: 1.5rem; max-width: 300px; }
-      .hero-stat + .hero-stat { border-left: none; padding-left: 0; border-top: 1px solid var(--navy-border); padding-top: 1.5rem; }
-      .comparison-grid { grid-template-columns: 1fr 1fr; }
-      .comparison-header:first-child { display: none; }
-      .comparison-header { padding: 1rem 1.1rem; }
-      .comparison-header.highlight { border-top-width: 2px; }
-      .comparison-cell.label-cell { grid-column: span 2; padding: 1rem 1.1rem 0.6rem; background: var(--navy-primary); }
-      .comparison-cell:not(.highlight):not(.label-cell) { padding: 0.9rem 1.1rem; background: var(--navy-deep); }
-      .comparison-cell:not(.highlight):not(.label-cell) .comparison-cell-value { font-size: 1rem; color: var(--text-subtle); }
-      .comparison-cell:not(.highlight):not(.label-cell) .comparison-cell-sub { font-size: 0.72rem; color: var(--text-subtle); }
-      .comparison-cell.highlight { padding: 0.9rem 1.1rem; }
-      .comparison-cell.highlight .comparison-cell-value.good { font-size: 1.2rem; }
-      .advantages-grid { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr; gap: 3rem; } .steps-grid::before { display: none; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
-    @media (max-width: 600px) {
-      .hero-inner { padding: 4rem 1.5rem 3rem; } .section { padding: 5rem 1.5rem; }
-      .comparison-section { padding: 5rem 1.5rem; } .steps-section { padding: 5rem 1.5rem; } .cta-section { padding: 4rem 1.5rem; }
+
+    /* ---------- hover helpers ---------- */
+    .lnav { transition: color .2s; }
+    .lnav:hover { color: var(--accent); }
+    .btn-brass { background: var(--accent); color: #F8F5EE; transition: background .2s, transform .25s cubic-bezier(.2,.8,.2,1); }
+    .btn-brass:hover { background: var(--accent-h); color: #fff; }
+    .btn-underline { border-bottom: 1px solid var(--line3); transition: color .2s, border-color .2s; }
+    .btn-underline:hover { color: var(--accent); border-color: var(--accent); }
+    .fllink { transition: color .2s; }
+    .fllink:hover { color: var(--accent); }
+
+    /* ---------- mobile sticky CTA ---------- */
+    .mobile-sticky-cta { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 55; background: var(--espresso); box-shadow: 0 -8px 24px -12px rgba(0,0,0,0.5); }
+    .mobile-sticky-cta a { display: block; text-align: center; padding: 1rem; color: #fff; background: var(--accent); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+      html { scroll-behavior: auto; }
     }
-    /* SOCIAL PROOF STRIP */
-    .proof-strip { background: var(--navy-card); border-bottom: 1px solid var(--navy-border); padding: 3rem 2rem; }
-    .proof-strip-inner { max-width: 1280px; margin: 0 auto; }
-    .proof-header { display: flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 1.8rem; }
-    .proof-stars-row { display: flex; gap: 2px; margin-bottom: 0.25rem; }
-    .proof-star { width: 0.75rem; height: 0.75rem; fill: var(--gold); }
-    .proof-grid { display: grid; grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); }
-    .proof-card { background: var(--navy-primary); padding: 1.6rem 1.8rem; }
-    .proof-quote { font-size: 0.88rem; font-weight: 300; color: var(--text-muted); line-height: 1.75; margin: 0.6rem 0 1.2rem; font-style: italic; }
-    .proof-reviewer { display: flex; align-items: center; gap: 0.8rem; }
-    .proof-avatar { width: 2rem; height: 2rem; border-radius: 50%; background: var(--navy-border); border: 1px solid var(--gold-muted); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 700; color: var(--gold); flex-shrink: 0; letter-spacing: 0.05em; }
-    .proof-name { font-size: 0.85rem; font-weight: 600; color: var(--text-primary); letter-spacing: 0.03em; }
-    .proof-role { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); margin-top: 0.1rem; }
-    .proof-cta-row { margin-top: 1.4rem; font-size: 0.82rem; color: var(--text-subtle); letter-spacing: 0.05em; }
-    .proof-cta-row a { color: var(--gold); text-decoration: none; }
-    @media (max-width: 640px) { .proof-grid { grid-template-columns: 1fr; } }
-    .trust-bar { display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--navy-border); flex-wrap: wrap; }
-    .trust-stat { text-align: center; padding: 0 2.5rem; }
-    .trust-stat-num { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 700; color: var(--gold); letter-spacing: 0.02em; line-height: 1.1; }
-    .trust-stat-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-subtle); margin-top: 0.35rem; line-height: 1.5; }
-    .trust-divider { width: 1px; height: 2.5rem; background: var(--navy-border); flex-shrink: 0; }
-    @media (max-width: 640px) { .trust-bar { gap: 1rem 0; } .trust-divider { display: none; } .trust-stat { padding: 0.5rem 1.5rem; } }
-    .mobile-sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 40; background: var(--gold); padding: 0.9rem 1.5rem; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); }
-    .mobile-sticky-cta a { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.88rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy-deep); text-decoration: none; }
-    @media (max-width: 1200px) { .mobile-sticky-cta { display: block; } }
-
-    /* ELIGIBILITY */
-    .qualify-section { background: var(--navy-deep); border-top: 1px solid var(--navy-border); border-bottom: 1px solid var(--navy-border); padding: 6rem 2rem; }
-    .qualify-title { font-family: 'Cinzel', serif; font-size: clamp(1.5rem, 3.5vw, 2.4rem); font-weight: 600; margin-bottom: 0.6rem; }
-    .qualify-sub { font-size: 0.92rem; font-weight: 300; color: var(--text-muted); line-height: 1.75; max-width: 540px; margin-bottom: 2.2rem; }
-    .qualify-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); }
-    .qualify-item { background: var(--navy-card); padding: 1.4rem 1.6rem; display: flex; gap: 1rem; align-items: flex-start; }
-    .qualify-check { width: 1.4rem; height: 1.4rem; border-radius: 50%; background: rgba(61,158,122,0.12); border: 1px solid #3D9E7A; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem; }
-    .qualify-check svg { width: 0.7rem; height: 0.7rem; color: #3D9E7A; }
-    .qualify-req { font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem; letter-spacing: 0.02em; }
-    .qualify-detail { font-size: 0.82rem; font-weight: 300; color: var(--text-subtle); line-height: 1.6; }
-    @media (max-width: 640px) { .qualify-grid { grid-template-columns: 1fr; } }
-
-    /* TIMELINE */
-    .timeline-section { background: var(--navy-primary); border-top: 1px solid var(--navy-border); padding: 5rem 2rem; }
-    .timeline-header { max-width: 560px; margin-bottom: 3rem; }
-    .timeline-title { font-family: 'Cinzel', serif; font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 600; margin-bottom: 0; }
-    .timeline { max-width: 720px; position: relative; }
-    .timeline::before { content: ''; position: absolute; left: 5.5rem; top: 0; bottom: 0; width: 1px; background: var(--navy-border); }
-    .timeline-item { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1.8rem; padding: 0 0 2.4rem 0; position: relative; }
-    .timeline-item:last-child { padding-bottom: 0; }
-    .timeline-marker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-subtle); padding-top: 0.15rem; text-align: right; line-height: 1.4; }
-    .timeline-dot { position: absolute; left: 5.5rem; top: 0.15rem; width: 7px; height: 7px; border-radius: 50%; background: var(--navy-border); border: 1px solid var(--text-subtle); transform: translateX(-3px); }
-    .timeline-item:last-child .timeline-dot { background: var(--gold); border-color: var(--gold); }
-    .timeline-event { font-size: 0.82rem; font-weight: 600; color: var(--text-primary); letter-spacing: 0.04em; margin-bottom: 0.4rem; }
-    .timeline-desc { font-size: 0.8rem; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
-    @media (max-width: 600px) { .timeline::before { left: 4rem; } .timeline-item { grid-template-columns: 4rem 1fr; gap: 1.2rem; } .timeline-dot { left: 4rem; } }
-
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    @keyframes heroFadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
-    .hero-eyebrow { animation: heroFadeUp 0.6s ease both; animation-delay: 0.1s; }
-    .hero-headline { animation: heroFadeUp 0.7s ease both; animation-delay: 0.28s; }
-    .hero-subline { animation: heroFadeUp 0.6s ease both; animation-delay: 0.52s; }
-    .hero-actions { animation: heroFadeUp 0.6s ease both; animation-delay: 0.72s; }
-    .hero-stats { animation: heroFadeUp 0.6s ease both; animation-delay: 0.96s; }
-    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .hero-eyebrow, .hero-headline, .hero-subline, .hero-actions, .hero-stats { animation: none; } }
-      @media (min-width: 1440px) { html { font-size: 17px; } }
-    @media (min-width: 1920px) { html { font-size: 18.5px; } }
-
-    /* FOOTER SOCIAL */
-    .footer-social { display: flex; gap: 1rem; align-items: center; }
-    .footer-social a { color: var(--text-subtle); transition: color 0.2s; line-height: 0; }
-    .footer-social a:hover { color: var(--gold); }
-    .footer-social svg { width: 1.1rem; height: 1.1rem; fill: currentColor; }
-
-    /* SKIP LINK */
-    .skip-link { position: absolute; left: -9999px; top: 0; background: var(--gold); color: var(--navy-deep); padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; z-index: 9999; text-decoration: none; }
-    .skip-link:focus { left: 0; }
+    @media (min-width: 1440px) { html { font-size: 17px; } }
   </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -283,7 +138,8 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBW5QJQT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    <nav>
+
+  <nav id="mfd-nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">MULTI FAMILY <span>DEALS</span></a>
       <ul class="nav-links">
@@ -292,7 +148,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <ul class="nav-dropdown-menu" role="menu">
             <li><a href="about.html" role="menuitem"><span class="dropdown-link-title">Our Approach</span><span class="dropdown-link-desc">The team &amp; the 50-door model</span></a></li>
             <li><a href="why-alberta.html" role="menuitem"><span class="dropdown-link-title">Why Alberta</span><span class="dropdown-link-desc">Market fundamentals &amp; data</span></a></li>
-            <li><a href="about.html#track-record" role="menuitem"><span class="dropdown-link-title">Track Record</span><span class="dropdown-link-desc">Every project appraised above purchase</span></a></li>
+            <li><a href="about.html#track-record" role="menuitem"><span class="dropdown-link-title">Track Record</span><span class="dropdown-link-desc">Every sold project appraised above purchase</span></a></li>
           </ul>
         </li>
         <li class="has-dropdown" data-category="properties">
@@ -300,7 +156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <ul class="nav-dropdown-menu" role="menu">
             <li><a href="inventory.html" role="menuitem"><span class="dropdown-link-title">Active Inventory</span><span class="dropdown-link-desc">Available 6–20 plex assets</span></a></li>
             <li><a href="crawford-plains.html" role="menuitem"><span class="dropdown-link-title">Crawford Plains 8-Plex</span><span class="dropdown-link-desc">Newest completed project · 2026</span></a></li>
-            <li><a href="inglewood.html" role="menuitem"><span class="dropdown-link-title">Inglewood 9-Plex</span><span class="dropdown-link-desc">Completed 2026 · set the standard</span></a></li>
+            <li><a href="inglewood.html" role="menuitem"><span class="dropdown-link-title">Inglewood 9-Plex</span><span class="dropdown-link-desc">Delivering soon · set the standard</span></a></li>
           </ul>
         </li>
         <li class="has-dropdown" data-category="resources">
@@ -319,11 +175,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hamburger" id="hamburger" role="button" aria-label="Open menu" tabindex="0"><span></span><span></span><span></span></div>
     </div>
   </nav>
-    <div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav" id="mobileNav">
     <a href="contact.html" data-conversion="book_call" class="mobile-nav-cta" style="margin-top:0;">Book Discovery Call</a>
     <a href="tel:+14162007010" data-conversion="phone_click">Call 416-200-7010</a>
     <div class="mobile-nav-category">The Strategy</div>
-    <a href="about.html">The Strategy</a>
+    <a href="about.html">Our Approach</a>
     <a href="why-alberta.html">Why Alberta</a>
     <div class="mobile-nav-category">Properties</div>
     <a href="inventory.html">Active Inventory</a>
@@ -331,317 +187,522 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="inglewood.html">Portfolio — Inglewood</a>
     <div class="mobile-nav-category">Resources</div>
     <a href="buying-process.html">Buying Process</a>
+    <a href="calculator.html">Calculator</a>
+    <a href="guide.html">Free Guide</a>
     <a href="faq.html">FAQ</a>
     <a href="reviews.html">Reviews</a>
     <a href="blog/index.html">Blog</a>
-    <a href="guide.html">Free Guide</a>
-    <a href="calculator.html">Calculator</a>
     <a href="contact.html" data-conversion="book_call" class="mobile-nav-cta">Book Discovery Call</a>
   </div>
 
-<main id="main-content">
-  <section class="hero">
-    <div class="hero-grid-bg"></div>
-    <div class="hero-inner">
-      <div class="hero-eyebrow">Edmonton, Alberta — MLI Select Program</div>
-      <h1 class="hero-headline">Scale to 50 Doors with Institutional Leverage. <br /><span class="accent">From $80,000 — Not $400,000.</span></h1>
-      <p class="hero-subline">CMHC MLI Select lets qualifying investors enter Edmonton's purpose-built multi-family market with as little as 5% down and 50-year amortization. The same $80,000 that buys one Ontario condo can acquire 6–10 doors of cash-flowing rental real estate in Canada's fastest-growing major city.</p>
-      <div class="hero-actions">
-        <a href="contact.html" data-conversion="book_call" class="btn-primary">Book Your Discovery Call</a>
-        <a href="inventory.html#available" class="btn-ghost">View the Available Packages</a>
-      </div>
-      <p style="margin-top:1.1rem;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-subtle);">More than half of released packages are already sold or under conditional offer &mdash; <a href="inventory.html" style="color:var(--gold);text-decoration:none;">see what remains &rarr;</a></p>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="hero-stat-number">5%</div><div class="hero-stat-label">Minimum Down Payment</div></div>
-        <div class="hero-stat"><div class="hero-stat-number">50 Yr</div><div class="hero-stat-label">Amortization Period</div></div>
-        <div class="hero-stat"><div class="hero-stat-number">4 Yrs</div><div class="hero-stat-label">Path to 50+ Doors</div></div>
-      </div>
-    </div>
-  </section>
+<main id="main-content" style="background:#F5F1E8;">
 
-  <div class="proof-strip reveal">
-    <div class="proof-strip-inner">
-      <div class="trust-bar">
-        <div class="trust-stat">
-          <div class="trust-stat-num">$500M+</div>
-          <div class="trust-stat-label">In Transactions Closed<br>by the Sarhadi Brothers</div>
+  <!-- HERO -->
+  <section id="top" style="padding-top:72px;background:#F5F1E8;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(#E7DFCD 1px,transparent 1px),linear-gradient(90deg,#E7DFCD 1px,transparent 1px);background-size:64px 64px;opacity:.45;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 30% 20%,#000,transparent 75%);mask-image:radial-gradient(ellipse 80% 70% at 30% 20%,#000,transparent 75%);pointer-events:none;"></div>
+    <div style="max-width:1240px;margin:0 auto;padding:clamp(44px,7vw,88px) clamp(18px,4vw,44px) clamp(28px,4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(28px,4vw,64px);align-items:center;position:relative;z-index:1;">
+      <div>
+        <div style="animation:heroUp .7s ease both;animation-delay:.05s;display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:26px;">
+          <span style="display:block;width:26px;height:1px;background:var(--accent);"></span>Edmonton · CMHC MLI Select
         </div>
-        <div class="trust-divider"></div>
-        <div class="trust-stat">
-          <div class="trust-stat-num">160+</div>
-          <div class="trust-stat-label">Verified Google Reviews</div>
+        <h1 style="animation:heroUp .8s ease both;animation-delay:.16s;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(2.7rem,6.2vw,4.7rem);line-height:1.0;letter-spacing:-0.025em;color:#1C1813;margin-bottom:26px;text-wrap:balance;">
+          One Ontario condo,<br />or <span style="font-style:italic;color:var(--accent);">eight Edmonton doors.</span>
+        </h1>
+        <p style="animation:heroUp .8s ease both;animation-delay:.3s;font-size:1.06rem;font-weight:400;line-height:1.7;color:#4A443B;max-width:520px;margin-bottom:34px;">
+          CMHC MLI Select lets qualifying investors enter Edmonton's purpose-built multi-family market with as little as <strong style="color:#1C1813;font-weight:600;">5% down</strong> and <strong style="color:#1C1813;font-weight:600;">50-year amortization</strong>. The down payment on a single Ontario condo can instead open the door to an entire Edmonton building — a projected cash-flowing foundation you scale toward 50 doors over four years.
+        </p>
+        <div class="hero-actions" style="animation:heroUp .8s ease both;animation-delay:.44s;display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
+          <a href="contact.html" data-conversion="book_call" data-magnetic class="btn-brass" style="padding:16px 34px;border-radius:2px;font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;">Book Your Discovery Call</a>
+          <a href="#explore" class="btn-underline" style="color:#1C1813;padding:16px 20px;font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;">Explore Entry Points →</a>
         </div>
-        <div class="trust-divider"></div>
-        <div class="trust-stat">
-          <div class="trust-stat-num">500+</div>
-          <div class="trust-stat-label">Families Served</div>
+        <p style="animation:heroUp .8s ease both;animation-delay:.58s;margin-top:22px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#8A8172;">
+          Released packages regularly sell or go under conditional offer before they reach the public
+        </p>
+        <div style="animation:heroUp .8s ease both;animation-delay:.72s;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:1px solid #DDD4C2;padding-top:28px;max-width:560px;">
+          <div style="padding-right:18px;">
+            <div style="font-family:'Newsreader',serif;font-size:2.3rem;font-weight:500;color:#1C1813;line-height:1;"><span data-count="5" data-suffix="%">5%</span></div>
+            <div style="font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:8px;">As low as, down</div>
+          </div>
+          <div style="padding:0 18px;border-left:1px solid #DDD4C2;">
+            <div style="font-family:'Newsreader',serif;font-size:2.3rem;font-weight:500;color:#1C1813;line-height:1;"><span data-count="50" data-suffix=" yr">50 yr</span></div>
+            <div style="font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:8px;">Amortization</div>
+          </div>
+          <div style="padding-left:18px;border-left:1px solid #DDD4C2;">
+            <div style="font-family:'Newsreader',serif;font-size:2.3rem;font-weight:500;color:#1C1813;line-height:1;"><span data-count="4" data-suffix=" yrs">4 yrs</span></div>
+            <div style="font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:8px;">Path to 50+ doors</div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div style="background:var(--navy-deep);border-bottom:1px solid var(--navy-border);padding:2.25rem 2rem;">
-    <div style="max-width:1000px;margin:0 auto;text-align:center;">
-      <div style="font-family:'Cinzel',serif;font-size:clamp(1.05rem,2.2vw,1.35rem);font-weight:700;color:var(--text-primary);line-height:1.5;">Every completed project has appraised <span style="color:var(--gold);">above its purchase price.</span></div>
-      <p style="font-size:0.88rem;color:var(--text-muted);margin-top:0.6rem;line-height:1.6;">Independent AACI appraisals — from $20,000 to $200,000 above purchase at completion. <a href="about.html#track-record" style="color:var(--gold);text-decoration:none;">See the track record &rarr;</a></p>
-      <p style="font-size:0.66rem;color:var(--text-subtle);margin-top:0.6rem;line-height:1.5;">As-if-complete appraisals prepared for financing. An appraisal is an opinion of value at a date; past results don&rsquo;t guarantee future values.</p>
-    </div>
-  </div>
-
-  <section class="comparison-section">
-    <div class="section-inner">
-      <div class="reveal">
-        <div class="section-label">The Alberta Advantage</div>
-        <h2 class="section-title">The Numbers Investors<br />In Ontario Aren't Seeing</h2>
-        <p class="section-subtitle">A side-by-side analysis of what it truly costs to enter each market — and what your capital produces from day one.</p>
-      </div>
-      <div class="comparison-grid reveal" style="transition-delay:0.1s">
-        <div class="comparison-header label-cell" style="background:var(--navy-primary);border:none"></div>
-        <div class="comparison-header"><div class="comparison-header-label">High Barrier Market</div><div class="comparison-header-title" style="color:var(--text-muted)">Ontario / BC</div></div>
-        <div class="comparison-header highlight"><div class="comparison-header-label">Our Market</div><div class="comparison-header-title">Edmonton, Alberta</div></div>
-        <div class="comparison-cell label-cell"><div class="comparison-label">CMHC Up-to-95% Access</div><div class="comparison-label-sub">MLI Select eligibility</div></div>
-        <div class="comparison-cell"><div class="comparison-cell-value bad" style="font-size:1rem">Higher Deposit</div><div class="comparison-cell-sub">CMHC raises deposit until DSCR clears 1.10 — often 2–4x Edmonton</div></div>
-        <div class="comparison-cell highlight"><div class="comparison-cell-value good" style="font-size:1rem">Open</div><div class="comparison-cell-sub">DSCR qualifies — rents cover expenses</div></div>
-        <div class="comparison-cell label-cell"><div class="comparison-label">Minimum Down Payment</div><div class="comparison-label-sub">Per acquisition, all-in</div></div>
-        <div class="comparison-cell"><div class="comparison-cell-value bad">20%</div><div class="comparison-cell-sub">~$400,000+ incl. taxes & charges</div></div>
-        <div class="comparison-cell highlight"><div class="comparison-cell-value good">5%</div><div class="comparison-cell-sub">From ~$80,000</div></div>
-        <div class="comparison-cell label-cell"><div class="comparison-label">Amortization Period</div><div class="comparison-label-sub">Affects monthly cashflow</div></div>
-        <div class="comparison-cell"><div class="comparison-cell-value bad">30 Yr</div><div class="comparison-cell-sub">Conventional</div></div>
-        <div class="comparison-cell highlight"><div class="comparison-cell-value good">50 Yr</div><div class="comparison-cell-sub">MLI Select Program</div></div>
-        <div class="comparison-cell label-cell"><div class="comparison-label">Provincial Sales Tax</div><div class="comparison-label-sub">On new construction</div></div>
-        <div class="comparison-cell"><div class="comparison-cell-value bad">13% HST</div><div class="comparison-cell-sub">Ontario</div></div>
-        <div class="comparison-cell highlight"><div class="comparison-cell-value good">None</div><div class="comparison-cell-sub">Alberta has no PST or HST</div></div>
-        <div class="comparison-cell label-cell"><div class="comparison-label">Land Transfer Tax</div><div class="comparison-label-sub">At closing</div></div>
-        <div class="comparison-cell"><div class="comparison-cell-value bad">Up to 2%</div><div class="comparison-cell-sub">+ Toronto LTT</div></div>
-        <div class="comparison-cell highlight"><div class="comparison-cell-value good">None</div><div class="comparison-cell-sub">Zero LTT in Alberta</div></div>
-        <div class="comparison-cell label-cell"><div class="comparison-label">Development Charges</div><div class="comparison-label-sub">Per unit, new builds</div></div>
-        <div class="comparison-cell"><div class="comparison-cell-value bad">$50K–$130K</div><div class="comparison-cell-sub">Per project (GTA)</div></div>
-        <div class="comparison-cell highlight"><div class="comparison-cell-value good">Minimal</div><div class="comparison-cell-sub">No Ontario-style DCs in Alberta</div></div>
-        <div class="comparison-cell label-cell"><div class="comparison-label">Property Condition</div><div class="comparison-label-sub">At acquisition</div></div>
-        <div class="comparison-cell"><div class="comparison-cell-value bad" style="font-size:1rem">25+ Yr Old</div><div class="comparison-cell-sub">Repairs required for CMHC criteria</div></div>
-        <div class="comparison-cell highlight"><div class="comparison-cell-value good" style="font-size:1rem">Brand New</div><div class="comparison-cell-sub">Alberta New Home Warranty included</div></div>
-        <div class="comparison-cell label-cell"><div class="comparison-label">Capital Per Door</div><div class="comparison-label-sub">Acquisition capacity</div></div>
-        <div class="comparison-cell"><div class="comparison-cell-value bad">3–4 Doors</div><div class="comparison-cell-sub">$400K deployed (ON/BC)</div></div>
-        <div class="comparison-cell highlight"><div class="comparison-cell-value good">24–28 Doors</div><div class="comparison-cell-sub">Same $400K deployed</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section style="background:var(--navy-primary);border-top:1px solid var(--navy-border);padding:6rem 2rem;">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="reveal" style="margin-bottom:2.5rem;max-width:640px;">
-        <div class="section-label">Why Through Us</div>
-        <h2 class="section-title" style="margin-top:0.75rem;">Why Not Just Go Straight<br />to a Builder?</h2>
-        <p class="section-subtitle" style="margin-top:1rem;">The Edmonton thesis is real. The difference is execution &mdash; and there are things a builder&rsquo;s sales office structurally cannot do for you.</p>
-      </div>
-      <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--navy-border);border:1px solid var(--navy-border);">
-        <div style="background:var(--navy-card);padding:2rem 1.75rem;"><div style="font-family:'Cinzel',serif;font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">Pre-vetted, pre-analyzed inventory</div><p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">Every package is pre-screened for MLI Select eligibility and modeled for DSCR and cash flow before it reaches you. You compare finished pro-formas, not sales brochures.</p></div>
-        <div style="background:var(--navy-card);padding:2rem 1.75rem;"><div style="font-family:'Cinzel',serif;font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">Allocation before the public</div><p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">Direct builder relationships mean our investors see purpose-built packages &mdash; and bundled incentives &mdash; before they&rsquo;re released to the general market.</p></div>
-        <div style="background:var(--navy-card);padding:2rem 1.75rem;"><div style="font-family:'Cinzel',serif;font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">The whole team, assembled</div><p style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;">Mortgage brokers, lawyers, property management, insurance &mdash; the entire remote-closing team is in place, so you buy from anywhere without sourcing a single professional.</p></div>
-      </div>
-      <div class="reveal" style="margin-top:2.5rem;"><a href="contact.html" data-conversion="book_call" class="btn-primary">Book a Discovery Call</a></div>
-    </div>
-  </section>
-
-  <section class="qualify-section reveal">
-    <div class="section-inner">
-      <h2 class="qualify-title">Do You Qualify?</h2>
-      <p class="qualify-sub">Most Ontario investors who reach out are already eligible. Here's the baseline we work with on every acquisition.</p>
-      <div class="qualify-grid">
-        <div class="qualify-item">
-          <div class="qualify-check">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2 6l3 3 5-5"/></svg>
-          </div>
-          <div>
-            <div class="qualify-req">$80,000–$155,000 Available Capital</div>
-            <div class="qualify-detail">Covers your 5% down payment plus closing costs across the 6–10 plex range. CMHC covers up to 95% of the purchase price.</div>
-          </div>
+      <div style="position:relative;animation:heroUp .9s ease both;animation-delay:.4s;">
+        <div style="position:relative;border:1px solid #DDD4C2;padding:10px;background:#FBF8F1;box-shadow:0 30px 70px -30px rgba(28,24,19,0.4);">
+          <img src="images/edmonton-aerial-hero.webp" alt="Edmonton skyline and river valley at golden hour" width="1200" height="800" style="display:block;width:100%;height:clamp(320px,44vw,520px);object-fit:cover;" />
+          <div style="position:absolute;left:16px;bottom:16px;background:rgba(20,17,12,0.82);backdrop-filter:blur(6px);color:#F5F1E8;padding:10px 16px;font-size:.66rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;">Edmonton, Alberta · River Valley</div>
         </div>
-        <div class="qualify-item">
-          <div class="qualify-check">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2 6l3 3 5-5"/></svg>
-          </div>
-          <div>
-            <div class="qualify-req">Personal Income or Existing Assets</div>
-            <div class="qualify-detail">CMHC MLI Select qualifies on rental income projections — not solely your personal income. CMHC does require documented landlord experience: one rental, even a basement suite, satisfies it. We'll confirm yours on the call.</div>
-          </div>
-        </div>
-        <div class="qualify-item">
-          <div class="qualify-check">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2 6l3 3 5-5"/></svg>
-          </div>
-          <div>
-            <div class="qualify-req">Strong Personal Credit (680+)</div>
-            <div class="qualify-detail">Standard mortgage underwriting applies. Most of our clients are in the 700–780 range. We can walk you through the requirements on the call.</div>
-          </div>
-        </div>
-        <div class="qualify-item">
-          <div class="qualify-check">
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2 6l3 3 5-5"/></svg>
-          </div>
-          <div>
-            <div class="qualify-req">Willing to Hold 3–5 Years Minimum</div>
-            <div class="qualify-detail">These are long-duration assets. Clients who benefit most are those building a portfolio over time — not looking to flip within 12 months.</div>
-          </div>
+        <div style="position:absolute;top:-22px;right:-14px;animation:floatY 6s ease-in-out infinite;background:#16130E;color:#F5F1E8;padding:18px 22px;max-width:230px;box-shadow:0 20px 50px -18px rgba(28,24,19,0.6);border-left:2px solid var(--accent);">
+          <div style="font-family:'Newsreader',serif;font-size:1.05rem;line-height:1.35;">Every sold project has appraised <span style="color:var(--accent-l);font-style:italic;">above its purchase price.</span></div>
         </div>
       </div>
     </div>
   </section>
 
-
-
-  <section class="timeline-section reveal">
-    <div class="section-inner">
-      <div class="timeline-header">
-        <div class="section-label">Realistic Timeline</div>
-        <h2 class="timeline-title">What the First 10 Months Look Like</h2>
+  <!-- TRUST STRIP -->
+  <section style="background:#EFE9DB;border-top:1px solid #E4DBCB;border-bottom:1px solid #E4DBCB;padding:clamp(30px,4vw,44px) clamp(18px,4vw,44px);">
+    <div class="reveal" data-reveal style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;align-items:start;gap:clamp(16px,4vw,56px);text-align:center;">
+      <div>
+        <div style="font-family:'Newsreader',serif;font-size:clamp(2rem,3.4vw,2.7rem);font-weight:500;color:#1C1813;line-height:1;"><span data-count="500" data-prefix="$" data-suffix="M+">$500M+</span></div>
+        <div style="font-size:.66rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:12px;line-height:1.6;">Real estate sold<br />combined Sarhadi Group</div>
       </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-marker">Month 1</div>
-          <div class="timeline-dot"></div>
-          <div>
-            <div class="timeline-event">Discovery, Qualification &amp; Allocation</div>
-            <div class="timeline-desc">We review your financials, confirm MLI Select eligibility, and match you to the right asset — then submit your worksheet to the builder to request your allocation. You leave with a full pro-forma and a clear acquisition path.</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-marker">Month 1–2</div>
-          <div class="timeline-dot"></div>
-          <div>
-            <div class="timeline-event">Due Diligence &amp; Lender Terms</div>
-            <div class="timeline-desc">Our preferred broker qualifies both you and the project, and your lender issues a Letter of Intent outlining your mortgage terms — confirming the financing structure before you proceed.</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-marker">Month 2</div>
-          <div class="timeline-dot"></div>
-          <div>
-            <div class="timeline-event">Deposit &amp; Agreement</div>
-            <div class="timeline-desc">Your first deposit secures your package with the builder. The agreement is conditional on CMHC approval and project viability — if CMHC doesn't approve, your deposit is returned per the Agreement of Purchase and Sale.</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-marker">Month 2–5</div>
-          <div class="timeline-dot"></div>
-          <div>
-            <div class="timeline-event">CMHC Submission &amp; Acceptance</div>
-            <div class="timeline-desc">We prepare and manage the full CMHC MLI Select application end to end. Once the Certificate of Insurance is issued — typically 60–90 days — your lawyer is introduced to prepare for closing.</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-marker">Month 5–9</div>
-          <div class="timeline-dot"></div>
-          <div>
-            <div class="timeline-event">Pre-Leasing Before Completion</div>
-            <div class="timeline-desc">Property management begins advertising and leasing your units ahead of completion. You make no mortgage payments until the project closes — the building is filling while you wait.</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-marker">Month ~10</div>
-          <div class="timeline-dot" style="background:var(--gold);border-color:var(--gold)"></div>
-          <div>
-            <div class="timeline-event" style="color:var(--gold)">Project Completion &amp; Cash Flow</div>
-            <div class="timeline-desc">You close. Title transfers into your name, your mortgage begins, and monthly net cash flow starts depositing into your account — you're now a multi-family owner with professional management in place.</div>
-          </div>
-        </div>
+      <div style="width:1px;height:56px;background:#DDD4C2;align-self:center;"></div>
+      <div>
+        <div style="font-family:'Newsreader',serif;font-size:clamp(2rem,3.4vw,2.7rem);font-weight:500;color:#1C1813;line-height:1;"><span data-count="160" data-suffix="+">160+</span></div>
+        <div style="color:var(--accent);letter-spacing:2px;font-size:.8rem;margin-top:6px;">★★★★★</div>
+        <div style="font-size:.66rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:6px;">Five-star client reviews</div>
+      </div>
+      <div style="width:1px;height:56px;background:#DDD4C2;align-self:center;"></div>
+      <div>
+        <div style="font-family:'Newsreader',serif;font-size:clamp(2rem,3.4vw,2.7rem);font-weight:500;color:#1C1813;line-height:1;"><span data-count="500" data-suffix="+">500+</span></div>
+        <div style="font-size:.66rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:12px;">Clients served</div>
       </div>
     </div>
   </section>
 
-  <!-- WORKED DEAL -->
-  <section style="background:var(--navy-deep);border-top:1px solid var(--navy-border);padding:6rem 2rem;">
-    <div style="max-width:1000px;margin:0 auto;">
-      <div class="reveal" style="text-align:center;margin-bottom:3rem;">
-        <div class="section-label" style="justify-content:center;">Anatomy of One Deal</div>
-        <h2 class="section-title" style="margin-top:0.75rem;">What a Single 8-Plex<br />Actually Looks Like</h2>
-        <p class="section-subtitle" style="margin:1rem auto 0;">An illustrative example of how the numbers come together on one purpose-built 8-plex — the same structure we walk through, line by line, on your discovery call.</p>
-      </div>
-      <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--navy-border);border:1px solid var(--navy-border);">
-        <div style="background:var(--navy-card);padding:1.9rem 1.5rem;text-align:center;"><div style="font-family:'Cinzel',serif;font-size:1.7rem;font-weight:700;color:var(--gold);">$115,000</div><div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-subtle);margin-top:0.4rem;line-height:1.5;">Your 5% deposit<br>on a ~$2.3M build</div></div>
-        <div style="background:var(--navy-card);padding:1.9rem 1.5rem;text-align:center;"><div style="font-family:'Cinzel',serif;font-size:1.7rem;font-weight:700;color:var(--gold);">50 Years</div><div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-subtle);margin-top:0.4rem;line-height:1.5;">Amortization at ~4%<br>via CMHC MLI Select</div></div>
-        <div style="background:var(--navy-card);padding:1.9rem 1.5rem;text-align:center;"><div style="font-family:'Cinzel',serif;font-size:1.7rem;font-weight:700;color:var(--gold);">~$21,000</div><div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-subtle);margin-top:0.4rem;line-height:1.5;">Projected annual<br>cash flow (pre-tax)</div></div>
-        <div style="background:var(--navy-card);padding:1.9rem 1.5rem;text-align:center;"><div style="font-family:'Cinzel',serif;font-size:1.7rem;font-weight:700;color:var(--gold);">~1.20</div><div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-subtle);margin-top:0.4rem;line-height:1.5;">DSCR — clears the<br>CMHC 1.10 minimum</div></div>
-      </div>
-      <p class="reveal" style="font-size:0.92rem;color:var(--text-muted);line-height:1.85;margin-top:2rem;max-width:820px;">Roughly <strong style="color:var(--text-primary);">$115,000 puts eight rental doors to work</strong> — the same capital that buys a fraction of one Toronto condo. The tenants' rent covers the mortgage; the 50-year amortization keeps the payment low enough to leave positive cash flow after professional management. Meanwhile the mortgage pays down and the asset appreciates — and to date, <a href="about.html#track-record" style="color:var(--gold);text-decoration:none;">every completed project has appraised above its purchase price</a> at completion. That is how one deal becomes equity, and equity becomes the deposit for the next.</p>
-      <p class="reveal" style="font-size:0.7rem;color:var(--text-subtle);line-height:1.6;margin-top:1.25rem;max-width:820px;">Illustrative example only, at a modeled ~4% rate. Actual figures vary by property, rents, financing, occupancy, and your tax situation. Cash flow is a pre-tax pro-forma estimate; an appraisal is an opinion of value at a date and past results do not guarantee future values. Not investment advice.</p>
+  <!-- POSITIONING -->
+  <section style="background:#16130E;color:#F5F1E8;padding:clamp(64px,9vw,120px) clamp(18px,4vw,44px);position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 70% 30%,rgba(196,154,94,0.14),transparent 60%);pointer-events:none;"></div>
+    <div class="reveal" data-reveal style="max-width:940px;margin:0 auto;text-align:center;position:relative;z-index:1;">
+      <div style="font-size:.7rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-l);margin-bottom:26px;">The Positioning</div>
+      <p style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(1.7rem,3.6vw,2.9rem);line-height:1.28;letter-spacing:-0.01em;text-wrap:balance;">
+        We don't sell properties. We build <span style="font-style:italic;color:var(--accent-l);">portfolios</span> — purpose-built rental assets, engineered around one program that quietly changes the arithmetic of scale.
+      </p>
     </div>
   </section>
 
-  <div class="network-strip">
-    <div class="network-strip-inner">
-      <div class="network-strip-left">
-        <div class="network-strip-dot"></div>
-        <p class="network-strip-text"><strong>Private Investor Network</strong> — New listings hit our WhatsApp group before they appear anywhere else. Hundreds of investors are already inside.</p>
+  <!-- THE MATH -->
+  <section id="arbitrage" style="background:#F5F1E8;padding:clamp(64px,9vw,130px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div class="reveal" data-reveal style="max-width:640px;margin-bottom:clamp(36px,5vw,64px);">
+        <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;"><span style="display:block;width:24px;height:1px;background:var(--accent);"></span>The Math</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(2.1rem,4.6vw,3.5rem);line-height:1.06;letter-spacing:-0.02em;margin-bottom:18px;">It simply isn't close.</h2>
+        <p style="font-size:1.02rem;line-height:1.7;color:#4A443B;">CMHC MLI Select is national — same program, same rules everywhere. The difference is arithmetic: where rents cover debt at 1.10 DSCR, 5% down works. Where they don't, CMHC raises the required deposit until it does. Deploy the same capital and watch what it becomes.</p>
       </div>
-      <a href="https://chat.whatsapp.com/BYNf65k8iSf3fNOIrkZUvZ" data-conversion="whatsapp_click" target="_blank" rel="noopener" class="network-strip-cta">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.116 1.529 5.843L.057 23.571a.5.5 0 0 0 .614.614l5.728-1.472A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.007-1.374l-.359-.214-3.728.958.975-3.565-.234-.371A9.818 9.818 0 1 1 12 21.818z"/></svg>
-        Join the Network
-      </a>
-    </div>
-  </div>
 
-  <div class="proof-strip reveal" style="border-top:1px solid var(--navy-border);">
-    <div class="proof-strip-inner">
-      <div class="proof-header">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-        Verified Client Experiences — Google Reviews
-      </div>
-      <div class="proof-grid">
-        <div class="proof-card">
-          <div class="proof-stars-row">
-            <svg class="proof-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg class="proof-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg class="proof-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg class="proof-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <svg class="proof-star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      <div class="reveal" data-reveal style="background:#FBF8F1;border:1px solid #DDD4C2;padding:clamp(24px,4vw,48px);margin-bottom:clamp(36px,4vw,56px);">
+        <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:34px;">
+          <span style="font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#8A8172;">Deploy the same</span>
+          <span style="font-family:'Newsreader',serif;font-size:clamp(2rem,4vw,2.9rem);font-weight:500;color:#1C1813;line-height:1;">$400,000</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:30px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
+              <span style="font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);">Ontario / BC · Conventional</span>
+              <span style="font-family:'Newsreader',serif;font-size:1.5rem;color:#4A443B;">4–8 doors</span>
+            </div>
+            <div data-doors="7" style="display:flex;flex-wrap:wrap;gap:6px;">
+              <span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span>
+            </div>
           </div>
-          <p class="proof-quote">"Kunal has done an excellent job of securing the multi family property, and educating me on the process, including getting me through all the requirements to move forward and make an educated decision."</p>
-          <div class="proof-reviewer">
-            <div class="proof-avatar">CF</div>
-            <div>
-              <div class="proof-name">Chad F.</div>
-              <div class="proof-role">Multi-Family Purchaser</div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
+              <span style="font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);">Edmonton · MLI Select</span>
+              <span style="font-family:'Newsreader',serif;font-size:1.5rem;color:#1C1813;">24–28 doors</span>
+            </div>
+            <div data-doors="26" style="display:flex;flex-wrap:wrap;gap:6px;">
+              <span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span><span data-door style="width:20px;height:28px;border:1px solid #D9D0C0;border-radius:2px 2px 0 0;background:transparent;"></span>
             </div>
           </div>
         </div>
+        <p style="margin-top:26px;font-size:.72rem;line-height:1.6;color:#8A8172;">Conventional financing (Ontario / BC) versus CMHC MLI Select in Edmonton, at each market's typical entry deposit. Illustrative of capital efficiency; projections subject to CMHC approval and lender underwriting, not guaranteed.</p>
       </div>
-      <p class="proof-cta-row">Read all reviews on <a href="reviews.html" style="text-decoration:underline">our Reviews page →</a></p>
-    </div>
-  </div>
 
-  <section class="cta-section">
-    <div class="cta-inner reveal">
-      <div class="section-label" style="justify-content:center"><span style="display:block;width:1.5rem;height:1px;background:var(--gold)"></span>Take The First Step<span style="display:block;width:1.5rem;height:1px;background:var(--gold)"></span></div>
-      <h2 class="cta-title">Your Next Acquisition<br />Starts With One Conversation</h2>
-      <p class="cta-sub">Qualified investors receive a full pro-forma analysis, debt structure breakdown, and a personalized acquisition roadmap — at no cost.</p>
-      <a href="contact.html" data-conversion="book_call" class="btn-primary">Book Your Discovery Call</a>
-      <p style="font-size:0.72rem;color:var(--text-subtle);letter-spacing:0.04em;line-height:1.7;max-width:520px;margin:2rem auto 0;">Real estate investment involves risk, including the potential loss of capital. Financing is subject to CMHC and lender approval. Past performance does not guarantee future results. This is not financial advice — consult a qualified advisor before investing.</p>
+      <div class="reveal" data-reveal style="border-top:1px solid #DDD4C2;">
+        <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0;padding:16px 0;border-bottom:1px solid #DDD4C2;">
+          <div style="font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;padding-left:4px;">Per acquisition</div>
+          <div style="text-align:center;"><div style="font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);">Ontario / BC</div><div style="font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#A79E8E;margin-top:3px;">Conventional financing</div></div>
+          <div style="text-align:center;"><div style="font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);">Edmonton</div><div style="font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#A79E8E;margin-top:3px;">CMHC MLI Select</div></div>
+        </div>
+        <div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0;padding:20px 0;border-bottom:1px solid #E4DBCB;align-items:center;">
+            <div style="padding-left:4px;"><div style="font-size:.92rem;font-weight:500;color:#1C1813;">Minimum down payment</div><div style="font-size:.74rem;color:#8A8172;margin-top:2px;">Entry deposit, per building</div></div>
+            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.5rem;color:#4A443B;">20%</div><div style="font-size:.72rem;color:#8A8172;">~$400K+</div></div>
+            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.7rem;color:var(--accent);">5%</div><div style="font-size:.72rem;color:#8A8172;">from ~$80K</div></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0;padding:20px 0;border-bottom:1px solid #E4DBCB;align-items:center;">
+            <div style="padding-left:4px;"><div style="font-size:.92rem;font-weight:500;color:#1C1813;">Amortization</div><div style="font-size:.74rem;color:#8A8172;margin-top:2px;">Drives monthly cashflow</div></div>
+            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.5rem;color:#4A443B;">30 yr</div><div style="font-size:.72rem;color:#8A8172;">Conventional</div></div>
+            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.7rem;color:var(--accent);">50 yr</div><div style="font-size:.72rem;color:#8A8172;">MLI Select</div></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0;padding:20px 0;border-bottom:1px solid #E4DBCB;align-items:center;">
+            <div style="padding-left:4px;"><div style="font-size:.92rem;font-weight:500;color:#1C1813;">Land transfer tax</div><div style="font-size:.74rem;color:#8A8172;margin-top:2px;">At closing</div></div>
+            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.5rem;color:#4A443B;">Up to 2%</div><div style="font-size:.72rem;color:#8A8172;">+ Toronto LTT</div></div>
+            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.7rem;color:var(--accent);">None</div><div style="font-size:.72rem;color:#8A8172;">Zero in Alberta</div></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0;padding:20px 0;border-bottom:1px solid #E4DBCB;align-items:center;">
+            <div style="padding-left:4px;"><div style="font-size:.92rem;font-weight:500;color:#1C1813;">Property condition</div><div style="font-size:.74rem;color:#8A8172;margin-top:2px;">At acquisition</div></div>
+            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.4rem;color:#4A443B;">Often older stock</div><div style="font-size:.72rem;color:#8A8172;">May need CMHC repairs</div></div>
+            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.55rem;color:var(--accent);">Brand new</div><div style="font-size:.72rem;color:#8A8172;">Warranty included</div></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0;padding:20px 0;align-items:center;">
+            <div style="padding-left:4px;"><div style="font-size:.92rem;font-weight:500;color:#1C1813;">Capital per door</div><div style="font-size:.74rem;color:#8A8172;margin-top:2px;">$400K deployed</div></div>
+            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.5rem;color:#4A443B;">4–8 doors</div><div style="font-size:.72rem;color:#8A8172;">ON / BC</div></div>
+            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.7rem;color:var(--accent);">24–28 doors</div><div style="font-size:.72rem;color:#8A8172;">Same capital</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTRY POINTS / PLEX EXPLORER -->
+  <section id="explore" style="background:#EFE9DB;border-top:1px solid #E4DBCB;padding:clamp(64px,9vw,130px) clamp(18px,4vw,44px);">
+    <div style="max-width:1140px;margin:0 auto;">
+      <div class="reveal" data-reveal style="max-width:620px;margin-bottom:40px;">
+        <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;"><span style="display:block;width:24px;height:1px;background:var(--accent);"></span>Entry Points</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(2rem,4.4vw,3.3rem);line-height:1.06;letter-spacing:-0.02em;margin-bottom:16px;">Find where your capital fits.</h2>
+        <p style="font-size:1.02rem;line-height:1.7;color:#4A443B;">Edmonton inventory spans six to ten units. Select a building size to see the typical entry deposit and projected pre-tax cashflow range.</p>
+      </div>
+      <div class="reveal" data-reveal style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px;">
+        <button data-plex="6" class="plex-btn" style="cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:12px 22px;border:1px solid #D9D0C0;background:transparent;color:#4A443B;border-radius:2px;transition:background .25s,color .25s,border-color .25s;">6-Plex</button>
+        <button data-plex="7" class="plex-btn" style="cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:12px 22px;border:1px solid #D9D0C0;background:transparent;color:#4A443B;border-radius:2px;transition:background .25s,color .25s,border-color .25s;">7-Plex</button>
+        <button data-plex="8" class="plex-btn" style="cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:12px 22px;border:1px solid #D9D0C0;background:transparent;color:#4A443B;border-radius:2px;transition:background .25s,color .25s,border-color .25s;">8-Plex</button>
+        <button data-plex="9" class="plex-btn" style="cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:12px 22px;border:1px solid #D9D0C0;background:transparent;color:#4A443B;border-radius:2px;transition:background .25s,color .25s,border-color .25s;">9-Plex</button>
+        <button data-plex="10" class="plex-btn" style="cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:12px 22px;border:1px solid #D9D0C0;background:transparent;color:#4A443B;border-radius:2px;transition:background .25s,color .25s,border-color .25s;">10-Plex</button>
+      </div>
+      <div class="reveal" data-reveal style="display:grid;grid-template-columns:1.3fr 1fr;gap:1px;background:#DDD4C2;border:1px solid #DDD4C2;">
+        <div style="background:#16130E;color:#F5F1E8;padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-l);margin-bottom:16px;"><span data-plex-units>8</span>-plex · entry deposit</div>
+          <div data-plex-deposit style="font-family:'Newsreader',serif;font-size:clamp(2.6rem,6vw,4.2rem);font-weight:500;line-height:1;letter-spacing:-0.02em;">$110K – $125K</div>
+          <div style="font-size:.82rem;color:#B9B0A0;margin-top:14px;">5% of <span data-plex-price>$2.25M – $2.45M</span> purchase price, plus $8K–$15K closing costs.</div>
+        </div>
+        <div style="background:#FBF8F1;display:flex;flex-direction:column;">
+          <div style="padding:clamp(22px,3vw,34px);border-bottom:1px solid #E4DBCB;flex:1;">
+            <div style="font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#8A8172;margin-bottom:10px;">Projected annual cashflow</div>
+            <div data-plex-cash style="font-family:'Newsreader',serif;font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:500;color:var(--accent);line-height:1;">$21K – $27K</div>
+            <div style="font-size:.72rem;color:#8A8172;margin-top:8px;">Pre-tax pro-forma, per year</div>
+          </div>
+          <div style="padding:clamp(22px,3vw,34px);flex:1;">
+            <div style="font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#8A8172;margin-bottom:10px;">Target DSCR range</div>
+            <div style="font-family:'Newsreader',serif;font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:500;color:#1C1813;line-height:1;">1.15 – 1.27</div>
+            <div style="font-size:.72rem;color:#8A8172;margin-top:8px;">Across active inventory (projected)</div>
+          </div>
+        </div>
+      </div>
+      <p class="reveal" data-reveal style="margin-top:20px;font-size:.72rem;line-height:1.6;color:#8A8172;max-width:760px;">Figures are typical ranges by asset size and are projections subject to lease-up, CMHC approval, and lender underwriting. Deposit assumes the project clears a 1.10 DSCR at that level. Not guaranteed and not financial advice.</p>
+    </div>
+  </section>
+
+  <!-- STRUCTURAL ADVANTAGES -->
+  <section style="background:#16130E;color:#F5F1E8;padding:clamp(64px,9vw,130px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div class="reveal" data-reveal style="max-width:620px;margin-bottom:clamp(40px,5vw,64px);">
+        <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-l);margin-bottom:20px;"><span style="display:block;width:24px;height:1px;background:var(--accent-l);"></span>Structural Advantages</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(2rem,4.4vw,3.3rem);line-height:1.06;letter-spacing:-0.02em;">Not incentives.<br />Permanent arithmetic.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:#2A2419;border:1px solid #2A2419;">
+        <div class="reveal" data-reveal style="background:#16130E;padding:clamp(30px,4vw,48px);">
+          <div style="font-family:'Newsreader',serif;font-size:clamp(3rem,6vw,4.4rem);font-weight:500;color:var(--accent-l);line-height:1;margin-bottom:20px;">$0</div>
+          <div style="font-size:1rem;font-weight:600;color:#F5F1E8;margin-bottom:12px;letter-spacing:.01em;">No land transfer tax</div>
+          <p style="font-size:.86rem;line-height:1.7;color:#B9B0A0;">Where Ontario land transfer tax can add tens of thousands per closing, Alberta charges none. Every acquisition saves that at the table.</p>
+        </div>
+        <div class="reveal" data-reveal data-delay="240" style="background:#16130E;padding:clamp(30px,4vw,48px);">
+          <div style="font-family:'Newsreader',serif;font-size:clamp(3rem,6vw,4.4rem);font-weight:500;color:var(--accent-l);line-height:1;margin-bottom:20px;">$0</div>
+          <div style="font-size:1rem;font-weight:600;color:#F5F1E8;margin-bottom:12px;letter-spacing:.01em;">No Ontario-style dev charges</div>
+          <p style="font-size:.86rem;line-height:1.7;color:#B9B0A0;">GTA developers can pay $50K–$130K per project in municipal development charges. Alberta has no equivalent regime — its off-site levies are far lower and typically built into builder pricing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY THROUGH US -->
+  <section style="background:#F5F1E8;padding:clamp(64px,9vw,130px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div class="reveal" data-reveal style="max-width:620px;margin-bottom:clamp(36px,4vw,56px);">
+        <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;"><span style="display:block;width:24px;height:1px;background:var(--accent);"></span>Why Through Us</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(2rem,4.4vw,3.3rem);line-height:1.06;letter-spacing:-0.02em;margin-bottom:16px;">Why not just go to a builder?</h2>
+        <p style="font-size:1.02rem;line-height:1.7;color:#4A443B;">The Edmonton thesis is real. Execution is the difference — and there are things a builder's sales office structurally cannot do for you.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:#DDD4C2;border:1px solid #DDD4C2;">
+        <div class="reveal" data-reveal data-mcard style="background:#FBF8F1;padding:clamp(28px,3vw,40px);position:relative;transition:transform .3s,box-shadow .3s;border-top:2px solid transparent;">
+          <div style="font-family:'Newsreader',serif;font-size:1.15rem;font-weight:500;color:#1C1813;margin-bottom:12px;">Pre-vetted, pre-modeled inventory</div>
+          <p style="font-size:.88rem;line-height:1.7;color:#4A443B;">Every package is screened for MLI Select eligibility and modeled for DSCR and cashflow before it reaches you. You compare finished pro-formas, not brochures.</p>
+        </div>
+        <div class="reveal" data-reveal data-delay="90" data-mcard style="background:#FBF8F1;padding:clamp(28px,3vw,40px);position:relative;transition:transform .3s,box-shadow .3s;border-top:2px solid transparent;">
+          <div style="font-family:'Newsreader',serif;font-size:1.15rem;font-weight:500;color:#1C1813;margin-bottom:12px;">Allocation before the public</div>
+          <p style="font-size:.88rem;line-height:1.7;color:#4A443B;">Direct builder relationships mean our investors see purpose-built packages, and bundled incentives, before they reach the general market.</p>
+        </div>
+        <div class="reveal" data-reveal data-delay="180" data-mcard style="background:#FBF8F1;padding:clamp(28px,3vw,40px);position:relative;transition:transform .3s,box-shadow .3s;border-top:2px solid transparent;">
+          <div style="font-family:'Newsreader',serif;font-size:1.15rem;font-weight:500;color:#1C1813;margin-bottom:12px;">A vetted Edmonton network</div>
+          <p style="font-size:.88rem;line-height:1.7;color:#4A443B;">Mortgage, legal, insurance, and property management partners already in place — so an out-of-province investor can acquire and operate entirely remotely.</p>
+        </div>
+        <div class="reveal" data-reveal data-delay="270" data-mcard style="background:#FBF8F1;padding:clamp(28px,3vw,40px);position:relative;transition:transform .3s,box-shadow .3s;border-top:2px solid transparent;">
+          <div style="font-family:'Newsreader',serif;font-size:1.15rem;font-weight:500;color:#1C1813;margin-bottom:12px;">Built for the second deal</div>
+          <p style="font-size:.88rem;line-height:1.7;color:#4A443B;">Many clients come back for a second acquisition as their portfolio grows — so we structure the first deal with the next one in mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" style="background:#EFE9DB;border-top:1px solid #E4DBCB;padding:clamp(64px,9vw,130px) clamp(18px,4vw,44px);">
+    <div style="max-width:1140px;margin:0 auto;">
+      <div class="reveal" data-reveal style="max-width:620px;margin-bottom:clamp(40px,5vw,64px);">
+        <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;"><span style="display:block;width:24px;height:1px;background:var(--accent);"></span>The Process</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(2rem,4.4vw,3.3rem);line-height:1.06;letter-spacing:-0.02em;">Three steps to ownership.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(24px,3vw,48px);">
+        <div class="reveal" data-reveal>
+          <div style="font-family:'Newsreader',serif;font-size:3rem;font-weight:400;color:var(--accent);line-height:1;margin-bottom:20px;">01</div>
+          <div style="height:1px;background:#DDD4C2;margin-bottom:20px;"></div>
+          <div style="font-size:1.05rem;font-weight:600;color:#1C1813;margin-bottom:12px;">Select your asset</div>
+          <p style="font-size:.9rem;line-height:1.7;color:#4A443B;">Browse curated Edmonton inventory — 6 to 10-plex builds in high-growth corridors. We share full pro-forma and debt analysis. You choose what fits your capital.</p>
+        </div>
+        <div class="reveal" data-reveal data-delay="120">
+          <div style="font-family:'Newsreader',serif;font-size:3rem;font-weight:400;color:var(--accent);line-height:1;margin-bottom:20px;">02</div>
+          <div style="height:1px;background:#DDD4C2;margin-bottom:20px;"></div>
+          <div style="font-size:1.05rem;font-weight:600;color:#1C1813;margin-bottom:12px;">Structure the financing</div>
+          <p style="font-size:.9rem;line-height:1.7;color:#4A443B;">We structure the acquisition through CMHC MLI Select — as little as 5% down, 50-year amortization. Our team manages the submission. Terms subject to CMHC approval.</p>
+        </div>
+        <div class="reveal" data-reveal data-delay="240">
+          <div style="font-family:'Newsreader',serif;font-size:3rem;font-weight:400;color:var(--accent);line-height:1;margin-bottom:20px;">03</div>
+          <div style="height:1px;background:#DDD4C2;margin-bottom:20px;"></div>
+          <div style="font-size:1.05rem;font-weight:600;color:#1C1813;margin-bottom:12px;">Hand off to management</div>
+          <p style="font-size:.9rem;line-height:1.7;color:#4A443B;">A licensed Edmonton property manager handles leasing, maintenance, and reporting. Out-of-province owners receive monthly statements and net cashflow deposits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK RECORD -->
+  <section id="proof" style="background:#F5F1E8;padding:clamp(64px,9vw,130px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(32px,5vw,72px);align-items:center;">
+      <div class="reveal" data-reveal style="position:relative;">
+        <div style="border:1px solid #DDD4C2;padding:10px;background:#FBF8F1;box-shadow:0 30px 70px -32px rgba(28,24,19,0.42);">
+          <img src="images/inglewood/primary/01.jpg" alt="Inglewood 9-plex purpose-built rental, Edmonton" width="1400" height="934" style="display:block;width:100%;height:clamp(300px,40vw,460px);object-fit:cover;" />
+        </div>
+        <div style="position:absolute;left:24px;bottom:-26px;background:#16130E;color:#F5F1E8;padding:16px 22px;box-shadow:0 18px 44px -16px rgba(28,24,19,0.6);">
+          <div style="font-family:'Newsreader',serif;font-size:1.5rem;font-weight:500;line-height:1;">9 units</div>
+          <div style="font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-l);margin-top:6px;">Delivering soon · Inglewood</div>
+        </div>
+      </div>
+      <div class="reveal" data-reveal data-delay="120">
+        <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;"><span style="display:block;width:24px;height:1px;background:var(--accent);"></span>The Track Record</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(1.9rem,4vw,3rem);line-height:1.08;letter-spacing:-0.02em;margin-bottom:20px;">A real building, not a rendering.</h2>
+        <p style="font-size:1rem;line-height:1.7;color:#4A443B;margin-bottom:28px;">The Inglewood 9-plex is our proof of concept — a purpose-built rental delivering soon under MLI Select, with three distinct suite types. It set the standard every active package is modeled against.</p>
+        <div style="border-top:1px solid #DDD4C2;padding-top:24px;">
+          <div style="font-family:'Newsreader',serif;font-size:1.3rem;font-weight:400;line-height:1.4;color:#1C1813;text-wrap:balance;">Every sold project has appraised <span style="color:var(--accent);font-style:italic;">above its purchase price</span> — from $20,000 to $200,000 above.</div>
+          <p style="font-size:.72rem;line-height:1.6;color:#8A8172;margin-top:16px;">Independent AACI as-if-complete appraisals prepared for financing. An appraisal is an opinion of value at a date; past results do not guarantee future values.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section style="background:#16130E;color:#F5F1E8;padding:clamp(64px,9vw,130px) clamp(18px,4vw,44px);">
+    <div style="max-width:900px;margin:0 auto;">
+      <div class="reveal" data-reveal style="margin-bottom:clamp(36px,4vw,56px);">
+        <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-l);margin-bottom:20px;"><span style="display:block;width:24px;height:1px;background:var(--accent-l);"></span>Realistic Timeline</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(2rem,4.4vw,3.3rem);line-height:1.06;letter-spacing:-0.02em;">The first ten months.</h2>
+      </div>
+      <div style="position:relative;">
+        <div style="position:absolute;left:clamp(72px,10vw,104px);top:6px;bottom:6px;width:1px;background:#33291B;"></div>
+        <div class="reveal" data-reveal style="display:grid;grid-template-columns:clamp(72px,10vw,104px) 1fr;gap:clamp(18px,3vw,36px);padding-bottom:32px;position:relative;">
+          <div style="text-align:right;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-l);padding-top:2px;">Month 0</div>
+          <div style="position:relative;padding-left:24px;"><span style="position:absolute;left:-4px;top:5px;width:8px;height:8px;border-radius:50%;background:var(--accent);"></span><div style="font-size:.95rem;font-weight:600;margin-bottom:6px;">Discovery, Qualification &amp; Allocation</div><p style="font-size:.86rem;line-height:1.7;color:#B9B0A0;">We review your financials, confirm MLI Select eligibility, and match you to the right asset — then submit your worksheet to the builder to request your allocation. You leave with a full pro-forma and a clear acquisition path.</p></div>
+        </div>
+        <div class="reveal" data-reveal data-delay="80" style="display:grid;grid-template-columns:clamp(72px,10vw,104px) 1fr;gap:clamp(18px,3vw,36px);padding-bottom:32px;position:relative;">
+          <div style="text-align:right;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8A8172;padding-top:2px;">Month 1–2</div>
+          <div style="position:relative;padding-left:24px;"><span style="position:absolute;left:-4px;top:5px;width:8px;height:8px;border-radius:50%;background:#5A4A30;"></span><div style="font-size:.95rem;font-weight:600;margin-bottom:6px;">Due Diligence &amp; Lender Terms</div><p style="font-size:.86rem;line-height:1.7;color:#B9B0A0;">Our preferred broker qualifies both you and the project, and your lender issues a Letter of Intent outlining your mortgage terms — confirming the financing structure before you proceed.</p></div>
+        </div>
+        <div class="reveal" data-reveal data-delay="160" style="display:grid;grid-template-columns:clamp(72px,10vw,104px) 1fr;gap:clamp(18px,3vw,36px);padding-bottom:32px;position:relative;">
+          <div style="text-align:right;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8A8172;padding-top:2px;">Month 2</div>
+          <div style="position:relative;padding-left:24px;"><span style="position:absolute;left:-4px;top:5px;width:8px;height:8px;border-radius:50%;background:#5A4A30;"></span><div style="font-size:.95rem;font-weight:600;margin-bottom:6px;">Deposit &amp; Agreement</div><p style="font-size:.86rem;line-height:1.7;color:#B9B0A0;">Your first deposit secures your package with the builder. The agreement is conditional on CMHC approval and project viability — if CMHC doesn't approve, your deposit is returned per the Agreement of Purchase and Sale.</p></div>
+        </div>
+        <div class="reveal" data-reveal data-delay="240" style="display:grid;grid-template-columns:clamp(72px,10vw,104px) 1fr;gap:clamp(18px,3vw,36px);padding-bottom:32px;position:relative;">
+          <div style="text-align:right;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8A8172;padding-top:2px;">Month 2–5</div>
+          <div style="position:relative;padding-left:24px;"><span style="position:absolute;left:-4px;top:5px;width:8px;height:8px;border-radius:50%;background:#5A4A30;"></span><div style="font-size:.95rem;font-weight:600;margin-bottom:6px;">CMHC Submission &amp; Acceptance</div><p style="font-size:.86rem;line-height:1.7;color:#B9B0A0;">We prepare and manage the full CMHC MLI Select application end to end. Once the Certificate of Insurance is issued — typically 60–90 days — your lawyer is introduced to prepare for closing.</p></div>
+        </div>
+        <div class="reveal" data-reveal data-delay="320" style="display:grid;grid-template-columns:clamp(72px,10vw,104px) 1fr;gap:clamp(18px,3vw,36px);padding-bottom:32px;position:relative;">
+          <div style="text-align:right;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8A8172;padding-top:2px;">Month 5–9</div>
+          <div style="position:relative;padding-left:24px;"><span style="position:absolute;left:-4px;top:5px;width:8px;height:8px;border-radius:50%;background:#5A4A30;"></span><div style="font-size:.95rem;font-weight:600;margin-bottom:6px;">Pre-Leasing Before Completion</div><p style="font-size:.86rem;line-height:1.7;color:#B9B0A0;">Property management begins advertising and leasing your units ahead of completion. You make no mortgage payments until the project closes — the building is filling while you wait.</p></div>
+        </div>
+        <div class="reveal" data-reveal data-delay="400" style="display:grid;grid-template-columns:clamp(72px,10vw,104px) 1fr;gap:clamp(18px,3vw,36px);position:relative;">
+          <div style="text-align:right;font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-l);padding-top:2px;">Month ~10</div>
+          <div style="position:relative;padding-left:24px;"><span style="position:absolute;left:-4px;top:5px;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(156,107,52,0.2);"></span><div style="font-size:.95rem;font-weight:600;margin-bottom:6px;">Project Completion &amp; Cash Flow</div><p style="font-size:.86rem;line-height:1.7;color:#B9B0A0;">You close. Title transfers into your name, your mortgage begins, and monthly net cash flow starts depositing into your account — you're now a multi-family owner with professional management in place.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVATE NETWORK -->
+  <section style="background:#EFE9DB;border-top:1px solid #E4DBCB;border-bottom:1px solid #E4DBCB;padding:clamp(30px,4vw,40px) clamp(18px,4vw,44px);">
+    <div class="reveal" data-reveal style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <span style="width:9px;height:9px;border-radius:50%;background:#2AAF72;animation:pulseDot 2s ease-in-out infinite;flex-shrink:0;"></span>
+        <div style="font-size:.9rem;color:#4A443B;line-height:1.5;"><strong style="color:#1C1813;font-weight:600;">Private Investor Network</strong> — new listings reach our WhatsApp group before they appear anywhere else.</div>
+      </div>
+      <a href="https://chat.whatsapp.com/BYNf65k8iSf3fNOIrkZUvZ" target="_blank" rel="noopener" data-conversion="whatsapp_click" data-magnetic style="background:transparent;border:1px solid var(--accent);color:var(--accent);padding:11px 24px;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;border-radius:2px;transition:background .2s,color .2s;">Join the Network</a>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="book" style="background:#16130E;color:#F5F1E8;padding:clamp(72px,11vw,150px) clamp(18px,4vw,44px);text-align:center;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 70% at 50% 40%,rgba(196,154,94,0.16),transparent 65%);pointer-events:none;"></div>
+    <div class="reveal" data-reveal style="max-width:720px;margin:0 auto;position:relative;z-index:1;">
+      <div style="font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-l);margin-bottom:24px;">Take the First Step</div>
+      <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(2.2rem,5vw,3.7rem);line-height:1.06;letter-spacing:-0.02em;margin-bottom:22px;text-wrap:balance;">Your next acquisition starts with one conversation.</h2>
+      <p style="font-size:1.02rem;line-height:1.7;color:#B9B0A0;margin-bottom:38px;max-width:560px;margin-left:auto;margin-right:auto;">Qualified investors receive a full pro-forma, debt-structure breakdown, and a personalized acquisition roadmap — at no cost.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center;">
+        <a href="contact.html" data-conversion="book_call" data-magnetic class="btn-brass" style="color:#16130E;padding:17px 40px;border-radius:2px;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;">Book Your Discovery Call</a>
+        <a href="tel:+14162007010" data-conversion="phone_click" class="btn-underline" style="color:#F5F1E8;padding:17px 20px;font-size:.76rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border-color:#4A4130;">416-200-7010</a>
+      </div>
+      <p style="font-size:.68rem;line-height:1.6;color:#8A8172;margin-top:40px;max-width:640px;margin-left:auto;margin-right:auto;">Real estate investment involves risk, including potential loss of capital. Financing is subject to CMHC and lender approval. Past performance does not guarantee future results. This is not financial advice — consult a qualified advisor before investing.</p>
     </div>
   </section>
 
 </main>
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">MULTI FAMILY <span>DEALS</span></div>
-      <ul class="footer-links">
-        <li><a href="about.html">Strategy</a></li>
-        <li><a href="why-alberta.html">Why Alberta</a></li>
-        <li><a href="inventory.html">Inventory</a></li>
-        <li><a href="crawford-plains.html">Portfolio</a></li>
-        <li><a href="buying-process.html">Buying Process</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
-        <li><a href="guide.html">Free Guide</a></li>
-        <li><a href="calculator.html">Calculator</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="footer-copy">Kunal Sarhadi, Real Estate Broker &nbsp;|&nbsp; Standard Realty Co., Edmonton (AB) &nbsp;|&nbsp; Homelife Miracle Realty Inc. (ON) &nbsp;|&nbsp; © 2026 Multi Family Deals.<br /><span style="display:inline-block;margin-top:0.45rem;opacity:0.8;">Not financial or investment advice. CMHC MLI Select program terms subject to change.</span></div>
+
+  <footer style="background:#0E0C09;color:#B9B0A0;padding:clamp(40px,6vw,64px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:36px;flex-wrap:wrap;padding-bottom:32px;border-bottom:1px solid #23201A;">
+        <div style="max-width:320px;">
+          <div style="font-family:'Newsreader',serif;font-size:1.1rem;font-weight:600;letter-spacing:.12em;color:#F5F1E8;margin-bottom:14px;">MULTI FAMILY <span style="color:var(--accent);">DEALS</span></div>
+          <p style="font-size:.82rem;line-height:1.7;color:#8A8172;">Alberta-focused multi-family investment. Purpose-built rental acquisition through CMHC MLI Select, for out-of-province investors scaling toward 50 doors.</p>
+        </div>
+        <div style="display:flex;gap:clamp(28px,5vw,64px);flex-wrap:wrap;">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#5A5348;margin-bottom:2px;">Explore</div>
+            <a href="about.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">The Strategy</a>
+            <a href="why-alberta.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Why Alberta</a>
+            <a href="inventory.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Inventory</a>
+            <a href="crawford-plains.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Portfolio</a>
+            <a href="blog/index.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Blog</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#5A5348;margin-bottom:2px;">Resources</div>
+            <a href="buying-process.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Buying Process</a>
+            <a href="calculator.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Calculator</a>
+            <a href="guide.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Free Guide</a>
+            <a href="faq.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">FAQ</a>
+            <a href="reviews.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Reviews</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#5A5348;margin-bottom:2px;">Contact</div>
+            <a href="tel:+14162007010" data-conversion="phone_click" class="fllink" style="font-size:.84rem;color:#B9B0A0;">416-200-7010</a>
+            <a href="mailto:sales@teamsarhadi.com" class="fllink" style="font-size:.84rem;color:#B9B0A0;">sales@teamsarhadi.com</a>
+            <a href="contact.html" data-conversion="book_call" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Book Discovery Call</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top:24px;font-size:.72rem;line-height:1.7;color:#6B6559;">Kunal Sarhadi, Real Estate Broker · Standard Realty Co., Edmonton (AB) · Homelife Miracle Realty Inc. (ON) · © 2026 Multi Family Deals.<br /><span style="display:inline-block;margin-top:0.45rem;opacity:0.85;">Not financial or investment advice. CMHC MLI Select program terms subject to change. Track-record figures are aggregate Sarhadi Group totals.</span></div>
     </div>
   </footer>
 
+  <div class="mobile-sticky-cta" id="mobileStickyCtaBar">
+    <a href="contact.html" data-conversion="book_call">Book Your Discovery Call &rarr;</a>
+  </div>
+
+  <!-- ===== Interactions (ported from prototype, vanilla) ===== -->
+  <script>
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var PLEX = {
+      '6':  { units:'6',  price:'$1.6M – $1.8M',  deposit:'$80K – $90K',   cash:'$13K – $20K' },
+      '7':  { units:'7',  price:'$2.0M – $2.1M',  deposit:'$100K – $105K', cash:'$17K – $20K' },
+      '8':  { units:'8',  price:'$2.25M – $2.45M', deposit:'$110K – $125K', cash:'$21K – $27K' },
+      '9':  { units:'9',  price:'$2.5M – $2.6M',  deposit:'$130K – $140K', cash:'$21K – $31K' },
+      '10': { units:'10', price:'$2.75M – $2.9M', deposit:'$140K – $155K', cash:'$30K – $37K' }
+    };
+
+    // --- Plex explorer ---
+    function paintPlex(cur){
+      document.querySelectorAll('[data-plex]').forEach(function(b){
+        var on = b.getAttribute('data-plex') === cur;
+        b.style.background = on ? '#9C6B34' : 'transparent';
+        b.style.color = on ? '#F8F5EE' : '#4A443B';
+        b.style.borderColor = on ? '#9C6B34' : '#D9D0C0';
+      });
+      var p = PLEX[cur] || PLEX['8'];
+      document.querySelectorAll('[data-plex-units]').forEach(function(e){ e.textContent = p.units; });
+      var dep = document.querySelector('[data-plex-deposit]'); if (dep) dep.textContent = p.deposit;
+      var pr = document.querySelector('[data-plex-price]'); if (pr) pr.textContent = p.price;
+      var ca = document.querySelector('[data-plex-cash]'); if (ca) ca.textContent = p.cash;
+    }
+    document.querySelectorAll('[data-plex]').forEach(function(b){
+      b.addEventListener('click', function(){ paintPlex(b.getAttribute('data-plex')); });
+    });
+    paintPlex('8');
+
+    // --- Nav scroll ---
+    var nav = document.getElementById('mfd-nav');
+    if (nav) {
+      var onNav = function(){
+        if (window.scrollY > 24) { nav.style.background = 'rgba(245,241,232,0.94)'; nav.style.boxShadow = '0 10px 34px -18px rgba(28,24,19,0.35)'; }
+        else { nav.style.background = 'rgba(245,241,232,0.72)'; nav.style.boxShadow = 'none'; }
+      };
+      window.addEventListener('scroll', onNav, { passive:true }); onNav();
+    }
+
+    // --- Card hover lift ---
+    document.querySelectorAll('[data-mcard]').forEach(function(el){
+      el.addEventListener('mouseenter', function(){ el.style.transform='translateY(-6px)'; el.style.boxShadow='0 26px 56px -30px rgba(28,24,19,0.5)'; el.style.borderTopColor='#9C6B34'; });
+      el.addEventListener('mouseleave', function(){ el.style.transform='translateY(0)'; el.style.boxShadow='none'; el.style.borderTopColor='transparent'; });
+    });
+
+    // --- Magnetic buttons ---
+    if (!(window.matchMedia && window.matchMedia('(hover: none)').matches)) {
+      document.querySelectorAll('[data-magnetic]').forEach(function(el){
+        el.addEventListener('mousemove', function(e){
+          var r = el.getBoundingClientRect();
+          var x = e.clientX - r.left - r.width/2, y = e.clientY - r.top - r.height/2;
+          el.style.transform = 'translate(' + (x*0.22) + 'px,' + (y*0.32) + 'px)';
+        });
+        el.addEventListener('mouseleave', function(){ el.style.transform='translate(0,0)'; });
+      });
+    }
+
+    // --- Count-up ---
+    function fmt(v, el){ var d=+(el.getAttribute('data-decimals')||0); var n=d>0?v.toFixed(d):Math.round(v).toString(); return (el.getAttribute('data-prefix')||'')+n+(el.getAttribute('data-suffix')||''); }
+    function animCount(el){
+      var t = parseFloat(el.getAttribute('data-count'))||0, dur=+(el.getAttribute('data-dur')||1500), start=performance.now();
+      function step(now){ var p=Math.min(1,(now-start)/dur); p=1-Math.pow(1-p,3); el.textContent=fmt(t*p,el); if(p<1) requestAnimationFrame(step); else el.textContent=fmt(t,el); }
+      requestAnimationFrame(step);
+    }
+
+    // --- Doors fill ---
+    function fillDoors(row, animate){
+      var fill = parseInt(row.getAttribute('data-doors'),10)||0;
+      var cells = row.querySelectorAll('[data-door]');
+      cells.forEach(function(c,i){
+        var on = i < fill;
+        var apply = function(){ c.style.background = on?'#9C6B34':'transparent'; c.style.borderColor = on?'#9C6B34':'#D9D0C0'; c.style.transform='scale(1)'; };
+        if (animate) { c.style.transform='scale(.55)'; c.style.transition='background .3s,border-color .3s,transform .3s cubic-bezier(.2,.8,.2,1)'; setTimeout(apply, i*42); }
+        else apply();
+      });
+    }
+
+    // --- Reveal ---
+    var reveals = [].slice.call(document.querySelectorAll('[data-reveal]'));
+    if (reduce) {
+      reveals.forEach(function(el){ el.style.opacity='1'; el.style.transform='none'; });
+      document.querySelectorAll('[data-count]').forEach(function(el){ el.textContent = fmt(parseFloat(el.getAttribute('data-count'))||0, el); });
+      document.querySelectorAll('[data-doors]').forEach(function(r){ fillDoors(r, false); });
+    } else {
+      reveals.forEach(function(el){
+        el.style.opacity='0'; el.style.transform='translateY(28px)';
+        el.style.transition='opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)';
+        el.style.transitionDelay=(el.getAttribute('data-delay')||'0')+'ms';
+      });
+      var ioR = new IntersectionObserver(function(ents){ ents.forEach(function(en){ if(en.isIntersecting){ en.target.style.opacity='1'; en.target.style.transform='none'; ioR.unobserve(en.target); } }); }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+      reveals.forEach(function(el){ ioR.observe(el); });
+      var ioC = new IntersectionObserver(function(ents){ ents.forEach(function(en){ if(en.isIntersecting){ animCount(en.target); ioC.unobserve(en.target); } }); }, { threshold:0.6 });
+      document.querySelectorAll('[data-count]').forEach(function(el){ ioC.observe(el); });
+      var ioD = new IntersectionObserver(function(ents){ ents.forEach(function(en){ if(en.isIntersecting){ fillDoors(en.target, true); ioD.unobserve(en.target); } }); }, { threshold:0.35 });
+      document.querySelectorAll('[data-doors]').forEach(function(r){ ioD.observe(r); });
+      // safety fallback: reveal everything after 1.6s in case observers miss
+      setTimeout(function(){ reveals.forEach(function(el){ if(el.style.opacity==='0'){ el.style.opacity='1'; el.style.transform='none'; } }); }, 1600);
+    }
+  })();
+  </script>
+
+  <!-- Mobile nav + dropdown nav -->
   <script>
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
@@ -650,120 +711,84 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function closeMenu() { var wasOpen = document.body.classList.contains('no-scroll'); mobileNav.classList.remove('open'); hamburger.classList.remove('is-open'); document.body.classList.remove('no-scroll'); document.body.style.top = ''; if (wasOpen) window.scrollTo(0, _navScroll); }
     function toggleMenu() { mobileNav.classList.contains('open') ? closeMenu() : openMenu(); }
     hamburger.addEventListener('click', toggleMenu);
-    hamburger.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') toggleMenu(); });
+    hamburger.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); } });
     mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     window.addEventListener('pageshow', function(e) { if (e.persisted) closeMenu(); });
     let _lastScroll = 0;
     window.addEventListener('scroll', () => { if (Math.abs(window.scrollY - _lastScroll) > 60) { closeMenu(); } _lastScroll = window.scrollY; }, { passive: true });
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
-    }, { threshold: 0, rootMargin: '0px 0px -10px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    window.addEventListener('scroll', () => { document.querySelectorAll('.reveal:not(.visible)').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight + 50) el.classList.add('visible'); }); }, { passive: true });
-    setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')), 1200);
-  
-  // Dropdown navigation
-  (function() {
-    var dropdowns = document.querySelectorAll('.has-dropdown');
-    dropdowns.forEach(function(dd) {
-      var btn = dd.querySelector('.nav-dropdown-btn');
-      btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        var isOpen = dd.classList.contains('open');
-        dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); });
-        if (!isOpen) { dd.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
-      });
-      dd.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
-      });
-    });
-    document.addEventListener('click', function() {
-      dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); });
-    });
-    // Active category highlight
-    var path = window.location.pathname;
-    var map = {
-      'why-edmonton': ['about', 'why-alberta'],
-      'properties': ['inventory', 'inglewood', 'crawford-plains'],
-      'resources': ['buying-process', 'faq', 'reviews', 'guide', 'blog', 'calculator']
-    };
-    for (var cat in map) {
-      for (var i = 0; i < map[cat].length; i++) {
-        if (path.indexOf(map[cat][i]) !== -1) {
-          var el = document.querySelector('.has-dropdown[data-category="' + cat + '"]');
-          if (el) el.classList.add('active');
-          break;
-        }
-      }
-    }
-  })();
-</script>
-<script defer src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69fa444c3cc75785c76e6387"></script>
 
-<script>
-// Meta Pixel — Contact event tracking
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
-    link.addEventListener('click', function() {
-      if (typeof fbq === 'function') {
-        var eventId = 'contact-tel-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
-        fbq('track', 'Contact', {
-          contact_method: 'phone',
-          phone_number: link.getAttribute('href').replace('tel:', '')
-        }, {eventID: eventId});
-      }
+    (function() {
+      var dropdowns = document.querySelectorAll('.has-dropdown');
+      dropdowns.forEach(function(dd) {
+        var btn = dd.querySelector('.nav-dropdown-btn');
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var isOpen = dd.classList.contains('open');
+          dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); });
+          if (!isOpen) { dd.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+        });
+        dd.addEventListener('keydown', function(e) { if (e.key === 'Escape') { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.focus(); } });
+      });
+      document.addEventListener('click', function() { dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); }); });
+    })();
+  </script>
+
+  <!-- GHL chat widget -->
+  <script defer src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69fa444c3cc75785c76e6387"></script>
+
+  <!-- Meta Pixel — Contact event tracking -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof fbq === 'function') {
+          var eventId = 'contact-tel-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+          fbq('track', 'Contact', { contact_method: 'phone', phone_number: link.getAttribute('href').replace('tel:', '') }, {eventID: eventId});
+        }
+      });
+    });
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof fbq === 'function') {
+          var eventId = 'contact-email-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+          fbq('track', 'Contact', { contact_method: 'email', email: link.getAttribute('href').replace('mailto:', '') }, {eventID: eventId});
+        }
+      });
     });
   });
-  document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
-    link.addEventListener('click', function() {
-      if (typeof fbq === 'function') {
-        var eventId = 'contact-email-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
-        fbq('track', 'Contact', {
-          contact_method: 'email',
-          email: link.getAttribute('href').replace('mailto:', '')
-        }, {eventID: eventId});
-      }
+  </script>
+
+  <!-- Conversion Event Listener -->
+  <script>
+  (function(){
+    document.addEventListener('click', function(e){
+      var el = e.target.closest('[data-conversion]');
+      if(!el) return;
+      var eventName = el.getAttribute('data-conversion');
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ 'event': eventName, 'event_category': 'engagement', 'event_label': el.textContent.trim().substring(0, 50), 'page_path': window.location.pathname });
     });
-  });
-});
-</script>
-<!-- Conversion Event Listener -->
-<script>
-(function(){
-  document.addEventListener('click', function(e){
-    var el = e.target.closest('[data-conversion]');
-    if(!el) return;
-    var eventName = el.getAttribute('data-conversion');
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': eventName,
-      'event_category': 'engagement',
-      'event_label': el.textContent.trim().substring(0, 50),
-      'page_path': window.location.pathname
-    });
-  });
-})();
-</script>
-<!-- End Conversion Event Listener -->
-<div class="mobile-sticky-cta" id="mobileStickyCtaBar">
-  <a href="contact.html" data-conversion="book_call">Book Your Discovery Call &rarr;</a>
-</div>
-<script>
-(function(){
-  var bar = document.getElementById('mobileStickyCtaBar');
-  if (!bar) return;
-  var heroActions = document.querySelector('.hero-actions');
-  var mq = window.matchMedia('(max-width: 1200px)');
-  function checkScroll() {
-    if (!heroActions) return;
-    var rect = heroActions.getBoundingClientRect();
-    var show = mq.matches && rect.bottom <= 0;
-    bar.style.display = show ? 'block' : 'none';
-    document.body.style.paddingBottom = show ? (bar.offsetHeight + 'px') : '';
-  }
-  window.addEventListener('scroll', checkScroll, { passive: true });
-  checkScroll();
-})();
-</script>
+  })();
+  </script>
+  <!-- End Conversion Event Listener -->
+
+  <!-- Mobile sticky CTA -->
+  <script>
+  (function(){
+    var bar = document.getElementById('mobileStickyCtaBar');
+    if (!bar) return;
+    var heroActions = document.querySelector('.hero-actions');
+    var mq = window.matchMedia('(max-width: 1024px)');
+    function checkScroll() {
+      if (!heroActions) return;
+      var rect = heroActions.getBoundingClientRect();
+      var show = mq.matches && rect.bottom <= 0;
+      bar.style.display = show ? 'block' : 'none';
+      document.body.style.paddingBottom = show ? (bar.offsetHeight + 'px') : '';
+    }
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    checkScroll();
+  })();
+  </script>
 </body>
 </html>
