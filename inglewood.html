@@ -114,7 +114,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       html { scroll-behavior: auto; }
     }
     @media (min-width: 1440px) { html { font-size: 17px; } }
-  </style>
+  
+/* nav-interactivity-fix */
+nav { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: rgba(245,241,232,0.97) !important; }
+.mobile-nav { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: #F5F1E8 !important; }
+</style>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -455,7 +459,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     window.addEventListener('pageshow', function(e) { if (e.persisted) closeMenu(); });
     let _lastScroll = 0;
-    window.addEventListener('scroll', () => { if (Math.abs(window.scrollY - _lastScroll) > 60) { closeMenu(); } _lastScroll = window.scrollY; }, { passive: true });
+    window.addEventListener('scroll', () => { if (document.body.classList.contains('no-scroll')) return; if (Math.abs(window.scrollY - _lastScroll) > 60) { closeMenu(); } _lastScroll = window.scrollY; }, { passive: true });
     (function() {
       var dropdowns = document.querySelectorAll('.has-dropdown');
       dropdowns.forEach(function(dd) {
