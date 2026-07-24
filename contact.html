@@ -10,6 +10,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="facebook-domain-verification" content="70okoyazosidn0o90gh7dzcyqqgxt4" />
   <title>Free 30-Min Discovery Call | Edmonton Multi-Family Investment | Multi Family Deals</title>
   <!-- Open Graph / Social Share -->
   <meta property="og:type" content="website" />
@@ -28,281 +29,75 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="description" content="Book your free 30-minute discovery call. Get a full pro-forma analysis and personalized 50-door roadmap." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
   <style>
     :root {
-      --navy-deep: #03080F; --navy-primary: #070F1C; --navy-card: #0C1828; --navy-alt: #0F1E35;
-      --navy-border: #162438; --gold: #C4934A; --gold-light: #DBA868;
-      --gold-muted: #9A7A34; --text-primary: #EEF2F7; --status-live: #2AAF72;
-      --text-muted: #9AAABB; --text-subtle: #8BA0B8; --accent-warm: #C4783A;
+      --paper:#F5F1E8; --paper-alt:#EFE9DB; --card:#FBF8F1;
+      --ink:#1C1813; --body:#4A443B; --muted:#8A8172; --faint:#A79E8E;
+      --line:#DDD4C2; --line2:#E4DBCB; --line3:#D9D0C0;
+      --accent:#9C6B34; --accent-h:#7A5326; --accent-l:#C79A5E; --accent2:#B0563F;
+      --espresso:#16130E; --footer:#0E0C09;
+      --on-dark:#F5F1E8; --on-dark-muted:#B9B0A0;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { overflow-x: hidden; min-width: 320px; }
-    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
-    body { background-color: var(--navy-primary); color: var(--text-primary); font-family: 'Josefin Sans', sans-serif; font-weight: 400; overflow-x: hidden; min-width: 320px; width: 100%; }
-    h1 { font-family: 'Cinzel', serif; letter-spacing: 0.02em; }
-    h2, h3, h4 { font-family: 'Josefin Sans', sans-serif; font-weight: 600; letter-spacing: 0.04em; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; overflow-x: hidden; min-width: 320px; }
+    body { background: var(--paper); color: var(--ink); font-family: 'Space Grotesk', sans-serif; font-weight: 400; overflow-x: hidden; min-width: 320px; width: 100%; }
+    ::selection { background: #1C1813; color: #F5F1E8; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-h); }
+    img { max-width: 100%; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(7,15,28,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--navy-border); }
-    .nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 4rem; height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-    .nav-logo { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
-    .nav-logo span { color: var(--text-primary); font-weight: 400; }
-    .nav-links { display: flex; gap: 0; list-style: none; }
+    @keyframes pulseDot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.8); } }
+    @keyframes heroUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+    .skip-link { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #fff; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; z-index: 9999; text-decoration: none; }
+    .skip-link:focus { left: 0; }
+
+    /* ---------- NAV (light) ---------- */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 60; background: rgba(245,241,232,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line2); transition: background .3s, box-shadow .3s; }
+    .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 clamp(18px,4vw,44px); height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { font-family: 'Newsreader', serif; font-size: 1.12rem; font-weight: 600; letter-spacing: .14em; color: var(--ink); white-space: nowrap; flex-shrink: 0; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 0; list-style: none; align-items: center; }
     .has-dropdown { position: relative; }
-    .nav-dropdown-btn { background: none; border: none; cursor: pointer; font-family: 'Josefin Sans', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); padding: 0.4rem 0.75rem; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; white-space: nowrap; }
-    .nav-dropdown-btn:hover { color: var(--gold); }
-    .has-dropdown.active > .nav-dropdown-btn { color: var(--gold); }
-    .nav-chevron { width: 0.65rem; height: 0.65rem; transition: transform 0.2s; flex-shrink: 0; }
+    .nav-dropdown-btn { background: none; border: none; cursor: pointer; font-family: 'Space Grotesk', sans-serif; font-size: .7rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: #5A5348; padding: 0.4rem 0.8rem; display: flex; align-items: center; gap: 0.35rem; transition: color 0.2s; white-space: nowrap; }
+    .nav-dropdown-btn:hover, .has-dropdown.active > .nav-dropdown-btn { color: var(--accent); }
+    .nav-chevron { width: 0.62rem; height: 0.62rem; transition: transform 0.2s; flex-shrink: 0; }
     .has-dropdown.open .nav-chevron { transform: rotate(180deg); }
-    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 230px; background: var(--navy-card); border: 1px solid var(--navy-border); border-top: 2px solid var(--gold); list-style: none; padding: 0.4rem 0; z-index: 100; box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+    .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 8px); left: 0; min-width: 240px; background: var(--card); border: 1px solid var(--line); border-top: 2px solid var(--accent); list-style: none; padding: 0.4rem 0; z-index: 100; box-shadow: 0 20px 48px -20px rgba(28,24,19,0.35); }
     .has-dropdown.open .nav-dropdown-menu { display: block; }
-    .nav-dropdown-menu li a { display: block; padding: 0.7rem 1.25rem; text-decoration: none; transition: background 0.15s; border-left: 2px solid transparent; }
-    .nav-dropdown-menu li a:hover { background: var(--navy-alt); border-left-color: var(--gold); }
-    .dropdown-link-title { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 0.18rem; }
-    .dropdown-link-desc { display: block; font-size: 0.7rem; font-weight: 300; color: var(--text-subtle); letter-spacing: 0.01em; text-transform: none; }
-    .mobile-nav-category { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-muted); padding: 1.2rem 0 0.35rem; pointer-events: none; margin-top: 0.25rem; }
-    .nav-links a { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; white-space: nowrap; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-    .nav-cta { background: var(--gold); border: 1px solid var(--gold); color: var(--navy-deep); padding: 0.6rem 1.4rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.2s, color 0.2s; }
-    .nav-cta:hover { background: var(--gold-light); }
+    .nav-dropdown-menu li a { display: block; padding: 0.7rem 1.25rem; transition: background 0.15s; border-left: 2px solid transparent; }
+    .nav-dropdown-menu li a:hover { background: var(--paper-alt); border-left-color: var(--accent); }
+    .dropdown-link-title { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.16rem; }
+    .dropdown-link-desc { display: block; font-size: 0.7rem; font-weight: 400; color: var(--muted); letter-spacing: 0.01em; }
+    .nav-cta { background: var(--accent); color: #F8F5EE; padding: 11px 20px; border-radius: 2px; font-family: 'Space Grotesk', sans-serif; font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--accent-h); color: #fff; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-    .hamburger span { width: 22px; height: 1px; background: var(--text-muted); display: block; transition: all 0.25s ease; }
+    .hamburger span { width: 22px; height: 2px; background: var(--ink); display: block; transition: all 0.25s ease; border-radius: 2px; }
     .hamburger.is-open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
     .hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
     .hamburger.is-open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
     body.no-scroll { overflow: hidden; position: fixed; width: 100%; }
-    .mobile-nav { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: rgba(7,15,28,0.98); backdrop-filter: blur(16px); z-index: 49; padding: 2rem 2rem 3rem; flex-direction: column; gap: 0; overflow-y: auto; }
+    .mobile-nav { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: rgba(245,241,232,0.98); backdrop-filter: blur(16px); z-index: 59; padding: 1.5rem 2rem 3rem; flex-direction: column; gap: 0; overflow-y: auto; }
     .mobile-nav.open { display: flex; }
-    .mobile-nav a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; padding: 1.1rem 0; border-bottom: 1px solid var(--navy-border); transition: color 0.2s; display: block; }
-    @media (hover: hover) { .mobile-nav a:hover { color: var(--gold); } }
-    .mobile-nav a.mobile-nav-cta { color: var(--gold); margin-top: 0.8rem; font-weight: 600; }
+    .mobile-nav a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #5A5348; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid var(--line); transition: color 0.2s; display: block; }
+    .mobile-nav a:hover { color: var(--accent); }
+    .mobile-nav a.mobile-nav-cta { color: #fff; background: var(--accent); text-align: center; border: none; margin-top: 0.8rem; padding: 0.95rem; font-weight: 600; border-radius: 2px; }
+    .mobile-nav-category { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--faint); padding: 1.1rem 0 0.3rem; pointer-events: none; }
 
-    /* PAGE HERO */
-    .page-hero {
-      padding: 9rem 2rem 5rem;
-      background: var(--navy-deep);
-      position: relative;
-      overflow: hidden;
-    }
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 50% 70% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .page-hero-inner {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-    .page-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      justify-content: center;
-    }
-    .page-eyebrow::before, .page-eyebrow::after {
-      content: '';
-      display: block;
-      width: 1.5rem;
-      height: 1px;
-      background: var(--gold);
-    }
-    .page-title {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 1.2rem;
-    }
-    .page-title span { color: var(--gold); }
-    .page-subtitle {
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.75;
-      max-width: 580px;
-      margin: 0 auto;
-      letter-spacing: 0.02em;
-    }
+    @media (max-width: 1024px) { .nav-links { display: none; } .nav-cta { display: none; } .hamburger { display: flex; } }
 
-    /* WHAT YOU GET */
-    .what-you-get {
-      padding: 5rem 2rem;
-      background: var(--navy-primary);
-      border-bottom: 1px solid var(--navy-border);
-    }
-    .what-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .what-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.2rem;
-    }
-    .what-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
-    .what-title {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 600;
-      margin-bottom: 2.5rem;
-      line-height: 1.2;
-    }
-    .what-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--navy-border);
-      border: 1px solid var(--navy-border);
-    }
-    .what-item {
-      background: var(--navy-card);
-      padding: 2rem 1.8rem;
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-    .what-check {
-      width: 1.4rem;
-      height: 1.4rem;
-      border: 1px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .what-check svg { width: 0.7rem; height: 0.7rem; color: var(--gold); }
-    .what-item-title {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-primary);
-      margin-bottom: 0.4rem;
-    }
-    .what-item-desc {
-      font-size: 0.82rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+    .btn-ghost-brass { background: transparent; border: 1px solid var(--accent); color: var(--accent); transition: background .2s, color .2s; }
+    .btn-ghost-brass:hover { background: var(--accent); color: #F8F5EE; }
+    .fllink { transition: color .2s; } .fllink:hover { color: var(--accent); }
 
-    /* QUALIFIER */
-    .qualifier {
-      padding: 4rem 2rem;
-      background: var(--navy-deep);
-      border-bottom: 1px solid var(--navy-border);
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+      html { scroll-behavior: auto; }
     }
-    .qualifier-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .qualifier-title {
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .qualifier-title::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold); }
-    /* TRUST BAR */
-    .trust-bar {
-      padding: 3rem 2rem;
-      background: var(--navy-deep);
-      border-top: 1px solid var(--navy-border);
-    }
-    .trust-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--navy-border);
-      border: 1px solid var(--navy-border);
-    }
-    .trust-item {
-      background: var(--navy-card);
-      padding: 1.5rem 2rem;
-      text-align: center;
-    }
-    .trust-item-number {
-      font-family: 'Cinzel', serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 0.3rem;
-    }
-    .trust-item-label {
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    /* FOOTER */
-    footer { background: var(--navy-deep); border-top: 1px solid var(--navy-border); padding: 3rem 2rem; }
-    .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
-    .footer-logo { font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 700; color: var(--gold); letter-spacing: 0.08em; }
-    .footer-logo span { color: var(--text-subtle); font-weight: 400; }
-    .footer-links { display: flex; gap: 2rem; list-style: none; }
-    @media (max-width: 640px) { .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1.5rem; } }
-    .footer-links a { font-size: 0.85rem; letter-spacing: 0.03em; color: var(--text-subtle); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-copy { font-size: 0.85rem; color: var(--text-subtle); letter-spacing: 0.05em; }
-
-    @media (max-width: 1200px) {
-      .nav-links { display: none; } .nav-cta { display: none; } .hamburger { display: flex; }
-      .what-grid { grid-template-columns: 1fr; }
-      .trust-inner { grid-template-columns: 1fr; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
-    }
-    @media (max-width: 600px) {
-      .page-hero { padding: 7rem 1.5rem 4rem; }
-      .what-you-get { padding: 4rem 1.5rem; }
-      .qualifier { padding: 3rem 1.5rem; }
-      .calendly-section { padding: 4rem 1.5rem; }
-    }
-
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
-      @media (min-width: 1440px) { html { font-size: 17px; } }
-    @media (min-width: 1920px) { html { font-size: 18.5px; } }
-    .btn-primary { background: var(--gold); color: var(--navy-deep); padding: 1rem 2.5rem; font-family: 'Josefin Sans', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; border: none; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-
-    /* FOOTER SOCIAL */
-    .footer-social { display: flex; gap: 1rem; align-items: center; }
-    .footer-social a { color: var(--text-subtle); transition: color 0.2s; line-height: 0; }
-    .footer-social a:hover { color: var(--gold); }
-    .footer-social svg { width: 1.1rem; height: 1.1rem; fill: currentColor; }
-
-    /* SKIP LINK */
-    .skip-link { position: absolute; left: -9999px; top: 0; background: var(--gold); color: var(--navy-deep); padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; z-index: 9999; text-decoration: none; }
-    .skip-link:focus { left: 0; }
+    @media (min-width: 1440px) { html { font-size: 17px; } }
   </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -323,9 +118,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":["RealEstateAgent","LocalBusiness"],"name":"Multi Family Deals","description":"Edmonton-based real estate investment firm specializing in purpose-built CMHC MLI Select multi-family properties. As low as 5% down, 50-year amortization on qualifying projects.","url":"https://multi-family-deals.ca","telephone":"+14162007010","email":"sales@teamsarhadi.com","address":{"@type":"PostalAddress","streetAddress":"14811 114 Ave NW","addressLocality":"Edmonton","addressRegion":"AB","postalCode":"T5M 4E5","addressCountry":"CA"},"founder":{"@type":"Person","name":"Kunal Sarhadi","jobTitle":"Real Estate Broker","worksFor":{"@type":"Organization","name":"Standard Realty Co."}},"areaServed":{"@type":"City","name":"Edmonton"},"knowsAbout":["Multi-family real estate","CMHC MLI Select","Real estate investment","Alberta real estate"],"priceRange":"$$$$","image":"https://multi-family-deals.ca/images/jasper-park.png","sameAs":["https://www.instagram.com/kunalsarhadi/","https://www.facebook.com/multifamilydeals"],"geo":{"@type":"GeoCoordinates","latitude":53.5461,"longitude":-113.4938}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://multi-family-deals.ca/"},{"@type":"ListItem","position":2,"name":"Book Discovery Call","item":"https://multi-family-deals.ca/contact.html"}]}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Book a Free Discovery Call \u2014 Multi Family Deals","url":"https://multi-family-deals.ca/contact.html","description":"Book a free 30-minute discovery call with Kunal Sarhadi. Get a full pro-forma, DSCR analysis, and your personal 50-door roadmap.","contactPoint":{"@type":"ContactPoint","telephone":"+14162007010","email":"sales@teamsarhadi.com","contactType":"Sales","availableLanguage":"English","areaServed":"CA"}}</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -334,7 +127,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-  <nav>
+  <nav id="mfd-nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">MULTI FAMILY <span>DEALS</span></a>
       <ul class="nav-links">
@@ -343,7 +136,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <ul class="nav-dropdown-menu" role="menu">
             <li><a href="about.html" role="menuitem"><span class="dropdown-link-title">Our Approach</span><span class="dropdown-link-desc">The team &amp; the 50-door model</span></a></li>
             <li><a href="why-alberta.html" role="menuitem"><span class="dropdown-link-title">Why Alberta</span><span class="dropdown-link-desc">Market fundamentals &amp; data</span></a></li>
-            <li><a href="about.html#track-record" role="menuitem"><span class="dropdown-link-title">Track Record</span><span class="dropdown-link-desc">Every project appraised above purchase</span></a></li>
+            <li><a href="about.html#track-record" role="menuitem"><span class="dropdown-link-title">Track Record</span><span class="dropdown-link-desc">Every sold project appraised above purchase</span></a></li>
           </ul>
         </li>
         <li class="has-dropdown" data-category="properties">
@@ -351,7 +144,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <ul class="nav-dropdown-menu" role="menu">
             <li><a href="inventory.html" role="menuitem"><span class="dropdown-link-title">Active Inventory</span><span class="dropdown-link-desc">Available 6–20 plex assets</span></a></li>
             <li><a href="crawford-plains.html" role="menuitem"><span class="dropdown-link-title">Crawford Plains 8-Plex</span><span class="dropdown-link-desc">Newest completed project · 2026</span></a></li>
-            <li><a href="inglewood.html" role="menuitem"><span class="dropdown-link-title">Inglewood 9-Plex</span><span class="dropdown-link-desc">Completed 2026 · set the standard</span></a></li>
+            <li><a href="inglewood.html" role="menuitem"><span class="dropdown-link-title">Inglewood 9-Plex</span><span class="dropdown-link-desc">Delivering soon · set the standard</span></a></li>
           </ul>
         </li>
         <li class="has-dropdown" data-category="resources">
@@ -366,15 +159,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ul>
         </li>
       </ul>
-      <a href="contact.html" data-conversion="book_call" class="nav-cta">Book Discovery Call</a>
+      <a href="tel:+14162007010" data-conversion="phone_click" class="nav-cta">Call 416-200-7010</a>
       <div class="hamburger" id="hamburger" role="button" aria-label="Open menu" tabindex="0"><span></span><span></span><span></span></div>
     </div>
   </nav>
-    <div class="mobile-nav" id="mobileNav">
-    <a href="contact.html" data-conversion="book_call" class="mobile-nav-cta" style="margin-top:0;">Book Discovery Call</a>
-    <a href="tel:+14162007010" data-conversion="phone_click">Call 416-200-7010</a>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="tel:+14162007010" data-conversion="phone_click" class="mobile-nav-cta" style="margin-top:0;">Call 416-200-7010</a>
     <div class="mobile-nav-category">The Strategy</div>
-    <a href="about.html">The Strategy</a>
+    <a href="about.html">Our Approach</a>
     <a href="why-alberta.html">Why Alberta</a>
     <div class="mobile-nav-category">Properties</div>
     <a href="inventory.html">Active Inventory</a>
@@ -382,177 +174,181 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="inglewood.html">Portfolio — Inglewood</a>
     <div class="mobile-nav-category">Resources</div>
     <a href="buying-process.html">Buying Process</a>
+    <a href="calculator.html">Calculator</a>
+    <a href="guide.html">Free Guide</a>
     <a href="faq.html">FAQ</a>
     <a href="reviews.html">Reviews</a>
     <a href="blog/index.html">Blog</a>
-    <a href="guide.html">Free Guide</a>
-    <a href="calculator.html">Calculator</a>
-    <a href="contact.html" data-conversion="book_call" class="mobile-nav-cta">Book Discovery Call</a>
   </div>
 
-  <!-- PAGE HERO -->
-<main id="main-content">
-  <section class="page-hero">
-    <div class="page-hero-inner">
-      <div class="page-eyebrow">No Cost. No Obligation.</div>
-      <h1 class="page-title">Book Your <span>Discovery Call</span></h1>
-      <p class="page-subtitle">
-        In 30 minutes, we'll map out your path to 50 doors — including a full
-        pro-forma breakdown, debt structure analysis, and your first acquisition target
-        in Edmonton's growth corridor.
-      </p>
-      <p style="margin-top:1.5rem;font-size:0.82rem;font-weight:400;color:var(--text-subtle);letter-spacing:0.04em;">Nous travaillons avec des investisseurs francophones. Contactez-nous en français.</p>
-      <p style="margin-top:0.75rem;font-size:0.82rem;color:var(--text-subtle);letter-spacing:0.04em;">
-        <a href="tel:+14162007010" data-conversion="phone_click" style="color:var(--text-muted);text-decoration:none;">416-200-7010</a>
-        &nbsp;·&nbsp;
-        <a href="mailto:sales@teamsarhadi.com" style="color:var(--gold);text-decoration:none;">sales@teamsarhadi.com</a>
-      </p>
+<main id="main-content" style="background:#F5F1E8;">
+
+  <!-- HERO -->
+  <section style="padding-top:72px;background:#F5F1E8;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(#E7DFCD 1px,transparent 1px),linear-gradient(90deg,#E7DFCD 1px,transparent 1px);background-size:64px 64px;opacity:.4;-webkit-mask-image:radial-gradient(ellipse 60% 80% at 25% 0%,#000,transparent 72%);mask-image:radial-gradient(ellipse 60% 80% at 25% 0%,#000,transparent 72%);pointer-events:none;"></div>
+    <div style="max-width:1240px;margin:0 auto;padding:clamp(44px,6vw,72px) clamp(18px,4vw,44px) clamp(20px,3vw,28px);position:relative;z-index:1;">
+      <div style="animation:heroUp .7s ease both;display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;"><span style="display:block;width:26px;height:1px;background:var(--accent);"></span>No Cost · No Obligation · 30 Minutes</div>
+      <h1 style="animation:heroUp .8s ease both;animation-delay:.14s;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(2.5rem,5.6vw,4.2rem);line-height:1.02;letter-spacing:-0.025em;color:#1C1813;max-width:860px;margin-bottom:20px;text-wrap:balance;">Book your <span style="font-style:italic;color:var(--accent);">discovery call.</span></h1>
+      <p id="propNote" style="display:none;animation:heroUp .8s ease both;animation-delay:.2s;font-size:.9rem;font-weight:600;letter-spacing:.04em;color:var(--accent);margin-bottom:14px;"></p>
+      <p style="animation:heroUp .8s ease both;animation-delay:.26s;font-size:1.04rem;line-height:1.7;color:#4A443B;max-width:600px;">In 30 minutes we map your path to 50 doors — a full pro-forma on a live Edmonton asset, the debt structure, and your first acquisition target. You leave with numbers, not a pitch.</p>
     </div>
   </section>
 
-  <!-- QUALIFIER -->
-  <section class="qualifier">
-    <div class="qualifier-inner reveal">
-      <div class="qualifier-title">Reserve Your Call &mdash; Step 1 of 2</div>
-      <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:700;color:var(--text-primary);margin-top:1rem;">Tell us about your situation <span style="color:var(--text-subtle);font-family:'Josefin Sans',sans-serif;font-size:0.85em;font-weight:400;">(about 2 minutes)</span></h2>
-      <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.7;margin-top:0.6rem;max-width:560px;">Your answers let Kunal build a pro-forma for your capital range before the call &mdash; so the 30 minutes are spent on numbers, not intake questions. You&rsquo;ll pick your call time on the next step.</p>
-      <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.65;margin-top:0.75rem;border-left:2px solid var(--gold);padding-left:0.9rem;">Every completed project has appraised above its purchase price &mdash; independent AACI appraisals, $20,000&ndash;$200,000 higher. <strong style="color:var(--gold);">Verification available on your call.</strong></p>
-      <div style="margin-top:1.5rem;">
-        <iframe
-            src="https://api.leadconnectorhq.com/widget/form/vP9PwFhTgisGUe7787YO"
-            style="width:100%;height:100%;min-height:620px;border:none;border-radius:8px"
-            id="inline-vP9PwFhTgisGUe7787YO"
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="MFD - Website Contact - Discovery Call Qualifier"
-            data-height="undefined"
-            data-layout-iframe-id="inline-vP9PwFhTgisGUe7787YO"
-            data-form-id="vP9PwFhTgisGUe7787YO"
-            title="MFD - Website Contact - Discovery Call Qualifier"
-        ></iframe>
-        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-      </div>
-      <p style="font-size:0.72rem;color:var(--text-subtle);margin-top:0.8rem;letter-spacing:0.04em;">Your answers help us tailor the call to your situation. No obligation, no spam.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:1.25rem 2.5rem;margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--navy-border);">
-        <div style="flex:1;min-width:200px;font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><span style="color:var(--gold);font-weight:700;">1.</span>&nbsp; Submit your details &mdash; about 2 minutes</div>
-        <div style="flex:1;min-width:200px;font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><span style="color:var(--gold);font-weight:700;">2.</span>&nbsp; Pick a call time that works for you</div>
-        <div style="flex:1;min-width:200px;font-size:0.82rem;color:var(--text-muted);line-height:1.6;"><span style="color:var(--gold);font-weight:700;">3.</span>&nbsp; 30-minute call with a live pro-forma. Not a fit? We&rsquo;ll tell you &mdash; no follow-up pressure.</div>
-      </div>
-      <p style="font-size:0.78rem;color:var(--text-subtle);margin-top:1.25rem;letter-spacing:0.03em;">You&rsquo;ll be speaking with <strong style="color:var(--text-muted);">Kunal Sarhadi</strong>, Real Estate Broker licensed in both Alberta and Ontario &mdash; backed by 160+ verified Google reviews.</p>
-    </div>
-  </section>
+  <!-- FORM + SIDEBAR -->
+  <section style="background:#F5F1E8;padding:clamp(8px,2vw,20px) clamp(18px,4vw,44px) clamp(56px,7vw,90px);">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,4vw,56px);align-items:start;">
 
-  <!-- WHAT YOU GET -->
-  <section class="what-you-get">
-    <div class="what-inner">
-      <div class="reveal">
-        <div class="what-label">On This Call</div>
-        <h2 class="what-title">What You'll Walk Away With</h2>
+      <div class="reveal" data-reveal style="position:relative;">
+        <div style="background:#FBF8F1;border:1px solid #DDD4C2;padding:clamp(22px,3vw,34px);">
+          <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;">
+            <span style="font-family:'Newsreader',serif;font-size:1.5rem;font-weight:500;color:#1C1813;">Tell us about your situation</span>
+            <span style="font-size:.78rem;color:#8A8172;">about 2 minutes</span>
+          </div>
+          <p style="font-size:.9rem;line-height:1.7;color:#4A443B;margin-bottom:18px;">Your answers let Kunal build a pro-forma for your capital range before the call — so the 30 minutes go to numbers, not intake. You'll pick your time on the next step.</p>
+          <div style="background:#F5F1E8;border:1px solid #E4DBCB;border-left:2px solid var(--accent);padding:14px 16px;margin-bottom:22px;">
+            <p style="font-size:.84rem;line-height:1.6;color:#4A443B;">Every sold project has appraised <strong style="color:#1C1813;">above its purchase price</strong> — independent AACI appraisals, $20K–$200K higher. <span style="color:var(--accent);font-weight:600;">Verification available on your call.</span></p>
+          </div>
+          <div style="background:#fff;border:1px solid #E4DBCB;border-radius:6px;overflow:hidden;">
+            <iframe src="https://api.leadconnectorhq.com/widget/form/vP9PwFhTgisGUe7787YO" style="width:100%;min-height:640px;border:none;display:block;" id="inline-vP9PwFhTgisGUe7787YO" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-activation-type="alwaysActivated" data-deactivation-type="neverDeactivate" data-form-name="MFD - Website Contact - Discovery Call Qualifier" data-height="640" data-layout-iframe-id="inline-vP9PwFhTgisGUe7787YO" data-form-id="vP9PwFhTgisGUe7787YO" title="MFD - Website Contact - Discovery Call Qualifier"></iframe>
+          </div>
+          <p style="font-size:.72rem;color:#8A8172;margin-top:12px;letter-spacing:.03em;">Your answers help tailor the call. No obligation, no spam.</p>
+        </div>
       </div>
-      <div class="what-grid">
-        <div class="what-item reveal" style="transition-delay:0.05s">
-          <div class="what-check">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+
+      <div style="display:flex;flex-direction:column;gap:clamp(20px,2.5vw,32px);">
+
+        <div class="reveal" data-reveal style="display:grid;grid-template-columns:auto 1fr auto;gap:0;background:#16130E;color:#F5F1E8;">
+          <div style="padding:20px 22px;text-align:center;border-right:1px solid #2A2419;"><div style="font-family:'Newsreader',serif;font-size:1.7rem;font-weight:500;color:var(--accent-l);line-height:1;">1</div><div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#8A8172;margin-top:6px;white-space:nowrap;">Submit</div></div>
+          <div style="padding:20px 22px;display:flex;flex-direction:column;justify-content:center;gap:2px;">
+            <div style="font-size:.88rem;font-weight:600;color:#F5F1E8;">Two-step, then you're booked</div>
+            <div style="font-size:.78rem;color:#B9B0A0;line-height:1.5;">Submit details → pick a time → 30-min call with a live pro-forma. Not a fit? We'll say so — no follow-up pressure.</div>
           </div>
-          <div>
-            <div class="what-item-title">Pro-Forma Analysis</div>
-            <p class="what-item-desc">Full breakdown of projected cash flow, debt service, and net returns on a live Edmonton asset.</p>
+          <div style="padding:20px 22px;text-align:center;border-left:1px solid #2A2419;display:flex;flex-direction:column;justify-content:center;"><div style="font-family:'Newsreader',serif;font-size:1.7rem;font-weight:500;color:var(--accent-l);line-height:1;">2</div><div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#8A8172;margin-top:6px;white-space:nowrap;">Pick time</div></div>
+        </div>
+
+        <div class="reveal" data-reveal>
+          <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;"><span style="display:block;width:24px;height:1px;background:var(--accent);"></span>What You Walk Away With</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#DDD4C2;border:1px solid #DDD4C2;">
+            <div style="background:#FBF8F1;padding:20px 20px 22px;"><div style="width:26px;height:26px;border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><span style="color:var(--accent);font-size:.8rem;">✓</span></div><div style="font-family:'Newsreader',serif;font-size:1.08rem;font-weight:500;color:#1C1813;margin-bottom:6px;">Pro-forma analysis</div><p style="font-size:.82rem;line-height:1.6;color:#4A443B;">Projected cash flow, debt service, and net returns on a live Edmonton asset — the real numbers, not a template.</p></div>
+            <div style="background:#FBF8F1;padding:20px 20px 22px;"><div style="width:26px;height:26px;border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><span style="color:var(--accent);font-size:.8rem;">✓</span></div><div style="font-family:'Newsreader',serif;font-size:1.08rem;font-weight:500;color:#1C1813;margin-bottom:6px;">50-door roadmap</div><p style="font-size:.82rem;line-height:1.6;color:#4A443B;">A personalized acquisition timeline showing how the flywheel scales you to 50+ doors over roughly four years.</p></div>
+            <div style="background:#FBF8F1;padding:20px 20px 22px;"><div style="width:26px;height:26px;border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><span style="color:var(--accent);font-size:.8rem;">✓</span></div><div style="font-family:'Newsreader',serif;font-size:1.08rem;font-weight:500;color:#1C1813;margin-bottom:6px;">Alberta tax position</div><p style="font-size:.82rem;line-height:1.6;color:#4A443B;">No HST and no land transfer tax vs Ontario's new-construction taxes and levies — modeled on your target asset.</p></div>
+            <div style="background:#FBF8F1;padding:20px 20px 22px;"><div style="width:26px;height:26px;border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><span style="color:var(--accent);font-size:.8rem;">✓</span></div><div style="font-family:'Newsreader',serif;font-size:1.08rem;font-weight:500;color:#1C1813;margin-bottom:6px;">Passive management plan</div><p style="font-size:.82rem;line-height:1.6;color:#4A443B;">How out-of-province owners collect rent without managing a single tenant, lease, or repair.</p></div>
           </div>
         </div>
-        <div class="what-item reveal" style="transition-delay:0.08s">
-          <div class="what-check">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+
+        <div class="reveal" data-reveal style="background:#FBF8F1;border:1px solid #DDD4C2;padding:22px 24px;">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+            <img src="images/kunal-headshot.png" alt="Kunal Sarhadi, Real Estate Broker" width="104" height="104" loading="lazy" style="width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1px solid #DDD4C2;" />
+            <div>
+              <div style="font-family:'Newsreader',serif;font-size:1.15rem;font-weight:500;color:#1C1813;line-height:1.1;">Kunal Sarhadi</div>
+              <div style="font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#8A8172;margin-top:3px;">Real Estate Broker · Licensed AB &amp; ON</div>
+            </div>
           </div>
-          <div>
-            <div class="what-item-title">50-Door Roadmap</div>
-            <p class="what-item-desc">A personalized acquisition timeline showing exactly how to scale to 50+ doors in 4 years.</p>
-          </div>
-        </div>
-        
-        <div class="what-item reveal" style="transition-delay:0.14s">
-          <div class="what-check">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div>
-            <div class="what-item-title">Alberta Tax Savings</div>
-            <p class="what-item-desc">Comparative tax analysis: Alberta's no-HST, no-LTT position vs Ontario's new construction taxes and levies on your target asset.</p>
+          <div style="display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;align-items:center;padding-top:16px;border-top:1px solid #E4DBCB;">
+            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.35rem;font-weight:500;color:var(--accent);line-height:1;">160+</div><div style="font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:#8A8172;margin-top:5px;">Google reviews</div></div>
+            <div style="width:1px;height:30px;background:#E4DBCB;"></div>
+            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.35rem;font-weight:500;color:#1C1813;line-height:1;">$500M+</div><div style="font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:#8A8172;margin-top:5px;">Sarhadi Group</div></div>
+            <div style="width:1px;height:30px;background:#E4DBCB;"></div>
+            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.35rem;font-weight:500;color:#1C1813;line-height:1;">AB &amp; ON</div><div style="font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:#8A8172;margin-top:5px;">Licensed</div></div>
           </div>
         </div>
-        <div class="what-item reveal" style="transition-delay:0.17s">
-          <div class="what-check">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div>
-            <div class="what-item-title">Passive Management Plan</div>
-            <p class="what-item-desc">How out-of-province owners collect rent without managing a single tenant or repair.</p>
-          </div>
+
+        <div class="reveal" data-reveal style="border:1px solid #DDD4C2;background:#EFE9DB;padding:18px 22px;">
+          <p style="font-size:.82rem;line-height:1.6;color:#4A443B;"><span style="font-style:italic;font-family:'Newsreader',serif;font-size:.95rem;">Nous travaillons avec des investisseurs francophones.</span> Contactez-nous en français au <a href="tel:+14162007010" data-conversion="phone_click" style="font-weight:600;">416-200-7010</a> ou <a href="mailto:sales@teamsarhadi.com">sales@teamsarhadi.com</a>.</p>
         </div>
-        
+
       </div>
     </div>
   </section>
 
-  <!-- WHATSAPP NETWORK -->
-  <div style="background:var(--navy-deep);border-top:1px solid var(--navy-border);border-bottom:1px solid var(--navy-border);padding:2rem 2rem;">
-    <div style="max-width:700px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
-      <div>
-        <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#2AAF72;margin-bottom:0.4rem;display:flex;align-items:center;gap:0.5rem;">
-          <span style="width:6px;height:6px;border-radius:50%;background:#2AAF72;display:inline-block;"></span>
-          Not ready to book a call?
-        </div>
-        <p style="font-size:0.85rem;font-weight:300;color:var(--text-muted);line-height:1.6;">Join our private WhatsApp group — we post new listings there the moment they're available, and you can reach out directly at any time.</p>
+  <!-- WHATSAPP STRIP -->
+  <section style="background:#EFE9DB;border-top:1px solid #E4DBCB;border-bottom:1px solid #E4DBCB;padding:clamp(30px,4vw,40px) clamp(18px,4vw,44px);">
+    <div class="reveal" data-reveal style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <span style="width:9px;height:9px;border-radius:50%;background:#2AAF72;animation:pulseDot 2s ease-in-out infinite;flex-shrink:0;"></span>
+        <div style="font-size:.9rem;color:#4A443B;line-height:1.5;"><strong style="color:#1C1813;font-weight:600;">Not ready to book?</strong> — join our private WhatsApp group; new listings post there the moment they're available, and you can reach out anytime.</div>
       </div>
-      <a href="https://chat.whatsapp.com/BYNf65k8iSf3fNOIrkZUvZ" data-conversion="whatsapp_click" target="_blank" rel="noopener" style="background:transparent;border:1px solid #2AAF72;color:#2AAF72;padding:0.7rem 1.6rem;font-family:'Josefin Sans',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:background 0.2s,color 0.2s;flex-shrink:0;white-space:nowrap;" onmouseover="this.style.background='#2AAF72';this.style.color='#000'" onmouseout="this.style.background='transparent';this.style.color='#2AAF72'">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.167L2 22l4.985-1.31A9.939 9.939 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 11.999 2zm.001 18a7.946 7.946 0 01-4.077-1.123l-.292-.173-3.036.796.811-2.96-.19-.303A7.946 7.946 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
-        Join the Group
-      </a>
-    </div>
-  </div>
-
-  <!-- TRUST BAR -->
-  <section class="trust-bar">
-    <div class="trust-inner">
-      <div class="trust-item">
-        <div class="trust-item-number">160+</div>
-        <div class="trust-item-label">Verified Google Reviews</div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-item-number">$500M+</div>
-        <div class="trust-item-label">In Transactions Closed</div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-item-number">AB &amp; ON</div>
-        <div class="trust-item-label">Licensed Residential &amp; Commercial Real Estate Broker</div>
-      </div>
+      <a href="https://chat.whatsapp.com/BYNf65k8iSf3fNOIrkZUvZ" data-conversion="whatsapp_click" target="_blank" rel="noopener" data-magnetic class="btn-ghost-brass" style="padding:11px 24px;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;border-radius:2px;">Join the Group</a>
     </div>
   </section>
 
 </main>
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">MULTI FAMILY <span>DEALS</span></div>
-      <ul class="footer-links">
-        <li><a href="about.html">Strategy</a></li>
-        <li><a href="why-alberta.html">Why Alberta</a></li>
-        <li><a href="inventory.html">Inventory</a></li>
-        <li><a href="crawford-plains.html">Portfolio</a></li>
-        <li><a href="buying-process.html">Buying Process</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
-        <li><a href="guide.html">Free Guide</a></li>
-        <li><a href="calculator.html">Calculator</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="footer-copy">Kunal Sarhadi, Real Estate Broker &nbsp;|&nbsp; Standard Realty Co., Edmonton (AB) &nbsp;|&nbsp; Homelife Miracle Realty Inc. (ON) &nbsp;|&nbsp; © 2026 Multi Family Deals.<br /><span style="display:inline-block;margin-top:0.45rem;opacity:0.8;">Not financial or investment advice. CMHC MLI Select program terms subject to change.</span></div>
+
+  <footer style="background:#0E0C09;color:#B9B0A0;padding:clamp(40px,6vw,64px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:36px;flex-wrap:wrap;padding-bottom:32px;border-bottom:1px solid #23201A;">
+        <div style="max-width:320px;">
+          <div style="font-family:'Newsreader',serif;font-size:1.1rem;font-weight:600;letter-spacing:.12em;color:#F5F1E8;margin-bottom:14px;">MULTI FAMILY <span style="color:var(--accent);">DEALS</span></div>
+          <p style="font-size:.82rem;line-height:1.7;color:#8A8172;">Alberta-focused multi-family investment. Purpose-built rental acquisition through CMHC MLI Select, for out-of-province investors scaling toward 50 doors.</p>
+        </div>
+        <div style="display:flex;gap:clamp(28px,5vw,64px);flex-wrap:wrap;">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#5A5348;margin-bottom:2px;">Explore</div>
+            <a href="about.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">The Strategy</a>
+            <a href="why-alberta.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Why Alberta</a>
+            <a href="inventory.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Inventory</a>
+            <a href="crawford-plains.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Portfolio</a>
+            <a href="blog/index.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Blog</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#5A5348;margin-bottom:2px;">Resources</div>
+            <a href="buying-process.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Buying Process</a>
+            <a href="calculator.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Calculator</a>
+            <a href="guide.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Free Guide</a>
+            <a href="faq.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">FAQ</a>
+            <a href="reviews.html" class="fllink" style="font-size:.84rem;color:#B9B0A0;">Reviews</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#5A5348;margin-bottom:2px;">Contact</div>
+            <a href="tel:+14162007010" data-conversion="phone_click" class="fllink" style="font-size:.84rem;color:#B9B0A0;">416-200-7010</a>
+            <a href="mailto:sales@teamsarhadi.com" class="fllink" style="font-size:.84rem;color:#B9B0A0;">sales@teamsarhadi.com</a>
+            <a href="https://chat.whatsapp.com/BYNf65k8iSf3fNOIrkZUvZ" target="_blank" rel="noopener" data-conversion="whatsapp_click" class="fllink" style="font-size:.84rem;color:#B9B0A0;">WhatsApp Group</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top:24px;font-size:.72rem;line-height:1.7;color:#6B6559;">Kunal Sarhadi, Real Estate Broker · Standard Realty Co., Edmonton (AB) · Homelife Miracle Realty Inc. (ON) · © 2026 Multi Family Deals.<br /><span style="display:inline-block;margin-top:0.45rem;opacity:0.85;">Not financial or investment advice. CMHC MLI Select program terms subject to change. Track-record figures are aggregate Sarhadi Group totals.</span></div>
     </div>
   </footer>
 
+  <!-- ===== Interactions (vanilla) ===== -->
+  <script>
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // property note from ?property= query param
+    (function(){
+      var el = document.getElementById('propNote'); if (!el) return;
+      var p = null; try { p = new URLSearchParams(location.search).get('property'); } catch(e){}
+      if (!p) return;
+      var label = p.replace(/-/g,' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
+      el.textContent = 'Regarding: ' + label; el.style.display = 'block';
+    })();
+
+    // nav scroll
+    var nav = document.getElementById('mfd-nav');
+    if (nav) { var onNav=function(){ if(window.scrollY>24){ nav.style.background='rgba(245,241,232,0.94)'; nav.style.boxShadow='0 10px 34px -18px rgba(28,24,19,0.35)'; } else { nav.style.background='rgba(245,241,232,0.72)'; nav.style.boxShadow='none'; } }; window.addEventListener('scroll', onNav, {passive:true}); onNav(); }
+
+    // magnetic
+    if (!(window.matchMedia && window.matchMedia('(hover: none)').matches)) {
+      document.querySelectorAll('[data-magnetic]').forEach(function(el){
+        el.addEventListener('mousemove', function(e){ var r=el.getBoundingClientRect(); el.style.transform='translate('+((e.clientX-r.left-r.width/2)*0.18)+'px,'+((e.clientY-r.top-r.height/2)*0.28)+'px)'; el.style.transition='transform .25s cubic-bezier(.2,.8,.2,1)'; });
+        el.addEventListener('mouseleave', function(){ el.style.transform='translate(0,0)'; });
+      });
+    }
+
+    // reveal
+    var reveals = [].slice.call(document.querySelectorAll('[data-reveal]'));
+    if (reduce) { reveals.forEach(function(el){ el.style.opacity='1'; el.style.transform='none'; }); }
+    else {
+      reveals.forEach(function(el){ el.style.opacity='0'; el.style.transform='translateY(24px)'; el.style.transition='opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)'; });
+      var io=new IntersectionObserver(function(ents){ ents.forEach(function(en){ if(en.isIntersecting){ en.target.style.opacity='1'; en.target.style.transform='none'; io.unobserve(en.target); } }); }, { threshold:0.1, rootMargin:'0px 0px -40px 0px' });
+      reveals.forEach(function(el){ io.observe(el); });
+      setTimeout(function(){ reveals.forEach(function(el){ if(el.style.opacity==='0'){ el.style.opacity='1'; el.style.transform='none'; } }); }, 1600);
+    }
+  })();
+  </script>
+
+  <!-- Mobile nav + dropdown nav -->
   <script>
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
@@ -561,157 +357,80 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function closeMenu() { var wasOpen = document.body.classList.contains('no-scroll'); mobileNav.classList.remove('open'); hamburger.classList.remove('is-open'); document.body.classList.remove('no-scroll'); document.body.style.top = ''; if (wasOpen) window.scrollTo(0, _navScroll); }
     function toggleMenu() { mobileNav.classList.contains('open') ? closeMenu() : openMenu(); }
     hamburger.addEventListener('click', toggleMenu);
-    hamburger.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') toggleMenu(); });
+    hamburger.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); } });
     mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
     window.addEventListener('pageshow', function(e) { if (e.persisted) closeMenu(); });
     let _lastScroll = 0;
     window.addEventListener('scroll', () => { if (Math.abs(window.scrollY - _lastScroll) > 60) { closeMenu(); } _lastScroll = window.scrollY; }, { passive: true });
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
-    }, { threshold: 0, rootMargin: '0px 0px -10px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    window.addEventListener('scroll', () => { document.querySelectorAll('.reveal:not(.visible)').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight + 50) el.classList.add('visible'); }); }, { passive: true });
-    setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')), 1200);
 
-  // Dropdown navigation
-  (function() {
-    var dropdowns = document.querySelectorAll('.has-dropdown');
-    dropdowns.forEach(function(dd) {
-      var btn = dd.querySelector('.nav-dropdown-btn');
-      btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        var isOpen = dd.classList.contains('open');
-        dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); });
-        if (!isOpen) { dd.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    (function() {
+      var dropdowns = document.querySelectorAll('.has-dropdown');
+      dropdowns.forEach(function(dd) {
+        var btn = dd.querySelector('.nav-dropdown-btn');
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var isOpen = dd.classList.contains('open');
+          dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); });
+          if (!isOpen) { dd.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+        });
+        dd.addEventListener('keydown', function(e) { if (e.key === 'Escape') { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.focus(); } });
       });
-      dd.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.focus(); }
+      document.addEventListener('click', function() { dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); }); });
+    })();
+  </script>
+
+  <!-- GHL chat widget -->
+  <script defer src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69fa444c3cc75785c76e6387"></script>
+
+  <!-- Meta Pixel — Contact event tracking -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof fbq === 'function') { var eventId='contact-tel-'+Date.now()+'-'+Math.random().toString(36).substr(2,9); fbq('track','Contact',{contact_method:'phone',phone_number:link.getAttribute('href').replace('tel:','')},{eventID:eventId}); }
       });
     });
-    document.addEventListener('click', function() {
-      dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); });
-    });
-    // Active category highlight
-    var path = window.location.pathname;
-    var map = {
-      'why-edmonton': ['about', 'why-alberta'],
-      'properties': ['inventory', 'inglewood', 'crawford-plains'],
-      'resources': ['buying-process', 'faq', 'reviews', 'guide', 'blog', 'calculator']
-    };
-    for (var cat in map) {
-      for (var i = 0; i < map[cat].length; i++) {
-        if (path.indexOf(map[cat][i]) !== -1) {
-          var el = document.querySelector('.has-dropdown[data-category="' + cat + '"]');
-          if (el) el.classList.add('active');
-          break;
-        }
-      }
-    }
-  })();
-</script>
-<script defer src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69fa444c3cc75785c76e6387"></script>
-
-<script>
-// Meta Pixel — Contact event tracking
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
-    link.addEventListener('click', function() {
-      if (typeof fbq === 'function') {
-        var eventId = 'contact-tel-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
-        fbq('track', 'Contact', {
-          contact_method: 'phone',
-          phone_number: link.getAttribute('href').replace('tel:', '')
-        }, {eventID: eventId});
-      }
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof fbq === 'function') { var eventId='contact-email-'+Date.now()+'-'+Math.random().toString(36).substr(2,9); fbq('track','Contact',{contact_method:'email',email:link.getAttribute('href').replace('mailto:','')},{eventID:eventId}); }
+      });
     });
   });
-  document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
-    link.addEventListener('click', function() {
-      if (typeof fbq === 'function') {
-        var eventId = 'contact-email-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
-        fbq('track', 'Contact', {
-          contact_method: 'email',
-          email: link.getAttribute('href').replace('mailto:', '')
-        }, {eventID: eventId});
-      }
-    });
-  });
-});
-</script>
-<!-- Conversion Event Listener -->
-<script>
-(function(){
-  document.addEventListener('click', function(e){
-    var el = e.target.closest('[data-conversion]');
-    if(!el) return;
-    var eventName = el.getAttribute('data-conversion');
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': eventName,
-      'event_category': 'engagement',
-      'event_label': el.textContent.trim().substring(0, 50),
-      'page_path': window.location.pathname
-    });
-  });
-})();
-</script>
-<!-- End Conversion Event Listener -->
-<!-- GHL Booking Completion Listener -->
-<script>
-(function(){
-  window.addEventListener('message', function(event){
-    // Verify origin is from GoHighLevel
-    if (!event.origin || event.origin.indexOf('leadconnectorhq.com') === -1) return;
+  </script>
 
-    // Detect booking completion events from GHL
-    var data = event.data;
-    var isBookingComplete = false;
-
-    // GHL fires multiple event types; check common patterns
-    if (typeof data === 'string') {
-      if (data.indexOf('appointment-booked') !== -1 ||
-          data.indexOf('booking-confirmed') !== -1 ||
-          data.indexOf('form-submitted') !== -1) {
-        isBookingComplete = true;
-      }
-    } else if (data && typeof data === 'object') {
-      if (data.event === 'appointment_booked' ||
-          data.event === 'booking_complete' ||
-          data.event === 'form_submit' ||
-          data.type === 'appointment-booked') {
-        isBookingComplete = true;
-      }
-    }
-
-    if (isBookingComplete) {
+  <!-- Conversion Event Listener -->
+  <script>
+  (function(){
+    document.addEventListener('click', function(e){
+      var el = e.target.closest('[data-conversion]');
+      if(!el) return;
+      var eventName = el.getAttribute('data-conversion');
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        'event': 'form_submit_contact',
-        'event_category': 'engagement',
-        'event_label': 'GHL booking iframe completion',
-        'page_path': window.location.pathname,
-        'ghl_event_data': typeof data === 'string' ? data : JSON.stringify(data)
-      });
-      console.log('[MFD] form_submit_contact event fired from GHL iframe');
-    }
-  });
-})();
-</script>
-<!-- End GHL Booking Completion Listener -->
-<!-- Property handoff reader -->
-<script>
-(function(){
-  var p = new URLSearchParams(location.search).get('property');
-  if (!p) return;
-  var label = p.replace(/-/g, ' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); });
-  var sub = document.querySelector('.page-subtitle');
-  if (sub) {
-    var el = document.createElement('p');
-    el.style.cssText = 'margin-top:1rem;font-size:0.88rem;letter-spacing:0.06em;color:var(--gold);font-weight:600;';
-    el.textContent = 'Regarding: ' + label;
-    sub.parentNode.insertBefore(el, sub.nextSibling);
-  }
-})();
-</script>
+      window.dataLayer.push({ 'event': eventName, 'event_category': 'engagement', 'event_label': el.textContent.trim().substring(0, 50), 'page_path': window.location.pathname });
+    });
+  })();
+  </script>
+  <!-- End Conversion Event Listener -->
+
+  <!-- GHL Booking Completion Listener -->
+  <script>
+  (function(){
+    window.addEventListener('message', function(event){
+      if (!event.origin || event.origin.indexOf('leadconnectorhq.com') === -1) return;
+      var data = event.data;
+      var isBookingComplete = false;
+      if (typeof data === 'string') {
+        if (data.indexOf('appointment-booked') !== -1 || data.indexOf('booking-confirmed') !== -1 || data.indexOf('form-submitted') !== -1) { isBookingComplete = true; }
+      } else if (data && typeof data === 'object') {
+        if (data.event === 'appointment_booked' || data.event === 'booking_complete' || data.event === 'form_submit' || data.type === 'appointment-booked') { isBookingComplete = true; }
+      }
+      if (isBookingComplete) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ 'event': 'form_submit_contact', 'event_category': 'engagement', 'event_label': 'GHL booking iframe completion', 'page_path': window.location.pathname, 'ghl_event_data': typeof data === 'string' ? data : JSON.stringify(data) });
+        console.log('[MFD] form_submit_contact event fired from GHL iframe');
+      }
+    });
+  })();
+  </script>
 </body>
 </html>
