@@ -102,8 +102,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .fllink:hover { color: var(--accent); }
 
     /* ---------- mobile sticky CTA ---------- */
-    .mobile-sticky-cta { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 55; background: var(--espresso); box-shadow: 0 -8px 24px -12px rgba(0,0,0,0.5); }
-    .mobile-sticky-cta a { display: block; text-align: center; padding: 1rem; color: #fff; background: var(--accent); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
 
     @media (prefers-reduced-motion: reduce) {
       * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
@@ -572,6 +570,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="contact.html" data-conversion="book_call" data-magnetic class="btn-brass" style="color:#16130E;padding:17px 40px;border-radius:2px;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;">Book Your Discovery Call</a>
         <a href="tel:+14162007010" data-conversion="phone_click" class="btn-underline" style="color:#F5F1E8;padding:17px 20px;font-size:.76rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border-color:#4A4130;">416-200-7010</a>
       </div>
+      <div style="margin-top:26px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;font-size:.72rem;letter-spacing:.03em;color:#B9B0A0;"><span style="color:var(--accent-l);letter-spacing:2px;">★★★★★</span><span>Rated <strong style="color:#F5F1E8;font-weight:600;">5.0</strong> by 160+ verified Google reviewers</span><a href="reviews.html" style="color:var(--accent-l);font-weight:600;">Read reviews →</a></div>
       <p style="font-size:.68rem;line-height:1.6;color:#8A8172;margin-top:40px;max-width:640px;margin-left:auto;margin-right:auto;">Real estate investment involves risk, including potential loss of capital. Financing is subject to CMHC and lender approval. Past performance does not guarantee future results. This is not financial advice — consult a qualified advisor before investing.</p>
     </div>
   </section>
@@ -614,9 +613,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </footer>
 
-  <div class="mobile-sticky-cta" id="mobileStickyCtaBar">
-    <a href="contact.html" data-conversion="book_call">Book Your Discovery Call &rarr;</a>
-  </div>
 
   <!-- ===== Interactions (ported from prototype, vanilla) ===== -->
   <script>
@@ -791,24 +787,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
   <!-- End Conversion Event Listener -->
 
-  <!-- Mobile sticky CTA -->
-  <script>
-  (function(){
-    var bar = document.getElementById('mobileStickyCtaBar');
-    if (!bar) return;
-    var heroActions = document.querySelector('.hero-actions');
-    var mq = window.matchMedia('(max-width: 1024px)');
-    function checkScroll() {
-      if (!heroActions) return;
-      var rect = heroActions.getBoundingClientRect();
-      var show = mq.matches && rect.bottom <= 0;
-      bar.style.display = show ? 'block' : 'none';
-      document.body.style.paddingBottom = show ? (bar.offsetHeight + 'px') : '';
-    }
-    window.addEventListener('scroll', checkScroll, { passive: true });
-    checkScroll();
-  })();
-  </script>
 <!-- mcta-bar -->
 <div class="mcta" role="region" aria-label="Book a discovery call">
   <div class="mcta-proof">
