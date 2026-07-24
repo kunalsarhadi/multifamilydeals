@@ -51,9 +51,11 @@ article table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max
 @media (max-width:640px){#mfd-nav a[style*="All Articles"],#mfd-nav a[style*="Inventory"]{display:none;}}
 @media (prefers-reduced-motion: reduce){[data-reveal]{opacity:1 !important;transform:none !important;}html{scroll-behavior:auto;}}
 
-/* nav-interactivity-fix */
-nav { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: rgba(245,241,232,0.97) !important; }
-.mobile-nav { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: #F5F1E8 !important; }
+/* nav-interactivity-fix (touch only; desktop keeps the frosted blur) */
+@media (hover: none), (pointer: coarse) {
+  nav { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: rgba(245,241,232,0.98) !important; }
+  .mobile-nav { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: #F5F1E8 !important; }
+}
 
 /* mcta-bar */
 .mcta { display: none; }

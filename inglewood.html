@@ -115,9 +115,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     @media (min-width: 1440px) { html { font-size: 17px; } }
   
-/* nav-interactivity-fix */
-nav { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: rgba(245,241,232,0.97) !important; }
-.mobile-nav { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: #F5F1E8 !important; }
+/* nav-interactivity-fix (touch only; desktop keeps the frosted blur) */
+@media (hover: none), (pointer: coarse) {
+  nav { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: rgba(245,241,232,0.98) !important; }
+  .mobile-nav { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: #F5F1E8 !important; }
+}
 
 /* mcta-bar */
 .mcta { display: none; }
