@@ -199,9 +199,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .skip-link { position: absolute; left: -9999px; top: 0; background: var(--gold); color: var(--navy-deep); padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; z-index: 9999; text-decoration: none; }
     .skip-link:focus { left: 0; }
     /* SIGNALS GRID */
-    .signals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--navy-border); border: 1px solid var(--navy-border); }
-    @media (max-width: 900px) { .signals-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 480px) { .signals-grid { grid-template-columns: 1fr; } }
   </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -356,11 +353,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="fund-card reveal" style="transition-delay:0.16s">
           <svg class="fund-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>
-          <div class="fund-card-title">GDP Diversification</div>
-          <div class="fund-card-stat">3.8%</div>
-          <div class="fund-card-stat-sub">Alberta GDP growth 2023</div>
-          <div class="fund-card-body">Alberta is no longer solely an energy economy. Healthcare, financial services, agri-technology, and an emerging tech sector have broadened the economic base. Amazon's regional cloud infrastructure, AI research institutions, and provincial cleantech investment are all drawing new employment sectors to Edmonton.</div>
-          <div class="fund-card-source">Source: Alberta Treasury Board · 2023 Annual Report</div>
+          <div class="fund-card-title">Employment Growth Leadership</div>
+          <div class="fund-card-stat">#1</div>
+          <div class="fund-card-stat-sub">in Canada for employment growth</div>
+          <div class="fund-card-body">Alberta leads all four major provinces in employment growth while Ontario, BC and Quebec have stalled or contracted. Employed newcomers — arriving for jobs, renting first — are exactly the tenant base purpose-built rental depends on.</div>
+          <div class="fund-card-source">Source: Statistics Canada · ATB Economics · June 2026</div>
         </div>
 
         <div class="fund-card reveal" style="transition-delay:0.20s">
@@ -491,35 +488,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </table>
         <p style="font-size:0.68rem;color:var(--text-subtle);margin-top:0.8rem;letter-spacing:0.03em">All figures are approximate and based on publicly available data from CMHC, Statistics Canada, and provincial sources. Figures are illustrative and subject to change.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- CONFIRMED SIGNALS -->
-  <section style="padding:3.5rem 2rem;background:var(--navy-deep);border-top:1px solid var(--navy-border);">
-    <div style="max-width:1100px;margin:0 auto;">
-      <div class="signals-grid">
-        <div style="background:var(--navy-card);padding:1.75rem 2rem;">
-          <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-muted);margin-bottom:0.6rem;">Migration · Stats Can 2024</div>
-          <div style="font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:var(--gold);margin-bottom:0.4rem;">200,000+</div>
-          <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.65;">Net new Albertans annually. Alberta led all provinces in interprovincial migration in 2023–2024.</div>
-        </div>
-        <div style="background:var(--navy-card);padding:1.75rem 2rem;">
-          <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-muted);margin-bottom:0.6rem;">Vacancy · CMHC 2025</div>
-          <div style="font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:var(--gold);margin-bottom:0.4rem;">~4%</div>
-          <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.65;">Edmonton rental vacancy. Population growth continues to outpace new purpose-built supply.</div>
-        </div>
-        <div style="background:var(--navy-card);padding:1.75rem 2rem;">
-          <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-muted);margin-bottom:0.6rem;">Tax · Canada Revenue Agency</div>
-          <div style="font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:var(--gold);margin-bottom:0.4rem;">$0</div>
-          <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.65;">Provincial sales tax. No PST, no HST — plus GST rebated on qualifying purpose-built rental housing.</div>
-        </div>
-        <div style="background:var(--navy-card);padding:1.75rem 2rem;">
-          <div style="font-size:0.66rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-muted);margin-bottom:0.6rem;">Employment · Stats Can + ATB Economics, June 2026</div>
-          <div style="font-family:'Cinzel',serif;font-size:1.6rem;font-weight:700;color:var(--gold);margin-bottom:0.4rem;">#1</div>
-          <div style="font-size:0.82rem;color:var(--text-muted);line-height:1.65;">Alberta leads all four major provinces in employment growth. Ontario, BC &amp; Quebec are now declining.</div>
-        </div>
-      </div>
-      <p style="font-size:0.68rem;color:var(--text-subtle);margin-top:0.8rem;letter-spacing:0.03em;">Sources: Statistics Canada, CMHC Rental Market Report, Canada Revenue Agency, ATB Economics. Figures are approximate and subject to change.</p>
     </div>
   </section>
 
