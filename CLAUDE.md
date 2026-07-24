@@ -4,7 +4,7 @@ This file is read automatically at the start of every session. Do not remove it.
 
 ## The Business
 
-**Multi Family Deals** is an Edmonton-based real estate investment firm run by brothers **Kunal Sarhadi** and **Ankit Sarhadi** — both licensed Real Estate Brokers. Kunal is licensed for residential and commercial real estate in BOTH Alberta and Ontario. Brokerages: **Standard Realty Co., 14811 114 Ave NW, Edmonton, AB T5M 4E5** (Alberta) and **Homelife Miracle Realty Inc.** (Ontario). Canonical credential line: "Kunal & Ankit Sarhadi, Real Estate Brokers | Standard Realty Co., Edmonton (AB) | Homelife Miracle Realty Inc. (ON)".
+**Multi Family Deals** is an Edmonton-based real estate investment firm run by brothers **Kunal Sarhadi** and **Ankit Sarhadi**. **Kunal is the licensed Real Estate Broker** — licensed for residential and commercial real estate in BOTH Alberta and Ontario. **Ankit is Co-Founder — Client Service (NOT a licensed broker; keep him off all broker/credential/licensing lines site-wide to avoid confusion — owner decision).** Brokerages: **Standard Realty Co., 14811 114 Ave NW, Edmonton, AB T5M 4E5** (Alberta) and **Homelife Miracle Realty Inc.** (Ontario). Canonical credential line (Kunal only): "Kunal Sarhadi, Real Estate Broker | Standard Realty Co., Edmonton (AB) | Homelife Miracle Realty Inc. (ON)". Genuine client testimonials that mention Ankit by name are fine to keep — those are real reviews, not credential claims.
 
 The firm helps investors acquire purpose-built multi-family properties in Edmonton, Alberta using the **CMHC MLI Select** program — which offers 5% down and 50-year amortization on qualifying builds.
 
