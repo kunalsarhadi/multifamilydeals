@@ -40,7 +40,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       --on-dark:#F5F1E8; --on-dark-muted:#B9B0A0;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; overflow-x: hidden; min-width: 320px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-font-smoothing: antialiased; overflow-x: hidden; min-width: 320px; }
     body { background: var(--paper); color: var(--ink); font-family: 'Space Grotesk', sans-serif; font-weight: 400; overflow-x: hidden; min-width: 320px; width: 100%; }
     ::selection { background: #1C1813; color: #F5F1E8; }
     a { color: var(--accent); text-decoration: none; }
@@ -55,7 +55,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .skip-link:focus { left: 0; }
 
     /* ---------- NAV (light) ---------- */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 60; background: rgba(245,241,232,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line2); transition: background .3s, box-shadow .3s; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 60; background: rgba(245,241,232,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line2); transition: background .3s, box-shadow .3s; -webkit-transform: translateZ(0); transform: translateZ(0); -webkit-backface-visibility: hidden; backface-visibility: hidden; }
     .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 clamp(18px,4vw,44px); height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
     .nav-logo { font-family: 'Newsreader', serif; font-size: 1.12rem; font-weight: 600; letter-spacing: .14em; color: var(--ink); white-space: nowrap; flex-shrink: 0; }
     .nav-logo span { color: var(--accent); }
@@ -100,6 +100,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
       html { scroll-behavior: auto; }
     }
+    .swipe-hint { display: none; }
+    @media (max-width: 760px) { .swipe-hint { display: block; font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); margin-top: 10px; } }
     @media (min-width: 1440px) { html { font-size: 17px; } }
   </style>
 <!-- Meta Pixel Code -->
@@ -277,7 +279,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(1.9rem,4vw,3rem);line-height:1.06;letter-spacing:-0.02em;margin-bottom:16px;">Edmonton vs Toronto: same strategy, different outcome.</h2>
         <p style="font-size:1rem;line-height:1.7;color:#4A443B;">An 8-plex in Edmonton and an 8-plex in Toronto are not the same investment. MLI Select is national — the capital-efficiency gap is not.</p>
       </div>
-      <div class="reveal" data-reveal style="border:1px solid #DDD4C2;background:#FBF8F1;overflow-x:auto;" tabindex="0" role="region" aria-label="Edmonton vs Toronto comparison table">
+      <div class="reveal" data-reveal style="border:1px solid #DDD4C2;background:#FBF8F1;overflow-x:auto;-webkit-overflow-scrolling:touch;" tabindex="0" role="region" aria-label="Edmonton vs Toronto comparison table">
         <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;min-width:560px;">
           <div style="padding:14px 20px;font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;border-bottom:1px solid #E4DBCB;">Metric</div>
           <div style="padding:14px 20px;font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:rgba(156,107,52,0.07);border-bottom:1px solid #E4DBCB;text-align:center;">Edmonton 8-Plex</div>
@@ -308,6 +310,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div style="padding:16px 20px;font-size:.9rem;color:#6B6459;text-align:center;">Insufficient for 5% down</div>
         </div>
       </div>
+      <div class="swipe-hint">← Swipe the table to see all columns →</div>
       <p class="reveal" data-reveal style="font-size:.7rem;line-height:1.6;color:#8A8172;margin-top:16px;">All figures are approximate, illustrative estimates based on publicly available data for purpose-built 8-unit assets. GST rebate is subject to CRA eligibility — consult your tax advisor. Cap rates, rents, and prices vary and are subject to change. Not financial advice.</p>
       <div class="reveal" data-reveal style="text-align:center;margin-top:36px;">
         <a href="contact.html" data-conversion="book_call" data-magnetic class="btn-brass" style="display:inline-block;padding:16px 36px;border-radius:2px;font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;">Run My Numbers on a Call</a>
