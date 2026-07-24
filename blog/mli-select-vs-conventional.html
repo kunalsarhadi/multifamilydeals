@@ -129,6 +129,11 @@ nav{-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-backface-vis
   body { padding-bottom: 62px; }
 }
 @media (max-width: 360px) { .mcta-sub { font-size: .55rem; } .mcta-btn { padding: 12px 14px; font-size: .68rem; } }
+
+/* a11y: skip-link + keyboard focus ring */
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--accent,#9C6B34);color:#fff;padding:.5rem 1rem;font-size:.85rem;font-weight:700;z-index:9999;text-decoration:none;}
+.skip-link:focus{left:0;}
+:focus-visible{outline:2px solid var(--accent,#9C6B34);outline-offset:3px;border-radius:2px;}
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -154,6 +159,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between MLI Select and conventional multi-family financing?","acceptedAnswer":{"@type":"Answer","text":"MLI Select offers 5% down and 50-year amortization on purpose-built rental properties with 5+ units. Conventional investment financing requires 20% down and amortizes over 25–30 years. On the same $1.8M property, MLI Select requires $90,000 vs $360,000 conventional — and generates positive cash flow where conventional often does not."}},{"@type":"Question","name":"Is MLI Select better than conventional financing for multi-family?","acceptedAnswer":{"@type":"Answer","text":"For investors who qualify, yes. MLI Select's 5% down preserves capital for multiple acquisitions and the 50-year amortization produces significantly better monthly cash flow. The tradeoff is the CMHC insurance premium (added to the loan) and eligibility requirements including a 25% net worth threshold and purpose-built new construction only."}}]}</script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBW5QJQT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -164,7 +170,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a href="index.html" class="nav-link">← All Articles</a><a href="../inventory.html" class="nav-link">Inventory</a>
 <a href="../contact.html" data-conversion="book_call" class="nav-cta">Book Discovery Call</a></div></div></nav>
 <div id="readbar"></div>
-<section class="hero"><div class="hero-in">
+<section id="main" class="hero"><div class="hero-in">
 <div class="eyebrow">Financing Comparison</div><h1>MLI Select vs <span class="gold">Conventional Financing:</span> 5% Down vs 20% Down</h1><div class="meta"><span>By Kunal Sarhadi, Real Estate Broker</span> <span>May 2026</span> <span>8 min read</span></div>
 </div></section>
 <article><div class="prose">

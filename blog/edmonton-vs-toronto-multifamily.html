@@ -71,6 +71,11 @@ article table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max
   body { padding-bottom: 62px; }
 }
 @media (max-width: 360px) { .mcta-sub { font-size: .55rem; } .mcta-btn { padding: 12px 14px; font-size: .68rem; } }
+
+/* a11y: skip-link + keyboard focus ring */
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--accent,#9C6B34);color:#fff;padding:.5rem 1rem;font-size:.85rem;font-weight:700;z-index:9999;text-decoration:none;}
+.skip-link:focus{left:0;}
+:focus-visible{outline:2px solid var(--accent,#9C6B34);outline-offset:3px;border-radius:2px;}
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -95,6 +100,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://multi-family-deals.ca/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://multi-family-deals.ca/blog/"},{"@type":"ListItem","position":3,"name":"Edmonton vs Toronto Multi-Family","item":"https://multi-family-deals.ca/blog/edmonton-vs-toronto-multifamily.html"}]}</script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBW5QJQT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -115,7 +121,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div id="readbar" style="position:fixed;top:72px;left:0;height:2px;width:0;background:var(--accent,#9C6B34);z-index:61;transition:width .1s linear;"></div>
 
-  <section style="padding-top:72px;background:#16130E;color:#F5F1E8;position:relative;overflow:hidden;">
+  <section id="main" style="padding-top:72px;background:#16130E;color:#F5F1E8;position:relative;overflow:hidden;">
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 50% 35%,rgba(196,154,94,0.12),transparent 65%);pointer-events:none;"></div>
     <div style="max-width:800px;margin:0 auto;padding:clamp(48px,7vw,92px) clamp(18px,4vw,44px) clamp(40px,5vw,56px);position:relative;z-index:1;">
       <div style="animation:heroUp .7s ease both;display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-l,#C79A5E);margin-bottom:20px;"><span style="display:block;width:24px;height:1px;background:var(--accent-l,#C79A5E);"></span>Market Analysis</div>

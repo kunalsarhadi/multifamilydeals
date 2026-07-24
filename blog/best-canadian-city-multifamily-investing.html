@@ -129,6 +129,11 @@ nav{-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-backface-vis
   body { padding-bottom: 62px; }
 }
 @media (max-width: 360px) { .mcta-sub { font-size: .55rem; } .mcta-btn { padding: 12px 14px; font-size: .68rem; } }
+
+/* a11y: skip-link + keyboard focus ring */
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--accent,#9C6B34);color:#fff;padding:.5rem 1rem;font-size:.85rem;font-weight:700;z-index:9999;text-decoration:none;}
+.skip-link:focus{left:0;}
+:focus-visible{outline:2px solid var(--accent,#9C6B34);outline-offset:3px;border-radius:2px;}
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -154,6 +159,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best city in Canada for multi-family real estate investing in 2026?","acceptedAnswer":{"@type":"Answer","text":"Edmonton is the best Canadian city for multi-family investing in 2026. It is the only major market where the CMHC MLI Select program is mathematically viable — the rent-to-cost ratio produces a DSCR above 1.10x at 95% LTV. Combined with no land transfer tax, no provincial sales tax, Canada-leading population growth, and 40–50% lower entry prices than Toronto or Vancouver, Edmonton offers the strongest risk-adjusted returns for purpose-built multi-family investors."}},{"@type":"Question","name":"Why doesn't CMHC MLI Select work in Toronto or Vancouver?","acceptedAnswer":{"@type":"Answer","text":"CMHC MLI Select is technically available in Toronto and Vancouver, but its core advantage — 5% down — does not work there. DSCR 1.10x can be reached in Toronto with roughly 15% down, and in Vancouver with closer to 20% down, because a larger deposit means less debt and lower debt service. But that defeats the purpose: the entire value of MLI Select is 5% down. If you need 15–20% down to qualify, you have lost the leverage advantage and the capital efficiency that makes the program worth using. Edmonton is the only major Canadian market where 5% down consistently produces DSCR above 1.10x."}},{"@type":"Question","name":"Is Edmonton real estate a good investment in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Edmonton is among Canada's fastest-growing major cities by population, with over 200,000 people moving to Alberta in 2024 alone. The vacancy rate sits around 4%, demand is sustained by interprovincial migrants who rent first, and the city has no land transfer tax, no provincial sales tax, and a purpose-built rental GST rebate. Purpose-built 6–12 plex properties acquired using CMHC MLI Select are producing positive cash flow from day one at 5% down."}},{"@type":"Question","name":"How does Edmonton compare to Calgary for multi-family investing?","acceptedAnswer":{"@type":"Answer","text":"Both cities benefit from Alberta's favourable tax environment. However, Calgary's land and construction costs have risen significantly — comparable multi-family projects in Calgary now cost $300,000–$400,000 more than equivalent Edmonton builds, which compresses the DSCR margin and reduces capital efficiency. Edmonton remains the stronger market for investors seeking maximum leverage through CMHC MLI Select."}}]}</script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBW5QJQT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -164,7 +170,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a href="index.html" class="nav-link">← All Articles</a><a href="../inventory.html" class="nav-link">Inventory</a>
 <a href="../contact.html" data-conversion="book_call" class="nav-cta">Book Discovery Call</a></div></div></nav>
 <div id="readbar"></div>
-<section class="hero"><div class="hero-in">
+<section id="main" class="hero"><div class="hero-in">
 <div class="eyebrow">Market Analysis</div><h1>Best Canadian City for <span class="gold">Multi-Family Investing</span> in 2026</h1><div class="meta"><span>By Kunal Sarhadi, Real Estate Broker</span> <span>May 2026</span> <span>14 min read</span></div>
 </div></section>
 <article><div class="prose">

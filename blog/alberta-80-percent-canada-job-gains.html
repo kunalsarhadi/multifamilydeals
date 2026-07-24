@@ -129,6 +129,11 @@ nav{-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-backface-vis
   body { padding-bottom: 62px; }
 }
 @media (max-width: 360px) { .mcta-sub { font-size: .55rem; } .mcta-btn { padding: 12px 14px; font-size: .68rem; } }
+
+/* a11y: skip-link + keyboard focus ring */
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--accent,#9C6B34);color:#fff;padding:.5rem 1rem;font-size:.85rem;font-weight:700;z-index:9999;text-decoration:none;}
+.skip-link:focus{left:0;}
+:focus-visible{outline:2px solid var(--accent,#9C6B34);outline-offset:3px;border-radius:2px;}
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -153,6 +158,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://multi-family-deals.ca/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://multi-family-deals.ca/blog/"},{"@type":"ListItem","position":3,"name":"Alberta 80 Percent of Canada Job Gains","item":"https://multi-family-deals.ca/blog/alberta-80-percent-canada-job-gains"}]}</script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBW5QJQT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -163,7 +169,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a href="index.html" class="nav-link">← All Articles</a><a href="../inventory.html" class="nav-link">Inventory</a>
 <a href="../contact.html" data-conversion="book_call" class="nav-cta">Book Discovery Call</a></div></div></nav>
 <div id="readbar"></div>
-<section class="hero"><div class="hero-in">
+<section id="main" class="hero"><div class="hero-in">
 <div class="eyebrow">Market News</div><h1>Alberta Just Captured 80% of Canada's Job Growth. <span class="gold">Here's What That Means for Rental Investors</span></h1><div class="meta"><span>By Kunal Sarhadi, Real Estate Broker</span> <span>July 2026</span> <span>7 min read</span></div>
 </div></section>
 <article><div class="prose">

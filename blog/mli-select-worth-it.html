@@ -129,6 +129,11 @@ nav{-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-backface-vis
   body { padding-bottom: 62px; }
 }
 @media (max-width: 360px) { .mcta-sub { font-size: .55rem; } .mcta-btn { padding: 12px 14px; font-size: .68rem; } }
+
+/* a11y: skip-link + keyboard focus ring */
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--accent,#9C6B34);color:#fff;padding:.5rem 1rem;font-size:.85rem;font-weight:700;z-index:9999;text-decoration:none;}
+.skip-link:focus{left:0;}
+:focus-visible{outline:2px solid var(--accent,#9C6B34);outline-offset:3px;border-radius:2px;}
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -154,6 +159,7 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is CMHC MLI Select worth it?","acceptedAnswer":{"@type":"Answer","text":"For qualifying Canadian investors, yes. MLI Select offers 5% down and 50-year amortization on purpose-built rental properties — terms unavailable anywhere else in Canada. The main constraints are a 25% net worth requirement, strict DSCR underwriting, and a 90-day CMHC approval process. It is not right for every investor, but for those who qualify, no other program comes close."}},{"@type":"Question","name":"What are the downsides of CMHC MLI Select?","acceptedAnswer":{"@type":"Answer","text":"The main limitations are: net worth must equal at least 25% of total project cost; open to Canadian citizens and permanent residents only; the project must meet CMHC's DSCR threshold of 1.10x (not all markets qualify); CMHC approval takes approximately 90 days; and the program applies to purpose-built new construction only."}},{"@type":"Question","name":"Who does not qualify for MLI Select?","acceptedAnswer":{"@type":"Answer","text":"Foreign nationals, investors whose net worth falls below 25% of total project cost, and investors purchasing existing (resale) properties rather than purpose-built new construction. In Ontario and BC, high property prices mean rents cannot support the 1.10x DSCR threshold at 95% LTV — CMHC raises the required deposit until the math clears, often 2 to 4 times the Edmonton deposit for the same-size building."}}]}</script>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBW5QJQT"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -164,7 +170,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a href="index.html" class="nav-link">← All Articles</a><a href="../inventory.html" class="nav-link">Inventory</a>
 <a href="../contact.html" data-conversion="book_call" class="nav-cta">Book Discovery Call</a></div></div></nav>
 <div id="readbar"></div>
-<section class="hero"><div class="hero-in">
+<section id="main" class="hero"><div class="hero-in">
 <div class="eyebrow">Program Analysis</div><h1>Is CMHC MLI Select <span class="gold">Worth It?</span> Honest Pros &amp; Cons (2026)</h1><div class="meta"><span>By Kunal Sarhadi, Real Estate Broker</span> <span>May 2026</span> <span>9 min read</span></div>
 </div></section>
 <article><div class="prose">
