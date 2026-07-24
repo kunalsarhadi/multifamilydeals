@@ -114,6 +114,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 /* nav-interactivity-fix */
 nav { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: rgba(245,241,232,0.97) !important; }
 .mobile-nav { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: #F5F1E8 !important; }
+
+/* mcta-bar */
+.mcta { display: none; }
+@media (max-width: 1024px) {
+  .mcta { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 58; align-items: center; justify-content: space-between; gap: 10px; background: rgba(22,19,14,0.98); border-top: 1px solid #2A2419; box-shadow: 0 -8px 24px -14px rgba(0,0,0,0.55); padding: 9px 70px 9px 16px; padding-bottom: calc(9px + env(safe-area-inset-bottom, 0px)); -webkit-transform: translateZ(0); transform: translateZ(0); }
+  .mcta-proof { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
+  .mcta-stars { color: #C79A5E; font-size: .82rem; letter-spacing: 2px; }
+  .mcta-sub { font-size: .6rem; letter-spacing: .03em; color: #B9B0A0; white-space: nowrap; }
+  .mcta-btn { background: var(--accent, #9C6B34); color: #16130E; font-weight: 700; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; padding: 12px 18px; border-radius: 2px; white-space: nowrap; flex-shrink: 0; text-decoration: none; }
+  .mcta-btn:hover { background: var(--accent-l, #C79A5E); color: #16130E; }
+  body { padding-bottom: 62px; }
+}
+@media (max-width: 360px) { .mcta-sub { font-size: .55rem; } .mcta-btn { padding: 12px 14px; font-size: .68rem; } }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -794,5 +807,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     checkScroll();
   })();
   </script>
+<!-- mcta-bar -->
+<div class="mcta" role="region" aria-label="Book a discovery call">
+  <div class="mcta-proof">
+    <span class="mcta-stars" aria-hidden="true">★★★★★</span>
+    <span class="mcta-sub">5.0 · 160+ Google reviews</span>
+  </div>
+  <a href="contact.html" data-conversion="book_call" class="mcta-btn">Book a Call</a>
+</div>
 </body>
 </html>
