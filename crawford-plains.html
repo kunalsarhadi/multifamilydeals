@@ -392,6 +392,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var GRID_MAX = 7;
     var cur = 'upper1', lbIndex = 0;
     function url(id, w){ return 'https://lh3.googleusercontent.com/d/' + id + '=w' + (w||1200); }
+    function local(suite, i){ return 'images/crawford/' + suite + '/' + (i+1<10?'0':'') + (i+1) + '.webp'; }
     var grid = document.getElementById('galGrid');
     var titleEl = document.getElementById('suiteTitle');
     var descEl = document.getElementById('suiteDesc');
@@ -409,10 +410,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         card.className = 'gal-card' + (i===0 ? ' hero' : '');
         card.setAttribute('data-idx', i);
         var im = document.createElement('img');
-        im.src = url(s.ids[i], i===0 ? 1600 : 800);
+        im.src = local(cur, i);
         im.alt = s.label + ' interior ' + (i+1);
         im.loading = 'lazy';
-        im.onerror = (function(cd){ return function(){ cd.setAttribute('data-failed','1'); cd.innerHTML = '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:14px;background:#EFE9DB;color:#6E6656;font-size:.72rem;letter-spacing:.04em;"><span style="font-family:\'Newsreader\',serif;font-size:1.4rem;color:#9C6B34;">◵</span><span>Photo loading — <a href="https://unbranded.youriguide.com/4836_11a_ave_nw_edmonton_ab/" target="_blank" rel="noopener" data-conversion="virtual_tour_view" style="color:#9C6B34;">open the 3D tour ↗</a></span></div>'; }; })(card);
+        im.onerror = (function(cd, image, id, w){ return function(){ if(!image.dataset.fb){ image.dataset.fb='1'; image.src = url(id, w); return; } cd.setAttribute('data-failed','1'); cd.innerHTML = '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:14px;background:#EFE9DB;color:#6E6656;font-size:.72rem;letter-spacing:.04em;"><span style="font-family:\'Newsreader\',serif;font-size:1.4rem;color:#9C6B34;">◵</span><span>Photo loading — <a href="https://unbranded.youriguide.com/4836_11a_ave_nw_edmonton_ab/" target="_blank" rel="noopener" data-conversion="virtual_tour_view" style="color:#9C6B34;">open the 3D tour ↗</a></span></div>'; }; })(card, im, s.ids[i], i===0 ? 1600 : 800);
         card.appendChild(im);
         (function(idx){ card.addEventListener('click', function(){ if(this.getAttribute('data-failed')) return; openLb(idx); }); })(i);
         grid.appendChild(card);
@@ -431,10 +432,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var lb = document.getElementById('lightbox');
     var lbImg = document.getElementById('lbImg');
     var lbCount = document.getElementById('lbCount');
-    lbImg.onerror = function(){ lbCount.textContent = 'Photo temporarily unavailable — open the 3D tour at youriguide.com'; };
+    lbImg.onerror = function(){ if(!lbImg.dataset.fb){ lbImg.dataset.fb='1'; lbImg.src = url(SUITES[cur].ids[lbIndex], 1600); return; } lbCount.textContent = 'Photo temporarily unavailable — open the 3D tour at youriguide.com'; };
     function paintLb(){
       var s = SUITES[cur];
-      lbImg.src = url(s.ids[lbIndex], 1600);
+      lbImg.removeAttribute('data-fb');
+      lbImg.src = local(cur, lbIndex);
       lbImg.alt = s.label + ' interior ' + (lbIndex+1);
       lbCount.textContent = (lbIndex+1) + ' / ' + s.ids.length + ' — ' + s.label;
     }
