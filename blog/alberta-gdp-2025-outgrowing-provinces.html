@@ -134,6 +134,9 @@ nav{-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-backface-vis
 .skip-link{position:absolute;left:-9999px;top:0;background:var(--accent,#9C6B34);color:#fff;padding:.5rem 1rem;font-size:.85rem;font-weight:700;z-index:9999;text-decoration:none;}
 .skip-link:focus{left:0;}
 :focus-visible{outline:2px solid var(--accent,#9C6B34);outline-offset:3px;border-radius:2px;}
+
+/* nav-cta-mobile-fix */
+@media (max-width: 1024px) { nav a[data-conversion="book_call"] { display: none !important; } .nav-in, nav .nav-in { flex-wrap: nowrap !important; } }
 </style>
 <!-- Meta Pixel Code -->
 <script>
