@@ -36,7 +36,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <style>
     :root {
       --paper:#F5F1E8; --paper-alt:#EFE9DB; --card:#FBF8F1;
-      --ink:#1C1813; --body:#4A443B; --muted:#8A8172; --faint:#A79E8E;
+      --ink:#1C1813; --body:#4A443B; --muted:#6E6656; --faint:#726A5C;
       --line:#DDD4C2; --line2:#E4DBCB; --line3:#D9D0C0;
       --accent:#9C6B34; --accent-h:#7A5326; --accent-l:#C79A5E; --accent2:#B0563F;
       --espresso:#16130E; --footer:#0E0C09; --green:#2C8F5E;
@@ -412,7 +412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         im.src = url(s.ids[i], i===0 ? 1600 : 800);
         im.alt = s.label + ' interior ' + (i+1);
         im.loading = 'lazy';
-        im.onerror = (function(cd){ return function(){ cd.setAttribute('data-failed','1'); cd.innerHTML = '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:14px;background:#EFE9DB;color:#8A8172;font-size:.72rem;letter-spacing:.04em;"><span style="font-family:\'Newsreader\',serif;font-size:1.4rem;color:#9C6B34;">◵</span><span>Photo loading — <a href="https://unbranded.youriguide.com/4836_11a_ave_nw_edmonton_ab/" target="_blank" rel="noopener" data-conversion="virtual_tour_view" style="color:#9C6B34;">open the 3D tour ↗</a></span></div>'; }; })(card);
+        im.onerror = (function(cd){ return function(){ cd.setAttribute('data-failed','1'); cd.innerHTML = '<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:14px;background:#EFE9DB;color:#6E6656;font-size:.72rem;letter-spacing:.04em;"><span style="font-family:\'Newsreader\',serif;font-size:1.4rem;color:#9C6B34;">◵</span><span>Photo loading — <a href="https://unbranded.youriguide.com/4836_11a_ave_nw_edmonton_ab/" target="_blank" rel="noopener" data-conversion="virtual_tour_view" style="color:#9C6B34;">open the 3D tour ↗</a></span></div>'; }; })(card);
         card.appendChild(im);
         (function(idx){ card.addEventListener('click', function(){ if(this.getAttribute('data-failed')) return; openLb(idx); }); })(i);
         grid.appendChild(card);
