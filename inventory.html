@@ -674,6 +674,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     }
     document.querySelectorAll('.size-btn').forEach(function(b){ b.addEventListener('click', function(){ paintFilter(b.getAttribute('data-size')); }); });
+    // Order available cards ascending by plex size (so "All" reads 6 → 7 → 8 …)
+    (function(){
+      var grid = document.getElementById('propGrid');
+      if (!grid) return;
+      [].slice.call(grid.querySelectorAll('[data-card]'))
+        .sort(function(a,b){ return (parseInt(a.getAttribute('data-size'),10)||0) - (parseInt(b.getAttribute('data-size'),10)||0); })
+        .forEach(function(c){ grid.appendChild(c); });
+    })();
     paintFilter('all');
 
     // Collapsible archive
