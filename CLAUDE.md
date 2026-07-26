@@ -110,10 +110,10 @@ Do NOT hand-edit the Available / Sold Conditional / Previously Sold counts on in
 - No provincial sales tax (long-standing policy; NOT constitutionally mandated — never claim it is; why-alberta.html words this correctly)
 - Lowest provincial income tax in Canada
 - Edmonton home prices 40–50% below Toronto/Vancouver — preserves cap rates
-- Canada's #1 interprovincial migration destination
+- Among Canada's strongest for interprovincial migration (soften '#1' without a named source)
 - 200,000+ people moved to Alberta in 2024 — creates sustained rental demand
 - New arrivals rent first — stable, employed tenants
-- Purpose-built rental GST exemption applies to CMHC MLI Select builds
+- Purpose-built rental GST exemption may apply to qualifying CMHC MLI Select builds (subject to CRA eligibility)
 - Alberta New Home Warranty Program covers all builds
 - CMHC MLI Select requires separate utility meters per unit — built to spec
 
