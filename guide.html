@@ -105,6 +105,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .pdf-modal-title { font-family: 'Newsreader', serif; font-weight: 500; font-size: 1.6rem; color: var(--ink); margin-bottom: 6px; }
     .pdf-modal-sub { font-size: .88rem; color: var(--body); line-height: 1.6; margin-bottom: 18px; }
     .pdf-modal-form { width: 100%; height: 520px; }
+    .pdf-modal-fallback { font-size: .8rem; color: var(--muted); line-height: 1.55; margin-top: 14px; text-align: center; }
+    .pdf-modal-fallback-link { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+    .pdf-modal-fallback.is-ready { color: var(--body); font-weight: 500; }
+    .pdf-modal-fallback.is-ready .pdf-modal-fallback-link { color: var(--accent-h, var(--accent)); }
 
     @media (prefers-reduced-motion: reduce) {
       * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
@@ -429,6 +433,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         ></iframe>
         <script src="https://link.msgsndr.com/js/form_embed.js"></script>
       </div>
+      <p class="pdf-modal-fallback">
+        Your download starts automatically after you submit. If it doesn't,
+        <a href="/assets/CMHC-MLI-Select-Investor-Guide.pdf" download="CMHC MLI Select Investor Guide — Multi Family Deals.pdf" target="_blank" rel="noopener" class="pdf-modal-fallback-link" id="pdfFallbackLink" data-conversion="guide_download">download the guide here</a>.
+      </p>
     </div>
   </div>
 
@@ -495,30 +503,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     pdfModalClose.addEventListener('click', closePdfModal);
     pdfModalOverlay.addEventListener('click', (e) => { if (e.target === pdfModalOverlay) closePdfModal(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && pdfModalOverlay.classList.contains('open')) closePdfModal(); });
+    const PDF_URL = '/assets/CMHC-MLI-Select-Investor-Guide.pdf';
+    const pdfFallback = document.querySelector('.pdf-modal-fallback');
+    const pdfFallbackLink = document.getElementById('pdfFallbackLink');
     let _pdfTriggered = false;
+    // Best-effort automatic download. Browsers may block a programmatic click that
+    // isn't a direct user gesture, so we ALSO promote the always-present manual
+    // link below the form — that click can never be blocked.
     function triggerPdfDownload() {
       if (_pdfTriggered) return;
       _pdfTriggered = true;
       if (typeof gtag === 'function') gtag('event', 'guide_download', { event_category: 'lead', event_label: 'mli_select_guide' });
       if (window.dataLayer) window.dataLayer.push({ event: 'guide_download', content_name: 'mli_select_guide' });
       if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'mli_select_guide' });
+      // Highlight the manual fallback so the user always has a reliable path.
+      if (pdfFallback) {
+        pdfFallback.classList.add('is-ready');
+        pdfFallback.innerHTML = 'Your guide is ready. <a href="' + PDF_URL + '" download="CMHC MLI Select Investor Guide — Multi Family Deals.pdf" target="_blank" rel="noopener" class="pdf-modal-fallback-link" data-conversion="guide_download">Click here to download the PDF</a> if it doesn’t start automatically.';
+      }
       setTimeout(() => {
-        const a = document.createElement('a');
-        a.href = '/assets/CMHC-MLI-Select-Investor-Guide.pdf';
-        a.download = 'CMHC MLI Select Investor Guide — Multi Family Deals.pdf';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        setTimeout(closePdfModal, 800);
-        _pdfTriggered = false;
-      }, 1500);
+        try {
+          const a = document.createElement('a');
+          a.href = PDF_URL;
+          a.download = 'CMHC MLI Select Investor Guide — Multi Family Deals.pdf';
+          a.rel = 'noopener';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        } catch (err) { /* manual link remains available */ }
+      }, 900);
     }
     window.addEventListener('message', (e) => {
       if (e.origin !== 'https://api.leadconnectorhq.com' && e.origin !== 'https://link.msgsndr.com') return;
       const d = e.data;
       if (!d) return;
-      const t = typeof d === 'string' ? d : (d.type || d.event || '');
-      if (/submit|success|complete/i.test(String(t))) triggerPdfDownload();
+      const raw = typeof d === 'string' ? d : JSON.stringify(d);
+      if (/submit|success|complete|thank|download/i.test(raw)) triggerPdfDownload();
     });
   </script>
 
