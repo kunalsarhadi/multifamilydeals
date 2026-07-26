@@ -251,3 +251,7 @@ When the user says "sync inventory", "update inventory", or "update the hotlist"
 - **Phone:** +14162007010
 - **Email:** sales@teamsarhadi.com
 - **WhatsApp group:** https://chat.whatsapp.com/BYNf65k8iSf3fNOIrkZUvZ
+
+## Message Templates
+
+Owner-approved client message templates live in **`docs/message-templates.md`**. When the owner says **"give me the allocation request form for {NAME}"**, return the Allocation Request template from that file verbatim with `{NAME}` swapped (change property/form link only if specified). Do not reword without owner sign-off — the copy is compliance-checked.
