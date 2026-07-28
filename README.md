@@ -11,19 +11,29 @@ Edmonton-based multi-family real estate investment firm. Helps out-of-province i
 
 ## PDF Guide
 
-`assets/CMHC-MLI-Select-Investor-Guide.pdf` is a static PDF snapshot of `guide.html`.
+The live investor guide is **`assets/CMHC-MLI-Select-Investor-Guide-v2.pdf`** — a
+designed PDF supplied by the owner (Canva), **not** a generated snapshot of
+`guide.html`. Do not overwrite it with `generate-pdf.js` output.
 
-**To regenerate after updating guide.html:**
+The filename is **versioned**. `guide.html` points at the `-vN` file in two
+places: the `PDF_URL` constant and the manual fallback `<a href>` in the modal.
 
-```bash
-cd /home/user/multifamilydeals
-node generate-pdf.js
-git add assets/CMHC-MLI-Select-Investor-Guide.pdf
-git commit -m "regen: update investor guide PDF"
-git push origin main
-```
+**To publish an updated guide:**
 
-Requires Node.js and the `puppeteer` dev dependency (`npm install` to restore if needed).
+1. Add the new file as the next version — `assets/CMHC-MLI-Select-Investor-Guide-v3.pdf`.
+2. Update **both** references in `guide.html` (`PDF_URL` and the fallback link `href`).
+3. Leave the older `-vN` files in `assets/` so links already shared with investors
+   keep resolving.
+4. Commit and push to `main`.
+
+Versioning the filename is what forces browsers and any CDN past a cached copy of
+the previous guide. The unversioned `CMHC-MLI-Select-Investor-Guide.pdf` is
+retained only for historical links.
+
+**Download reliability:** the modal always renders a visible manual download link.
+The automatic download (fired from the GHL form's `postMessage`) is best-effort
+only — browsers can block a programmatic click that isn't a direct user gesture,
+so the manual link is the guarantee. Don't remove it.
 
 ## Version history
 See `VERSION.md` for snapshot log.

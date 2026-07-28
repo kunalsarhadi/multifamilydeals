@@ -435,7 +435,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <p class="pdf-modal-fallback">
         Your download starts automatically after you submit. If it doesn't,
-        <a href="/assets/CMHC-MLI-Select-Investor-Guide.pdf" download="CMHC MLI Select Investor Guide — Multi Family Deals.pdf" target="_blank" rel="noopener" class="pdf-modal-fallback-link" id="pdfFallbackLink" data-conversion="guide_download">download the guide here</a>.
+        <a href="/assets/CMHC-MLI-Select-Investor-Guide-v2.pdf" download="CMHC MLI Select Investor Guide — Multi Family Deals.pdf" target="_blank" rel="noopener" class="pdf-modal-fallback-link" id="pdfFallbackLink" data-conversion="guide_download">download the guide here</a>.
       </p>
     </div>
   </div>
@@ -503,7 +503,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     pdfModalClose.addEventListener('click', closePdfModal);
     pdfModalOverlay.addEventListener('click', (e) => { if (e.target === pdfModalOverlay) closePdfModal(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && pdfModalOverlay.classList.contains('open')) closePdfModal(); });
-    const PDF_URL = '/assets/CMHC-MLI-Select-Investor-Guide.pdf';
+    // Versioned filename: bumping the -vN suffix forces browsers/CDNs past any
+    // cached copy of an older guide. Keep prior versions in /assets so links
+    // already shared with investors continue to resolve.
+    const PDF_URL = '/assets/CMHC-MLI-Select-Investor-Guide-v2.pdf';
     const pdfFallback = document.querySelector('.pdf-modal-fallback');
     const pdfFallbackLink = document.getElementById('pdfFallbackLink');
     let _pdfTriggered = false;
