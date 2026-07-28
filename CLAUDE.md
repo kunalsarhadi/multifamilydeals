@@ -154,6 +154,24 @@ When the user says "sync inventory", "update inventory", or "update the hotlist"
 4. Update inventory.html to match the sheet
 5. Commit and push to main
 
+**NOTE:** `.env` is gitignored, so a fresh clone (every Claude Code on the web session) has **no** `SHEETS_API_KEY`. In that case read the sheet through the **Google Drive connector** instead: `read_file_content` with fileId `1rv3GdNkdN89AmNthj1JeL2ulSgKL9x3NnIL7UxCbn20`. It renders the tab as a markdown table.
+
+### "Sync line N" — the owner's standing workflow (owner instruction, July 2026)
+
+When the owner says **"line N on the hotlist is a new inventory"** / **"sync line N"**, do the whole job without asking: publish that listing to inventory.html **with its Drive package link AND its elevation image**.
+
+1. **Read the sheet** (Drive connector, above). Columns: PROPERTY TYPE · STATUS · PACKAGE · NEIGHBORHOOD · REGION · CASH FLOW · DSCR · TOTAL DEPOSIT · DEPOSIT STRUCTURE · COMPLETION DATE.
+2. **Resolve the row.** The Drive markdown render is **off by one** versus real sheet rows (owner's "line 60" = the 61st rendered row). So don't trust the count alone — the target is the AVAILABLE row that is **not yet on inventory.html**, normally the **last** row of the AVAILABLE block (new listings are appended). Cross-check the neighborhood against the site before building. Only ask if two candidates both fit.
+3. **Get the Drive package folder.** The sheet's PACKAGE cell is a hyperlink, and **the text export strips URLs** — you will not see it in the sheet content. Find it instead by searching Drive for a folder titled like the property: `title contains '<NEIGHBORHOOD>' and mimeType = 'application/vnd.google-apps.folder'`. Naming convention is `8Plex <Neighborhood>` (watch for older same-name folders — pick the one whose `createdTime` is newest / matches the new listing). Folders live under parent `1klHG36SRQQRNNmjuHKYsVYGfXFFhkoyU`.
+4. **Get the image.** Each package folder holds `5. Elevation.png` (alongside `1. Brochure.pdf`, `2. Proforma.pdf`, `3. Location.pdf`, `4. Floor Plan.pdf`). List the folder with `parentId = '<folderId>'`.
+5. **Confirm sharing** on both the folder and the PNG with `get_file_permissions` — you need `{"role":"reader","type":"anyone"}` or visitors can't open them.
+6. **Build the card** by copying an existing `[data-card]` `<article>` and swapping neighborhood, cash flow, DSCR, completion. The CTA must be **"View Full Package →"** with `data-conversion="package_view"` → `https://drive.google.com/drive/folders/<folderId>?usp=sharing`. Never leave it as a contact.html/`book_call` fallback — `package_view` is what feeds the Meta retargeting audience.
+7. **Counts need no edits** — Available / headline auto-derive from the cards.
+
+**Image hosting gotcha (important):** this container's network policy **blocks `drive.google.com` and `lh3.googleusercontent.com`** (403 on CONNECT), so the elevation PNG **cannot be downloaded and committed** to `images/inv/` from a web session, and cannot be visually verified in a headless render. Reference it directly instead — `https://lh3.googleusercontent.com/d/<FILE_ID>=w1600` — the same pattern the Crawford gallery uses, and always include the graceful fallback (`onerror` hides the `<img>` + its "Artist's rendering" tag so the card degrades to the placeholder panel rather than showing a broken image). Tell the owner to eyeball it live, and offer to localize to `images/inv/<neighborhood>-<n>plex.png` when they can supply the file. **Never** reuse another property's rendering to fill the gap.
+
+**Git gotcha:** do **not** run `git checkout -B claude/... main` to sync the dev branch after committing on it — that resets the branch and orphans the commit, and the follow-up `git push origin main` reports "Everything up-to-date" while nothing shipped. Commit on `main` (or merge into it), push `main`, then `git branch -f claude/... main` + `git push -f`. Always verify with `git log --oneline main -1` and a successful `pages build and deployment` run before telling the owner it's live.
+
 ---
 
 ## Google Ads & GTM
