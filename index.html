@@ -184,8 +184,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
     /* ---------- Founder / authority block ---------- */
     .founder { max-width:1140px; margin:0 auto; display:grid; grid-template-columns:300px 1fr; gap:clamp(28px,4vw,60px); align-items:center; }
-    .founder-photo { position:relative; background:#0E0C09; border:1px solid #33291B; padding:4pt; align-self:start; }
-    .founder-photo img { display:block; width:100%; height:auto; }
+    /* Frameless: the photo's background is colour-matched to this section
+       (#EFE9DB), so it reads as a cut-out on the page rather than a boxed
+       image. The mask fades the bottom edge so the crop does not end in a
+       hard horizontal cut across the chest. */
+    .founder-photo { position:relative; align-self:start; }
+    .founder-photo img { display:block; width:100%; height:auto;
+      -webkit-mask-image:linear-gradient(to bottom,#000 84%,transparent 100%);
+              mask-image:linear-gradient(to bottom,#000 84%,transparent 100%); }
     .founder-creds { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr)); gap:1px; background:#DDD4C2; border:1px solid #DDD4C2; margin-bottom:26px; }
     .founder-creds > div { background:#FBF8F1; padding:14px 16px; }
     .fc-l { font-size:.58rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#8A8172; }
@@ -552,7 +558,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section style="background:#EFE9DB;border-top:1px solid #E4DBCB;padding:clamp(56px,8vw,110px) clamp(18px,4vw,44px);">
     <div class="founder reveal" data-reveal>
       <div class="founder-photo">
-        <img src="images/kunal-headshot.png" alt="Kunal Sarhadi, Real Estate Broker, Multi Family Deals" loading="lazy" />
+        <img src="images/kunal-headshot-2026.webp" width="1000" height="1563" alt="Kunal Sarhadi, Real Estate Broker, Multi Family Deals" loading="lazy" />
       </div>
       <div class="founder-body">
         <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;"><span style="display:block;width:24px;height:1px;background:var(--accent);"></span>Who You're Working With</div>
