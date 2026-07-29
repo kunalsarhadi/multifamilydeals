@@ -122,7 +122,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 /* nav-cta-mobile-fix */
 @media (max-width: 1024px) { nav a[data-conversion="book_call"] { display: none !important; } .nav-in, nav .nav-in { flex-wrap: nowrap !important; } }
-</style>
+
+    /* 3-step strip: at phone widths the middle cell was squeezed to ~110px and
+       ran to six wrapped lines beside two-word neighbours. Stack instead. */
+    @media (max-width: 700px) {
+      .steps-strip { grid-template-columns:1fr !important; }
+      .steps-strip > div { border-right:none !important; border-bottom:1px solid #2A2419; text-align:left !important; }
+      .steps-strip > div:last-child { border-bottom:none; }
+    }
+  </style>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -243,7 +251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div style="display:flex;flex-direction:column;gap:clamp(20px,2.5vw,32px);">
 
-        <div class="reveal" data-reveal style="display:grid;grid-template-columns:auto 1fr auto;gap:0;background:#16130E;color:#F5F1E8;">
+        <div class="reveal steps-strip" data-reveal style="display:grid;grid-template-columns:auto 1fr auto;gap:0;background:#16130E;color:#F5F1E8;">
           <div style="padding:20px 22px;text-align:center;border-right:1px solid #2A2419;"><div style="font-family:'Newsreader',serif;font-size:1.7rem;font-weight:500;color:var(--accent-l);line-height:1;">1</div><div style="font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#8A8172;margin-top:6px;white-space:nowrap;">Submit</div></div>
           <div style="padding:20px 22px;display:flex;flex-direction:column;justify-content:center;gap:2px;">
             <div style="font-size:.88rem;font-weight:600;color:#F5F1E8;">Two-step, then you're booked</div>

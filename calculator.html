@@ -137,7 +137,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 /* nav-cta-mobile-fix */
 @media (max-width: 1024px) { nav a[data-conversion="book_call"] { display: none !important; } .nav-in, nav .nav-in { flex-wrap: nowrap !important; } }
-</style>
+
+    /* stat strip: at ~100px per cell the uppercase labels wrapped to two lines
+       on the outer cells and one in the middle, so they stopped lining up.
+       Tighten tracking on phones so all three sit on a single line. */
+    @media (max-width: 620px) {
+      .calc-stats > div { padding-left:6px !important; padding-right:6px !important; }
+      .calc-stats > div > div:last-child { letter-spacing:.04em !important; font-size:.52rem !important; }
+    }
+  </style>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -314,7 +322,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div style="height:1px;background:#2A2419;margin:22px 0;"></div>
         <div style="font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-l);margin-bottom:12px;">Eligibility (typical)</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:#2A2419;border:1px solid #2A2419;">
+        <div class="calc-stats" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:#2A2419;border:1px solid #2A2419;">
           <div style="background:#16130E;padding:14px 12px;text-align:center;"><div id="o-dep2" style="font-family:'Newsreader',serif;font-size:1.1rem;color:#F5F1E8;">$0</div><div style="font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:#8A8172;margin-top:4px;">Down payment</div></div>
           <div style="background:#16130E;padding:14px 12px;text-align:center;"><div id="o-liquidity" style="font-family:'Newsreader',serif;font-size:1.1rem;color:#F5F1E8;">$0</div><div style="font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:#8A8172;margin-top:4px;">Min. liquidity</div></div>
           <div style="background:#16130E;padding:14px 12px;text-align:center;"><div id="o-networth" style="font-family:'Newsreader',serif;font-size:1.1rem;color:#F5F1E8;">$0</div><div style="font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:#8A8172;margin-top:4px;">Min. net worth</div></div>
