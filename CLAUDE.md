@@ -109,6 +109,20 @@ Always tell the user whether a change is local-only or has been pushed live.
 - **No conversion event of its own** (owner decision, July 2026): its CTAs fire the standard `book_call` / `phone_click`. The owner markets this link to audiences whose contact details he already has, so a separate `dual_income_lead` event was judged unnecessary. Do not add one unasked.
 - **Copy rules:** first person as Kunal; buyers are **"out-of-town"**, never "out-of-province"; never promise cash flow (figures are projected / pre-tax pro-forma / subject to lender approval); everything listed as included **is** included at $499,000 (no "optional"/"future"/"rough-in" language); keep the "Illustrations are artist's impressions. E.&O.E." and specifications-subject-to-change lines.
 
+## Client representation — NEVER claim it (standing rule, July 2026)
+
+**Never write copy that describes the firm, Kunal, or Ankit as representing the reader.** This applies to every page, blog post, guide, PDF, ad, and message template.
+
+Banned phrasings (and anything equivalent): "represent you", "we represent our clients", "your agent", "your representative", "acting for you", "we act on your behalf", "buyer representation", "buyer's agent", "we work for you", "our client" used to mean the site visitor, and any language implying an agency or fiduciary relationship with the reader.
+
+**Write the role in service terms instead:** we source, screen, model, coordinate, introduce, submit, and manage. Those are accurate and carry the same credibility.
+
+**Dual AB/ON licensing is still a selling point** — cite it as market knowledge and professional standing ("licensed in both Alberta and Ontario, so I work in both of the markets you're weighing"), never as "I can represent you in both provinces."
+
+**Not affected:** the site-wide disclaimer phrase "nothing shown here is an offer or a binding representation" (a legal term of art), and "representative" meaning illustrative/typical. Leave both alone.
+
+Audited July 2026: the only violation was one line in the homepage founder block; it has been rewritten. Re-run a sweep for the banned phrasings above after any large copy change.
+
 ## Content repetition budget (standing rule, July 2026 audit)
 
 - Appraisal claim: max ONE contextual placement per page (full grid lives on about.html#track-record only)
