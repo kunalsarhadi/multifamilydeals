@@ -297,6 +297,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <option value="cash-desc">Cash flow · highest first</option>
               <option value="cash-asc">Cash flow · lowest first</option>
               <option value="date-asc">Completion · soonest first</option>
+              <option value="date-desc">Completion · latest first</option>
             </select>
           </div>
         </div>
@@ -780,7 +781,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         'units-desc': function(a,b){ return num(b,'data-size') - num(a,'data-size') || num(b,'data-cash') - num(a,'data-cash'); },
         'cash-desc':  function(a,b){ return num(b,'data-cash') - num(a,'data-cash'); },
         'cash-asc':   function(a,b){ return num(a,'data-cash') - num(b,'data-cash'); },
-        'date-asc':   function(a,b){ return num(a,'data-complete') - num(b,'data-complete') || num(b,'data-cash') - num(a,'data-cash'); }
+        'date-asc':   function(a,b){ return num(a,'data-complete') - num(b,'data-complete') || num(b,'data-cash') - num(a,'data-cash'); },
+        'date-desc':  function(a,b){ return num(b,'data-complete') - num(a,'data-complete') || num(b,'data-cash') - num(a,'data-cash'); }
       }[mode] || null;
       if (!cmp) return;
       [].slice.call(grid.querySelectorAll('[data-card]')).sort(cmp)

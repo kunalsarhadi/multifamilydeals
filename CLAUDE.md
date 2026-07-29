@@ -187,6 +187,12 @@ When the user says "sync inventory", "update inventory", or "update the hotlist"
 
 **NOTE:** `.env` is gitignored, so a fresh clone (every Claude Code on the web session) has **no** `SHEETS_API_KEY`. In that case read the sheet through the **Google Drive connector** instead: `read_file_content` with fileId `1rv3GdNkdN89AmNthj1JeL2ulSgKL9x3NnIL7UxCbn20`. It renders the tab as a markdown table.
 
+### Hotlist scope — ONLY the lines the owner names (owner instruction, July 2026)
+
+**Do not proactively reconcile the site against the hotlist.** Sync only the specific line(s) the owner names, and nothing else in the sheet.
+
+The sheet and the site legitimately disagree: the owner gives status changes verbally (e.g. Glenwood, Pleasantview, and the Mill Woods 6- and 7-plex are marked sold/sold-conditional on the site while the sheet still shows them AVAILABLE). **The site is correct in those cases.** Do not "fix" the site to match the sheet, and do not keep raising the discrepancy — it has been flagged and the owner has accepted it.
+
 ### "Sync line N" — the owner's standing workflow (owner instruction, July 2026)
 
 When the owner says **"line N on the hotlist is a new inventory"** / **"sync line N"**, do the whole job without asking: publish that listing to inventory.html **with its Drive package link AND its elevation image**.
