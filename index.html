@@ -160,19 +160,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .di-home-meta .di-dot { display:none; }
     }
   
-    /* ---------- The Math comparison: mobile restructure ----------
-       At 390px the 1.4fr/1fr/1fr split leaves ~100px per value column, so
-       values wrapped ('24-28 doors', 'Often older stock') and the two
-       columns stopped lining up. On small screens the label spans the full
-       width and the two values sit side by side beneath it, which gives each
-       value ~50% and keeps them on a shared baseline. */
+    /* ---------- The Math comparison: mobile tuning ----------
+       Keeps the three-column comparison intact on phones (it reads as a
+       comparison, which stacking destroys). Instead: give the value columns
+       more of the width, scale the numerals down so they wrap at most to two
+       lines, and pin the numeral band to a fixed height so the captions
+       underneath line up across both columns regardless of wrapping. */
     @media (max-width: 620px) {
-      .math-row { grid-template-columns:1fr 1fr !important; align-items:start !important; row-gap:12px; }
-      .math-row > :first-child { grid-column:1 / -1; padding-left:0 !important; }
-      /* stacked rows carry their own label, so the label-column header is noise */
-      .math-head > :first-child { display:none; }
-      .math-row .mv { font-size:1.35rem !important; }
-      .math-row .mv-lg { font-size:1.5rem !important; }
+      .math-row { grid-template-columns:1.05fr 1fr 1fr !important; align-items:start !important; column-gap:6px; }
+      .math-row > :first-child { padding-left:0 !important; }
+      .math-row .ml { font-size:.84rem !important; }
+      .math-row .ms { font-size:.68rem !important; }
+      .math-row .mv   { font-size:1.15rem !important; }
+      .math-row .mv-lg{ font-size:1.25rem !important; }
+      .math-row .mv, .math-row .mv-lg {
+        min-height:3rem; display:flex; align-items:center; justify-content:center;
+        line-height:1.15; text-wrap:balance;
+      }
+      .math-row .mc { font-size:.66rem !important; line-height:1.35; display:block; }
+      .math-head { column-gap:6px; }
+      .math-head > div { font-size:.6rem !important; }
+    }
     }
   </style>
 <!-- Meta Pixel Code -->
@@ -388,29 +396,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div>
           <div class="math-row" style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0;padding:20px 0;border-bottom:1px solid #E4DBCB;align-items:center;">
-            <div style="padding-left:4px;"><div style="font-size:.92rem;font-weight:500;color:#1C1813;">Minimum down payment</div><div style="font-size:.74rem;color:#6E6656;margin-top:2px;">Entry deposit, per building</div></div>
-            <div style="text-align:center;"><div class="mv" style="font-family:\'Newsreader\',serif;font-size:1.5rem;color:#4A443B;">20%</div><div style="font-size:.72rem;color:#6E6656;">~$400K+</div></div>
-            <div style="text-align:center;"><div class="mv-lg" style="font-family:\'Newsreader\',serif;font-size:1.7rem;color:var(--accent);">5%</div><div style="font-size:.72rem;color:#6E6656;">from ~$80K</div></div>
+            <div style="padding-left:4px;"><div class="ml" style="font-size:.92rem;font-weight:500;color:#1C1813;">Minimum down payment</div><div class="ms" style="font-size:.74rem;color:#6E6656;margin-top:2px;">Entry deposit, per building</div></div>
+            <div style="text-align:center;"><div class="mv" style="font-family:\'Newsreader\',serif;font-size:1.5rem;color:#4A443B;">20%</div><div class="mc" style="font-size:.72rem;color:#6E6656;">~$400K+</div></div>
+            <div style="text-align:center;"><div class="mv-lg" style="font-family:\'Newsreader\',serif;font-size:1.7rem;color:var(--accent);">5%</div><div class="mc" style="font-size:.72rem;color:#6E6656;">from ~$80K</div></div>
           </div>
           <div class="math-row" style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0;padding:20px 0;border-bottom:1px solid #E4DBCB;align-items:center;">
-            <div style="padding-left:4px;"><div style="font-size:.92rem;font-weight:500;color:#1C1813;">Amortization</div><div style="font-size:.74rem;color:#6E6656;margin-top:2px;">Drives monthly cashflow</div></div>
-            <div style="text-align:center;"><div class="mv" style="font-family:\'Newsreader\',serif;font-size:1.5rem;color:#4A443B;">30 yr</div><div style="font-size:.72rem;color:#6E6656;">Conventional</div></div>
-            <div style="text-align:center;"><div class="mv-lg" style="font-family:\'Newsreader\',serif;font-size:1.7rem;color:var(--accent);">50 yr</div><div style="font-size:.72rem;color:#6E6656;">MLI Select</div></div>
+            <div style="padding-left:4px;"><div class="ml" style="font-size:.92rem;font-weight:500;color:#1C1813;">Amortization</div><div class="ms" style="font-size:.74rem;color:#6E6656;margin-top:2px;">Drives monthly cashflow</div></div>
+            <div style="text-align:center;"><div class="mv" style="font-family:\'Newsreader\',serif;font-size:1.5rem;color:#4A443B;">30 yr</div><div class="mc" style="font-size:.72rem;color:#6E6656;">Conventional</div></div>
+            <div style="text-align:center;"><div class="mv-lg" style="font-family:\'Newsreader\',serif;font-size:1.7rem;color:var(--accent);">50 yr</div><div class="mc" style="font-size:.72rem;color:#6E6656;">MLI Select</div></div>
           </div>
           <div class="math-row" style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0;padding:20px 0;border-bottom:1px solid #E4DBCB;align-items:center;">
-            <div style="padding-left:4px;"><div style="font-size:.92rem;font-weight:500;color:#1C1813;">Land transfer tax</div><div style="font-size:.74rem;color:#6E6656;margin-top:2px;">At closing</div></div>
-            <div style="text-align:center;"><div class="mv" style="font-family:\'Newsreader\',serif;font-size:1.5rem;color:#4A443B;">Up to 2%</div><div style="font-size:.72rem;color:#6E6656;">+ Toronto LTT</div></div>
-            <div style="text-align:center;"><div class="mv-lg" style="font-family:\'Newsreader\',serif;font-size:1.7rem;color:var(--accent);">None</div><div style="font-size:.72rem;color:#6E6656;">Zero in Alberta</div></div>
+            <div style="padding-left:4px;"><div class="ml" style="font-size:.92rem;font-weight:500;color:#1C1813;">Land transfer tax</div><div class="ms" style="font-size:.74rem;color:#6E6656;margin-top:2px;">At closing</div></div>
+            <div style="text-align:center;"><div class="mv" style="font-family:\'Newsreader\',serif;font-size:1.5rem;color:#4A443B;">Up to 2%</div><div class="mc" style="font-size:.72rem;color:#6E6656;">+ Toronto LTT</div></div>
+            <div style="text-align:center;"><div class="mv-lg" style="font-family:\'Newsreader\',serif;font-size:1.7rem;color:var(--accent);">None</div><div class="mc" style="font-size:.72rem;color:#6E6656;">Zero in Alberta</div></div>
           </div>
           <div class="math-row" style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0;padding:20px 0;border-bottom:1px solid #E4DBCB;align-items:center;">
-            <div style="padding-left:4px;"><div style="font-size:.92rem;font-weight:500;color:#1C1813;">Property condition</div><div style="font-size:.74rem;color:#6E6656;margin-top:2px;">At acquisition</div></div>
-            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.4rem;color:#4A443B;">Often older stock</div><div style="font-size:.72rem;color:#6E6656;">May need CMHC repairs</div></div>
-            <div style="text-align:center;"><div style="font-family:'Newsreader',serif;font-size:1.55rem;color:var(--accent);">Brand new</div><div style="font-size:.72rem;color:#6E6656;">Warranty included</div></div>
+            <div style="padding-left:4px;"><div class="ml" style="font-size:.92rem;font-weight:500;color:#1C1813;">Property condition</div><div class="ms" style="font-size:.74rem;color:#6E6656;margin-top:2px;">At acquisition</div></div>
+            <div style="text-align:center;"><div class="mv" style="font-family:'Newsreader',serif;font-size:1.4rem;color:#4A443B;">Often older stock</div><div class="mc" style="font-size:.72rem;color:#6E6656;">May need CMHC repairs</div></div>
+            <div style="text-align:center;"><div class="mv-lg" style="font-family:'Newsreader',serif;font-size:1.55rem;color:var(--accent);">Brand new</div><div class="mc" style="font-size:.72rem;color:#6E6656;">Warranty included</div></div>
           </div>
           <div class="math-row" style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:0;padding:20px 0;align-items:center;">
-            <div style="padding-left:4px;"><div style="font-size:.92rem;font-weight:500;color:#1C1813;">Capital per door</div><div style="font-size:.74rem;color:#6E6656;margin-top:2px;">$400K deployed</div></div>
-            <div style="text-align:center;"><div class="mv" style="font-family:\'Newsreader\',serif;font-size:1.5rem;color:#4A443B;">4–8 doors</div><div style="font-size:.72rem;color:#6E6656;">High-cost metros</div></div>
-            <div style="text-align:center;"><div class="mv-lg" style="font-family:\'Newsreader\',serif;font-size:1.7rem;color:var(--accent);">24–28 doors</div><div style="font-size:.72rem;color:#6E6656;">Same capital</div></div>
+            <div style="padding-left:4px;"><div class="ml" style="font-size:.92rem;font-weight:500;color:#1C1813;">Capital per door</div><div class="ms" style="font-size:.74rem;color:#6E6656;margin-top:2px;">$400K deployed</div></div>
+            <div style="text-align:center;"><div class="mv" style="font-family:\'Newsreader\',serif;font-size:1.5rem;color:#4A443B;">4–8 doors</div><div class="mc" style="font-size:.72rem;color:#6E6656;">High-cost metros</div></div>
+            <div style="text-align:center;"><div class="mv-lg" style="font-family:\'Newsreader\',serif;font-size:1.7rem;color:var(--accent);">24–28 doors</div><div class="mc" style="font-size:.72rem;color:#6E6656;">Same capital</div></div>
           </div>
         </div>
       </div>
