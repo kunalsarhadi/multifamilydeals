@@ -26,7 +26,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="twitter:description" content="Brand-new dual income homes in Leduc, Alberta — a 1,410 sq ft upper home plus a 595 sq ft legal basement suite. Two rents, one title, conventional financing. Appliances, window coverings, landscaping and the finished suite included. Model the cash flow yourself." />
   <meta name="twitter:image" content="https://multi-family-deals.ca/images/dual/tu-elevation.jpg" />
   <meta name="description" content="Brand-new dual income homes in Leduc, Alberta — a 1,410 sq ft upper home plus a 595 sq ft legal basement suite. Two rents, one title, conventional financing. Appliances, window coverings, landscaping and the finished suite included. Model the cash flow yourself." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -160,137 +160,29 @@ src="https://www.facebook.com/tr?id=3083326175185716&ev=PageView&noscript=1"
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Dual Income Homes in Leduc, Alberta","url":"https://multi-family-deals.ca/dual-income-homes.html","description":"Brand-new dual income homes in Leduc, Alberta — a 1,410 sq ft upper home plus a 595 sq ft legal basement suite. Two rents, one title, conventional financing. Appliances, window coverings, landscaping and the finished suite included. Model the cash flow yourself.","about":{"@type":"Product","name":"Dual Income Home — Leduc, Alberta","description":"Brand-new detached home with a 1,410 sq ft upper unit (3 bed, 2.5 bath) and a 595 sq ft legal one-bedroom basement suite. Two rents on one title, financed conventionally.","category":"Residential investment property","brand":{"@type":"Brand","name":"Multi Family Deals"},"offers":{"@type":"Offer","price":"499000","priceCurrency":"CAD","availability":"https://schema.org/InStock","areaServed":{"@type":"City","name":"Leduc","addressRegion":"AB","addressCountry":"CA"}}}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://multi-family-deals.ca/"},{"@type":"ListItem","position":2,"name":"Dual Income Homes","item":"https://multi-family-deals.ca/dual-income-homes.html"}]}</script>
   <style>
-    /* ===== Dual Income Homes — page-scoped ===== */
-    .di-muted { color:#8A8172; }
-    .di-sec { padding: clamp(52px,6.5vw,88px) clamp(18px,4vw,44px); }
-    .di-wrap { max-width: 1240px; margin: 0 auto; }
-    .di-eyebrow { display:inline-flex; align-items:center; gap:10px; font-size:.72rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin-bottom:18px; }
-    .di-eyebrow span.rule { display:block; width:26px; height:1px; background:var(--accent); }
-    .di-h2 { font-family:'Newsreader',serif; font-weight:400; font-size:clamp(1.85rem,3.6vw,2.7rem); line-height:1.08; letter-spacing:-0.02em; color:#1C1813; text-wrap:balance; }
-    .di-h2 i { font-style:italic; color:var(--accent); }
-    .di-lede { font-size:.95rem; line-height:1.75; color:#4A443B; max-width:760px; }
-    .di-note { font-size:.72rem; line-height:1.7; color:#8A8172; }
+    /* ===== Dual Income Homes — responsive only. =====
+       The prototype is desktop-first with inline styles and no media queries.
+       Nothing here restyles it: these rules only handle the mobile work the
+       handoff flagged as outstanding. Desktop rendering is the prototype's. */
 
-    /* hairline grid strips */
-    .di-strip { display:grid; gap:1px; background:#DDD4C2; border-top:1px solid #DDD4C2; border-bottom:1px solid #DDD4C2; }
-    .di-strip > div { background:#F5F1E8; padding:22px clamp(14px,2vw,24px); }
-    .di-cell-label { font-size:.64rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:#8A8172; }
-    .di-cell-fig { font-family:'Newsreader',serif; font-size:clamp(1.5rem,2.6vw,2rem); font-weight:500; color:#1C1813; line-height:1.05; margin:8px 0 5px; }
-    .di-cell-sub { font-size:.72rem; color:#A79E8E; letter-spacing:.02em; }
+    /* Outlook table: 5 fixed columns -> horizontal scroll on small screens. */
+    .di-outlook-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .di-outlook { min-width: 560px; }
+    .di-swipe-hint { display: none; font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: #A79E8E; margin-bottom: 10px; }
 
-    .di-hero-metrics { grid-template-columns: repeat(4,1fr); }
-    .di-hero-metrics .di-dark { background:#16130E; }
-    .di-hero-metrics .di-dark .di-cell-label { color:#B9B0A0; }
-    .di-hero-metrics .di-dark .di-cell-fig { color:#7FB396; }
-    .di-hero-metrics .di-dark .di-cell-sub { color:#6B6559; }
-
-    /* elevation mount */
-    .di-elev-mount { background:#0E0C09; border:1px solid #33291B; padding:4pt; position:relative; }
-    .di-elev-mount img { display:block; width:100%; height:auto; }
-    .di-elev-tag { position:absolute; left:14px; bottom:14px; font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(245,241,232,.82); background:rgba(14,12,9,.62); padding:4px 9px; }
-
-    .di-stats { grid-template-columns: repeat(4,1fr); }
-
-    /* generic card grids */
-    .di-grid3 { display:grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:1px; background:#DDD4C2; border:1px solid #DDD4C2; }
-    .di-grid3 > article { background:#FBF8F1; padding:26px clamp(18px,2vw,26px); }
-    .di-card-eyebrow { font-size:.64rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); }
-    .di-card-title { font-family:'Newsreader',serif; font-size:1.28rem; font-weight:500; color:#1C1813; margin:10px 0 4px; }
-    .di-card-sub { font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:#A79E8E; margin-bottom:16px; }
-    .di-list { list-style:none; display:flex; flex-direction:column; gap:9px; }
-    .di-list li { font-size:.85rem; line-height:1.6; color:#4A443B; padding-left:16px; position:relative; }
-    .di-list li::before { content:''; position:absolute; left:0; top:.62em; width:5px; height:1px; background:var(--accent); }
-    .di-list li strong { font-weight:600; color:#1C1813; }
-    .di-more { color:var(--accent); font-weight:600; }
-
-    /* gallery */
-    .di-feature { position:relative; aspect-ratio:16/7; overflow:hidden; background:#E7DFCD; }
-    .di-feature img { width:100%; height:100%; object-fit:cover; display:block; }
-    .di-gal { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:14px; margin-top:14px; }
-    .di-gal figure { position:relative; aspect-ratio:4/3; overflow:hidden; background:#E7DFCD; margin:0; }
-    .di-gal img { width:100%; height:100%; object-fit:cover; display:block; }
-    .di-cap { position:absolute; left:0; bottom:0; right:0; padding:9px 12px; font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:#F5F1E8; background:rgba(14,12,9,.66); }
-
-    /* calculator */
-    .di-calc { display:grid; grid-template-columns: 1.05fr .95fr; gap:clamp(20px,3vw,34px); align-items:start; }
-    .di-inputs { background:#FBF8F1; border:1px solid #DDD4C2; padding:clamp(20px,2.6vw,30px); }
-    .di-fieldset { border:none; margin:0 0 22px; padding:0; }
-    .di-fieldset:last-of-type { margin-bottom:0; }
-    .di-legend { font-size:.64rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); padding:0; margin-bottom:14px; }
-    .di-pair { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-    .di-field label { display:block; font-size:.64rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:#8A8172; margin-bottom:6px; }
-    .di-field .di-in { position:relative; display:flex; align-items:center; }
-    .di-field .di-pre { position:absolute; left:12px; font-size:.92rem; color:#A79E8E; pointer-events:none; }
-    .di-field .di-post { position:absolute; right:12px; font-size:.92rem; color:#A79E8E; pointer-events:none; }
-    .di-field input { width:100%; font-family:'Space Grotesk',sans-serif; font-size:.92rem; color:#1C1813; background:#F5F1E8; border:1px solid #DDD4C2; border-radius:2px; padding:11px 12px; }
-    .di-field input.pad-l { padding-left:24px; }
-    .di-field input.pad-r { padding-right:28px; }
-    .di-field input:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(156,107,52,.14); }
-    .di-field input[readonly] { background:#EFE9DB; color:#6E6656; }
-    .di-help { font-size:.72rem; line-height:1.65; color:#8A8172; margin-top:12px; }
-
-    .di-res { background:#16130E; color:#F5F1E8; padding:clamp(20px,2.6vw,30px); position:sticky; top:88px; }
-    .di-res-lab { font-size:.64rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:#C79A5E; }
-    .di-res-hero { border-bottom:1px solid #2A2419; padding-bottom:20px; margin-bottom:18px; }
-    .di-res-big { font-family:'Newsreader',serif; font-size:clamp(2.2rem,4vw,3rem); font-weight:500; line-height:1; margin:10px 0 8px; }
-    .di-res-note { font-size:.72rem; line-height:1.65; color:#B9B0A0; }
-    .di-row { display:flex; justify-content:space-between; align-items:baseline; gap:14px; padding:7px 0; font-size:.85rem; }
-    .di-row span:first-child { color:#B9B0A0; }
-    .di-row span:last-child { font-family:'Newsreader',serif; font-size:1rem; color:#F5F1E8; white-space:nowrap; }
-    .di-row.tot { border-top:1px solid #2A2419; margin-top:7px; padding-top:12px; }
-    .di-row.tot span:first-child { color:#F5F1E8; }
-    .di-block { margin-top:20px; }
-    .di-block-h { font-size:.62rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:#6B6559; margin-bottom:6px; }
-    .di-returns { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:#2A2419; border:1px solid #2A2419; margin-top:20px; }
-    .di-returns > div { background:#16130E; padding:13px 12px; text-align:center; }
-    .di-returns .l { font-size:.58rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#6B6559; }
-    .di-returns .v { font-family:'Newsreader',serif; font-size:1.15rem; color:#F5F1E8; margin-top:4px; }
-    .di-badge { display:inline-block; font-size:.56rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:2px 7px; border-radius:2px; margin-top:4px; }
-
-    /* outlook */
-    .di-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
-    .di-table { width:100%; border-collapse:collapse; min-width:560px; }
-    .di-table th { font-size:.62rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:#8A8172; text-align:right; padding:12px 14px; border-bottom:1px solid #DDD4C2; }
-    .di-table th:first-child, .di-table td:first-child { text-align:left; }
-    .di-table td { font-family:'Newsreader',serif; font-size:1.02rem; color:#1C1813; text-align:right; padding:14px; border-bottom:1px solid #E4DBCB; }
-    .di-table td:first-child { font-family:'Space Grotesk',sans-serif; font-size:.8rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#8A8172; }
-    .swipe-hint { display:none; font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:#A79E8E; text-align:center; margin-bottom:10px; }
-
-    /* why-it-works numbered */
-    .di-why { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:1px; background:#DDD4C2; border:1px solid #DDD4C2; }
-    .di-why > article { background:#FBF8F1; padding:28px clamp(18px,2vw,26px); }
-    .di-num { font-family:'Newsreader',serif; font-size:1.6rem; color:var(--accent-l); line-height:1; }
-    .di-why h3 { font-family:'Newsreader',serif; font-size:1.2rem; font-weight:500; color:#1C1813; margin:12px 0 8px; }
-    .di-why p { font-size:.85rem; line-height:1.7; color:#4A443B; }
-
-    /* CTA */
-    .di-cta { background:#16130E; position:relative; overflow:hidden; }
-    .di-cta::after { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 70% at 50% 100%, rgba(156,107,52,.30), transparent 70%); pointer-events:none; }
-    .di-cta .di-wrap { position:relative; z-index:1; text-align:center; }
-    .btn-brass-di { display:inline-block; background:var(--accent); color:#16130E; padding:17px 38px; border-radius:2px; font-size:.76rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
-    .btn-brass-di:hover { color:#16130E; background:var(--accent-l); }
-    .btn-ghost-di { display:inline-block; color:#F5F1E8; border:1px solid #33291B; padding:17px 32px; border-radius:2px; font-size:.76rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; }
-    .btn-ghost-di:hover { color:var(--accent-l); border-color:var(--accent); }
-
-    /* ---------- responsive ---------- */
     @media (max-width: 1000px) {
-      .di-calc { grid-template-columns: 1fr; }
-      .di-res { position:static; }
-    }
-    @media (max-width: 900px) {
-      .di-hero-metrics, .di-stats { grid-template-columns: repeat(2,1fr); }
+      /* Results panel unsticks and sits under the inputs. */
+      .di-res { position: static !important; top: auto !important; }
     }
     @media (max-width: 760px) {
-      .swipe-hint { display:block; }
+      .di-swipe-hint { display: block; }
     }
     @media (max-width: 560px) {
-      .di-pair { grid-template-columns: 1fr; }
-      .di-hero-metrics, .di-stats { grid-template-columns: 1fr; }
-      .di-returns { grid-template-columns: 1fr; }
-      .di-cell-fig { font-size:1.6rem; }
+      /* Paired inputs stack. */
+      .di-pair { grid-template-columns: 1fr !important; }
     }
     @media (prefers-reduced-motion: reduce) {
-      * { animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+      * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
     }
   </style>
 
@@ -358,458 +250,403 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="reviews.html">Reviews</a>
     <a href="blog/index.html">Blog</a>
   </div>
+
+
 <main id="main-content" style="background:#F5F1E8;">
 
-  <!-- ===== HERO ===== -->
+
   <section style="padding-top:72px;background:#F5F1E8;position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background-image:linear-gradient(#E7DFCD 1px,transparent 1px),linear-gradient(90deg,#E7DFCD 1px,transparent 1px);background-size:64px 64px;opacity:.4;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 20% 0%,#000,transparent 72%);mask-image:radial-gradient(ellipse 70% 80% at 20% 0%,#000,transparent 72%);pointer-events:none;"></div>
-    <div class="di-wrap" style="padding:clamp(44px,6vw,72px) clamp(18px,4vw,44px) clamp(24px,3vw,32px);position:relative;z-index:1;">
-      <div class="di-eyebrow" style="animation:heroUp .7s ease both;"><span class="rule"></span>Dual Income Homes · Leduc, Alberta</div>
-      <h1 style="animation:heroUp .8s ease both;animation-delay:.14s;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.02;letter-spacing:-0.025em;color:#1C1813;margin-bottom:20px;text-wrap:balance;">Two legal doors under <span style="font-style:italic;color:var(--accent);">one roof.</span></h1>
-      <p style="animation:heroUp .8s ease both;animation-delay:.26s;font-size:1.02rem;line-height:1.75;color:#4A443B;max-width:720px;">Not every investor wants an eight-plex. These are brand-new detached homes in Leduc with a 1,410 sq ft upper home and a 595 sq ft legal basement suite below it — two rents, one title, one ordinary residential mortgage. Appliances, window coverings, landscaping, a two-car garage and the finished legal suite are all in the price, so it leases up the month you take possession.</p>
-      <div style="animation:heroUp .8s ease both;animation-delay:.38s;display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;">
-        <a href="#calculator" data-magnetic class="btn-brass-di">Run the cash flow</a>
-        <a href="contact.html" data-conversion="book_call" data-magnetic style="display:inline-block;color:#1C1813;border:1px solid #DDD4C2;padding:17px 32px;border-radius:2px;font-size:.76rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;">Talk to Kunal →</a>
+    <div style="position:absolute;inset:0;background-image:linear-gradient(#E7DFCD 1px,transparent 1px),linear-gradient(90deg,#E7DFCD 1px,transparent 1px);background-size:64px 64px;opacity:.4;mask-image:radial-gradient(ellipse 70% 80% at 20% 0%,#000,transparent 72%);-webkit-mask-image:radial-gradient(ellipse 70% 80% at 20% 0%,#000,transparent 72%);pointer-events:none;"></div>
+    <div style="max-width:1240px;margin:0 auto;padding:clamp(44px,6vw,72px) clamp(18px,4vw,44px) clamp(24px,3vw,34px);position:relative;z-index:1;">
+      <div style="animation:heroUp .7s ease both;display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent,#9C6B34);margin-bottom:20px;"><span style="display:block;width:26px;height:1px;background:var(--accent,#9C6B34);"></span>Dual Income Homes · Leduc, Alberta</div>
+      <h1 style="animation:heroUp .8s ease both;animation-delay:.14s;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.02;letter-spacing:-0.025em;color:#1C1813;margin-bottom:20px;max-width:900px;text-wrap:balance;">Two legal doors under <span style="font-style:italic;color:var(--accent,#9C6B34);">one roof.</span></h1>
+      <p style="animation:heroUp .8s ease both;animation-delay:.26s;font-size:1.05rem;line-height:1.75;color:#4A443B;max-width:660px;">Not every investor wants an eight-plex. These are brand-new detached homes in Leduc with a 1,410 sq ft upper home and a 595 sq ft legal basement suite below it — two rents, one title, one ordinary residential mortgage. Appliances, window coverings, landscaping, a two-car garage and the finished legal suite are all in the price, so it leases up the month you take possession.</p>
+      <div style="margin-top:32px;animation:heroUp .8s ease both;animation-delay:.34s;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:#DDD4C2;border:1px solid #DDD4C2;">
+        <div style="background:#FBF8F1;padding:20px 22px;"><div style="font-family:'Newsreader',serif;font-size:1.7rem;font-weight:500;color:#1C1813;line-height:1.1;">$499,000</div><div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:9px;line-height:1.6;">Purchase price, both units<br /><span style="font-weight:500;color:#A79E8E;">About $249,500 a door</span></div></div>
+        <div style="background:#FBF8F1;padding:20px 22px;"><div style="font-family:'Newsreader',serif;font-size:1.7rem;font-weight:500;color:#1C1813;line-height:1.1;"><span data-di="grossM"></span></div><div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:9px;line-height:1.6;">Rent, both units<br /><span style="font-weight:500;color:#A79E8E;"><span data-di="rentUpperM"></span> + <span data-di="rentLowerM"></span></span></div></div>
+          <div style="background:#16130E;padding:20px 22px;"><div style="font-family:'Newsreader',serif;font-size:1.7rem;font-weight:500;color:#7FB396;line-height:1.1;"><span data-di="cashflowM"></span></div><div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#B9B0A0;margin-top:9px;line-height:1.6;">Projected cash flow / mo<br /><span style="font-weight:500;color:#8A8172;">After every expense</span></div></div>
+        </div>
+        <p style="font-size:.74rem;line-height:1.6;color:#8A8172;margin-top:12px;max-width:660px;">Projected pre-tax, at 3.79% over a 30-year amortization, after the mortgage, property tax, home insurance and property management. Every assumption is yours to change below.</p>
       </div>
-    </div>
 
-    <div class="di-strip di-hero-metrics" style="animation:heroUp .8s ease both;animation-delay:.5s;">
-      <div>
-        <div class="di-cell-label">Purchase price, both units</div>
-        <div class="di-cell-fig" id="diHeroPrice">$499,000</div>
-        <div class="di-cell-sub">About <span id="diHeroDoor">$249,500</span> a door</div>
-      </div>
-      <div>
-        <div class="di-cell-label">Rent, both units</div>
-        <div class="di-cell-fig" id="diHeroRent">$3,400</div>
-        <div class="di-cell-sub"><span id="diHeroRentSplit">$2,200 upper · $1,200 lower</span></div>
-      </div>
-      <div>
-        <div class="di-cell-label">Down payment</div>
-        <div class="di-cell-fig" id="diHeroDown">$99,800</div>
-        <div class="di-cell-sub"><span id="diHeroDownPct">20%</span> · conventional financing</div>
-      </div>
-      <div class="di-dark">
-        <div class="di-cell-label">Projected cash flow / mo</div>
-        <div class="di-cell-fig" id="diHeroCF">$0</div>
-        <div class="di-cell-sub">After every expense</div>
-      </div>
-    </div>
-
-    <div class="di-wrap" style="padding:18px clamp(18px,4vw,44px) 0;">
-      <p class="di-note" style="max-width:860px;">Projected pre-tax, at <span id="diHeroRate">3.79%</span> over a <span id="diHeroAmort">30</span>-year amortization, after the mortgage, property tax, home insurance and property management. Every assumption is yours to change below.</p>
-    </div>
-  </section>
-
-  <!-- ===== ELEVATION ===== -->
-  <section class="di-sec" style="padding-top:clamp(28px,3.5vw,44px);">
-    <div class="di-wrap">
-      <div class="di-elev-mount">
-        <img src="images/dual/tu-elevation.jpg" alt="Artist's impression of a brand-new dual income home in Leduc, Alberta — upper home with a legal basement suite" />
-        <div class="di-elev-tag">Artist's impression</div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:30px;animation:heroUp .8s ease both;animation-delay:.36s;">
+        <a href="#cashflow" style="background:var(--accent,#9C6B34);color:#F8F5EE;padding:15px 30px;border-radius:2px;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;">Run the cash flow</a>
+        <a href="contact.html" data-conversion="book_call" style="color:#1C1813;padding:15px 4px;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid #D3C9B5;">Talk to Kunal →</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== STAT STRIP ===== -->
-  <div class="di-strip di-stats">
-    <div>
-      <div class="di-cell-label">2 units</div>
-      <div class="di-cell-sub" style="margin-top:7px;">Upper home + suite</div>
-      <div class="di-cell-sub">One title, one mortgage</div>
-    </div>
-    <div>
-      <div class="di-cell-label">3 bed · 2.5 bath</div>
-      <div class="di-cell-sub" style="margin-top:7px;">Upper home</div>
-      <div class="di-cell-sub">1,410 sq ft</div>
-    </div>
-    <div>
-      <div class="di-cell-label">1 bed · 1 bath</div>
-      <div class="di-cell-sub" style="margin-top:7px;">Lower suite</div>
-      <div class="di-cell-sub">595 sq ft</div>
-    </div>
-    <div>
-      <div class="di-cell-label">Leduc, AB</div>
-      <div class="di-cell-sub" style="margin-top:7px;">Minutes from YEG</div>
-      <div class="di-cell-sub">Rear-lane detached</div>
-    </div>
-  </div>
-
-  <!-- ===== THE BUILDING ===== -->
-  <section class="di-sec">
-    <div class="di-wrap">
-      <div class="di-eyebrow"><span class="rule"></span>The Building</div>
-      <h2 class="di-h2" style="margin-bottom:34px;">Purpose-built for <i>two tenancies.</i></h2>
-      <div class="di-grid3">
-        <article>
-          <div class="di-card-eyebrow">Unit A · Upper home</div>
-          <div class="di-card-title">3 bed · 2.5 bath</div>
-          <div class="di-card-sub">1,410 sq ft over two storeys</div>
-          <ul class="di-list">
-            <li>Great room, central dining, rear island kitchen</li>
-            <li>Primary with walk-in closet and ensuite</li>
-            <li>Two full baths up, half bath on the main</li>
-            <li>Upper-floor laundry and rear mudroom</li>
-          </ul>
-        </article>
-        <article>
-          <div class="di-card-eyebrow">Unit B · Basement suite</div>
-          <div class="di-card-title">1 bed · 1 bath</div>
-          <div class="di-card-sub">595 sq ft, its own side entrance</div>
-          <ul class="di-list">
-            <li>One bedroom, four-piece bath</li>
-            <li>Open living area with a full kitchen</li>
-            <li>Stacked in-suite washer and dryer</li>
-            <li>Separate side door at grade</li>
-          </ul>
-        </article>
-        <article>
-          <div class="di-card-eyebrow">Included in the price</div>
-          <div class="di-card-title">Rent-ready at handover</div>
-          <div class="di-card-sub">No optional extras to add</div>
-          <ul class="di-list">
-            <li>Appliances in both units</li>
-            <li>Window coverings throughout</li>
-            <li>Landscaping complete</li>
-            <li>Two-car garage plus two parking pads</li>
-          </ul>
-        </article>
+  <section style="background:#F5F1E8;padding:0 clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="background:#0E0C09;border:1px solid #33291B;padding:4pt;position:relative;">
+        <img loading="lazy" decoding="async" src="images/dual/tu-elevation.jpg" alt="Dual income home, front elevation" style="display:block;width:100%;height:auto;" />
+        <div style="position:absolute;left:16px;bottom:16px;background:rgba(14,12,9,0.72);color:#B9B0A0;font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:6px 10px;">Artist's impression</div>
       </div>
     </div>
   </section>
 
-  <!-- ===== INTERIORS ===== -->
-  <section class="di-sec" style="background:#EFE9DB;">
-    <div class="di-wrap">
-      <div class="di-eyebrow"><span class="rule"></span>Interiors</div>
-      <h2 class="di-h2" style="margin-bottom:12px;">Finished to a standard <i>tenants pay for.</i></h2>
-      <p class="di-note" style="margin-bottom:26px;">Photographed in a completed home of the same specification. Finishes may vary by lot.</p>
-      <figure class="di-feature" style="margin:0;">
-        <img src="images/dual/tu-kitchen.jpg" alt="Rear island kitchen opening to the dining area in a Leduc dual income home" loading="lazy" />
-        <figcaption class="di-cap">Kitchen &amp; dining</figcaption>
+  <section style="background:#F5F1E8;padding:clamp(28px,4vw,44px) clamp(18px,4vw,44px) clamp(48px,6vw,72px);">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:#DDD4C2;border:1px solid #DDD4C2;">
+      <div style="background:#FBF8F1;padding:26px 22px;"><div style="font-family:'Newsreader',serif;font-size:1.5rem;font-weight:500;color:#1C1813;line-height:1.2;letter-spacing:-0.01em;">2 units</div><div style="font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:12px;line-height:1.7;">Upper home + suite<br />One title, one mortgage</div></div>
+      <div style="background:#FBF8F1;padding:26px 22px;"><div style="font-family:'Newsreader',serif;font-size:1.5rem;font-weight:500;color:#1C1813;line-height:1.2;letter-spacing:-0.01em;">3 bed &middot; 2.5 bath</div><div style="font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:12px;line-height:1.7;">Upper home<br />1,410 sq ft</div></div>
+      <div style="background:#FBF8F1;padding:26px 22px;"><div style="font-family:'Newsreader',serif;font-size:1.5rem;font-weight:500;color:#1C1813;line-height:1.2;letter-spacing:-0.01em;">1 bed &middot; 1 bath</div><div style="font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:12px;line-height:1.7;">Lower suite<br />595 sq ft</div></div>
+      <div style="background:#FBF8F1;padding:26px 22px;"><div style="font-family:'Newsreader',serif;font-size:1.5rem;font-weight:500;color:#1C1813;line-height:1.2;letter-spacing:-0.01em;">Leduc, AB</div><div style="font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:12px;line-height:1.7;">Minutes from YEG<br />Rear-lane detached</div></div>
+    </div>
+  </section>
+
+  <section style="background:#EFE9DB;padding:clamp(52px,6.5vw,88px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent,#9C6B34);margin-bottom:18px;"><span style="display:block;width:26px;height:1px;background:var(--accent,#9C6B34);"></span>The Building</div>
+      <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(1.85rem,3.6vw,2.7rem);line-height:1.1;letter-spacing:-0.02em;color:#1C1813;margin-bottom:40px;max-width:640px;text-wrap:balance;">Purpose-built for two tenancies.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(18px,2.4vw,28px);">
+        <div style="background:#FBF8F1;border:1px solid #DDD4C2;padding:clamp(22px,2.6vw,30px);">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px;"><div style="font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#9C6B34);">Unit A · Upper home</div><div style="font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A8172;">3 bed · 2.5 bath</div></div>
+          <div style="font-family:'Newsreader',serif;font-size:1.4rem;font-weight:500;color:#1C1813;margin-bottom:14px;">1,410 sq ft over two storeys</div>
+          <div style="display:flex;flex-direction:column;gap:9px;font-size:.9rem;line-height:1.5;color:#4A443B;">
+            <div>Great room, central dining, rear island kitchen</div>
+            <div>Primary with walk-in closet and ensuite</div>
+            <div>Two full baths up, half bath on the main</div>
+            <div>Upper-floor laundry and rear mudroom</div>
+          </div>
+        </div>
+        <div style="background:#FBF8F1;border:1px solid #DDD4C2;padding:clamp(22px,2.6vw,30px);">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px;"><div style="font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#9C6B34);">Unit B · Basement suite</div><div style="font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A8172;">1 bed · 1 bath</div></div>
+          <div style="font-family:'Newsreader',serif;font-size:1.4rem;font-weight:500;color:#1C1813;margin-bottom:14px;">595 sq ft, its own side entrance</div>
+          <div style="display:flex;flex-direction:column;gap:9px;font-size:.9rem;line-height:1.5;color:#4A443B;">
+            <div>One bedroom, four-piece bath</div>
+            <div>Open living area with a full kitchen</div>
+            <div>Stacked in-suite washer and dryer</div>
+            <div>Separate side door at grade</div>
+          </div>
+        </div>
+        <div style="background:#FBF8F1;border:1px solid #DDD4C2;padding:clamp(22px,2.6vw,30px);">
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#9C6B34);margin-bottom:14px;">Included in the price</div>
+          <div style="font-family:'Newsreader',serif;font-size:1.4rem;font-weight:500;color:#1C1813;margin-bottom:14px;">Rent-ready at handover</div>
+          <div style="display:flex;flex-direction:column;gap:9px;font-size:.9rem;line-height:1.5;color:#4A443B;">
+            <div>Appliances in both units</div>
+            <div>Window coverings throughout</div>
+            <div>Landscaping complete</div>
+            <div>Two-car garage plus two parking pads</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F5F1E8;padding:clamp(52px,6.5vw,88px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:32px;">
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent,#9C6B34);margin-bottom:16px;"><span style="display:block;width:26px;height:1px;background:var(--accent,#9C6B34);"></span>Interiors</div>
+          <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(1.85rem,3.6vw,2.7rem);line-height:1.1;letter-spacing:-0.02em;color:#1C1813;max-width:560px;text-wrap:balance;">Finished to a standard tenants pay for.</h2>
+        </div>
+        <p style="font-size:.8rem;line-height:1.7;color:#8A8172;max-width:280px;">Photographed in a completed home of the same specification. Finishes may vary by lot.</p>
+      </div>
+      <figure style="margin:0 0 clamp(12px,1.4vw,16px);position:relative;border:1px solid #DDD4C2;background:#EFE9DB;">
+        <img loading="lazy" decoding="async" src="images/dual/tu-kitchen.jpg" alt="Island kitchen open to the dining area" style="display:block;width:100%;aspect-ratio:16/7;object-fit:cover;object-position:center 58%;" />
+        <figcaption style="position:absolute;left:0;bottom:0;background:rgba(14,12,9,0.66);color:#F5F1E8;font-size:.64rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:9px 14px;">Kitchen &amp; dining</figcaption>
       </figure>
-      <div class="di-gal">
-        <figure><img src="images/dual/tu-living.jpg" alt="Great room with large windows and electric fireplace" loading="lazy" /><figcaption class="di-cap">Great room</figcaption></figure>
-        <figure><img src="images/dual/tu-dining.jpg" alt="Central dining nook" loading="lazy" /><figcaption class="di-cap">Dining nook</figcaption></figure>
-        <figure><img src="images/dual/tu-ensuite.jpg" alt="Primary ensuite with standing shower" loading="lazy" /><figcaption class="di-cap">Primary ensuite</figcaption></figure>
-        <figure><img src="images/dual/tu-bath.jpg" alt="Second full four-piece bathroom" loading="lazy" /><figcaption class="di-cap">Second full bath</figcaption></figure>
-        <figure><img src="images/dual/tu-mudroom.jpg" alt="Rear mudroom off the garage entry" loading="lazy" /><figcaption class="di-cap">Mudroom</figcaption></figure>
-        <figure><img src="images/dual/tu-stairs.jpg" alt="Upper landing and stairwell" loading="lazy" /><figcaption class="di-cap">Upper landing</figcaption></figure>
-        <figure><img src="images/dual/tu-wic.jpg" alt="Primary walk-in closet" loading="lazy" /><figcaption class="di-cap">Walk-in closet</figcaption></figure>
-        <figure><img src="images/dual/tu-wic2.jpg" alt="Bedroom closet and storage" loading="lazy" /><figcaption class="di-cap">Bedroom storage</figcaption></figure>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(12px,1.4vw,16px);">
+        <figure style="margin:0;position:relative;border:1px solid #DDD4C2;background:#EFE9DB;">
+          <img loading="lazy" decoding="async" src="images/dual/tu-living.jpg" alt="Great room with linear fireplace" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;" />
+          <figcaption style="position:absolute;left:0;bottom:0;background:rgba(14,12,9,0.66);color:#F5F1E8;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 12px;">Great room</figcaption>
+        </figure>
+        <figure style="margin:0;position:relative;border:1px solid #DDD4C2;background:#EFE9DB;">
+          <img loading="lazy" decoding="async" src="images/dual/tu-dining.jpg" alt="Dining nook with oversized window" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;" />
+          <figcaption style="position:absolute;left:0;bottom:0;background:rgba(14,12,9,0.66);color:#F5F1E8;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 12px;">Dining nook</figcaption>
+        </figure>
+        <figure style="margin:0;position:relative;border:1px solid #DDD4C2;background:#EFE9DB;">
+          <img loading="lazy" decoding="async" src="images/dual/tu-ensuite.jpg" alt="Primary ensuite with double vanity and tiled shower" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;" />
+          <figcaption style="position:absolute;left:0;bottom:0;background:rgba(14,12,9,0.66);color:#F5F1E8;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 12px;">Primary ensuite</figcaption>
+        </figure>
+        <figure style="margin:0;position:relative;border:1px solid #DDD4C2;background:#EFE9DB;">
+          <img loading="lazy" decoding="async" src="images/dual/tu-bath.jpg" alt="Second full bathroom with tub" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;" />
+          <figcaption style="position:absolute;left:0;bottom:0;background:rgba(14,12,9,0.66);color:#F5F1E8;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 12px;">Second full bath</figcaption>
+        </figure>
+        <figure style="margin:0;position:relative;border:1px solid #DDD4C2;background:#EFE9DB;">
+          <img loading="lazy" decoding="async" src="images/dual/tu-mudroom.jpg" alt="Rear mudroom with bench and hooks" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 62%;" />
+          <figcaption style="position:absolute;left:0;bottom:0;background:rgba(14,12,9,0.66);color:#F5F1E8;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 12px;">Mudroom</figcaption>
+        </figure>
+        <figure style="margin:0;position:relative;border:1px solid #DDD4C2;background:#EFE9DB;">
+          <img loading="lazy" decoding="async" src="images/dual/tu-stairs.jpg" alt="Upper landing and stairwell" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;" />
+          <figcaption style="position:absolute;left:0;bottom:0;background:rgba(14,12,9,0.66);color:#F5F1E8;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 12px;">Upper landing</figcaption>
+        </figure>
+        <figure style="margin:0;position:relative;border:1px solid #DDD4C2;background:#EFE9DB;">
+          <img loading="lazy" decoding="async" src="images/dual/tu-wic.jpg" alt="Walk-in closet with built-in shelving" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;" />
+          <figcaption style="position:absolute;left:0;bottom:0;background:rgba(14,12,9,0.66);color:#F5F1E8;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 12px;">Walk-in closet</figcaption>
+        </figure>
+        <figure style="margin:0;position:relative;border:1px solid #DDD4C2;background:#EFE9DB;">
+          <img loading="lazy" decoding="async" src="images/dual/tu-wic2.jpg" alt="Bedroom closet with shelving and hanging rails" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 70%;" />
+          <figcaption style="position:absolute;left:0;bottom:0;background:rgba(14,12,9,0.66);color:#F5F1E8;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 12px;">Bedroom storage</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- ===== FEATURES & FINISHES ===== -->
-  <section class="di-sec">
-    <div class="di-wrap">
-      <div class="di-eyebrow"><span class="rule"></span>Features &amp; Finishes</div>
-      <h2 class="di-h2" style="margin-bottom:34px;">Everything in this list is <i>in the price.</i></h2>
-      <div class="di-grid3">
-        <article>
-          <div class="di-card-title" style="margin-top:0;">Exterior</div>
-          <ul class="di-list" style="margin-top:14px;">
-            <li>Precast entry steps, aluminum railing</li>
-            <li>Premium vinyl siding, brick stone finish</li>
-            <li>Landscaping complete</li>
-            <li><strong>Two-car garage</strong> plus two parking pads</li>
-            <li><strong>Separate side entrance</strong> to the suite</li>
-          </ul>
-        </article>
-        <article>
-          <div class="di-card-title" style="margin-top:0;">Main floor</div>
-          <ul class="di-list" style="margin-top:14px;">
-            <li>Open-concept layout</li>
-            <li>Living room with large windows</li>
-            <li><strong>Electric fireplace</strong> in the living area</li>
-            <li>Rear kitchen, large central island</li>
-            <li>Central dining, mudroom, half bath</li>
-          </ul>
-        </article>
-        <article>
-          <div class="di-card-title" style="margin-top:0;">Second floor</div>
-          <ul class="di-list" style="margin-top:14px;">
-            <li>Three bedrooms, two full bathrooms</li>
-            <li>Primary with large window and <strong>walk-in closet</strong></li>
-            <li><strong>Private ensuite</strong>, standing shower</li>
-            <li>Two further bedrooms with closets</li>
-            <li><strong>Upper-floor laundry</strong>, four-piece common bath</li>
-          </ul>
-        </article>
-        <article>
-          <div class="di-card-title" style="margin-top:0;">Legal basement suite</div>
-          <ul class="di-list" style="margin-top:14px;">
-            <li>595 sq ft, fully finished and <strong>legally suited</strong></li>
-            <li>One bedroom, four-piece bath</li>
-            <li>Open living area with a full kitchen</li>
-            <li>Stacked in-suite washer and dryer</li>
-            <li>9&#8242;3&#8243; foundation wall height</li>
-          </ul>
-        </article>
-        <article>
-          <div class="di-card-title" style="margin-top:0;">Kitchens &amp; appliances</div>
-          <ul class="di-list" style="margin-top:14px;">
-            <li><strong>Quartz countertops</strong> throughout</li>
-            <li>Melamine or glossy laminate cabinets</li>
-            <li><strong>Tile backsplash</strong> in kitchens and baths</li>
-            <li><strong>Appliances in both units</strong></li>
-            <li><strong>Window coverings</strong> throughout</li>
-          </ul>
-        </article>
-        <article>
-          <div class="di-card-title" style="margin-top:0;">Flooring, mechanical &amp; more</div>
-          <ul class="di-list" style="margin-top:14px;">
-            <li><strong>Luxury vinyl plank</strong> on the main floor</li>
-            <li>35 oz carpet upstairs, tile in wet areas</li>
-            <li><strong>High-efficiency furnace</strong>, 50-gallon tank</li>
-            <li><strong>HRV</strong>, radon piping, 15 pot lights</li>
-            <li><strong>Alberta New Home Warranty</strong> <span class="di-more">— and much more</span></li>
-          </ul>
-        </article>
+  <section id="features" style="background:#EFE9DB;padding:clamp(52px,6.5vw,88px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent,#9C6B34);margin-bottom:18px;"><span style="display:block;width:26px;height:1px;background:var(--accent,#9C6B34);"></span>Features &amp; Finishes</div>
+      <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(1.85rem,3.6vw,2.7rem);line-height:1.1;letter-spacing:-0.02em;color:#1C1813;max-width:640px;margin-bottom:34px;text-wrap:balance;">Everything in this list is <span style="font-style:italic;color:var(--accent,#9C6B34);">in the price.</span></h2>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:1px;background:#DDD4C2;border:1px solid #DDD4C2;">
+        <div style="background:#FBF8F1;padding:clamp(24px,2.8vw,32px);">
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#9C6B34);padding-bottom:10px;border-bottom:1px solid #E4DBCB;margin-bottom:18px;">Exterior</div>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:.875rem;line-height:1.6;color:#4A443B;">
+            <div>Precast entry steps, aluminum railing</div>
+            <div><strong style="color:#1C1813;font-weight:600;">Premium vinyl siding, brick stone finish</strong></div>
+            <div><strong style="color:#1C1813;font-weight:600;">Landscaping complete</strong></div>
+            <div><strong style="color:#1C1813;font-weight:600;">Two-car garage</strong> plus two parking pads</div>
+            <div><strong style="color:#1C1813;font-weight:600;">Separate side entrance</strong> to the suite</div>
+          </div>
+        </div>
+        <div style="background:#FBF8F1;padding:clamp(24px,2.8vw,32px);">
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#9C6B34);padding-bottom:10px;border-bottom:1px solid #E4DBCB;margin-bottom:18px;">Main floor</div>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:.875rem;line-height:1.6;color:#4A443B;">
+            <div><strong style="color:#1C1813;font-weight:600;">Open-concept layout</strong></div>
+            <div>Living room with large windows</div>
+            <div><strong style="color:#1C1813;font-weight:600;">Electric fireplace</strong> in the living area</div>
+            <div><strong style="color:#1C1813;font-weight:600;">Rear kitchen, large central island</strong></div>
+            <div>Central dining, mudroom, half bath</div>
+          </div>
+        </div>
+        <div style="background:#FBF8F1;padding:clamp(24px,2.8vw,32px);">
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#9C6B34);padding-bottom:10px;border-bottom:1px solid #E4DBCB;margin-bottom:18px;">Second floor</div>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:.875rem;line-height:1.6;color:#4A443B;">
+            <div><strong style="color:#1C1813;font-weight:600;">Three bedrooms, two full bathrooms</strong></div>
+            <div>Primary with large window and <strong style="color:#1C1813;font-weight:600;">walk-in closet</strong></div>
+            <div><strong style="color:#1C1813;font-weight:600;">Private ensuite</strong>, standing shower</div>
+            <div>Two further bedrooms with closets</div>
+            <div><strong style="color:#1C1813;font-weight:600;">Upper-floor laundry</strong>, four-piece common bath</div>
+          </div>
+        </div>
+        <div style="background:#FBF8F1;padding:clamp(24px,2.8vw,32px);">
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#9C6B34);padding-bottom:10px;border-bottom:1px solid #E4DBCB;margin-bottom:18px;">Legal basement suite</div>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:.875rem;line-height:1.6;color:#4A443B;">
+            <div><strong style="color:#1C1813;font-weight:600;">595 sq ft, fully finished and legally suited</strong></div>
+            <div><strong style="color:#1C1813;font-weight:600;">One bedroom, four-piece bath</strong></div>
+            <div>Open living area with a full kitchen</div>
+            <div><strong style="color:#1C1813;font-weight:600;">Stacked in-suite washer and dryer</strong></div>
+            <div>9&#8242;3&#8243; foundation wall height</div>
+          </div>
+        </div>
+        <div style="background:#FBF8F1;padding:clamp(24px,2.8vw,32px);">
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#9C6B34);padding-bottom:10px;border-bottom:1px solid #E4DBCB;margin-bottom:18px;">Kitchens &amp; appliances</div>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:.875rem;line-height:1.6;color:#4A443B;">
+            <div><strong style="color:#1C1813;font-weight:600;">Quartz countertops throughout</strong></div>
+            <div>Melamine or glossy laminate cabinets</div>
+            <div><strong style="color:#1C1813;font-weight:600;">Tile backsplash</strong> in kitchens and baths</div>
+            <div><strong style="color:#1C1813;font-weight:600;">Appliances in both units</strong></div>
+            <div><strong style="color:#1C1813;font-weight:600;">Window coverings</strong> throughout</div>
+          </div>
+        </div>
+        <div style="background:#FBF8F1;padding:clamp(24px,2.8vw,32px);">
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#9C6B34);padding-bottom:10px;border-bottom:1px solid #E4DBCB;margin-bottom:18px;">Flooring, mechanical &amp; more</div>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:.875rem;line-height:1.6;color:#4A443B;">
+            <div><strong style="color:#1C1813;font-weight:600;">Luxury vinyl plank</strong> on the main floor</div>
+            <div>35 oz carpet upstairs, tile in wet areas</div>
+            <div><strong style="color:#1C1813;font-weight:600;">High-efficiency furnace</strong>, 50-gallon tank</div>
+            <div><strong style="color:#1C1813;font-weight:600;">HRV</strong>, radon piping, 15 pot lights</div>
+            <div><strong style="color:#1C1813;font-weight:600;">Alberta New Home Warranty</strong> <span style="color:var(--accent,#9C6B34);font-weight:600;">&mdash; and much more</span></div>
+          </div>
+        </div>
       </div>
-      <p class="di-note" style="margin-top:22px;">Specifications, finishes and dimensions are subject to change without notice and may vary by lot and elevation. Illustrations are artist's impressions. E.&amp;O.E.</p>
+      <p style="font-size:.72rem;line-height:1.7;color:#8A8172;margin-top:24px;max-width:820px;">Specifications, finishes and dimensions are subject to change without notice and may vary by lot and elevation. Illustrations are artist&rsquo;s impressions. E.&amp;O.E.</p>
     </div>
   </section>
 
-  <!-- ===== LOCATION ===== -->
-  <section class="di-sec" style="background:#EFE9DB;">
-    <div class="di-wrap">
-      <div class="di-eyebrow"><span class="rule"></span>Location · Leduc, Alberta</div>
-      <h2 class="di-h2" style="margin-bottom:20px;">A city that runs on <i>jobs, not commutes.</i></h2>
-      <p class="di-lede" style="margin-bottom:14px;">Leduc sits just south of Edmonton on the QEII, immediately next to Edmonton International Airport and the Nisku Business Park — at 5,050 acres, the largest energy-manufacturing industrial park in Canada, with more than 400 businesses on it. Between Nisku and the Leduc Business Park the area draws on a labour pool of over 15,000 skilled trades.</p>
-      <p class="di-lede">That employment base is why rental demand here is shift workers and trades households rather than students. Leduc's population is <strong>up 3.0% in a year and 17.1% over five</strong>, among the faster-growing municipalities in Alberta, and new rental supply has not kept pace. A legal two-unit home lets you serve two different tenant budgets on one lot.</p>
-
-      <div class="di-strip di-stats" style="margin:32px 0 32px;background:#DDD4C2;">
-        <div style="background:#FBF8F1;">
-          <div class="di-cell-fig" style="margin-top:0;">+17.1%</div>
-          <div class="di-cell-label">Five-year growth</div>
-          <div class="di-cell-sub" style="margin-top:5px;">+3.0% year over year</div>
-        </div>
-        <div style="background:#FBF8F1;">
-          <div class="di-cell-fig" style="margin-top:0;">5,050</div>
-          <div class="di-cell-label">Acres at Nisku</div>
-          <div class="di-cell-sub" style="margin-top:5px;">Largest such park in Canada</div>
-        </div>
-        <div style="background:#FBF8F1;">
-          <div class="di-cell-fig" style="margin-top:0;">400+</div>
-          <div class="di-cell-label">Businesses next door</div>
-          <div class="di-cell-sub" style="margin-top:5px;">15,000+ skilled trades</div>
-        </div>
-        <div style="background:#FBF8F1;">
-          <div class="di-cell-fig" style="margin-top:0;">~10 min</div>
-          <div class="di-cell-label">To YEG &amp; Nisku</div>
-          <div class="di-cell-sub" style="margin-top:5px;">24-hour air-cargo hub</div>
+  <section id="location" style="background:#16130E;color:#F5F1E8;padding:clamp(52px,6.5vw,88px) clamp(18px,4vw,44px);position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 15% 10%,rgba(196,154,94,0.14),transparent 62%);pointer-events:none;"></div>
+    <div style="max-width:1240px;margin:0 auto;position:relative;z-index:1;">
+      <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-l,#C79A5E);margin-bottom:18px;"><span style="display:block;width:26px;height:1px;background:var(--accent-l,#C79A5E);"></span>Location &middot; Leduc, Alberta</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:clamp(24px,3vw,48px);align-items:start;margin-bottom:38px;">
+        <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(1.85rem,3.6vw,2.7rem);line-height:1.1;letter-spacing:-0.02em;text-wrap:balance;">A city that runs on <span style="font-style:italic;color:var(--accent-l,#C79A5E);">jobs, not commutes.</span></h2>
+        <div style="display:flex;flex-direction:column;gap:16px;font-size:.95rem;line-height:1.75;color:#B9B0A0;">
+          <p>Leduc sits just south of Edmonton on the QEII, immediately next to Edmonton International Airport and the Nisku Business Park &mdash; at 5,050 acres, the largest energy-manufacturing industrial park in Canada, with more than 400 businesses on it. Between Nisku and the Leduc Business Park the area draws on a labour pool of over 15,000 skilled trades.</p>
+          <p>That employment base is why rental demand here is shift workers and trades households rather than students. Leduc’s population is <strong style="color:#F5F1E8;">up 3.0% in a year and 17.1% over five</strong>, among the faster-growing municipalities in Alberta, and new rental supply has not kept pace. A legal two-unit home lets you serve two different tenant budgets on one lot.</p>
         </div>
       </div>
 
-      <div class="di-grid3">
-        <article>
-          <div class="di-card-title" style="margin-top:0;">Who rents here</div>
-          <p style="font-size:.85rem;line-height:1.7;color:#4A443B;margin-top:12px;">Airport and Nisku shift workers, trades and energy-services households, young families priced out of south Edmonton, and airline crew who need to be minutes from the terminal. Two unit sizes on one title means you can rent to a family upstairs and a single worker below.</p>
-        </article>
-        <article>
-          <div class="di-card-title" style="margin-top:0;">Everyday amenities</div>
-          <p style="font-size:.85rem;line-height:1.7;color:#4A443B;margin-top:12px;">Leduc has its own Costco, along with the full big-box and grocery run, the Leduc Recreation Centre, a hospital and schools across every grade — so tenants are not driving into Edmonton for the basics. Parks, walking trails and green space throughout the newer communities.</p>
-        </article>
-        <article>
-          <div class="di-card-title" style="margin-top:0;">Why it matters to you</div>
-          <p style="font-size:.85rem;line-height:1.7;color:#4A443B;margin-top:12px;">Alberta charges <strong>no land transfer tax and no development charges</strong> — on a purchase this size that is thousands that stays in your pocket rather than going to closing costs. Add a landlord-friendly tenancy framework, no provincial rent control, and YEG's Airport City campus drawing roughly $1.5 billion over the past decade to keep the job base growing next door.</p>
-        </article>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:1px;background:#2A2419;border:1px solid #2A2419;">
+        <div style="background:#16130E;padding:24px 22px;"><div style="font-family:'Newsreader',serif;font-size:1.8rem;color:var(--accent-l,#C79A5E);line-height:1;">+17.1%</div><div style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:10px;line-height:1.6;">Five-year growth<br />+3.0% year over year</div></div>
+        <div style="background:#16130E;padding:24px 22px;"><div style="font-family:'Newsreader',serif;font-size:1.8rem;color:#F5F1E8;line-height:1;">5,050</div><div style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:10px;line-height:1.6;">Acres at Nisku<br />Largest such park in Canada</div></div>
+        <div style="background:#16130E;padding:24px 22px;"><div style="font-family:'Newsreader',serif;font-size:1.8rem;color:#F5F1E8;line-height:1;">400+</div><div style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:10px;line-height:1.6;">Businesses next door<br />15,000+ skilled trades</div></div>
+        <div style="background:#16130E;padding:24px 22px;"><div style="font-family:'Newsreader',serif;font-size:1.8rem;color:#F5F1E8;line-height:1;">~10 min</div><div style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8A8172;margin-top:10px;line-height:1.6;">To YEG &amp; Nisku<br />24-hour air-cargo hub</div></div>
+        
       </div>
-      <p class="di-note" style="margin-top:22px;">Population growth: Alberta Regional Dashboard municipal estimates, 2025. Nisku figures: Leduc County and Nisku Business Association. Drive times approximate. Past growth is not a forecast of future performance.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(18px,2.4vw,30px);margin-top:36px;">
+        <div>
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-l,#C79A5E);padding-bottom:10px;border-bottom:1px solid #2A2419;margin-bottom:14px;">Who rents here</div>
+          <p style="font-size:.875rem;line-height:1.7;color:#B9B0A0;">Airport and Nisku shift workers, trades and energy-services households, young families priced out of south Edmonton, and airline crew who need to be minutes from the terminal. Two unit sizes on one title means you can rent to a family upstairs and a single worker below.</p>
+        </div>
+        <div>
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-l,#C79A5E);padding-bottom:10px;border-bottom:1px solid #2A2419;margin-bottom:14px;">Everyday amenities</div>
+          <p style="font-size:.875rem;line-height:1.7;color:#B9B0A0;">Leduc has its own Costco, along with the full big-box and grocery run, the Leduc Recreation Centre, a hospital and schools across every grade &mdash; so tenants are not driving into Edmonton for the basics. Parks, walking trails and green space throughout the newer communities.</p>
+        </div>
+        <div>
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-l,#C79A5E);padding-bottom:10px;border-bottom:1px solid #2A2419;margin-bottom:14px;">Why it matters to you</div>
+          <p style="font-size:.875rem;line-height:1.7;color:#B9B0A0;">Alberta charges <strong style="color:#F5F1E8;">no land transfer tax and no development charges</strong> &mdash; on a purchase this size that is thousands that stays in your pocket rather than going to closing costs. Add a landlord-friendly tenancy framework, no provincial rent control, and YEG’s Airport City campus drawing roughly $1.5 billion over the past decade to keep the job base growing next door.</p>
+        </div>
+      </div>
+      <p style="font-size:.7rem;line-height:1.7;color:#6B6559;margin-top:28px;max-width:820px;">Population growth: Alberta Regional Dashboard municipal estimates, 2025. Nisku figures: Leduc County and Nisku Business Association. Drive times approximate. Past growth is not a forecast of future performance.</p>
     </div>
   </section>
 
-  <!-- ===== CALCULATOR ===== -->
-  <section class="di-sec" id="calculator">
-    <div class="di-wrap">
-      <div class="di-eyebrow"><span class="rule"></span>Cash Flow Analysis</div>
-      <h2 class="di-h2" style="margin-bottom:14px;">What two doors <i>actually pay you.</i></h2>
-      <p class="di-lede" style="margin-bottom:30px;">Every field is editable. Defaults reflect current market rents for this product — <strong>$2,200</strong> upper, <strong>$1,200</strong> lower — at a 30-year conventional amortization. Change anything and the numbers move with you.</p>
+  <section id="cashflow" style="background:#EFE9DB;padding:clamp(52px,6.5vw,88px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent,#9C6B34);margin-bottom:18px;"><span style="display:block;width:26px;height:1px;background:var(--accent,#9C6B34);"></span>Cash Flow Analysis</div>
+      <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(1.85rem,3.6vw,2.7rem);line-height:1.1;letter-spacing:-0.02em;color:#1C1813;margin-bottom:16px;max-width:660px;text-wrap:balance;">What two doors actually pay you.</h2>
+      <p style="font-size:.95rem;line-height:1.75;color:#4A443B;max-width:640px;margin-bottom:36px;">Every field is editable. Defaults reflect current market rents for this product — <strong style="color:#1C1813;">$2,200</strong> upper, <strong style="color:#1C1813;">$1,200</strong> lower — at a 30-year conventional amortization. Change anything and the numbers move with you.</p>
 
-      <div class="di-calc">
-        <!-- inputs -->
-        <div class="di-inputs">
-          <fieldset class="di-fieldset">
-            <legend class="di-legend">Your assumptions</legend>
-            <div class="di-pair">
-              <div class="di-field">
-                <label for="diPrice">Purchase price</label>
-                <div class="di-in"><span class="di-pre">$</span><input type="number" id="diPrice" class="pad-l" value="499000" min="0" step="1000" inputmode="numeric" /></div>
-              </div>
-              <div class="di-field">
-                <label for="diDep">Down payment</label>
-                <div class="di-in"><input type="number" id="diDep" class="pad-r" value="20" min="0" max="100" step="0.5" inputmode="decimal" /><span class="di-post">%</span></div>
-              </div>
-              <div class="di-field">
-                <label for="diRate">Interest rate</label>
-                <div class="di-in"><input type="number" id="diRate" class="pad-r" value="3.79" min="0" max="25" step="0.01" inputmode="decimal" /><span class="di-post">%</span></div>
-              </div>
-              <div class="di-field">
-                <label for="diAmort">Amortization (yrs)</label>
-                <div class="di-in"><input type="number" id="diAmort" value="30" min="1" max="40" step="1" inputmode="numeric" /></div>
-              </div>
-              <div class="di-field">
-                <label for="diMgmt">Property management</label>
-                <div class="di-in"><input type="number" id="diMgmt" class="pad-r" value="8" min="0" max="30" step="0.5" inputmode="decimal" /><span class="di-post">%</span></div>
-              </div>
-            </div>
-            <p class="di-help">Conventional financing at 20% down — no mortgage insurance premium. Property management is charged on gross monthly rent.</p>
-          </fieldset>
+      <div class="di-calc" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(20px,2.5vw,32px);align-items:start;">
 
-          <fieldset class="di-fieldset">
-            <legend class="di-legend">Rent roll</legend>
-            <div class="di-pair">
-              <div class="di-field">
-                <label for="diRentUp">Upper level / mo (3 bed · 2.5 bath)</label>
-                <div class="di-in"><span class="di-pre">$</span><input type="number" id="diRentUp" class="pad-l" value="2200" min="0" step="25" inputmode="numeric" /></div>
-              </div>
-              <div class="di-field">
-                <label for="diRentLow">Lower level / mo (1 bed · 1 bath)</label>
-                <div class="di-in"><span class="di-pre">$</span><input type="number" id="diRentLow" class="pad-l" value="1200" min="0" step="25" inputmode="numeric" /></div>
-              </div>
-            </div>
-          </fieldset>
+        <div style="background:#FBF8F1;border:1px solid #DDD4C2;padding:clamp(22px,3vw,32px);">
+          <div style="font-family:'Newsreader',serif;font-size:1.4rem;font-weight:500;color:#1C1813;margin-bottom:22px;">Your assumptions</div>
 
-          <fieldset class="di-fieldset">
-            <legend class="di-legend">Operating expenses</legend>
-            <div class="di-pair">
-              <div class="di-field">
-                <label for="diIns">Home insurance / mo</label>
-                <div class="di-in"><span class="di-pre">$</span><input type="number" id="diIns" class="pad-l" value="120" min="0" step="5" inputmode="numeric" /></div>
-              </div>
-              <div class="di-field">
-                <label for="diTaxYear">Property tax / year</label>
-                <div class="di-in"><input type="text" id="diTaxYear" value="$3,516" readonly aria-readonly="true" /></div>
-              </div>
-            </div>
-            <p class="di-help">Operating expenses are property tax, home insurance and property management only. One policy covers both units, upper and lower. Utilities are tenant-paid. Property tax is estimated on the assessed value.</p>
-          </fieldset>
+          <div style="margin-bottom:16px;">
+            <label style="display:block;font-size:.64rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8A8172;margin-bottom:7px;">Purchase price</label>
+            <div style="position:relative;display:flex;align-items:center;"><span style="position:absolute;left:12px;color:#8A8172;font-size:.9rem;">$</span><input type="text" inputMode="numeric" id="diPrice" value="499000" style="width:100%;background:#F5F1E8;border:1px solid #DDD4C2;color:#1C1813;padding:11px 12px 11px 24px;font-family:'Space Grotesk';font-size:.95rem;border-radius:2px;" /></div>
+          </div>
+
+          <div class="di-pair" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div><label style="display:block;font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A8172;margin-bottom:7px;">Down payment</label><div style="position:relative;display:flex;align-items:center;"><input type="number" step="1" id="diDep" value="20" style="width:100%;background:#F5F1E8;border:1px solid #DDD4C2;color:#1C1813;padding:11px 28px 11px 12px;font-family:'Space Grotesk';font-size:.92rem;border-radius:2px;" /><span style="position:absolute;right:12px;color:#8A8172;font-size:.85rem;">%</span></div></div>
+            <div><label style="display:block;font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A8172;margin-bottom:7px;">Interest rate</label><div style="position:relative;display:flex;align-items:center;"><input type="number" step="0.05" id="diRate" value="3.79" style="width:100%;background:#F5F1E8;border:1px solid #DDD4C2;color:#1C1813;padding:11px 28px 11px 12px;font-family:'Space Grotesk';font-size:.92rem;border-radius:2px;" /><span style="position:absolute;right:12px;color:#8A8172;font-size:.85rem;">%</span></div></div>
+            <div><label style="display:block;font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A8172;margin-bottom:7px;">Amortization (yrs)</label><input type="number" step="5" id="diAmort" value="30" style="width:100%;background:#F5F1E8;border:1px solid #DDD4C2;color:#1C1813;padding:11px 12px;font-family:'Space Grotesk';font-size:.92rem;border-radius:2px;" /></div>
+            <div><label style="display:block;font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A8172;margin-bottom:7px;">Property management</label><div style="position:relative;display:flex;align-items:center;"><input type="number" step="0.5" id="diMgmt" value="8" style="width:100%;background:#F5F1E8;border:1px solid #DDD4C2;color:#1C1813;padding:11px 28px 11px 12px;font-family:'Space Grotesk';font-size:.92rem;border-radius:2px;" /><span style="position:absolute;right:12px;color:#8A8172;font-size:.85rem;">%</span></div></div>
+          </div>
+          <div style="font-size:.7rem;color:#8A8172;line-height:1.55;margin-top:12px;">Conventional financing at 20% down — no mortgage insurance premium. Property management is charged on gross monthly rent.</div>
+
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#9C6B34);padding-bottom:8px;border-bottom:1px solid #DDD4C2;margin:26px 0 16px;">Rent roll</div>
+          <div class="di-pair" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div><label style="display:block;font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A8172;margin-bottom:7px;">Upper level / mo <span style="text-transform:none;letter-spacing:0;color:#A79E8E;">(3 bed &middot; 2.5 bath)</span></label><div style="position:relative;display:flex;align-items:center;"><span style="position:absolute;left:12px;color:#8A8172;font-size:.85rem;">$</span><input type="text" inputMode="numeric" id="diRentUp" value="2200" style="width:100%;background:#F5F1E8;border:1px solid #DDD4C2;color:#1C1813;padding:11px 12px 11px 24px;font-family:'Space Grotesk';font-size:.92rem;border-radius:2px;" /></div></div>
+            <div><label style="display:block;font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A8172;margin-bottom:7px;">Lower level / mo <span style="text-transform:none;letter-spacing:0;color:#A79E8E;">(1 bed &middot; 1 bath)</span></label><div style="position:relative;display:flex;align-items:center;"><span style="position:absolute;left:12px;color:#8A8172;font-size:.85rem;">$</span><input type="text" inputMode="numeric" id="diRentLow" value="1200" style="width:100%;background:#F5F1E8;border:1px solid #DDD4C2;color:#1C1813;padding:11px 12px 11px 24px;font-family:'Space Grotesk';font-size:.92rem;border-radius:2px;" /></div></div>
+          </div>
+
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#9C6B34);padding-bottom:8px;border-bottom:1px solid #DDD4C2;margin:26px 0 16px;">Operating expenses</div>
+          <div class="di-pair" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div><label style="display:block;font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A8172;margin-bottom:7px;">Home insurance / mo</label><div style="position:relative;display:flex;align-items:center;"><span style="position:absolute;left:12px;color:#8A8172;font-size:.85rem;">$</span><input type="text" inputMode="numeric" id="diIns" value="120" style="width:100%;background:#F5F1E8;border:1px solid #DDD4C2;color:#1C1813;padding:11px 12px 11px 24px;font-family:'Space Grotesk';font-size:.92rem;border-radius:2px;" /></div></div>
+            <div><label style="display:block;font-size:.64rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A8172;margin-bottom:7px;">Property tax / year</label><div style="display:flex;align-items:center;background:#EFE9DB;border:1px solid #DDD4C2;color:#4A443B;padding:11px 12px;font-size:.92rem;border-radius:2px;"><span data-di="taxYear"></span></div></div>
+          </div>
+          <div style="font-size:.7rem;color:#8A8172;line-height:1.55;margin-top:14px;">Operating expenses are property tax, home insurance and property management only. One policy covers both units, upper and lower. Utilities are tenant-paid. Property tax is estimated on the assessed value.</div>
+
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#9C6B34);padding-bottom:8px;border-bottom:1px solid #DDD4C2;margin:26px 0 16px;">One-time, at closing</div>
+          <div class="di-pair" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#DDD4C2;border:1px solid #DDD4C2;">
+            <div style="background:#F5F1E8;padding:16px 18px;"><div style="font-family:'Newsreader',serif;font-size:1.35rem;color:#1C1813;line-height:1;"><span data-di="depOnly"></span></div><div style="font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8A8172;margin-top:7px;">Down payment &middot; <span data-di="depPctLabel"></span></div></div>
+            <div style="background:#F5F1E8;padding:16px 18px;"><div style="font-family:'Newsreader',serif;font-size:1.35rem;color:#1C1813;line-height:1;"><span data-di="loan"></span></div><div style="font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#8A8172;margin-top:7px;">Mortgage amount</div></div>
+          </div>
         </div>
 
-        <!-- results -->
-        <aside class="di-res" aria-live="polite">
-          <div class="di-res-hero">
-            <div class="di-res-lab">Monthly cash flow</div>
-            <div class="di-res-big" id="diCF">$0</div>
-            <p class="di-res-note">After the mortgage payment, property tax, home insurance and property management — projected, pre-tax.</p>
+        <div class="di-res" style="position:sticky;top:88px;background:#16130E;color:#F5F1E8;border:1px solid #2A2419;padding:clamp(24px,3vw,34px);">
+          <div style="font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#8A8172;margin-bottom:10px;">Monthly cash flow</div>
+          <div style="font-family:'Newsreader',serif;font-size:clamp(2.8rem,5.4vw,3.9rem);font-weight:500;color:#7FB396;line-height:1;"><span data-di="cashflowM"></span></div>
+          <div style="font-size:.72rem;color:#8A8172;margin-top:10px;line-height:1.6;">After the mortgage payment, property tax, home insurance and property management &mdash; projected, pre-tax.</div>
+          <div style="height:1px;background:#2A2419;margin:24px 0;"></div>
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-l,#C79A5E);margin-bottom:14px;">Monthly rent</div>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:.9rem;">
+            <div style="display:flex;justify-content:space-between;gap:12px;"><span style="color:#B9B0A0;">Upper level <span style="color:#6B6559;">(3 bed &middot; 2.5 bath)</span></span><span style="color:#F5F1E8;"><span data-di="rentUpperM"></span></span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;"><span style="color:#B9B0A0;">Lower level <span style="color:#6B6559;">(1 bed &middot; 1 bath)</span></span><span style="color:#F5F1E8;"><span data-di="rentLowerM"></span></span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;padding-top:11px;border-top:1px solid #2A2419;"><span style="color:var(--accent-l,#C79A5E);font-weight:600;">Total monthly rent</span><span style="color:var(--accent-l,#C79A5E);font-weight:600;"><span data-di="grossM"></span></span></div>
           </div>
-
-          <div class="di-block">
-            <div class="di-block-h">One-time, at closing</div>
-            <div class="di-row"><span>Down payment · <span id="diDepPctLab">20%</span></span><span id="diDepAmt">$99,800</span></div>
-            <div class="di-row"><span>Mortgage amount</span><span id="diLoan">$399,200</span></div>
+          <div style="height:1px;background:#2A2419;margin:24px 0;"></div>
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-l,#C79A5E);margin-bottom:14px;">Monthly operating expenses</div>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:.9rem;">
+            <div style="display:flex;justify-content:space-between;gap:12px;"><span style="color:#B9B0A0;">Property tax</span><span style="color:#F5F1E8;"><span data-di="taxM"></span></span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;"><span style="color:#B9B0A0;">Home insurance <span style="color:#6B6559;">(both units)</span></span><span style="color:#F5F1E8;"><span data-di="insM"></span></span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;"><span style="color:#B9B0A0;">Property management <span style="color:#6B6559;"><span data-di="mgmtLabel"></span></span></span><span style="color:#F5F1E8;"><span data-di="mgmtM"></span></span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;padding-top:11px;border-top:1px solid #2A2419;"><span style="color:var(--accent-l,#C79A5E);font-weight:600;">Total operating expenses</span><span style="color:var(--accent-l,#C79A5E);font-weight:600;"><span data-di="expensesM"></span></span></div>
           </div>
-
-          <div class="di-block">
-            <div class="di-block-h">Monthly rent</div>
-            <div class="di-row"><span>Upper level</span><span id="diRUp">$2,200</span></div>
-            <div class="di-row"><span>Lower level</span><span id="diRLow">$1,200</span></div>
-            <div class="di-row tot"><span>Total monthly rent</span><span id="diRTot">$3,400</span></div>
+          <div style="height:1px;background:#2A2419;margin:24px 0;"></div>
+          <div style="font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-l,#C79A5E);margin-bottom:14px;">Monthly result</div>
+          <div style="display:flex;flex-direction:column;gap:11px;font-size:.9rem;">
+            <div style="display:flex;justify-content:space-between;gap:12px;"><span style="color:#B9B0A0;">Net operating income</span><span style="color:#F5F1E8;"><span data-di="noiM"></span></span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;"><span style="color:#B9B0A0;">Mortgage payment</span><span style="color:#F5F1E8;"><span data-di="monthlyNeg"></span></span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;padding-top:11px;border-top:1px solid #2A2419;"><span style="color:#7FB396;font-weight:600;">Cash flow</span><span style="color:#7FB396;font-weight:600;"><span data-di="cashflowM"></span></span></div>
           </div>
-
-          <div class="di-block">
-            <div class="di-block-h">Monthly operating expenses</div>
-            <div class="di-row"><span>Property tax</span><span id="diTaxM">$0</span></div>
-            <div class="di-row"><span>Home insurance (both units)</span><span id="diInsM">$0</span></div>
-            <div class="di-row"><span>Property management <span id="diMgmtLab">(8%)</span></span><span id="diMgmtM">$0</span></div>
-            <div class="di-row tot"><span>Total operating expenses</span><span id="diExpM">$0</span></div>
-          </div>
-
-          <div class="di-block">
-            <div class="di-block-h">Monthly result</div>
-            <div class="di-row"><span>Net operating income</span><span id="diNoiM">$0</span></div>
-            <div class="di-row"><span>Mortgage payment</span><span id="diPmtM">$0</span></div>
-            <div class="di-row tot"><span>Cash flow</span><span id="diCFRow">$0</span></div>
-          </div>
-
-          <div class="di-returns">
-            <div><div class="l">Cap rate</div><div class="v" id="diCap">0.00%</div></div>
-            <div><div class="l">Cash-on-cash</div><div class="v" id="diCoC">0.00%</div></div>
-            <div><div class="l">DSCR</div><div class="v" id="diDscr">0.00</div><span class="di-badge" id="diDscrBadge">—</span></div>
-          </div>
-
-          <p class="di-res-note" style="margin-top:18px;">Estimates only, using monthly-compounded financing and your assumptions. Pre-tax pro-forma; not a projection of actual results, and not a promise of cash flow. Rates, taxes and rents change — verify with your mortgage professional and accountant.</p>
-        </aside>
-      </div>
-
-      <!-- 3-year outlook -->
-      <div style="margin-top:clamp(32px,4vw,52px);">
-        <div class="di-eyebrow" style="margin-bottom:10px;"><span class="rule"></span>3-Year Outlook</div>
-        <p class="di-note" style="margin-bottom:18px;max-width:820px;">Illustrative projection — 4%/yr appreciation, rents and operating expenses both growing 4%/yr, plus principal paydown. Not guaranteed.</p>
-        <div class="swipe-hint">← Swipe the table to see all columns →</div>
-        <div class="di-scroll">
-          <table class="di-table">
-            <thead>
-              <tr><th scope="col">Year</th><th scope="col">Property value</th><th scope="col">Cash flow / yr</th><th scope="col">Equity gained</th><th scope="col">Return on down</th></tr>
-            </thead>
-            <tbody id="diOutlook"></tbody>
-          </table>
+          <p style="font-size:.7rem;line-height:1.65;color:#6B6559;margin-top:22px;">Estimates only, using monthly-compounded financing and your assumptions. Pre-tax pro-forma; not a projection of actual results, and not a promise of cash flow. Rates, taxes and rents change &mdash; verify with your mortgage professional and accountant.</p>
         </div>
       </div>
+
+      
+        <div style="margin-top:clamp(24px,3vw,32px);background:#FBF8F1;border:1px solid #DDD4C2;padding:clamp(22px,3vw,32px);">
+          <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent,#9C6B34);margin-bottom:8px;"><span style="display:block;width:24px;height:1px;background:var(--accent,#9C6B34);"></span>3-Year Outlook</div>
+          <p style="font-size:.85rem;color:#8A8172;margin-bottom:18px;">Illustrative projection — 4%/yr appreciation, rents and operating expenses both growing 4%/yr, plus principal paydown. Not guaranteed.</p>
+
+          <div style="overflow-x:auto;">
+            <div class="di-swipe-hint">← Swipe the table to see all columns →</div>
+<div class="di-outlook-scroll"><div class="di-outlook" style="display:grid;grid-template-columns:repeat(5,1fr);min-width:560px;border:1px solid #E4DBCB;">
+              <div style="padding:12px 16px;font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A8172;border-bottom:1px solid #E4DBCB;">Year</div>
+              <div style="padding:12px 16px;font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A8172;border-bottom:1px solid #E4DBCB;text-align:right;">Property value</div>
+              <div style="padding:12px 16px;font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A8172;border-bottom:1px solid #E4DBCB;text-align:right;">Cash flow / yr</div>
+              <div style="padding:12px 16px;font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A8172;border-bottom:1px solid #E4DBCB;text-align:right;">Equity gained</div>
+              <div style="padding:12px 16px;font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#9C6B34);border-bottom:1px solid #E4DBCB;text-align:right;">Return on down</div>
+              <div id="diOutlook" style="display:contents"></div>
+            </div></div>
+          </div>
+        </div>
+      
     </div>
   </section>
 
-  <!-- ===== WHY THIS WORKS ===== -->
-  <section class="di-sec" style="background:#EFE9DB;">
-    <div class="di-wrap">
-      <div class="di-eyebrow"><span class="rule"></span>Why This Works</div>
-      <h2 class="di-h2" style="margin-bottom:34px;">The smallest asset that still behaves like <i>multi-family.</i></h2>
-      <div class="di-why">
-        <article>
-          <div class="di-num">01</div>
-          <h3>Two rents against one mortgage</h3>
-          <p>The suite carries a meaningful share of the payment. A single-family rental at the same price gives you one cheque and one point of failure; here, one vacancy doesn't take the whole income with it.</p>
-        </article>
-        <article>
-          <div class="di-num">02</div>
-          <h3>Financed like a home, not an institution</h3>
-          <p>A standard residential mortgage on a 30-year amortization. Qualification leans on your income, credit and the documented rents rather than the net-worth test that MLI Select underwriting applies — so this is often the first door for an investor building toward it.</p>
-        </article>
-        <article>
-          <div class="di-num">03</div>
-          <h3>A legal suite lenders will count</h3>
-          <p>Because the second unit is permitted and built to code, its rent is documentable income rather than a grey-market add-on — and it stays insurable and enforceable if a tenancy goes sideways.</p>
-        </article>
-        <article>
-          <div class="di-num">04</div>
-          <h3>Two exits, not one</h3>
-          <p>An eight-plex sells to investors. This sells to investors <em>and</em> to families who want the suite to help with their own mortgage — a far deeper buyer pool when you decide to move on.</p>
-        </article>
-        <article>
-          <div class="di-num">05</div>
-          <h3>New build, nothing to fix</h3>
-          <p>Quartz counters, LVP, a high-efficiency furnace, HRV and a 50-gallon tank — all new, all under new-home warranty. Your first years of ownership are about leasing and rent growth, not roofs and furnaces.</p>
-        </article>
-        <article>
-          <div class="di-num">06</div>
-          <h3>Managed in house, start to finish</h3>
-          <p>We manage these in house, so an out-of-town owner has one team for the purchase, the lease-up and the tenants. Alberta also charges no land transfer tax and no development charges, so more of your cash goes into the asset.</p>
-        </article>
+  <section style="background:#F5F1E8;padding:clamp(52px,6.5vw,88px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent,#9C6B34);margin-bottom:18px;"><span style="display:block;width:26px;height:1px;background:var(--accent,#9C6B34);"></span>Why This Works</div>
+      <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(1.85rem,3.6vw,2.7rem);line-height:1.1;letter-spacing:-0.02em;color:#1C1813;margin-bottom:40px;max-width:700px;text-wrap:balance;">The smallest asset that still behaves like <span style="font-style:italic;color:var(--accent,#9C6B34);">multi-family.</span></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:1px;background:#DDD4C2;border:1px solid #DDD4C2;">
+        <div style="background:#FBF8F1;padding:clamp(24px,2.8vw,32px);">
+          <div style="font-family:'Newsreader',serif;font-size:1.6rem;color:var(--accent,#9C6B34);margin-bottom:14px;">01</div>
+          <div style="font-family:'Newsreader',serif;font-size:1.25rem;font-weight:500;color:#1C1813;margin-bottom:12px;">Two rents against one mortgage</div>
+          <p style="font-size:.9rem;line-height:1.7;color:#4A443B;">The suite carries a meaningful share of the payment. A single-family rental at the same price gives you one cheque and one point of failure; here, one vacancy doesn't take the whole income with it.</p>
+        </div>
+        <div style="background:#FBF8F1;padding:clamp(24px,2.8vw,32px);">
+          <div style="font-family:'Newsreader',serif;font-size:1.6rem;color:var(--accent,#9C6B34);margin-bottom:14px;">02</div>
+          <div style="font-family:'Newsreader',serif;font-size:1.25rem;font-weight:500;color:#1C1813;margin-bottom:12px;">Financed like a home, not an institution</div>
+          <p style="font-size:.9rem;line-height:1.7;color:#4A443B;">A standard residential mortgage on a 30-year amortization. Qualification leans on your income, credit and the documented rents rather than the net-worth test that MLI Select underwriting applies — so this is often the first door for an investor building toward it.</p>
+        </div>
+        <div style="background:#FBF8F1;padding:clamp(24px,2.8vw,32px);">
+          <div style="font-family:'Newsreader',serif;font-size:1.6rem;color:var(--accent,#9C6B34);margin-bottom:14px;">03</div>
+          <div style="font-family:'Newsreader',serif;font-size:1.25rem;font-weight:500;color:#1C1813;margin-bottom:12px;">A legal suite lenders will count</div>
+          <p style="font-size:.9rem;line-height:1.7;color:#4A443B;">Because the second unit is permitted and built to code, its rent is documentable income rather than a grey-market add-on — and it stays insurable and enforceable if a tenancy goes sideways.</p>
+        </div>
+        <div style="background:#FBF8F1;padding:clamp(24px,2.8vw,32px);">
+          <div style="font-family:'Newsreader',serif;font-size:1.6rem;color:var(--accent,#9C6B34);margin-bottom:14px;">04</div>
+          <div style="font-family:'Newsreader',serif;font-size:1.25rem;font-weight:500;color:#1C1813;margin-bottom:12px;">Two exits, not one</div>
+          <p style="font-size:.9rem;line-height:1.7;color:#4A443B;">An eight-plex sells to investors. This sells to investors <em>and</em> to families who want the suite to help with their own mortgage — a far deeper buyer pool when you decide to move on.</p>
+        </div>
+        <div style="background:#FBF8F1;padding:clamp(24px,2.8vw,32px);">
+          <div style="font-family:'Newsreader',serif;font-size:1.6rem;color:var(--accent,#9C6B34);margin-bottom:14px;">05</div>
+          <div style="font-family:'Newsreader',serif;font-size:1.25rem;font-weight:500;color:#1C1813;margin-bottom:12px;">New build, nothing to fix</div>
+          <p style="font-size:.9rem;line-height:1.7;color:#4A443B;">Quartz counters, LVP, a high-efficiency furnace, HRV and a 50-gallon tank — all new, all under new-home warranty. Your first years of ownership are about leasing and rent growth, not roofs and furnaces.</p>
+        </div>
+        <div style="background:#FBF8F1;padding:clamp(24px,2.8vw,32px);">
+          <div style="font-family:'Newsreader',serif;font-size:1.6rem;color:var(--accent,#9C6B34);margin-bottom:14px;">06</div>
+          <div style="font-family:'Newsreader',serif;font-size:1.25rem;font-weight:500;color:#1C1813;margin-bottom:12px;">Managed in house, start to finish</div>
+          <p style="font-size:.9rem;line-height:1.7;color:#4A443B;">We manage these in house, so an out-of-town owner has one team for the purchase, the lease-up and the tenants. Alberta also charges no land transfer tax and no development charges, so more of your cash goes into the asset.</p>
+        </div>
       </div>
-      <p class="di-note" style="margin-top:22px;">Underwriting on a dual income home is led by your personal income, credit and net worth alongside the property's documented rents. Eligibility and final terms are subject to lender approval and vary by applicant. Nothing here is a promise of cash flow.</p>
+      <p style="font-size:.72rem;line-height:1.7;color:#8A8172;margin-top:28px;max-width:820px;">Underwriting on a dual income home is led by your personal income, credit and net worth alongside the property's documented rents. Eligibility and final terms are subject to lender approval and vary by applicant. Nothing here is a promise of cash flow.</p>
     </div>
   </section>
 
-  <!-- ===== CTA ===== -->
-  <section class="di-sec di-cta">
-    <div class="di-wrap">
-      <div class="di-eyebrow" style="color:var(--accent-l);justify-content:center;"><span class="rule" style="background:var(--accent-l);"></span>Start Smaller</div>
-      <h2 class="di-h2" style="color:#F5F1E8;margin-bottom:16px;">Two doors is a good place <i style="color:var(--accent-l);">to begin.</i></h2>
-      <p style="font-size:.95rem;line-height:1.75;color:#B9B0A0;max-width:620px;margin:0 auto 30px;">Send me your timeline and I will come back with what is available now, the full pro-forma behind these numbers, and the rent comparables they are built on.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
-        <a href="contact.html" data-conversion="book_call" data-magnetic class="btn-brass-di">Book Your Discovery Call</a>
-        <a href="tel:+14162007010" data-conversion="phone_click" data-magnetic class="btn-ghost-di">416-200-7010</a>
+  <section style="background:#16130E;color:#F5F1E8;padding:clamp(64px,10vw,140px) clamp(18px,4vw,44px);text-align:center;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 70% at 50% 40%,rgba(196,154,94,0.16),transparent 65%);pointer-events:none;"></div>
+    <div style="max-width:640px;margin:0 auto;position:relative;z-index:1;">
+      <div style="font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-l,#C79A5E);margin-bottom:24px;">Start Smaller</div>
+      <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.06;letter-spacing:-0.02em;margin-bottom:20px;text-wrap:balance;">Two doors is a good place to begin.</h2>
+      <p style="font-size:1rem;line-height:1.7;color:#B9B0A0;margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto;">Send me your timeline and I will come back with what is available now, the full pro-forma behind these numbers, and the rent comparables they are built on.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;align-items:center;">
+        <a href="contact.html" data-conversion="book_call" data-magnetic style="background:var(--accent,#9C6B34);color:#16130E;padding:17px 38px;border-radius:2px;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;">Book Your Discovery Call</a>
+        <a href="tel:+14162007010" data-conversion="phone_click" style="color:#F5F1E8;padding:17px 20px;font-size:.76rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid #4A4130;">416-200-7010</a>
       </div>
-      <p class="di-note" style="color:#6B6559;margin-top:28px;max-width:760px;margin-left:auto;margin-right:auto;">Illustrations are artist's impressions. Interior photography is of a completed home of the same specification; finishes and dimensions may vary. E.&amp;O.E.</p>
+      <p style="font-size:.66rem;line-height:1.6;color:#6B6559;margin-top:36px;max-width:700px;margin-left:auto;margin-right:auto;">Illustrations are artist's impressions. Interior photography is of a completed home of the same specification; finishes and dimensions may vary. E.&amp;O.E.</p>
     </div>
   </section>
 
+  
 </main>
 
 
-  <footer style="background:#0E0C09;color:#B9B0A0;padding:clamp(40px,6vw,64px) clamp(18px,4vw,44px);">
+<footer style="background:#0E0C09;color:#B9B0A0;padding:clamp(40px,6vw,64px) clamp(18px,4vw,44px);">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:36px;flex-wrap:wrap;padding-bottom:32px;border-bottom:1px solid #23201A;">
         <div style="max-width:320px;">
@@ -845,17 +682,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="padding-top:24px;font-size:.72rem;line-height:1.7;color:#6B6559;">Kunal Sarhadi, Real Estate Broker · Standard Realty Co., Edmonton (AB) · Homelife Miracle Realty Inc. (ON) · © 2026 Multi Family Deals. This website is under active development: content is preliminary, updated frequently, and not final, and may change without notice. Nothing shown here is an offer or a binding representation — the Agreement of Purchase and Sale and current CMHC terms govern. Prior versions, screenshots, or cached copies of this site do not reflect current terms and should not be relied upon.<br /><span style="display:inline-block;margin-top:0.45rem;opacity:0.85;">Calculator for illustration only; not financial advice. CMHC MLI Select terms subject to change.</span></div>
     </div>
   </footer>
-  <!-- ===== Dual income cash-flow calculator (vanilla) ===== -->
+  <!-- ===== Dual income cash-flow calculator (vanilla — math ported from the design handoff) ===== -->
   <script>
   (function(){
     var $ = function(id){ return document.getElementById(id); };
+    function set(tok, val){
+      var els = document.querySelectorAll('[data-di="' + tok + '"]');
+      for (var i = 0; i < els.length; i++) els[i].textContent = val;
+      return els;
+    }
     var n = function(v){ var x = parseFloat(String(v).replace(/[^0-9.\-]/g,'')); return isNaN(x) ? 0 : x; };
     var money = function(v){ return (v < 0 ? '-$' : '$') + Math.abs(Math.round(v)).toLocaleString('en-US'); };
     var pct = function(v){ return v.toFixed(2) + '%'; };
 
-    // Property tax basis: assessed value factor x municipal mill rate.
+    // Property tax basis: assessed-value factor x municipal mill rate.
     // Owner decision (July 2026): keep the 0.75 factor from the design handoff.
-    // Deliberately not surfaced in the UI — the field is labelled "Property tax / year" only.
+    // Neither number is surfaced in the UI — the field reads "Property tax / year" only.
     var ASSESS_FACTOR = 0.75, MILL_RATE = 0.009395;
 
     function pmt(principal, ratePct, years){
@@ -901,55 +743,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var annual  = monthly * 12;
       var cashFlow = noi - annual;
 
-      // hero strip
-      $('diHeroPrice').textContent = money(price);
-      $('diHeroDoor').textContent  = money(price/2);
-      $('diHeroRent').textContent  = money(monthlyRent);
-      $('diHeroRentSplit').textContent = money(rentUp) + ' upper · ' + money(rentLow) + ' lower';
-      $('diHeroDown').textContent  = money(deposit);
-      $('diHeroDownPct').textContent = n(depPct).toFixed(0) + '%';
-      $('diHeroCF').textContent    = money(cashFlow/12);
-      $('diHeroCF').style.color    = cashFlow >= 0 ? '#7FB396' : '#D9645A';
-      $('diHeroRate').textContent  = rate.toFixed(2) + '%';
-      $('diHeroAmort').textContent = String(Math.round(amort));
+      set('grossM',      money(monthlyRent));
+      set('rentUpperM',  money(rentUp));
+      set('rentLowerM',  money(rentLow));
+      set('taxYear',     money(tax));
+      set('depOnly',     money(deposit));
+      set('depPctLabel', n(depPct).toFixed(0) + '%');
+      set('loan',        money(loan));
+      set('taxM',        money(-tax/12));
+      set('insM',        money(-insAnn/12));
+      set('mgmtLabel',   '(' + mgmtPct + '%)');
+      set('mgmtM',       money(-mgmt/12));
+      set('expensesM',   money(-totalExp/12));
+      set('noiM',        money(noi/12));
+      set('monthlyNeg',  money(-monthly));
 
-      // read-only tax field
-      $('diTaxYear').value = money(tax);
+      var cfEls = set('cashflowM', money(cashFlow/12));
+      for (var i = 0; i < cfEls.length; i++) {
+        var host = cfEls[i].parentElement;
+        if (host) host.style.color = cashFlow >= 0 ? '#7FB396' : '#D9645A';
+      }
 
-      // results
-      $('diCF').textContent      = money(cashFlow/12);
-      $('diCF').style.color      = cashFlow >= 0 ? '#7FB396' : '#D9645A';
-      $('diDepPctLab').textContent = n(depPct).toFixed(0) + '%';
-      $('diDepAmt').textContent  = money(deposit);
-      $('diLoan').textContent    = money(loan);
-      $('diRUp').textContent     = money(rentUp);
-      $('diRLow').textContent    = money(rentLow);
-      $('diRTot').textContent    = money(monthlyRent);
-      $('diTaxM').textContent    = money(-tax/12);
-      $('diInsM').textContent    = money(-insAnn/12);
-      $('diMgmtLab').textContent = '(' + mgmtPct + '%)';
-      $('diMgmtM').textContent   = money(-mgmt/12);
-      $('diExpM').textContent    = money(-totalExp/12);
-      $('diNoiM').textContent    = money(noi/12);
-      $('diPmtM').textContent    = money(-monthly);
-      $('diCFRow').textContent   = money(cashFlow/12);
-      $('diCFRow').style.color   = cashFlow >= 0 ? '#7FB396' : '#D9645A';
-
-      // returns
-      var capRate = price ? (noi / price * 100) : 0;
-      var coc     = deposit ? (cashFlow / deposit * 100) : 0;
-      var dscr    = annual ? (noi / annual) : 0;
-      $('diCap').textContent  = pct(capRate);
-      $('diCoC').textContent  = pct(coc);
-      $('diCoC').style.color  = coc >= 0 ? '#F5F1E8' : '#D9645A';
-      $('diDscr').textContent = dscr.toFixed(2);
-      var badge = $('diDscrBadge');
-      if (dscr >= 1.10)      { badge.textContent = 'Healthy';  badge.style.background = '#2AAF72'; badge.style.color = '#0E0C09'; }
-      else if (dscr >= 1.00) { badge.textContent = 'Tight';    badge.style.background = '#D4A24A'; badge.style.color = '#0E0C09'; }
-      else                   { badge.textContent = 'Negative'; badge.style.background = '#D9645A'; badge.style.color = '#0E0C09'; }
-
-      // 3-year outlook
       var growth = 0.04, value = price, rows = '';
+      var cell = 'padding:13px 16px;font-family:\'Newsreader\',serif;font-size:.98rem;border-bottom:1px solid #EFE9DB;text-align:right;';
       for (var y = 1; y <= 3; y++) {
         var apprDollar = value * growth;
         value += apprDollar;
@@ -958,9 +774,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         var paydown = principalPaidInYear(loan, rate, amort, y);
         var equity = apprDollar + yearCashFlow + paydown;
         var ret = deposit ? (equity / deposit * 100) : 0;
-        rows += '<tr><td>Year ' + y + '</td><td>' + money(value) + '</td>'
-             +  '<td style="color:' + (yearCashFlow >= 0 ? '#1C1813' : '#B0563F') + ';">' + money(yearCashFlow) + '</td>'
-             +  '<td>' + money(equity) + '</td><td>' + pct(ret) + '</td></tr>';
+        rows += '<div style="padding:13px 16px;font-size:.875rem;font-weight:500;color:#1C1813;border-bottom:1px solid #EFE9DB;">Year ' + y + '</div>'
+             +  '<div style="' + cell + 'color:#1C1813;">' + money(value) + '</div>'
+             +  '<div style="' + cell + 'color:' + (yearCashFlow >= 0 ? '#1C1813' : '#B0563F') + ';">' + money(yearCashFlow) + '</div>'
+             +  '<div style="' + cell + 'color:#1C1813;">' + money(equity) + '</div>'
+             +  '<div style="' + cell + 'color:var(--accent,#9C6B34);">' + pct(ret) + '</div>';
       }
       $('diOutlook').innerHTML = rows;
     }
@@ -986,7 +804,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   })();
   </script>
 
-  <!-- Mobile nav + dropdown nav + magnetic + nav scroll -->
+<!-- Mobile nav + dropdown nav + magnetic + nav scroll -->
   <script>
     (function(){
       var nav = document.getElementById('mfd-nav');
@@ -1020,7 +838,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       document.addEventListener('click', function() { dropdowns.forEach(function(d) { d.classList.remove('open'); d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded', 'false'); }); });
     })();
   </script>
-  <!-- GHL chat widget -->
+<!-- GHL chat widget -->
   <script defer src="https://beta.leadconnectorhq.com/loader.js" data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69fa444c3cc75785c76e6387"></script>
 
   <!-- Meta Pixel — Contact event tracking -->
