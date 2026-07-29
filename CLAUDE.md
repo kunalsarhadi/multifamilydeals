@@ -45,6 +45,7 @@ Always tell the user whether a change is local-only or has been pushed live.
 | `blog/edmonton-vs-toronto-multifamily.html` | `/blog/edmonton-vs-toronto-multifamily` | Blog: Edmonton vs Toronto multifamily comparison |
 | `blog/scale-50-doors.html` | `/blog/scale-50-doors` | Blog: How to scale to 50 doors |
 | `calculator.html` | `/calculator` | DSCR / pro-forma calculator (defaults: $2.0M 8-plex at 4%) |
+| `dual-income-homes.html` | `/dual-income-homes` | **Dual Income Homes, Leduc — second product line, NON-MLI (conventional financing)** |
 
 (Plus additional blog posts not individually listed — see `blog/` and `sitemap.xml` for the full set. Sitemap is the canonical page list.)
 
@@ -91,6 +92,22 @@ Always tell the user whether a change is local-only or has been pushed live.
 - **Calculator default rate:** 4% (owner standard — matches the inventory disclaimer and all site payment examples)
 - **Calculator — CMHC premium default:** 5.4% (owner decision, July 2026). No "5.8% typical at 95% LTV" helper text on the field.
 - **Calculator — property tax estimate:** assessed value = **85% of purchase price** × Edmonton mill rate (1.01738%). `ASSESS_FACTOR = 0.85` in calculator.html (owner decision, July 2026 — was 75%).
+
+## Dual Income Homes — second product line (NON-MLI, owner-added July 2026)
+
+`dual-income-homes.html` markets a **separate product** from the CMHC MLI Select multi-family inventory. It exists for investors who **do not have the net worth to qualify for MLI Select** — the owner's words. Do not merge it into the MLI inventory or apply MLI framing to it.
+
+- **What it is:** brand-new detached homes in **Leduc, Alberta** — a 1,410 sq ft upper home (3 bed · 2.5 bath) over a 595 sq ft **legal** basement suite (1 bed · 1 bath). Two rents, **one title, one ordinary residential mortgage**. From **$499,000**.
+- **NOT MLI Select.** This is **conventional financing** — 20% down, 30-year amortization, no mortgage insurance premium. **Never** import MLI framing onto this page: no 50-year amortization, no "as low as 5% down", no up-to-95% LTV, no points scoring. Underwriting is led by personal income, credit and net worth alongside the documented rents; eligibility and final terms vary by applicant and are subject to lender approval.
+- **Availability: 8 homes, possession Summer 2027** (owner-confirmed July 2026). This count is **hand-maintained** — unlike inventory.html there are no per-unit cards to derive it from. It appears in **two places**: the hero pill on dual-income-homes.html and the promo band on inventory.html. Update both. The owner said he will tell us when any of the 8 move or sell — **do not change the number on your own initiative.**
+- **Interest rate default is 3.79%**, not the site's 4% MLI figure. That is deliberate: 4% is the firm's modeled *MLI Select* rate, and this product is conventionally financed. The calculator recomputes live, so every figure stays consistent with whatever rate is shown.
+- **Property tax uses a 0.75 assessed-value factor x 0.9395% mill rate** — deliberately different from calculator.html's `ASSESS_FACTOR = 0.85` x Edmonton's 1.01738%, because this property is in **Leduc, not the City of Edmonton** (owner-confirmed). **Do not "reconcile" the two factors.** Neither the factor nor the mill rate is surfaced in the UI — the field reads "Property tax / year" only.
+- **Design source of truth is the owner's design handoff zip** (`MFD_Dual_Income.zip` → `Dual Income Homes.dc.html`). The page is a direct port of that prototype's markup and inline styles. **Do not restyle it or add UI the prototype does not have** — an earlier attempt added a cap-rate / cash-on-cash / DSCR returns row and the owner had it removed ("doesn't get asked in non-MLI product"). The only additions kept are the responsive rules the handoff itself listed as outstanding (results panel unsticks below 1000px, paired inputs stack, outlook table scrolls with a swipe hint, reduced-motion guard).
+- **Grid track minimums matter:** Features & Finishes and Why This Works use a **380px** minimum so they lay out **3 + 3**. A smaller minimum fits 4 and the owner will flag it. Metric/stat strips live **inside** the 1240px container — never full-bleed to the viewport edge.
+- **Number formatting:** purchase price and both rents display with thousands separators (499,000 / 2,200 / 1,200), formatted on load and blur, stripped on focus so typing is not interrupted.
+- **Linked from** the Properties nav dropdown, mobile nav and footer across all root pages, the footer on every blog page, `sitemap.xml`, and a dark promo band on inventory.html. That band sits **outside `#propGrid` and carries no count hooks**, so the auto-derived MLI counts are unaffected — keep it that way.
+- **No conversion event of its own** (owner decision, July 2026): its CTAs fire the standard `book_call` / `phone_click`. The owner markets this link to audiences whose contact details he already has, so a separate `dual_income_lead` event was judged unnecessary. Do not add one unasked.
+- **Copy rules:** first person as Kunal; buyers are **"out-of-town"**, never "out-of-province"; never promise cash flow (figures are projected / pre-tax pro-forma / subject to lender approval); everything listed as included **is** included at $499,000 (no "optional"/"future"/"rough-in" language); keep the "Illustrations are artist's impressions. E.&O.E." and specifications-subject-to-change lines.
 
 ## Content repetition budget (standing rule, July 2026 audit)
 
