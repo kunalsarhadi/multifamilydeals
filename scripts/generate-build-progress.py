@@ -47,16 +47,46 @@ def exists(rel):
     return bool(rel) and os.path.exists(os.path.join(ROOT, rel))
 
 
-def ratio(rel, fallback='3 / 2'):
-    """The plate's own aspect ratio, measured from the real file so nothing
-    reflows on load. Only clamped below 0.5, per the handoff."""
+def dims(rel):
     try:
         from PIL import Image
         with Image.open(os.path.join(ROOT, rel)) as im:
-            w, h = im.size
-        return '1 / 2' if w / h < 0.5 else f'{w} / {h}'
+            return im.size
     except Exception:
+        return None
+
+
+def ratio(rel, fallback='3 / 2'):
+    """The plate's own aspect ratio, measured from the real file so nothing
+    reflows on load. Only clamped below 0.5, per the handoff."""
+    wh = dims(rel)
+    if not wh:
         return fallback
+    w, h = wh
+    return '1 / 2' if w / h < 0.5 else f'{w} / {h}'
+
+
+# Portrait phone footage is 464x832 or 720x1280. Left at its true ratio it fills
+# the 711px lead column to ~1270px tall -- taller than the viewport, and nearly
+# double its landscape neighbour, which is what made the cards look lopsided.
+# Cap the figure's WIDTH instead of the plate's height: the media keeps its exact
+# ratio (never cropped, never letterboxed -- the handoff's rule holds) and simply
+# renders smaller. The cap only binds on wide screens; on mobile the column is
+# already narrower than any cap, so nothing changes there.
+MAX_PLATE_H = 640
+
+
+def figure_cap(rel):
+    """max-width for a figure whose media would otherwise run too tall.
+    Adds back the figure padding and the mount's 4px padding + 1px border."""
+    wh = dims(rel)
+    if not wh:
+        return ''
+    w, h = wh
+    plate = round(MAX_PLATE_H * max(w / h, 0.5))
+    if plate >= 700:                      # landscape enough to never bind
+        return ''
+    return f'max-width:calc({plate}px + 2 * clamp(16px, 2vw, 22px) + 10px);'
 
 
 # ---------------------------------------------------------------- media item
@@ -111,6 +141,10 @@ def mount(inner, tag=None):
 
 def figure(it, cls, style=''):
     inner = plate_clip(it, 'contain') if it['clip'] else plate_photo(it, 'contain')
+    # a clip is sized from its poster frame
+    cap = figure_cap(path(poster(it['src'])) if it['clip'] else it['src'])
+    if cap:
+        style = (style[:-1] + cap + '"') if style.endswith('"') else f' style="{cap}"'
     return f'''<figure class="{cls}"{style}>
             {mount(inner, it['tag'])}
             <figcaption class="bp-figcap"><span class="bp-stage">{e(it['stage'])}</span><span class="bp-month">{it['monthLong']}</span></figcaption>
@@ -144,7 +178,8 @@ for p in sorted(P, key=lambda x: rank.get(x['id'], len(ORDER))):
         vm = vid.get('month')
         vmonth = (f'Month {vm} &middot; {e(STAGES[vm])}' if isinstance(vm, int) else e(vid['date']))
         vit = {'src': path(vid['file']), 'stage': vid['label'], 'clip': True}
-        side = f'''<figure class="bp-fig bp-side">
+        vcap = figure_cap(path(poster(vid['file'])))
+        side = f'''<figure class="bp-fig bp-side"{f' style="{vcap}"' if vcap else ''}>
             {mount(plate_clip(vit, 'contain'), 'Clip &middot; unedited')}
             <figcaption class="bp-figcap"><span class="bp-stage">{e(vid['label'])}</span><span class="bp-month">{vmonth}</span></figcaption>
             <p class="bp-cap bp-cap-mute">Muted, no sound track &mdash; filmed on site.</p>
