@@ -109,6 +109,20 @@ Always tell the user whether a change is local-only or has been pushed live.
 - **No conversion event of its own** (owner decision, July 2026): its CTAs fire the standard `book_call` / `phone_click`. The owner markets this link to audiences whose contact details he already has, so a separate `dual_income_lead` event was judged unnecessary. Do not add one unasked.
 - **Copy rules:** first person as Kunal; buyers are **"out-of-town"**, never "out-of-province"; never promise cash flow (figures are projected / pre-tax pro-forma / subject to lender approval); everything listed as included **is** included at $499,000 (no "optional"/"future"/"rough-in" language); keep the "Illustrations are artist's impressions. E.&O.E." and specifications-subject-to-change lines.
 
+## Build Progress page (`build-progress.html`, added Aug 2026)
+
+Construction proof page — dated site photography and clips from nine live projects, organised around an 8-month build arc. Its whole premise is that **nothing on it is a rendering** (the counterweight to inventory.html, which is all artist's renderings). Linked from the Properties nav dropdown, mobile nav and footer site-wide, plus `sitemap.xml`.
+
+- **Design source of truth: `MFD__Website.zip` → `Build Progress.dc.html`** (a React prototype, inline styles only). Re-expressed as classes; colours, type sizes, spacing and copy lifted verbatim.
+- **The page is GENERATED.** Do not hand-edit `<main>` — edit `scripts/build-progress-data.json` and re-run `python3 scripts/generate-build-progress.py`, then splice the produced `<main>` in. The `<style>` and `<script>` blocks live in the page and are edited directly. Static HTML is deliberate: every other page here is readable with JS off, and a client-rendered page would be an empty shell to crawlers.
+- **Two different plate rules — do not mix them.** Lead and second-column plates carry the media's OWN aspect ratio with `object-fit: contain` (never cropped, never bucketed to a preset). Rail thumbnails and timeline stops are a uniform **4:3 with `cover`** — that is what keeps a rail from going ragged. An inline ratio leaking onto a 4:3 thumbnail was the original "images sized weird" bug.
+- **A project's `video` is a property SEPARATE from `media`.** It fills the second column and suppresses `secondary`. Ignoring it silently drops clips.
+- **Clips are click-to-play**, `preload="none"`, `src` attached on first click, poster frames committed alongside. Never autoplay, never preload — the library is ~47 MB. Clip paths are fixed by convention: poster = clip filename with `.mp4` → `-poster.jpg`.
+- **Images load eagerly.** Do NOT add `loading="lazy"` or gate them behind IntersectionObserver — the handoff is explicit that this rendered as empty black plates.
+- Media lives in `images/build/**` (24 photos) and `media/<project>/*.mp4` + `-poster.jpg` (10 clips). Owner supplies clips as unlabelled uploads; match them by extracting frames with `imageio_ffmpeg` and comparing against the committed posters — filenames carry no meaning.
+- **Contrast floor:** muted greys on this page were promoted to `#6F695C` (>=4.5:1 on paper/card/alt) and `#847D6E` on espresso. `#8A8172` and `#A79E8E` fail on light backgrounds — do not revert them.
+- Carries the standard WhatsApp bar (in the generator, not just the page) and `book_call` / `phone_click` / `whatsapp_click`. No conversion event of its own.
+
 ## Client representation — NEVER claim it (standing rule, July 2026)
 
 **Never write copy that describes the firm, Kunal, or Ankit as representing the reader.** This applies to every page, blog post, guide, PDF, ad, and message template.
