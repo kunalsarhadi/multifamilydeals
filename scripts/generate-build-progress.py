@@ -259,7 +259,7 @@ MAIN = f'''<main id="main-content">
       <ol class="bp-rail bp-timeline">
 {chr(10).join(stops)}
       </ol>
-      <p class="bp-fine">Months are counted from a firm deal. Construction schedules move with weather, trades and inspection dates &mdash; this is the sequence, not a completion commitment.</p>
+      <p class="bp-fine">Months are counted from a firm deal and describe the typical sequence, not a schedule. Construction timelines move with weather, trades, inspections, supply and municipal approvals, and an individual project can run materially longer or shorter than the eight months shown. Nothing here is a commitment to a completion date.</p>
     </div>
   </section>
 
@@ -269,6 +269,7 @@ MAIN = f'''<main id="main-content">
       <div class="bp-uchead">
         <div class="bp-eyebrow"><span class="rule"></span>Under construction</div>
         <h2 class="bp-h2">The sites I am on right now.</h2>
+        <p class="bp-fine">Each card below is a separate project by a separate builder, photographed on the dates shown &mdash; not necessarily the building you would be buying. Elevations, finishes, layouts, unit counts, site conditions and build durations vary by project. Stage labels describe what a photograph shows on its date; they are not a progress guarantee.</p>
       </div>
 {chr(10).join(cards)}
     </div>
@@ -296,7 +297,7 @@ MAIN = f'''<main id="main-content">
       <div class="bp-cta-btns">
         <a href="contact.html" data-conversion="book_call" class="bp-btn">Book a Discovery Call</a>
         <a href="tel:+14162007010" data-conversion="phone_click" class="bp-btn-ghost">Request a Site Tour &middot; 416 200 7010</a>
-        <p class="bp-fine bp-fine-d">All photographs on this page were taken on site on the dates shown. Renderings appear only where labelled &ldquo;Artist&rsquo;s rendering&rdquo;. Construction schedules move; stage dates describe what was photographed, not a completion commitment.</p>
+        <p class="bp-fine bp-fine-d">All photographs and clips on this page were taken on site on the dates shown and are unretouched. They show a range of projects at different stages and are included to illustrate how a build progresses &mdash; the finished product, finishes, specifications, unit mix and timelines of any project you purchase may differ from what is shown here. Construction schedules move; stage dates describe what was photographed, not a completion commitment. Nothing on this page is an offer or a binding representation &mdash; the Agreement of Purchase and Sale and current CMHC terms govern.</p>
       </div>
     </div>
   </section>
