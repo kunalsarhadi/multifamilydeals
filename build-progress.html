@@ -53,6 +53,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     @keyframes heroUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
     @keyframes livePulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+    @keyframes pulseDot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.8); } }
 
     .skip-link { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #fff; padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: 700; z-index: 9999; text-decoration: none; }
     .skip-link:focus { left: 0; }
@@ -980,6 +981,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </figure>
         </div>
       </article>
+    </div>
+  </section>
+
+  <!-- PRIVATE NETWORK — the site-wide WhatsApp bar (not in the prototype) -->
+  <section style="background:#EFE9DB;border-top:1px solid #E4DBCB;border-bottom:1px solid #E4DBCB;padding:clamp(30px,4vw,40px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <span style="width:9px;height:9px;border-radius:50%;background:#2AAF72;animation:pulseDot 2s ease-in-out infinite;flex-shrink:0;"></span>
+        <div style="font-size:.9rem;color:#4A443B;line-height:1.5;"><strong style="color:#1C1813;font-weight:600;">Private Investor Network</strong> &mdash; new listings reach our WhatsApp group before they appear anywhere else.</div>
+      </div>
+      <a href="https://chat.whatsapp.com/BYNf65k8iSf3fNOIrkZUvZ" target="_blank" rel="noopener" data-conversion="whatsapp_click" style="background:transparent;border:1px solid var(--accent);color:var(--accent);padding:11px 24px;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;border-radius:2px;transition:background .2s,color .2s;">Join the Network</a>
     </div>
   </section>
 

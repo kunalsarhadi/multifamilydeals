@@ -274,6 +274,17 @@ MAIN = f'''<main id="main-content">
     </div>
   </section>
 
+  <!-- PRIVATE NETWORK — the site-wide WhatsApp bar (not in the prototype) -->
+  <section style="background:#EFE9DB;border-top:1px solid #E4DBCB;border-bottom:1px solid #E4DBCB;padding:clamp(30px,4vw,40px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <span style="width:9px;height:9px;border-radius:50%;background:#2AAF72;animation:pulseDot 2s ease-in-out infinite;flex-shrink:0;"></span>
+        <div style="font-size:.9rem;color:#4A443B;line-height:1.5;"><strong style="color:#1C1813;font-weight:600;">Private Investor Network</strong> &mdash; new listings reach our WhatsApp group before they appear anywhere else.</div>
+      </div>
+      <a href="https://chat.whatsapp.com/BYNf65k8iSf3fNOIrkZUvZ" target="_blank" rel="noopener" data-conversion="whatsapp_click" style="background:transparent;border:1px solid var(--accent);color:var(--accent);padding:11px 24px;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;border-radius:2px;transition:background .2s,color .2s;">Join the Network</a>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section id="visit" class="bp-cta">
     <div class="bp-wrap bp-cta-grid">
