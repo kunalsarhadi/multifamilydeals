@@ -123,7 +123,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 /* nav-cta-mobile-fix */
 @media (max-width: 1024px) { nav a[data-conversion="book_call"] { display: none !important; } .nav-in, nav .nav-in { flex-wrap: nowrap !important; } }
-</style>
+
+    /* Cost breakdown + documents (from the owner's one-pagers) */
+    .wx        { display:flex; align-items:baseline; justify-content:space-between; gap:14px; padding:7px 0; font-size:.86rem; color:#B9B0A0; border-bottom:1px solid #23201A; }
+    .wx-tot    { border-bottom:0; border-top:1px solid #33291B; margin-top:6px; padding-top:11px; color:#F5F1E8; font-weight:600; }
+    .wxv       { font-family:'Newsreader',serif; font-size:1rem; color:#F5F1E8; white-space:nowrap; }
+    .cost-row { display:flex; align-items:flex-start; justify-content:space-between; gap:clamp(14px,3vw,40px);
+                padding:clamp(16px,2vw,20px) clamp(18px,2.4vw,28px); border-bottom:1px solid #E4DBCB; }
+    .cost-name { font-size:.98rem; font-weight:600; color:#1C1813; line-height:1.35; }
+    .cost-note { font-size:.8rem; line-height:1.6; color:#6F695C; margin-top:4px; max-width:52ch; }
+    .cost-amt  { text-align:right; flex-shrink:0; }
+    .cost-fig  { font-family:'Newsreader',serif; font-size:1.15rem; color:var(--accent); white-space:nowrap; }
+    .cost-who  { font-size:.82rem; line-height:1.5; color:#4A443B; display:block; max-width:20ch; }
+    .doc-grid  { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:1px; background:#DDD4C2; border:1px solid #DDD4C2; }
+    @media (max-width:1000px){ .doc-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:560px){ .doc-grid { grid-template-columns:1fr; } }
+    .doc-item  { background:#FBF8F1; padding:clamp(20px,2.4vw,26px); display:flex; gap:14px; align-items:flex-start; }
+    .doc-n     { font-family:'Newsreader',serif; font-size:1.15rem; color:var(--accent); line-height:1.2; flex-shrink:0; }
+    .doc-t     { font-size:.95rem; font-weight:600; color:#1C1813; line-height:1.35; }
+    .doc-d     { font-size:.82rem; line-height:1.6; color:#6F695C; margin-top:5px; }
+    @media (max-width:560px){
+      .cost-row { flex-direction:column; gap:8px; }
+      .cost-amt { text-align:left; }
+      .cost-who { max-width:none; }
+    }
+  </style>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -344,6 +368,150 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- FLYWHEEL -->
+  <!-- THE THREE TESTS + WORKED EXAMPLE (from the owner's Eligibility Requirements one-pager) -->
+  <section id="qualify" style="background:#16130E;color:#F5F1E8;padding:clamp(60px,8vw,120px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div class="reveal" data-reveal style="max-width:700px;margin-bottom:clamp(38px,4.5vw,56px);">
+        <div style="font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-l);margin-bottom:18px;">Do you qualify</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(1.9rem,4vw,3rem);line-height:1.08;letter-spacing:-0.02em;margin-bottom:16px;color:#F5F1E8;">Three tests decide it.</h2>
+        <p style="font-size:1rem;line-height:1.75;color:#B9B0A0;">All three are measured against the purchase price, and all three are assessed on the applicants together rather than on one name. The figures below are worked against an eight-plex at a purchase price of $2,350,000.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1px;background:#2A2419;border:1px solid #2A2419;">
+        <div class="reveal" data-reveal style="background:#0E0C09;padding:clamp(24px,3vw,34px);">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;"><div style="font-size:1.02rem;font-weight:600;color:#F5F1E8;">Down payment</div><div style="font-family:'Newsreader',serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--accent-l);line-height:1;">5%</div></div>
+          <p style="font-size:.85rem;line-height:1.7;color:#B9B0A0;margin-top:12px;">The cash equity that goes into the purchase. MLI Select allows up to 95% financing on qualifying projects, so the deposit can start at 5%.</p>
+          <div style="font-size:.8rem;color:#847D6E;margin-top:12px;">$117,500 on a $2.35M purchase</div>
+        </div>
+        <div class="reveal" data-reveal style="background:#0E0C09;padding:clamp(24px,3vw,34px);">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;"><div style="font-size:1.02rem;font-weight:600;color:#F5F1E8;">Liquidity</div><div style="font-family:'Newsreader',serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--accent-l);line-height:1;">10%</div></div>
+          <p style="font-size:.85rem;line-height:1.7;color:#B9B0A0;margin-top:12px;">Cash and near-cash assets available at closing. <strong style="color:#F5F1E8;font-weight:600;">The 5% down payment comes out of this figure &mdash; it is not held on top of it</strong>, so plan on roughly a further 5% beyond the deposit.</p>
+          <div style="font-size:.8rem;color:#847D6E;margin-top:12px;">$235,000 on a $2.35M purchase</div>
+        </div>
+        <div class="reveal" data-reveal style="background:#0E0C09;padding:clamp(24px,3vw,34px);">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;"><div style="font-size:1.02rem;font-weight:600;color:#F5F1E8;">Net worth</div><div style="font-family:'Newsreader',serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--accent-l);line-height:1;">25%</div></div>
+          <p style="font-size:.85rem;line-height:1.7;color:#B9B0A0;margin-top:12px;">Total assets less total liabilities, across personal and investment holdings. A partner or co-guarantor can be added to the application and their net worth counted alongside yours.</p>
+          <div style="font-size:.8rem;color:#847D6E;margin-top:12px;">$587,500 on a $2.35M purchase</div>
+        </div>
+      </div>
+
+      <div class="reveal" data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(24px,4vw,56px);margin-top:clamp(32px,4vw,48px);">
+        <div>
+          <div style="font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#847D6E;margin-bottom:14px;">What counts toward net worth</div>
+          <ul style="list-style:none;padding:0;margin:0;font-size:.88rem;line-height:2;color:#B9B0A0;">
+            <li>Equity in your primary residence</li><li>Equity in investment real estate</li><li>Cash and savings</li><li>Registered accounts &mdash; RRSP and TFSA</li><li>A partner or co-guarantor&rsquo;s net worth</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#847D6E;margin-bottom:14px;">What counts toward liquidity</div>
+          <ul style="list-style:none;padding:0;margin:0;font-size:.88rem;line-height:2;color:#B9B0A0;">
+            <li>Cash and savings</li><li>Registered accounts, often discounted</li><li>Available room on a HELOC</li>
+          </ul>
+          <p style="font-size:.82rem;line-height:1.7;color:#847D6E;margin-top:12px;">Equity on its own is not liquid &mdash; but undrawn room on a line of credit secured against it is. The building being purchased never counts.</p>
+        </div>
+      </div>
+
+      <div class="reveal" data-reveal style="border-top:1px solid #2A2419;margin-top:clamp(34px,4vw,48px);padding-top:clamp(30px,3.6vw,42px);">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px;">
+          <h3 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(1.4rem,2.6vw,1.9rem);color:#F5F1E8;">A worked example</h3>
+          <span style="font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#847D6E;">$2.35M eight-plex &middot; illustrative</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:1px;background:#2A2419;border:1px solid #2A2419;">
+          <div style="background:#0E0C09;padding:clamp(22px,2.6vw,28px);">
+            <div style="font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#847D6E;margin-bottom:14px;">Adding up net worth</div>
+            <div class="wx"><span>Primary residence equity</span><span class="wxv">$310,000</span></div>
+            <div class="wx"><span>Rental property equity</span><span class="wxv">$300,000</span></div>
+            <div class="wx"><span>Cash and savings</span><span class="wxv">$150,000</span></div>
+            <div class="wx wx-tot"><span>Total net worth</span><span class="wxv" style="color:var(--accent-l);">$760,000</span></div>
+            <div style="font-size:.78rem;color:#847D6E;margin-top:10px;">Against $587,500 required</div>
+          </div>
+          <div style="background:#0E0C09;padding:clamp(22px,2.6vw,28px);">
+            <div style="font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#847D6E;margin-bottom:14px;">Meeting the liquidity test</div>
+            <div class="wx"><span>Cash and savings</span><span class="wxv">$150,000</span></div>
+            <div class="wx"><span>Available room on a HELOC</span><span class="wxv">$188,000</span></div>
+            <div class="wx wx-tot"><span>Total liquidity</span><span class="wxv" style="color:var(--accent-l);">$338,000</span></div>
+            <div style="font-size:.78rem;color:#847D6E;margin-top:10px;">Against $235,000 required. Undrawn credit adds to liquidity, not to net worth.</div>
+          </div>
+          <div style="background:#0E0C09;padding:clamp(22px,2.6vw,28px);display:flex;flex-direction:column;justify-content:center;">
+            <div style="font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-l);margin-bottom:12px;">Qualifies</div>
+            <p style="font-size:.88rem;line-height:1.75;color:#B9B0A0;">Both tests clear. The $117,500 down payment is drawn from that $338,000, leaving $220,500 against closing costs of roughly $13,000 to $22,000.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(20px,3vw,40px);margin-top:clamp(32px,4vw,46px);">
+        <div><div style="font-family:'Newsreader',serif;font-size:1.5rem;color:#F5F1E8;">5 units</div><p style="font-size:.84rem;line-height:1.7;color:#B9B0A0;margin-top:6px;">Minimum project size. Five doors or more on a single title.</p></div>
+        <div><div style="font-family:'Newsreader',serif;font-size:1.5rem;color:#F5F1E8;">1.10 DSCR</div><p style="font-size:.84rem;line-height:1.7;color:#B9B0A0;margin-top:6px;">The building&rsquo;s net operating income must cover debt service by at least 1.10x.</p></div>
+        <div><div style="font-family:'Newsreader',serif;font-size:1.5rem;color:#F5F1E8;">Experience</div><p style="font-size:.84rem;line-height:1.7;color:#B9B0A0;margin-top:6px;">Multi-family operating history, or a licensed property manager on the file. Our projects come with one.</p></div>
+      </div>
+
+      <p class="reveal" data-reveal style="font-size:.78rem;line-height:1.7;color:#847D6E;margin-top:clamp(26px,3vw,36px);max-width:920px;">All figures are illustrative and subject to change, to CMHC program rules, and to lender requirements on the specific borrower and project &mdash; they are not quotes or approvals. The example is hypothetical and does not reflect an actual applicant. Thresholds, asset treatment and the discounting of any asset class are determined by CMHC and the lender, who alone qualify a borrower or a project.</p>
+    </div>
+  </section>
+
+  <!-- PROGRAM COST BREAKDOWN (from the owner's Cost Breakdown one-pager) -->
+  <section id="costs" style="background:#F5F1E8;border-top:1px solid #E4DBCB;padding:clamp(60px,8vw,120px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div class="reveal" data-reveal style="max-width:660px;margin-bottom:clamp(36px,4.5vw,54px);">
+        <div style="font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;">What it costs</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(1.9rem,4vw,3rem);line-height:1.08;letter-spacing:-0.02em;margin-bottom:16px;">Every cost, line by line.</h2>
+        <p style="font-size:1rem;line-height:1.7;color:#4A443B;">The fees that sit on a qualifying build &mdash; the amount, and who pays it. Several are reimbursed by the builder, and two are carried inside the mortgage rather than paid in cash.</p>
+      </div>
+
+      <div style="border:1px solid #DDD4C2;background:#FBF8F1;">
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:14px clamp(18px,2.4vw,28px);border-bottom:1px solid #DDD4C2;background:#EFE9DB;">
+          <span style="font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6F695C;">Fee</span>
+          <span style="font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6F695C;text-align:right;">Amount &middot; who pays</span>
+        </div>
+        <div class="cost-row reveal" data-reveal><div><div class="cost-name">MLI application fee</div><div class="cost-note">Paid before submitting the application</div></div><div class="cost-amt"><span class="cost-fig">$200 per door</span></div></div>
+        <div class="cost-row reveal" data-reveal><div><div class="cost-name">Appraisal</div><div class="cost-note">$2,500 &ndash; $4,000, dependent on project size</div></div><div class="cost-amt"><span class="cost-who">Paid back by the builder</span></div></div>
+        <div class="cost-row reveal" data-reveal><div><div class="cost-name">Environmental Phase 1</div><div class="cost-note">$2,500 &ndash; $4,000, dependent on project size</div></div><div class="cost-amt"><span class="cost-who">Paid back by the builder</span></div></div>
+        <div class="cost-row reveal" data-reveal><div><div class="cost-name">Lender fee</div><div class="cost-note">Can be incorporated into the mortgage</div></div><div class="cost-amt"><span class="cost-fig">$5,000 &ndash; $10,000</span></div></div>
+        <div class="cost-row reveal" data-reveal><div><div class="cost-name">Broker fee</div><div class="cost-note">1% of the total lending</div></div><div class="cost-amt"><span class="cost-who">Paid back by the builder</span></div></div>
+        <div class="cost-row reveal" data-reveal><div><div class="cost-name">CMHC insurance fee</div><div class="cost-note">Up to 6.15% of the total lending</div></div><div class="cost-amt"><span class="cost-who">Incorporated into the mortgage</span></div></div>
+        <div class="cost-row reveal" data-reveal style="border-bottom:0;"><div><div class="cost-name">Legal and mortgage registration</div><div class="cost-note">Buyer counsel, plus registration &amp; other fees &mdash; paid at closing</div></div><div class="cost-amt"><span class="cost-fig">$8,000 &ndash; $10,000</span></div></div>
+      </div>
+
+      <div class="reveal" data-reveal style="margin-top:clamp(28px,3.4vw,40px);">
+        <div style="font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#6F695C;margin-bottom:16px;">What you pay in cash</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1px;background:#DDD4C2;border:1px solid #DDD4C2;">
+          <div style="background:#FBF8F1;padding:clamp(22px,2.8vw,30px);"><div style="font-family:'Newsreader',serif;font-size:clamp(1.5rem,2.6vw,2rem);font-weight:500;color:var(--accent);line-height:1.05;">As low as 5%</div><div style="font-size:.8rem;line-height:1.6;color:#4A443B;margin-top:8px;">Deposit on the purchase price</div></div>
+          <div style="background:#FBF8F1;padding:clamp(22px,2.8vw,30px);"><div style="font-family:'Newsreader',serif;font-size:clamp(1.5rem,2.6vw,2rem);font-weight:500;color:var(--accent);line-height:1.05;">$5K &ndash; $10K</div><div style="font-size:.8rem;line-height:1.6;color:#4A443B;margin-top:8px;">Lender fee</div></div>
+          <div style="background:#FBF8F1;padding:clamp(22px,2.8vw,30px);"><div style="font-family:'Newsreader',serif;font-size:clamp(1.5rem,2.6vw,2rem);font-weight:500;color:var(--accent);line-height:1.05;">$8K &ndash; $12K</div><div style="font-size:.8rem;line-height:1.6;color:#4A443B;margin-top:8px;">Legal, registration and application fee</div></div>
+        </div>
+        <p style="font-size:.78rem;line-height:1.7;color:#6F695C;margin-top:18px;max-width:900px;">All figures are estimates, subject to change and to lender and CMHC requirements on the specific project &mdash; not quotes. Third-party costs are set by the provider, not by Multi Family Deals. Items shown as paid by the builder are project specific &mdash; review the Agreement of Purchase and Sale for the terms that apply to a given project. Only CMHC and the lender qualify a borrower or a project. Investors may use any of their own licensed providers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENTS REQUIRED (from the owner's Documents Required one-pager) -->
+  <section id="documents" style="background:#EFE9DB;border-top:1px solid #E4DBCB;padding:clamp(60px,8vw,120px) clamp(18px,4vw,44px);">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div class="reveal" data-reveal style="max-width:660px;margin-bottom:clamp(36px,4.5vw,54px);">
+        <div style="font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;">What we will need</div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(1.9rem,4vw,3rem);line-height:1.08;letter-spacing:-0.02em;margin-bottom:16px;">Documents for the broker and lender.</h2>
+        <p style="font-size:1rem;line-height:1.7;color:#4A443B;">Ordered from the quickest to gather to the most involved. CMHC review runs 60 to 90 days once the file is complete, so the earlier these arrive, the earlier the clock starts.</p>
+      </div>
+      <div class="doc-grid">
+        <div class="doc-item reveal" data-reveal><span class="doc-n">01</span><div><div class="doc-t">Two pieces of government ID</div><div class="doc-d">Front and back &mdash; driver&rsquo;s licence plus one other, which does not have to be photo ID</div></div></div>
+        <div class="doc-item reveal" data-reveal><span class="doc-n">02</span><div><div class="doc-t">Bank and investment statements</div><div class="doc-d">Most recent three months, personal assets</div></div></div>
+        <div class="doc-item reveal" data-reveal><span class="doc-n">03</span><div><div class="doc-t">Full T1s</div><div class="doc-d">Most recent two years</div></div></div>
+        <div class="doc-item reveal" data-reveal><span class="doc-n">04</span><div><div class="doc-t">Notice of assessment</div><div class="doc-d">Most recent two months</div></div></div>
+        <div class="doc-item reveal" data-reveal><span class="doc-n">05</span><div><div class="doc-t">Mortgage statement</div><div class="doc-d">Primary residence and all rental properties</div></div></div>
+        <div class="doc-item reveal" data-reveal><span class="doc-n">06</span><div><div class="doc-t">Property tax assessment</div><div class="doc-d">Primary residence and all rental properties</div></div></div>
+        <div class="doc-item reveal" data-reveal><span class="doc-n">07</span><div><div class="doc-t">Real estate portfolio</div><div class="doc-d">Template to be provided by the lender</div></div></div>
+        <div class="doc-item reveal" data-reveal><span class="doc-n">08</span><div><div class="doc-t">Personal net worth statement</div><div class="doc-d">Template to be provided by the lender</div></div></div>
+        <div class="doc-item reveal" data-reveal><span class="doc-n">09</span><div><div class="doc-t">Sale purchase agreement</div><div class="doc-d">Signed by you and the builder</div></div></div>
+        <div class="doc-item reveal" data-reveal><span class="doc-n">10</span><div><div class="doc-t">Borrower profile</div><div class="doc-d">Education background, work background and property management experience</div></div></div>
+      </div>
+      <div class="reveal" data-reveal style="display:flex;gap:clamp(20px,4vw,56px);flex-wrap:wrap;margin-top:clamp(26px,3vw,36px);">
+        <div style="flex:1 1 300px;"><div style="font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6F695C;margin-bottom:8px;">Personal documents</div><p style="font-size:.86rem;line-height:1.7;color:#4A443B;">Shareholders may submit items 04 to 08 to the lender individually rather than through the group.</p></div>
+        <div style="flex:1 1 300px;"><div style="font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6F695C;margin-bottom:8px;">Review window</div><p style="font-size:.86rem;line-height:1.7;color:#4A443B;">60 to 90 days at CMHC, from a complete file.</p></div>
+      </div>
+      <p class="reveal" data-reveal style="font-size:.78rem;line-height:1.7;color:#6F695C;margin-top:20px;max-width:900px;">This is the minimum document list. Following a preliminary review the lender may have additional requests, and the list is subject to change &mdash; the lender and CMHC may request more or fewer items on a specific project. Documents are handled confidentially and shared only with the parties underwriting the file.</p>
+    </div>
+  </section>
+
   <section style="background:#EFE9DB;border-top:1px solid #E4DBCB;padding:clamp(60px,8vw,120px) clamp(18px,4vw,44px);">
     <div style="max-width:1240px;margin:0 auto;">
       <div class="reveal" data-reveal style="max-width:640px;margin:0 auto clamp(40px,5vw,60px);text-align:center;">
