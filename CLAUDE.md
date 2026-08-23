@@ -215,7 +215,14 @@ When the owner says **"line N on the hotlist is a new inventory"** / **"sync lin
 1. **Read the sheet** (Drive connector, above). Columns: PROPERTY TYPE · STATUS · PACKAGE · NEIGHBORHOOD · REGION · CASH FLOW · DSCR · TOTAL DEPOSIT · DEPOSIT STRUCTURE · COMPLETION DATE.
 2. **Resolve the row.** The Drive markdown render is **off by one** versus real sheet rows (owner's "line 60" = the 61st rendered row). So don't trust the count alone — the target is the AVAILABLE row that is **not yet on inventory.html**, normally the **last** row of the AVAILABLE block (new listings are appended). Cross-check the neighborhood against the site before building. Only ask if two candidates both fit.
 3. **Get the Drive package folder.** The sheet's PACKAGE cell is a hyperlink, and **the text export strips URLs** — you will not see it in the sheet content. Find it instead by searching Drive for a folder titled like the property: `title contains '<NEIGHBORHOOD>' and mimeType = 'application/vnd.google-apps.folder'`. Naming convention is `8Plex <Neighborhood>` (watch for older same-name folders — pick the one whose `createdTime` is newest / matches the new listing). Folders live under parent `1klHG36SRQQRNNmjuHKYsVYGfXFFhkoyU`.
-4. **Get the image.** Each package folder holds `5. Elevation.png` (alongside `1. Brochure.pdf`, `2. Proforma.pdf`, `3. Location.pdf`, `4. Floor Plan.pdf`). List the folder with `parentId = '<folderId>'`.
+4. **Get the image, and ALWAYS compress it.** Each package folder holds `5. Elevation.png` (alongside `1. Brochure.pdf`, `2. Proforma.pdf`, `3. Location.pdf`, `4. Floor Plan.pdf`). List the folder with `parentId = '<folderId>'`, `download_file_content`, `base64.b64decode`, then convert — **never commit the raw PNG** (they are ~2.2 MB each; webp is ~200 KB and identical at card size):
+   ```python
+   im = Image.open(io.BytesIO(raw)).convert('RGB')
+   w, h = im.size
+   if w > 1600: im = im.resize((1600, round(h*1600/w)), Image.LANCZOS)
+   im.save('images/inv/<neighbourhood>-<n>plex.webp', 'WEBP', quality=82, method=6)
+   ```
+   Point the card at the local `.webp`. Skipping this is what made the owner report renderings as "missing" in Aug 2026 — the cards are `loading="lazy"`, so an uncompressed elevation leaves the "Rendering coming soon" placeholder on screen for seconds on mobile.
 5. **Confirm sharing** on both the folder and the PNG with `get_file_permissions` — you need `{"role":"reader","type":"anyone"}` or visitors can't open them.
 6. **Build the card** by copying an existing `[data-card]` `<article>` and swapping neighborhood, cash flow, DSCR, completion. The CTA must be **"View Full Package →"** with `data-conversion="package_view"` → `https://drive.google.com/drive/folders/<folderId>?usp=sharing`. Never leave it as a contact.html/`book_call` fallback — `package_view` is what feeds the Meta retargeting audience.
 7. **Counts need no edits** — Available / headline auto-derive from the cards.
