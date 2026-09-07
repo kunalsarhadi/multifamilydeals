@@ -133,8 +133,12 @@ for p in sorted(P, key=lambda x: rank.get(x['id'], len(ORDER))):
                   if one_visit else 'Earlier stages')
     # The prototype only pluralises the one-visit branch; pluralise both.
     s = '' if len(rail) == 1 else 's'
-    rail_count = (f'{len(rail)} more photograph{s} from this visit' if one_visit
-                  else f'{len(rail)} earlier photograph{s} · oldest at the right')
+    # ...and name what is actually in the rail. Calling a clip a "photograph"
+    # undercuts the one claim this page makes, that the media is what it says.
+    kinds = {i['clip'] for i in rail}
+    noun = 'clip' if kinds == {True} else 'photograph' if kinds == {False} else 'item'
+    rail_count = (f'{len(rail)} more {noun}{s} from this visit' if one_visit
+                  else f'{len(rail)} earlier {noun}{s} · oldest at the right')
     months = [i['month'] for i in items if i['month'] is not None]
     stage_label = f'Month {max(months)} of 8 &middot; {e(STAGES[max(months)])}' if months else ''
     lead_span = 'auto' if (vid or secondary) else '1 / -1'
