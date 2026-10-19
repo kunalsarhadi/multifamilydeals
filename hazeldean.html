@@ -308,11 +308,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p style="font-size:1rem;line-height:1.7;color:#4A443B;">Photographed in September 2026 on completion of the build — unstaged, the way tenants will move in. Select a set to explore.</p>
       </div>
       <div class="reveal" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;">
-        <button type="button" class="suite-tab active" data-suite="exterior">Exterior &amp; Aerial · 9 photos</button>
-        <button type="button" class="suite-tab" data-suite="interior">Interiors · 41 photos</button>
+        <button type="button" class="suite-tab active" data-suite="exterior">Exterior · 9 photos</button>
+        <button type="button" class="suite-tab" data-suite="main">Main Suite · 26 photos</button>
+        <button type="button" class="suite-tab" data-suite="lower">Lower Suite · 15 photos</button>
       </div>
       <div class="reveal" style="margin-bottom:18px;">
-        <div id="suiteTitle" style="font-family:'Newsreader',serif;font-size:1.3rem;font-weight:500;color:#1C1813;">Exterior &amp; Aerial</div>
+        <div id="suiteTitle" style="font-family:'Newsreader',serif;font-size:1.3rem;font-weight:500;color:#1C1813;">Exterior</div>
         <div id="suiteDesc" style="font-size:.9rem;line-height:1.6;color:#4A443B;margin-top:4px;max-width:640px;">Street-level and drone photography of the completed building, its new landscaping, and its setting in Hazeldean.</div>
       </div>
       <div id="galGrid"></div>
@@ -425,10 +426,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // shared "anyone with the link can EDIT", so falling back to it would let a
     // stranger change what this page shows. On a miss we show the 3D-tour panel.
     var SETS = {
-      exterior: { label:'Exterior & Aerial', desc:'Street-level and drone photography of the completed building, its new landscaping, and its setting in Hazeldean.',
+      exterior: { label:'Exterior', desc:'Street-level and drone photography of the completed building, its new landscaping, and its setting in Hazeldean.',
         files:['dji-0073','dji-0076','dji-0075','dji-0082','dji-0083','dji-0077','dji-0079','dji-0080','dji-0081'] },
-      interior: { label:'Interiors', desc:'Every room photographed on completion of the build — unstaged. The kitchen leads; the rest follows the photographer’s walk through the suites.',
-        files:['dsc-03474','dsc-03454','dsc-03457','dsc-03459','dsc-03464','dsc-03465','dsc-03468','dsc-03471','dsc-03479','dsc-03480','dsc-03483','dsc-03488','dsc-03490','dsc-03493','dsc-03495','dsc-03498','dsc-03501','dsc-03505','dsc-03508','dsc-03511','dsc-03513','dsc-03516','dsc-03520','dsc-03524','dsc-03526','dsc-03529','dsc-03533','dsc-03535','dsc-03538','dsc-03541','dsc-03544','dsc-03548','dsc-03551','dsc-03552','dsc-03555','dsc-03558','dsc-03561','dsc-03564','dsc-03568','dsc-03570','dsc-03573'] }
+      main: { label:'Main Suite', desc:'The two-storey main suite — open-concept kitchen with a waterfall island and the living area on the main floor, with the bedrooms, bathrooms and laundry upstairs.',
+        files:['dsc-03474','dsc-03454','dsc-03457','dsc-03459','dsc-03464','dsc-03465','dsc-03468','dsc-03471','dsc-03479','dsc-03480','dsc-03483','dsc-03488','dsc-03490','dsc-03538','dsc-03541','dsc-03544','dsc-03548','dsc-03551','dsc-03552','dsc-03555','dsc-03558','dsc-03561','dsc-03564','dsc-03568','dsc-03570','dsc-03573'] },
+      lower: { label:'Lower Suite', desc:'The fully self-contained lower suite, with its own entrance, kitchen, bathroom and in-suite laundry.',
+        files:['dsc-03505','dsc-03493','dsc-03495','dsc-03498','dsc-03501','dsc-03508','dsc-03511','dsc-03513','dsc-03516','dsc-03520','dsc-03524','dsc-03526','dsc-03529','dsc-03533','dsc-03535'] }
     };
     var TOUR = 'https://unbranded.youriguide.com/6414_97_st_nw_edmonton_ab/';
     var GRID_MAX = 7;
