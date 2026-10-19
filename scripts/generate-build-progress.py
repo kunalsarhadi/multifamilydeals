@@ -65,6 +65,14 @@ def item(m, project_name):
     clip = is_clip(f)
     mo = m[4] if len(m) > 4 else None
     known = isinstance(mo, int)
+    # Optional 6th element 'pro': shot by a hired photographer on completion. Those are
+    # HDR-merged and colour-corrected, so they must NOT carry the "unretouched" tag the
+    # owner's own site photos carry -- the whole page rests on that claim being true.
+    pro = len(m) > 5 and m[5] == 'pro'
+    if pro:
+        tag = 'Professional photograph'
+    else:
+        tag = 'Clip &middot; unedited' if clip else 'Photograph &middot; unretouched'
     return {
         'stage': m[0], 'date': m[1], 'caption': m[2], 'src': path(f), 'clip': clip,
         'monthShort': f'Month {mo}' if known else e(m[1]),
@@ -72,7 +80,7 @@ def item(m, project_name):
         'dateNote': (('Filmed ' if clip else 'Photographed ') + m[1]) if known else '',
         'alt': f'{project_name} — {m[0]}, {m[1]}',
         'month': mo if known else None,
-        'tag': 'Clip &middot; unedited' if clip else 'Photograph &middot; unretouched',
+        'tag': tag,
     }
 
 
@@ -184,12 +192,17 @@ for p in sorted(P, key=lambda x: rank.get(x['id'], len(ORDER))):
           <div class="bp-swipe"><span class="rule"></span>Swipe for the full sequence</div>
         </div>'''
 
+    # optional link out to a finished-project page (e.g. Hazeldean); emitted only when set
+    lk = p.get('link')
+    proj_link = (f'\n            <a class="bp-projlink" href="{e(lk["href"])}">{e(lk["label"])} &rarr;</a>'
+                 if lk else '')
+
     cards.append(f'''      <article class="bp-card" id="bp-{e(p['id'])}">
         <div class="bp-projhead">
           <div class="bp-projmeta">
             <div class="bp-projtags"><span class="bp-units">{e(p['units'])}</span><span class="bp-place">{e(p['place'])}</span></div>
             <h3 class="bp-name">{e(p['name'])}</h3>
-            <p class="bp-note">{e(p.get('note', ''))}</p>
+            <p class="bp-note">{e(p.get('note', ''))}</p>{proj_link}
           </div>
           <div class="bp-statuswrap">
             <div class="bp-status"><span class="bp-dot" aria-hidden="true"></span><span>{e(p['status'])}</span></div>
@@ -301,7 +314,7 @@ MAIN = f'''<main id="main-content">
       <div class="bp-cta-btns">
         <a href="contact.html" data-conversion="book_call" class="bp-btn">Book a Discovery Call</a>
         <a href="tel:+14162007010" data-conversion="phone_click" class="bp-btn-ghost">Request a Site Tour &middot; 416 200 7010</a>
-        <p class="bp-fine bp-fine-d">All photographs and clips on this page were taken on site on the dates shown and are unretouched. They show a range of projects at different stages and are included to illustrate how a build progresses &mdash; the finished product, finishes, specifications, unit mix and timelines of any project you purchase may differ from what is shown here. Construction schedules move; stage dates describe what was photographed, not a completion commitment. Nothing on this page is an offer or a binding representation &mdash; the Agreement of Purchase and Sale and current CMHC terms govern.</p>
+        <p class="bp-fine bp-fine-d">Site photographs and clips on this page were taken on the dates shown and are unretouched. Images marked &ldquo;Professional photograph&rdquo; were shot by a hired photographer on completion and may be edited for exposure and colour. They show a range of projects at different stages and are included to illustrate how a build progresses &mdash; the finished product, finishes, specifications, unit mix and timelines of any project you purchase may differ from what is shown here. Construction schedules move; stage dates describe what was photographed, not a completion commitment. Nothing on this page is an offer or a binding representation &mdash; the Agreement of Purchase and Sale and current CMHC terms govern.</p>
       </div>
     </div>
   </section>

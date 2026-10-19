@@ -34,6 +34,7 @@ Always tell the user whether a change is local-only or has been pushed live.
 | `inventory.html` | `/inventory` | Active property listings |
 | `inglewood.html` | `/inglewood` | Portfolio — completed 9-plex project |
 | `crawford-plains.html` | `/crawford-plains` | Portfolio — 8-plex Crawford Plains (newest; **complete build, now pre-leasing before closing** — NOT yet closed; higher priority than Inglewood) |
+| `hazeldean.html` | `/hazeldean` | Portfolio — 8-plex Hazeldean (**complete, landscaped, now pre-leasing** — added Oct 2026; walkthrough video + iGuide + 50-photo gallery). See the Hazeldean section below. |
 | `buying-process.html` | `/buying-process` | Step-by-step buying process |
 | `faq.html` | `/faq` | FAQ accordion |
 | `reviews.html` | `/reviews` | Client reviews |
@@ -120,9 +121,27 @@ Construction proof page — dated site photography and clips from nine live proj
 - **A project's `video` is a property SEPARATE from `media`.** It fills the second column and suppresses `secondary`. Ignoring it silently drops clips.
 - **Clips are click-to-play**, `preload="none"`, `src` attached on first click, poster frames committed alongside. Never autoplay, never preload — the library is ~47 MB. Clip paths are fixed by convention: poster = clip filename with `.mp4` → `-poster.jpg`.
 - **Images load eagerly.** Do NOT add `loading="lazy"` or gate them behind IntersectionObserver — the handoff is explicit that this rendered as empty black plates.
-- Media lives in `images/build/**` (24 photos) and `media/<project>/*.mp4` + `-poster.jpg` (10 clips). Owner supplies clips as unlabelled uploads; match them by extracting frames with `imageio_ffmpeg` and comparing against the committed posters — filenames carry no meaning.
+- Media lives in `images/build/**` (27 image files; the generator counts the 25 it places) and `media/<project>/*.mp4` + `-poster.jpg` (11 clips). Owner supplies clips as unlabelled uploads; match them by extracting frames with `imageio_ffmpeg` and comparing against the committed posters — filenames carry no meaning.
 - **Contrast floor:** muted greys on this page were promoted to `#6F695C` (>=4.5:1 on paper/card/alt) and `#847D6E` on espresso. `#8A8172` and `#A79E8E` fail on light backgrounds — do not revert them.
 - Carries the standard WhatsApp bar (in the generator, not just the page) and `book_call` / `phone_click` / `whatsapp_click`. No conversion event of its own.
+- **RUN THE GENERATOR WITH A PYTHON THAT HAS PILLOW.** `ratio()` measures every plate with Pillow and, if the import fails, **silently falls back to `3 / 2` for every plate** — no error, just a page full of wrong aspect ratios. Some containers have two Pythons on PATH (Oct 2026: `/usr/local/bin/python3` = 3.11 without Pillow, `/usr/bin/python3` = 3.13 with it). Check `python3 -c "import PIL"` first, and after splicing confirm `grep -c 'aspect-ratio:3 / 2'` is 0.
+- **Prove the blast radius after every regenerate:** diff each `<article class="bp-card">` against the previous page and confirm only the project you meant to touch changed (plus the photo counter). That check caught a whitespace leak that had silently altered all nine cards.
+- **Optional per-media 6th element `'pro'`** — marks a photo shot by a hired photographer. It is tagged **"Professional photograph"** instead of "Photograph · unretouched", and the page fine print scopes the unretouched claim to site photos. **Professional real-estate photos are HDR-merged and colour-corrected — never let them carry the "unretouched" tag.** The whole page rests on that claim being true.
+- **Optional per-project `link: {href, label}`** — renders a "label →" link under the note to a finished-project page. Only emitted when set. Used by Hazeldean → `hazeldean.html`.
+
+## Hazeldean 8-Plex page (`hazeldean.html`, added Oct 2026)
+
+Finished-project page in the same mould as `crawford-plains.html` (its head, nav, footer, GTM/pixel/GHL plumbing and listeners were copied verbatim from Crawford). Sections: hero → walkthrough video → iGuide tour → photo gallery → "From slab to sod" (links to build-progress) + MLI panel → WhatsApp bar → CTA.
+
+- **Status: complete, landscaped, now pre-leasing.** Inferred from the Sept 2026 completion shoot and a "For Rent" sign in the owner's photos — **owner to confirm.** It does NOT say "before closing", "closed", "sold" or "delivered"; keep it that way unless the owner says otherwise. The hotlist row says SOLD — that is the allocation sale, same as Crawford's row.
+- **Address:** iGuide is `6414 97 St NW`. An earlier owner photo showed "6413" on a window; the building was confirmed identical by massing/window layout (overcast May shots read darker than sunny Sept ones, and the mint-green doors weren't hung yet in May). Likely a multi-address lot.
+- **Video is streamed from Google Drive, NOT committed.** It is 105 MB — over GitHub's 100 MB hard limit, and the Drive connector caps downloads at 10 MB anyway. Drive file `1Q-Rrup-iFpUM_unopJAGeqa_FGoaa2Is` (shared anyone/reader). The page shows a poster-button facade and injects the `/preview` iframe **only on click**, so Google's player stays off the page for anyone who doesn't press play. If it ever needs self-hosting, the owner must supply a compressed copy under ~50 MB.
+- **iGuide:** `https://unbranded.youriguide.com/6414_97_st_nw_edmonton_ab/` (blocked from this container, same as Crawford's — verify live).
+- **Photos: 50, self-hosted** in `images/hazeldean/` as webp (max 1600px, q82, 6.0 MB total): 9 drone `dji-NNNN.webp` + 41 interior `dsc-NNNNN.webp`, named by the photographer's original numbers. Interiors follow the photographer's walk order, kitchen (`dsc-03474`) first. OG image `images/hazeldean/hazeldean-og.jpg` (from `dji-0073`).
+- **NO Google Drive fallback on these photos — deliberately.** The photographer's source folder (`1vUflBzR5j32yM3YqrlaONG348lWYHCVy`, owned by `sandhusarabjit513`) is shared **"anyone with the link → EDITOR"**. A fallback to it would let any stranger change what the page shows. On a missing local file the card degrades to a "open the 3D tour" panel. Do not link that folder publicly. Owner was asked to get it switched to Viewer.
+- **41 of the source JPEGs are exactly 3,145,728 bytes** (3 MiB). That looked like truncation; it isn't — the JPEG data ends normally and the file is zero-padded. Every image was checked for a grey truncation band during import.
+- **Not carried over from Crawford (no Hazeldean data for them):** the "+$100K appraised" stat/section, "refinements learned from Inglewood", and the "Now Renting / managed before closing" block. Do not add an appraisal figure without an owner-supplied number.
+- **Nav:** Properties dropdown lists it right **after** Crawford as "Hazeldean 8-Plex · Complete · pre-leasing 2026"; also in mobile nav, every root footer, every blog footer, and `sitemap.xml`. Crawford's own label still says "Newest project" — arguably stale now that Hazeldean completed later; left for the owner to decide because changing it cascades into Crawford's hero and meta copy.
 
 ## Client representation — NEVER claim it (standing rule, July 2026)
 

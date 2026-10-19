@@ -211,16 +211,25 @@
    "name": "8-Plex Hazeldean",
    "units": "8-Plex",
    "place": "Hazeldean, Edmonton · Alberta",
-   "status": "Under construction",
-   "note": "Siding and stucco are on, windows and doors in, and the entry decks are framed. The earlier shots in the sequence are the same building in spring, still wrapped.",
-   "railTitle": "Site visit",
+   "status": "Complete · pre-leasing",
+   "note": "Complete and landscaped, and now pre-leasing. The sequence runs back through the summer siding and stucco to the same building still wrapped in spring.",
+   "railTitle": "Earlier site visits",
    "media": [
     [
-     "On site",
-     "Spring 2026",
-     "Me out front on a walkthrough — this is the front elevation from the street.",
-     "images/hazeldean/kunal-site.jpg",
-     3
+     "Complete & landscaped",
+     "September 2026",
+     "The finished front elevation — doors hung, walks poured, sod down and trees planted.",
+     "images/hazeldean/complete-front.webp",
+     8,
+     "pro"
+    ],
+    [
+     "Rear & meter bank",
+     "September 2026",
+     "The rear elevation and the bank of individual suite meters — every unit separately metered.",
+     "images/hazeldean/complete-rear.webp",
+     8,
+     "pro"
     ],
     [
      "Siding complete",
@@ -230,13 +239,24 @@
      4
     ],
     [
+     "On site",
+     "Spring 2026",
+     "Me out front on a walkthrough — this is the front elevation from the street.",
+     "images/hazeldean/kunal-site.jpg",
+     3
+    ],
+    [
      "Sheathed & glazed",
      "Spring 2026",
      "Corner elevation with windows installed and the building wrap going up over the sheathing.",
      "images/hazeldean/corner-elev.jpg",
      3
     ]
-   ]
+   ],
+   "link": {
+    "href": "hazeldean.html",
+    "label": "Video, 3D tour & full gallery"
+   }
   },
   {
    "id": "inglewood9",
