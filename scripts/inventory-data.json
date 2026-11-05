@@ -1,5 +1,5 @@
 {
- "_note": "Available inventory cards. Edit here, then run: python3 scripts/generate-inventory.py. cashFlow/dscr/completion come from the hotlist.",
+ "_note": "Available inventory cards. Edit here, then run: python3 scripts/generate-inventory.py. price/deposit/incentives come from each package's Proforma.pdf; cashFlow/dscr/completion from the hotlist.",
  "listings": [
   {
    "slug": "mill-woods-8plex",
@@ -13,7 +13,16 @@
    "completion": "Fall 2026",
    "image": "images/inv/mill-woods-8plex.webp",
    "driveImageId": null,
-   "packageFolder": "1SPLCXkIZc5z21QLuoO-3zM0U1fCxubDz"
+   "packageFolder": "1SPLCXkIZc5z21QLuoO-3zM0U1fCxubDz",
+   "price": 2350000,
+   "deposit": 117500,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1Xsgr73MTcRZYMneRKuvi0UtVBhNB3sqP"
   },
   {
    "slug": "prince-charles-8plex",
@@ -27,7 +36,16 @@
    "completion": "Early 2027",
    "image": "images/inv/prince-charles-8plex.webp",
    "driveImageId": "1FoLvEqbA6V3mRZHVsCbE1aUkeETyNFGk",
-   "packageFolder": "1oHAlMX9IZ4BWfCw87xA4O3CXdmmmBVWp"
+   "packageFolder": "1oHAlMX9IZ4BWfCw87xA4O3CXdmmmBVWp",
+   "price": 2250000,
+   "deposit": 112500,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1pCvYTW3tIrifw9yCxXA5YOKRcSyXjOxK"
   },
   {
    "slug": "west-jasper-place-2-8plex",
@@ -41,7 +59,16 @@
    "completion": "Early 2027",
    "image": "images/inv/west-jasper-place-2-8plex.webp",
    "driveImageId": "110J93YbiWoFN4NxvDtPaVYYytIq8tH5E",
-   "packageFolder": "1XhHgdGSt-IPn6tGDHrIyuG7IqXfZaHnW"
+   "packageFolder": "1XhHgdGSt-IPn6tGDHrIyuG7IqXfZaHnW",
+   "price": 2250000,
+   "deposit": 112500,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1lRP3omv6f4zmoXniCniEtrWHdLk81yd_"
   },
   {
    "slug": "eastwood-8plex",
@@ -55,7 +82,16 @@
    "completion": "Early 2027",
    "image": "images/inv/eastwood-8plex.webp",
    "driveImageId": "12gs4GjEB64wbe6GW_ILBc5UZX1_tqQZZ",
-   "packageFolder": "164DEVh4SMIpyEsH6KPBiRyWkfYPMF49l"
+   "packageFolder": "164DEVh4SMIpyEsH6KPBiRyWkfYPMF49l",
+   "price": 2250000,
+   "deposit": 112500,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1t4e8SUVc6CrKjvr0mmfzLKcJAUMPV-9X"
   },
   {
    "slug": "elmwood-park-10plex",
@@ -69,7 +105,16 @@
    "completion": "Early 2027",
    "image": "images/inv/elmwood-park-10plex.webp",
    "driveImageId": "1JlNVaTvtY_aonJFjwEvG_5PRe4MT-RPy",
-   "packageFolder": "1AtRtTXrpAwDanfWiwdrPmOqMqzXHQomM"
+   "packageFolder": "1AtRtTXrpAwDanfWiwdrPmOqMqzXHQomM",
+   "price": 2750000,
+   "deposit": 137500,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1MqiLmWaK_iAu4SjZ070jOGb4k1c7b42h"
   },
   {
    "slug": "leduc-10plex",
@@ -83,7 +128,16 @@
    "completion": "Summer 2027",
    "image": "images/inv/leduc-10plex.webp",
    "driveImageId": "1kd6272A952FYced118iVhTawQ5jGt8RF",
-   "packageFolder": "1UnkeGl4uYumcze90-nMTSzDOessuS3sb"
+   "packageFolder": "1UnkeGl4uYumcze90-nMTSzDOessuS3sb",
+   "price": 2750000,
+   "deposit": 137500,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1BrhJwPc3dCc8rr6YPbNlLpMOwDidmtNi"
   },
   {
    "slug": "spruce-avenue-11plex",
@@ -97,7 +151,16 @@
    "completion": "Summer 2027",
    "image": "images/inv/spruce-avenue-11plex.webp",
    "driveImageId": "12cUOoVkY85ADIkQX6lqq_8kNOAB0CYTE",
-   "packageFolder": "1wcZQh_s0dpf0m4D1OkaLQQ27KkO4IUy_"
+   "packageFolder": "1wcZQh_s0dpf0m4D1OkaLQQ27KkO4IUy_",
+   "price": 2500000,
+   "deposit": 125000,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1x8Wbuqt94IzglqczmRfdnwp4RIKsW50r"
   },
   {
    "slug": "inglewood-8plex",
@@ -111,7 +174,16 @@
    "completion": "Summer 2027",
    "image": "images/inv/inglewood-8plex.webp",
    "driveImageId": "1TiXi4uKtpfwwsu2Nx6m5c1R_a24kIEdx",
-   "packageFolder": "1ShsGcO4BfnYxO8ELJmSy9hoz4oG0jdZk"
+   "packageFolder": "1ShsGcO4BfnYxO8ELJmSy9hoz4oG0jdZk",
+   "price": 2400000,
+   "deposit": 120000,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1sxfSnXHbny0gWgz5cw6vYSy-IZ7ggQ4C"
   },
   {
    "slug": "inglewood-9plex",
@@ -125,7 +197,16 @@
    "completion": "Summer 2027",
    "image": "images/inv/inglewood-9plex.webp",
    "driveImageId": "1D2vEfmGCR2R0KyMkrl0_rzZEe3HzQtB_",
-   "packageFolder": "1LJQvKWRvsQCovQZbe0ZNHW7Mkxq_f4GF"
+   "packageFolder": "1LJQvKWRvsQCovQZbe0ZNHW7Mkxq_f4GF",
+   "price": 2550000,
+   "deposit": 127500,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1UEZSN4ct_0KNosluXrpn2E1DzoTOzEAb"
   },
   {
    "slug": "central-mcdougall-16plex",
@@ -139,7 +220,16 @@
    "completion": "Summer 2027",
    "image": "images/inv/central-mcdougall-16plex.webp",
    "driveImageId": "1MR1pPmsk_CPr_mpFDjLue3IuHnoGBSzl",
-   "packageFolder": "1BgX9CoFJHyy4q6AZxAPtuNsni6LSav27"
+   "packageFolder": "1BgX9CoFJHyy4q6AZxAPtuNsni6LSav27",
+   "price": 4500000,
+   "deposit": 225000,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "10VF8ULyEEtGCQF9SsFbVY-zUyFaSJfoR"
   },
   {
    "slug": "killarney-19plex",
@@ -153,7 +243,16 @@
    "completion": "Summer 2027",
    "image": "images/inv/killarney-19plex.webp",
    "driveImageId": "1_Ne0uyxUicG8YJpwDWyTHOeMF06ErTn3",
-   "packageFolder": "11aGKwvxT7yiLM9nnoXm_nW-9-XMT2O50"
+   "packageFolder": "11aGKwvxT7yiLM9nnoXm_nW-9-XMT2O50",
+   "price": 5400000,
+   "deposit": 270000,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1jVyOa06Sc4bmdoHYWH8D5T6vlkH9E5G5"
   },
   {
    "slug": "central-mcdougall-8plex",
@@ -167,7 +266,16 @@
    "completion": "Summer 2027",
    "image": "images/inv/central-mcdougall-8plex.webp",
    "driveImageId": "1DFiT_pMEMvycxmBRiYxDhcfjPGaqEpAe",
-   "packageFolder": "1zJC1A-OXyheTB7aG4EdaNvCOQGxawNvm"
+   "packageFolder": "1zJC1A-OXyheTB7aG4EdaNvCOQGxawNvm",
+   "price": 2250000,
+   "deposit": 112500,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1KXfnxhTH4d1HWQivcuq-Dgyvqymuy_m2"
   },
   {
    "slug": "jasper-park-9plex",
@@ -181,7 +289,16 @@
    "completion": "Summer 2027",
    "image": "images/inv/jasper-park-9plex.webp",
    "driveImageId": "1kgY5sTLcTDwl73EK0SKjyoX93Fws6ORo",
-   "packageFolder": "1Isngvymm7ockF03H_JBdq1gGqzmvQum5"
+   "packageFolder": "1Isngvymm7ockF03H_JBdq1gGqzmvQum5",
+   "price": 2550000,
+   "deposit": 127500,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1HOaEu0GVLc2iQmhadIJyjDCPCewMmz4V"
   },
   {
    "slug": "delton-6plex",
@@ -195,7 +312,16 @@
    "completion": "Summer 2027",
    "image": "images/inv/delton-6plex.webp",
    "driveImageId": "1WMa74rBqPixZpKmwrB0FUSiUGcXcNUEp",
-   "packageFolder": "1lGjoA1aYwWIrUB9Lwp4BNcFVGw9VPpMn"
+   "packageFolder": "1lGjoA1aYwWIrUB9Lwp4BNcFVGw9VPpMn",
+   "price": 1750000,
+   "deposit": 87500,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1QcQcI6yNCcc3Oh7on0l7dzWfSdiNVs3u"
   }
  ]
 }
