@@ -134,6 +134,14 @@ def replace_between(page, start, end, body, anchor_re=None):
 
 
 def build(page, listings):
+    # Guard: an Available card outside the generated block would be shown twice
+    # (this happened when a hand-added card on main was merged into this file).
+    if CARDS_START in page:
+        i, j = page.index(CARDS_START), page.index(CARDS_END)
+        outside = len(re.findall(r'<article class="inv-card reveal" data-card', page[:i] + page[j:]))
+        if outside:
+            sys.exit(f'{outside} Available card(s) sit outside the generated block in inventory.html — '
+                     'remove them and add the listing to scripts/inventory-data.json instead')
     cards = '\n\n'.join(card(d) for d in listings)
     page = replace_between(
         page, CARDS_START, CARDS_END, cards,

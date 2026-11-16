@@ -322,6 +322,29 @@
     "Year 1 PM fee paid back by builder"
    ],
    "proformaFileId": "1QcQcI6yNCcc3Oh7on0l7dzWfSdiNVs3u"
+  },
+  {
+   "slug": "sherwood-8plex",
+   "title": "Sherwood 8-Plex",
+   "subtitle": "Sherwood · Edmonton",
+   "placeholder": "Sherwood",
+   "units": 8,
+   "cashFlow": 21034,
+   "completeSort": 2027.2,
+   "dscr": "1.20",
+   "completion": "Spring 2027",
+   "image": "images/inv/sherwood-8plex.webp",
+   "driveImageId": "1xhjzaWt3rdGvfTcxP-JFs14dNIkd2eAu",
+   "packageFolder": "1ZLPJHOAbFIUZUm1-kSDDNWERUWPmrOvp",
+   "price": 2250000,
+   "deposit": 112500,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1PrIyw56wBli2n49yxj1gLya1rBGBe5v8"
   }
  ]
 }
