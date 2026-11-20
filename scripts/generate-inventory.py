@@ -63,6 +63,11 @@ def card(d):
     else:
         onerror = hide
 
+    # Optional "fit": "contain" letterboxes a render that is too wide/tall for the 16/10 frame
+    # (cover would crop the building). Stopgap only, until a 16/10 re-render arrives.
+    fit_css = ('object-fit:contain;background:#1C1813;' if d.get('fit') == 'contain'
+               else 'object-fit:cover;')
+
     pricing = ''
     if d.get('price') and d.get('deposit'):
         pricing = f'''
@@ -83,7 +88,7 @@ def card(d):
               <div style="font-family:'Newsreader',serif;font-size:1.5rem;font-weight:500;color:#665F53;line-height:1.1;">{e(d['placeholder'])}</div>
               <div style="font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#665F53;margin-top:8px;">Rendering coming soon</div>
             </div>
-            <img src="{e(d['image'])}" alt="{e(title)} &mdash; artist&#39;s rendering" loading="lazy" onerror="{onerror}" style="position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;" />
+            <img src="{e(d['image'])}" alt="{e(title)} &mdash; artist&#39;s rendering" loading="lazy" onerror="{onerror}" style="position:absolute;inset:0;display:block;width:100%;height:100%;{fit_css}" />
             <div style="position:absolute;top:12px;left:12px;background:rgba(20,17,12,0.82);backdrop-filter:blur(4px);color:#F5F1E8;padding:6px 12px;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;">{d['units']} Plex</div>
             <div style="position:absolute;top:12px;right:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;background:rgba(224,244,233,0.92);color:#1C6B44;"><span style="width:7px;height:7px;border-radius:50%;background:#2C8F5E;"></span>Available</div>
             <div id="{tag_id}" style="position:absolute;bottom:10px;right:12px;font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,241,232,0.85);background:rgba(20,17,12,0.5);padding:3px 8px;border-radius:2px;">Artist&rsquo;s rendering</div>

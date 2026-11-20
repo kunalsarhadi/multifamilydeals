@@ -345,6 +345,30 @@
     "Year 1 PM fee paid back by builder"
    ],
    "proformaFileId": "1PrIyw56wBli2n49yxj1gLya1rBGBe5v8"
+  },
+  {
+   "slug": "west-jasper-place-3-8plex",
+   "title": "West Jasper 8-Plex",
+   "subtitle": "West Jasper · Edmonton",
+   "placeholder": "West Jasper",
+   "units": 8,
+   "cashFlow": 22401,
+   "completeSort": 2027.2,
+   "dscr": "1.18",
+   "completion": "Spring 2027",
+   "image": "images/inv/west-jasper-place-3-8plex.webp",
+   "driveImageId": "1iAWaZ0BmN_tWSeaeKs7T-HtP9Iq-YeR5",
+   "packageFolder": "17F1QJIWSnWB6ohiI-qsoXJqMzaumQrIK",
+   "fit": "contain",
+   "price": 2650000,
+   "deposit": 132500,
+   "incentives": [
+    "Appliances included",
+    "Blinds included",
+    "Landscaping included",
+    "Year 1 PM fee paid back by builder"
+   ],
+   "proformaFileId": "1HikBIHpTzZiyHy0PwLAArQ31fZI-XpWp"
   }
  ]
 }
